@@ -1,4 +1,4 @@
-import './pages/blogs/Blogs.css'
+import './Blogs.css'
 
 function Blogs() {
 
@@ -7,7 +7,7 @@ function Blogs() {
         <>
 
 
-
+blogs pagina
 
 
 

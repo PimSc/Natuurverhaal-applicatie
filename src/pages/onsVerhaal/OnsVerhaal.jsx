@@ -1,4 +1,4 @@
-import './pages/onsVerhaal/OnsVerhaal.css'
+import './OnsVerhaal.css'
 
 function OnsVerhaal() {
 
@@ -7,7 +7,7 @@ function OnsVerhaal() {
         <>
 
 
-
+ons verhaal pagina
 
 
 

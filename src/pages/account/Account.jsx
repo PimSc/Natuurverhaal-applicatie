@@ -1,4 +1,4 @@
-import './pages/account/Account.css'
+import './Account.css'
 
 function Account() {
 
@@ -7,7 +7,7 @@ function Account() {
         <>
 
 
-
+account pagina
 
 
 

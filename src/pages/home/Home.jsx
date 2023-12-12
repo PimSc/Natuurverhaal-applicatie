@@ -1,4 +1,4 @@
-import './pages/home/Home.css'
+import './Home.css'
 
 function Home() {
 
@@ -6,7 +6,7 @@ function Home() {
     return (
         <>
 
-
+home pagina
 
 
 

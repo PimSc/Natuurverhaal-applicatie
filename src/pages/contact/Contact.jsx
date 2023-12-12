@@ -1,4 +1,4 @@
-import './pages/contact/Contact.css'
+import './Contact.css'
 
 function Contact() {
 
@@ -7,7 +7,7 @@ function Contact() {
         <>
 
 
-
+contact pagina
 
 
 

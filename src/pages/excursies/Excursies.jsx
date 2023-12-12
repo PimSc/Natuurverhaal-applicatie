@@ -1,4 +1,4 @@
-import './pages/excursies/Excursies.css'
+import './Excursies.css'
 
 function Excursies() {
 
@@ -8,7 +8,7 @@ function Excursies() {
 
 
 
-
+excursies pagina
 
 
         </>
