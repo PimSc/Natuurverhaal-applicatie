@@ -14,7 +14,6 @@ function App() {
   return (
     <>
         <Navigation/>  {/*blijft standaard staan*/}
-
         <Routes> {/*Hier wordt tussen gewisseld*/}
             <Route path="/" element={<Home/>}/>
             <Route path="/OnsVerhaal" element={<OnsVerhaal/>}/>
@@ -24,6 +23,14 @@ function App() {
             <Route path="/Contact" element={<Contact/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
+
+
+
+
+
+
+
+
     </>
   )
 }
