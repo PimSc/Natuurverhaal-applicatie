@@ -7,7 +7,9 @@ function Header() {
         <>
 
 
-
+            <header className="title-container">
+                <h1>hoi</h1>
+            </header>
 
 
 
