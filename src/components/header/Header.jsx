@@ -1,19 +1,29 @@
 import './Header.css'
+import {Link} from "react-router-dom";
+
 
 function Header() {
 
 
     return (
-        <>
-
-
-            <header className="title-container">
-                <h1>hoi</h1>
-            </header>
+<>
 
 
 
-        </>
+        <div className="headerContainer">
+
+            <div className="bg"></div>
+
+            <div className="homeTitle">
+                <Link to="/">Natuurverhaal.nl</Link>
+            </div>
+
+
+
+
+
+        </div>
+</>
     )
 }
 

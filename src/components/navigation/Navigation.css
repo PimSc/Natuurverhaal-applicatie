@@ -1,14 +1,13 @@
 .nav-container {
     flex-basis: 1000px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 nav {
     width: 100%;
-    background-color: #3624ff;
+    background-color: var(--white);
+    font-family: var(--TitleFont);
     display: flex;
     justify-content: center;
     height: 60px;
@@ -16,14 +15,20 @@ nav {
 
 ul {
     list-style-type: none;
-    flex-basis: 550px;
+    flex-basis: 65%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 
+.default-link {
+    font-size: 25px;
+}
 
+.active-link {
+    font-size: 25px;
+}
 
 
 
