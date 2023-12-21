@@ -7,8 +7,6 @@
 
 
 /*Layout start*/
-
-
 .homeTitle, .homeTitle:hover, .homeTitle:visited {
     font-size: var(--mainTitleFontSize);
     font-family: var(--titleFont);
@@ -41,9 +39,6 @@
     background-position: center center;
     background-size: cover;
 }
-
-
-
 /*Layout end*/
 
 

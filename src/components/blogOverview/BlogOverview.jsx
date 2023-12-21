@@ -1,8 +1,10 @@
 import './BlogOverview.css';
 import posts from "../../constants/data.json";
+import {Link} from "react-router-dom";
 
 
 function BlogOverview() {
+    {/*for the BLOGS COUNTER*/}
     const totalPosts = posts.length;
 
 
@@ -11,25 +13,61 @@ function BlogOverview() {
 return (
 <>
 
-    <h2 className="totalBlogsCounter">Totaal aantal natuurblogs: {totalPosts}</h2>
-    {/*outer-content-container*/}
-    <section className="overview-section ">
-        {posts.map((post) => (
-            <div key={post.id}>
-                <h3>
-                    {/*<Link to={`/blogpost/${post.id}`}>{post.title}</Link> ({post.author})*/}
-                </h3>
-                <h2>{post.title}</h2>
-                <p>
-                    {post.comments} reacties - {post.shares} keer gedeeld
-                </p>
-            </div>
-        ))}
+    {/*BLOGS COUNTER*/}
+    <h2 className="totalBlogsCounter">Totaal aantal natuurblogs op het platform: {totalPosts}</h2>
+
+
+
+    {/*<section className="blogOverviewSection outer-content-container">*/}
+    {/*    <Link to={`/posts/${post.id}`}>*/}
+    {/*        <div className="inner-content-container">*/}
+    {/*            <ul className="post-list">*/}
+    {/*                {posts.map((post) => (*/}
+    {/*                    <li key={post.id} className="post-item">*/}
+    {/*                        <h2 className="post-title">*/}
+    {/*                            {post.title}*/}
+    {/*                        </h2>*/}
+    {/*                        <p>Geschreven door {post.author}</p>*/}
+    {/*                        <p>{post.comments} reacties - {post.shares} keer gedeeld</p>*/}
+    {/*                    </li>*/}
+    {/*                ))}*/}
+    {/*            </ul>*/}
+    {/*        </div>*/}
+    {/*    </Link>*/}
+    {/*</section>*/}
+
+    <section className="blogOverviewSection outer-content-container">
+        <div className="inner-content-container">
+            <ul className="post-list">
+                {posts.map((post) => (
+                    <li key={post.id} className="post-item">
+                        <h2 className="post-title">
+                            <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                        </h2>
+                        <p>Geschreven door {post.author}</p>
+                        <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
     </section>
 
 
-
-
+    {/*<section className="blogOverviewSection outer-content-container">*/}
+    {/*    <div className="inner-content-container">*/}
+    {/*        {posts.map((post) => (*/}
+    {/*            <div key={post.id}>*/}
+    {/*                <h3>*/}
+    {/*                    /!*<Link to={`/blogpost/${post.id}`}>{post.title}</Link> ({post.author})*!/*/}
+    {/*                </h3>*/}
+    {/*                <h2>{post.title}</h2>*/}
+    {/*                <p>*/}
+    {/*                    {post.comments} reacties - {post.shares} keer gedeeld*/}
+    {/*                </p>*/}
+    {/*            </div>*/}
+    {/*        ))}*/}
+    {/*    </div>*/}
+    {/*</section>*/}
 
 
 

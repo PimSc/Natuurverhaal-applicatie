@@ -13,7 +13,7 @@
   --brown: #8b4208;
   --lightBrown: #a68d7a;
   --black: #000000;
-  --darkerGrey: #4B4A4C;
+  --darkerGrey: #242424;
   --grey: #9B9A9C;
   --lightGrey: #f2f2f2;
   --white: #FFFFFF;
@@ -26,11 +26,11 @@
 
   /*font-sizes start*/
   --mainTitleFontSize: 5rem;
-  --h2FontSize: 1.8rem;
-  --pFontSize: 1.4rem;
-  --aTitleFontSize: 2rem;
-  --aHoverEaseOutFontSize: 2.5rem;
-  --postDateFontSize: 1.2rem;
+  /*--h2FontSize: 1.8rem;*/
+  /*--pFontSize: 1.4rem;*/
+  /*--aTitleFontSize: 2rem;*/
+  /*--aHoverEaseOutFontSize: 2.5rem;*/
+  /*--postDateFontSize: 1.2rem;*/
   /*font-sizes end*/
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -39,7 +39,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--darkerGrey);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,8 +50,7 @@
 img {
   width:100%
 }
-/*Verwijderd alle opmaak van links*/
-
+/*remove all styling from links*/
 a,
 a:visited,
 a:hover,
@@ -61,12 +60,18 @@ a:active {
   cursor: pointer;
 }
 
+/*gives all links the title font*/
 a {
   font-family: var(--titleFont);
 }
 
 button:hover {
   cursor: pointer;
+}
+
+/*inherit font family from parent*/
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 
@@ -90,6 +95,40 @@ p {
 }
 
 
+
+
+/*----------- INNER- EN OUTER CONTAINERS ------------------- */
+
+.outer-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*!* Brede inner container*!*/
+/*.inner-content-container {*/
+/*  flex-basis: 1400px;*/
+/*  flex-shrink: 1;*/
+/*  flex-grow: 0;*/
+/*  align-items: center;*/
+/*}*/
+
+/*!* Smalle inner container voor tekst etc. *!*/
+/*.inner-content-container__text-restriction {*/
+/*  flex-basis: 1000px;*/
+/*  flex-shrink: 1;*/
+/*  flex-grow: 0;*/
+/*  align-items: flex-start;*/
+/*}*/
+
+.inner-content-container,
+.inner-content-container__text-restriction {
+  margin: 0 20px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+}
 
 
 

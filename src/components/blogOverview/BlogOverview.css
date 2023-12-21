@@ -1,21 +1,64 @@
+/*Styling start*/
+
+
+
+/*Styling end*/
+
+
+
+/*Layout start*/
 .totalBlogsCounter {
     margin: 30px 0 30px 0;
     text-align: center;
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.5); /* 50% transparant wit */
+    /*color: var(--white);*/
     font-family: var(--mainFont);
 }
 
-
-
-
-.overview-section {
+.blogOverviewSection {
     text-align: left;
-    background-color: lightgrey;
+    background-color: var(--white);
+    /*Border: 2px solid red;*/
 }
 
+.post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    column-gap: 16px;
+    /*Border: 2px solid blue;*/
+}
+
+.post-item {
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: white;
+    padding: 16px;
+
+    flex-basis: 50px;
+    width: 80vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    /*Border: 2px solid darkgreen;*/
+}
+
+/*Layout end*/
+
+
+
+
+
+
+/*dit staat op de blog*/
 /*.overview-section h1 {*/
 /*    margin-top: 0;*/
 /*}*/
+
+
+
+
 
 /*.post-list {*/
 /*    list-style: none;*/

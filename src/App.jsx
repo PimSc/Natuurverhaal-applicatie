@@ -11,6 +11,7 @@ import NotFound from "./pages/notFound/NotFound";
 import Navigation from './components/navigation/Navigation';
 import Header from "./components/header/Header.jsx";
 import Registreer from "./pages/registreer/Registreer.jsx";
+import PostDetail from "./pages/postDetail/PostDetail.jsx";
 // import ViewBlog from "./components/viewBlog/ViewBlog.jsx";
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
 
             {/*Pages outside the nav*/}
             <Route path="/registreer" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><Registreer /></div>}/>
+            <Route path="//posts/:id" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><PostDetail /></div>}/>
+
             {/*<Route path="/Blog/:id" element={<ViewBlog/>}/>*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>
         </Routes>
