@@ -27,7 +27,7 @@
   /*font-sizes start*/
   --mainTitleFontSize: 5rem;
   /*--h2FontSize: 1.8rem;*/
-  /*--pFontSize: 1.4rem;*/
+  --pFontSize: 1rem;
   /*--aTitleFontSize: 2rem;*/
   /*--aHoverEaseOutFontSize: 2.5rem;*/
   /*--postDateFontSize: 1.2rem;*/
@@ -70,11 +70,19 @@ button:hover {
 }
 
 /*inherit font family from parent*/
-button, input, select, textarea {
+button, select, textarea {
   font-family: inherit;
 }
 
-
+/*imput field layout*/
+input {
+  background-color: var(--white); /* Vervang dit met je gewenste achtergrondkleur */
+  padding: 5px;
+  border: 1px solid var(--black);
+  border-radius: 9px;
+  font-size: var(--pFontSize);
+  font-weight: bold;
+}
 
 
 

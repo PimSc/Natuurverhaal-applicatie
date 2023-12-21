@@ -22,8 +22,12 @@ function Navigation() {
             <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
             <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>
             <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Zoek..."/>
+            </form>
         </ul>
             </nav>
+
 
         </div>
     )
