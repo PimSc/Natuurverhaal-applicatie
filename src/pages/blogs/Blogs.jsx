@@ -7,7 +7,7 @@ function Blogs() {
         <>
 
 
-blogs pagina
+Mijn blog bewerk pagina
 
 
 

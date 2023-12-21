@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Young+Serif&display=swap');
 
+
+
+
+/*----------Basic information start----------*/
 * {padding: 0; margin: 0; box-sizing: border-box}
+
 
 :root {
   /*colors start*/
@@ -15,8 +20,8 @@
   /*colors end*/
 
   /*font-family`s start*/
-  --TitleFont: "Young Serif";
-  --MainFont: "Roboto";
+  --titleFont: "Young Serif";
+  --mainFont: "Roboto";
   /*font-family`s end*/
 
   /*font-sizes start*/
@@ -42,9 +47,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
+img {
+  width:100%
+}
 /*Verwijderd alle opmaak van links*/
+
 a,
 a:visited,
 a:hover,
@@ -54,19 +61,46 @@ a:active {
   cursor: pointer;
 }
 
+a {
+  font-family: var(--titleFont);
+}
 
-
-
-img {
-  width:100%
+button:hover {
+  cursor: pointer;
 }
 
 
+
+
+
+/*basic information end*/
+
+
+
+/*Title colors en fonts*/
 h1, h2, h3, h4, h5, h6 {
-  /*H`s colors & font-fams*/
-  color: var(--white);
-  font-family: var(--TitleFont);
+  color: var(--black);
+  font-family: var(--titleFont);
 }
+
+
+p {
+  color: var(--black);
+  font-family: var(--mainFont);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

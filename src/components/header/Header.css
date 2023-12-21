@@ -1,9 +1,20 @@
+/*Styling start*/
+
+
+
+/*Styling end*/
+
+
+
+/*Layout start*/
+
+
 .homeTitle, .homeTitle:hover, .homeTitle:visited {
     font-size: var(--mainTitleFontSize);
-    font-family: var(--titleFontFam);
-    color: var(--white);
+    font-family: var(--titleFont);
+    color: var(--black);
     text-decoration: none;
-    position: absolute; /* Positioneer het overlapelement absoluut binnen het achtergrondelement */
+    position: absolute;
     z-index: 2;
     margin: 15rem 0 4rem 5rem;
 }
@@ -30,3 +41,12 @@
     background-position: center center;
     background-size: cover;
 }
+
+
+
+/*Layout end*/
+
+
+
+
+

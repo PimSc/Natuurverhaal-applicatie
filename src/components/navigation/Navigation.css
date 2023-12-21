@@ -1,13 +1,49 @@
+/*Styling start*/
+
+
+
+/*Styling end*/
+
+
+
+/*Layout start*/
+
+
+
+
+/*Layout end*/
+
+
+
+
+
+.nav-container {
+    background: white;
+    position: sticky;
+    top: 0; /* Set top to 0 to stick to the top of the viewport */
+    z-index: 1000;
+    border-bottom: 1px solid #ccc; /* Add a border if desired */
+}
+
+
+a {
+    font-family: var(--mainFont);
+}
+
+
+
 .nav-container {
     flex-basis: 1000px;
     display: flex;
     justify-content: space-between;
+    transition: .3s ease-in-out;
 }
 
 nav {
     width: 100%;
+    max-width: 1550px;
     background-color: var(--white);
-    font-family: var(--TitleFont);
+    font-family: var(--titleFont);
     display: flex;
     justify-content: center;
     height: 60px;
@@ -20,6 +56,8 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 
 .default-link {
@@ -50,8 +88,15 @@ nav ul a:visited {
     border-bottom: 1px solid black;
 }
 
-nav a:hover {
-    color: white;
-}
+/*.EaseOutA a:hover {*/
+/*    !*margin-top: 5px;*!*/
+/*    transition: all 0.15s ease-in-out;*/
+/*    font-size: 26px;*/
+/*}*/
+
+/*.EaseOutA a {*/
+/*    !*margin-top: -0.7rem;*!*/
+/*    transition: all 0.25s ease-in-out;*/
+/*}*/
 
 

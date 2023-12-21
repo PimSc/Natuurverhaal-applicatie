@@ -1,36 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Young+Serif&display=swap');
+/*Styling start*/
+
+
+
+/*Styling end*/
+
+
+
+/*Layout start*/
 
 
 
 
-
-/*----------Basic information start----------*/
-* {padding: 0; margin: 0; box-sizing: border-box}
-
-
-:root {
-  /*colors start*/
-  --brown: #8b4208;
-  --lightBrown: #a68d7a;
-  --black: #000000;
-  --darkerGrey: #4B4A4C;
-  --grey: #9B9A9C;
-  --lightGrey: #f2f2f2;
-  --white: #FFFFFF;
-  /*colors end*/
-
-  /*font-family`s start*/
-  --titleFontFam: "Young Serif";
-  --normalTextFontFam: "Roboto";
-  /*font-family`s end*/
-
-}img {
-   width:100%
- }
-
-button:hover {
-  cursor: pointer;
-}
-/*basic information end*/
-
-
+/*Layout end*/
