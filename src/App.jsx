@@ -1,14 +1,14 @@
 import './App.css'
 import {Helmet} from "react-helmet";
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/home/Home';
-import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal';
-import Blogs from './pages/blogs/Blogs';
-import Excursies from './pages/excursies/Excursies';
-import Account from './pages/account/Account';
-import Contact from './pages/contact/Contact';
-import NotFound from "./pages/notFound/NotFound";
-import Navigation from './components/navigation/Navigation';
+import Home from './pages/home/Home.jsx';
+import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
+import Blogs from './pages/blogs/Blogs.jsx';
+import Excursies from './pages/excursies/Excursies.jsx';
+import Account from './pages/account/Account.jsx';
+import Contact from './pages/contact/Contact.jsx';
+import NotFound from "./pages/notFound/NotFound.jsx";
+import Navigation from './components/navigation/Navigation.jsx';
 import Header from "./components/header/Header.jsx";
 import Registreer from "./pages/registreer/Registreer.jsx";
 import PostDetail from "./pages/postDetail/PostDetail.jsx";

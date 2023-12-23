@@ -8,6 +8,7 @@
 * {padding: 0; margin: 0; box-sizing: border-box}
 
 
+
 :root {
   /*colors start*/
   --brown: #8b4208;
@@ -19,10 +20,14 @@
   --white: #FFFFFF;
   /*colors end*/
 
+  --mainBackgroundColor: #FFFFFF;
+  --secondBackgroundColor: #242424;
+
   /*font-family`s start*/
   --titleFont: "Young Serif";
   --mainFont: "Roboto";
   /*font-family`s end*/
+
 
   /*font-sizes start*/
   --mainTitleFontSize: 5rem;
@@ -39,7 +44,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--darkerGrey);
+  background-color: var(--mainBackgroundColor);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,10 +52,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-img {
-  width:100%
+/*Background colors*/
+
+
+.mainBackground {
+  background-color: var(--mainBackgroundColor);
+  height: 100vh;
 }
-/*remove all styling from links*/
+
+.secondBackground {
+  background-color: var(--secondBackgroundColor);
+  height: 100vh;
+}
+
+
+/*Edit texts*/
+h1, h2, h3, h4, h5, h6 {
+  color: var(--black);
+  font-family: var(--titleFont);
+}
+
+p {
+  color: var(--black);
+  font-family: var(--mainFont);
+}
+
+/*Link styling*/
 a,
 a:visited,
 a:hover,
@@ -58,25 +85,17 @@ a:active {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-/*gives all links the title font*/
-a {
   font-family: var(--titleFont);
 }
 
+/*Button styling*/
 button:hover {
   cursor: pointer;
 }
 
-/*inherit font family from parent*/
-button, select, textarea {
-  font-family: inherit;
-}
-
 /*imput field layout*/
 input {
-  background-color: var(--white); /* Vervang dit met je gewenste achtergrondkleur */
+  background-color: var(--white);
   padding: 5px;
   border: 1px solid var(--black);
   border-radius: 9px;
@@ -84,23 +103,29 @@ input {
   font-weight: bold;
 }
 
+/*Other stylings*/
+img {
+  max-width:100%
+}
 
+button, select, textarea {
+  font-family: inherit;
+}
+
+section {
+  text-align: center;
+}
 
 /*basic information end*/
 
 
 
-/*Title colors en fonts*/
-h1, h2, h3, h4, h5, h6 {
-  color: var(--black);
-  font-family: var(--titleFont);
-}
 
 
-p {
-  color: var(--black);
-  font-family: var(--mainFont);
-}
+
+
+
+
 
 
 
@@ -130,8 +155,7 @@ p {
 /*  align-items: flex-start;*/
 /*}*/
 
-.inner-content-container,
-.inner-content-container__text-restriction {
+.inner-content-container {
   margin: 0 20px;
   padding: 40px 0;
   display: flex;

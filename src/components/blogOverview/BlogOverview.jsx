@@ -4,37 +4,10 @@ import {Link} from "react-router-dom";
 
 
 function BlogOverview() {
-    {/*for the BLOGS COUNTER*/}
-    const totalPosts = posts.length;
-
-
-
 
 return (
 <>
 
-    {/*BLOGS COUNTER*/}
-    <h2 className="totalBlogsCounter">Totaal aantal natuurblogs op het platform: {totalPosts}</h2>
-
-
-
-    {/*<section className="blogOverviewSection outer-content-container">*/}
-    {/*    <Link to={`/posts/${post.id}`}>*/}
-    {/*        <div className="inner-content-container">*/}
-    {/*            <ul className="post-list">*/}
-    {/*                {posts.map((post) => (*/}
-    {/*                    <li key={post.id} className="post-item">*/}
-    {/*                        <h2 className="post-title">*/}
-    {/*                            {post.title}*/}
-    {/*                        </h2>*/}
-    {/*                        <p>Geschreven door {post.author}</p>*/}
-    {/*                        <p>{post.comments} reacties - {post.shares} keer gedeeld</p>*/}
-    {/*                    </li>*/}
-    {/*                ))}*/}
-    {/*            </ul>*/}
-    {/*        </div>*/}
-    {/*    </Link>*/}
-    {/*</section>*/}
 
     <section className="blogOverviewSection outer-content-container">
         <div className="inner-content-container">

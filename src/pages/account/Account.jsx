@@ -6,9 +6,7 @@ function Account() {
     return (
         <>
 
-
 account pagina
-
 
 
         </>

@@ -6,9 +6,7 @@ function Contact() {
     return (
         <>
 
-
 contact pagina
-
 
 
         </>

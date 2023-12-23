@@ -6,9 +6,7 @@ function Blogs() {
     return (
         <>
 
-
 Mijn blog bewerk pagina
-
 
 
         </>

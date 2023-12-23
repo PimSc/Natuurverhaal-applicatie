@@ -6,9 +6,7 @@ function Registreer() {
     return (
         <>
 
-
             Registreer pagina
-
 
 
         </>
