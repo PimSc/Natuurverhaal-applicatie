@@ -13,7 +13,6 @@ function Navigation() {
     return (
 
         <div className="nav-container" >
-
             <nav>
         <ul>
             <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>

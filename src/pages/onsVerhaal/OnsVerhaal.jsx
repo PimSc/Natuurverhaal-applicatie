@@ -4,15 +4,16 @@ function OnsVerhaal() {
 
 
     return (
+       <div className="outer-content-container">
+        <div className="inner-content-container">
+            <div className="textContainer">
         <section>
             <h1>Het ontstaan van Natuurverhaal.nl</h1>
-                <br />
+            <br />
             <p>Natuurverhaal.nl is begonnen als eindproject voor de opleiding tot fullstack developer bij Novi Hogeschool. Ik kan dan ook niet anders dan 2 emoji`s toevoegen. 🍌🦄</p>
                 <br />
-            <h2>Even voorstellen</h2>
-                <br />
 
-
+            <h4>Even voorstellen</h4>
             <p>Ik ben Pim Schuitema, bijna afgestudeerd voor fullstack developer en daarnaast natuurliefhebber.
             In mijn vrije tijd ben ik vaak met mijn camera in de bosjes te vinden opzoek naar wilde dieren.
                     <br />
@@ -20,8 +21,8 @@ function OnsVerhaal() {
                     <br />
             Zo kwam ik op het idee om een platform te maken waar mensen natuur blogs op kunnen schrijven. Omdat de natuurblogs van verschillende auteurs op het platform samenkomen is het makkelijker om ze te vinden.</p>
                 <br />
-                <h2>Gebruik van de applicatie</h2>
-
+                <h4>Gebruik van de applicatie</h4>
+            <p>
             Blogs
             De Blogs zijn voor iedereen vrij toegankelijk om te lezen, je vind de blogs op de home pagina.
             Ieder blog bevat naast de inhoudelijke gegevens van het blog ook een aangegeven gemiddelde leestijd.
@@ -45,7 +46,11 @@ function OnsVerhaal() {
             Zoek jij een vakantie maatje? Of iemand die in de buurt woont en dezelfde natuur interesses heeft? Ben jij opzoek naar iemand die je wilt leren hoe je het beste natuurfoto`s kan maken?
             Plaats van een bericht op het prikbord!
             Via de prikbord pagina kan je als geregistreerd gebruiker een bericht op het prikbord plaatsen. Vergeet hierbij niet je contact gegevens in te vullen zodat mensen je kunnen bereiken voor een antwoord.
+            </p>
         </section>
+            </div>
+            </div>
+            </div>
     )
 }
 

@@ -9,7 +9,7 @@ function BlogCounter() {
 return (
 <>
     {/*blogs counter*/}
-    <h2 className="totalBlogsCounter">Totaal aantal natuurblogs op het platform: {totalPosts}</h2>
+    <h2 className="totalBlogsCounter">Totaal aantal natuurblogs: {totalPosts}</h2>
 </>
 );
 }
