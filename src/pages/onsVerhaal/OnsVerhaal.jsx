@@ -16,9 +16,7 @@ function OnsVerhaal() {
             <h4>Even voorstellen</h4>
             <p>Ik ben Pim Schuitema, bijna afgestudeerd voor fullstack developer en daarnaast natuurliefhebber.
             In mijn vrije tijd ben ik vaak met mijn camera in de bosjes te vinden opzoek naar wilde dieren.
-                    <br />
             Omdat ik niet altijd naar buiten ga vind ik mijn ontspanning regelmatig met het zoeken en lezen van natuurblogs. Vooral het zoeken is een ding. zie ze maar eens te vinden..
-                    <br />
             Zo kwam ik op het idee om een platform te maken waar mensen natuur blogs op kunnen schrijven. Omdat de natuurblogs van verschillende auteurs op het platform samenkomen is het makkelijker om ze te vinden.</p>
                 <br />
                 <h4>Gebruik van de applicatie</h4>

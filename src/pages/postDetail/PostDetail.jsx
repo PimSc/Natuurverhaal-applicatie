@@ -13,21 +13,23 @@ function PostDetail() {
 
     return (
         <>
-            <section className="post-detail-section outer-content-container">
-                <div className="inner-content-container__text-restriction">
+            <section className="outer-content-container">
+                <div className=".inner-content-container">
                     <h1>{title}</h1>
                     <h2>{subtitle}</h2>
                     <p className="post-detail-author">Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
                     <span className="post-detail-read-time">
-                        <Clock color="#50535C" size={18} />
-                        <p> {readTime} minuten lezen</p>
+                        <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>
                     </span>
+                    <br/>
                     <p>{content}</p>
                     <p>{comments} reacties - {shares} keer gedeeld</p>
 
-                    <Link to="/posts" className="back-link">
-                        <CaretLeft color="#38E991" size={22} />
-                        <p>Terug naar de overzichtspagina</p>
+                    <Link to="/" className="back-link">
+                        <br/>
+                        <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>
+                        <br/>
+                        <br/>
                     </Link>
                 </div>
             </section>
