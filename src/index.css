@@ -35,6 +35,8 @@
   --h2FontSize: 1.8rem;
   --h3FontSize: 1.6rem;
   --h4FontSize: 1.4rem;
+  --h5FontSize: 1.2rem;
+  --h6FontSize: 1rem;
   --pFontSize: 1.1rem;
   --navLinkSize: 1.7rem;
   /*--aTitleFontSize: 2rem;*/
@@ -236,7 +238,7 @@ section {
     /*Edit texts*/
 
   .homeTitle, .homeTitle:hover, .homeTitle:visited {
-    font-size: calc(var(--mainTitleFontSize) - 250%);
+    font-size: calc(var(--mainTitleFontSize) - 290%);
     /*font-size: var(--mainTitleFontSize);*/
   }
 
@@ -265,9 +267,25 @@ section {
       /*font-size: var(--h4FontSize);*/
     }
 
+  h5 {
+    font-size: calc(var(--h5FontSize) - 20%);
+    /*font-size: var(--h3FontSize);*/
+  }
+
+  h6 {
+    font-size: calc(var(--h6FontSize) - 20%);
+    /*font-size: var(--h4FontSize);*/
+  }
+
   /*Aanpassen van de main title*/
   .homeTitle, .homeTitle:hover, .homeTitle:visited {
     margin: 19rem 0 4rem 3rem;
+  }
+
+  /*imput field layout*/
+  input {
+    padding: 1px;
+    font-size: calc(var(--pFontSize) - 10%);
   }
 
   }

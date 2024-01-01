@@ -89,6 +89,10 @@ ul {
         /*font-size: var(--navLinkSize);*/
 
     }
+
+    .mainLink {
+        display: none;
+    }
 }
 
 
