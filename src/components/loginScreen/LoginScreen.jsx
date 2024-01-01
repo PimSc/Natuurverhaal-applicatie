@@ -8,7 +8,7 @@ function LoginScreen() {
 return (
 <>
     <form>
-        <h1>login</h1>
+        <h1>Inloggen</h1>
         <p>Welkom terug</p>
         <hr />
         <div className="loginOuterContainer">

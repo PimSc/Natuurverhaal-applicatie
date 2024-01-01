@@ -6,7 +6,7 @@ return (
 <>
 
     <form>
-        <h1>Register</h1>
+        <h1>Registreren</h1>
         <p>Vul de velden in om een account aan te maken</p>
         <hr />
         <div className="loginOuterContainer">
