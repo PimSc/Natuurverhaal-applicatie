@@ -10,7 +10,7 @@ function Navigation() {
     return (
         <>
 
-        <div className="navContainerSticky">  {/*Sticky container*/}
+        <div className="navContainerStickyTop">  {/*Sticky container*/}
 
             {/*Start main navigation bar*/}
             <nav className="mainNav">

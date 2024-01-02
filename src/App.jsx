@@ -47,6 +47,14 @@ function App() {
 {/*Route voorbeeld zonder helmet*/}
         {/*<Route path="/blogs" element={<Blogs/>}/>*/}
 
+
+
+        {/*sticky navigation element*/}
+
+        {/*Footer element*/}
+
+
+
     </>
   )
 }
