@@ -8,7 +8,7 @@ function Navigation() {
 
 
     return (
-        <div className="nav-container-main">
+        <div className="navContainerSticky">
 
 
             {/*Start main navigation bar*/}
