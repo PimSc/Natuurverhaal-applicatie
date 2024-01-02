@@ -196,8 +196,9 @@ ul {
         --bar-width: 60px;
         --bar-height: 8px;
         --hamburger-gap: 6px;
-        --foreground: #333;
+        --foreground: var(--darkerGrey);
         --background: white;
+        --sideBarBackground: hsla(0, 0%, 20%, 0.8);;
         --hamburger-margin: 8px;
         --animation-timing: 200ms ease-in-out;
         --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -274,7 +275,9 @@ ul {
         translate: -100%;
         padding: 0.5rem 1rem;
         padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.5rem);
-        background-color: var(--foreground);
+
+        /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+        background-color: var(--sideBarBackground);
         color: var(--background);
         max-width: 10rem;
         min-height: 40vh;
