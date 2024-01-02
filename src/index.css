@@ -279,7 +279,7 @@ section {
 
   /*Aanpassen van de main title*/
   .homeTitle, .homeTitle:hover, .homeTitle:visited {
-    margin: 19rem 0 4rem 3rem;
+    margin: 20rem 0 2rem 3rem;
   }
 
   /*imput field layout*/
