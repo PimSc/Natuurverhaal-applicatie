@@ -12,10 +12,10 @@ function Navigation() {
 
         <div className="navContainerStickyTop">  {/*Sticky container*/}
 
-            {/*Start main navigation bar*/}
+            {/*Start main navigation bar (computer screen)*/}
             <nav className="mainNav">
                         <ul>
-                            <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Homemain</NavLink></li>
+                            <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                             <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                             {/*<li><NavLink to="/Blogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>*/}
                             <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
@@ -26,7 +26,7 @@ function Navigation() {
                     </nav>
             {/*End main navigation bar*/}
 
-
+            {/*Start telephone navigation bar (phone screen)*/}
             <div className="phoneSearchBar">
                 <SearchBar />  {/*Searchbar component*/}
             </div>
@@ -37,7 +37,7 @@ function Navigation() {
 
             <aside className="sidebar">
                 <nav>
-                    <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Telefoon</NavLink></li>
+                    <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                     <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                     <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
                     <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>
@@ -45,46 +45,6 @@ function Navigation() {
                 </nav>
             </aside>
         </div>
-
-
-
-            {/*/!*Start phone navigation bar*!/*/}
-            {/*<nav className="phoneNav">*/}
-            {/*    <ul>*/}
-            {/*        <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Telefoon</NavLink></li>*/}
-            {/*        <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>*/}
-            {/*        /!*<li><NavLink to="/Blogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>*!/*/}
-            {/*        <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>*/}
-            {/*        <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>*/}
-            {/*        <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>*/}
-
-            {/*        <form action="/search" method="get">*/}
-            {/*            <input type="text" name="query" placeholder="Zoek..."/>*/}
-            {/*        </form>*/}
-            {/*    </ul>*/}
-            {/*</nav>*/}
-            {/*/!*End phone navigation bar*!/*/}
-
-
-
-            {/*/!*Start phone navigation bar*!/*/}
-            {/*<nav className="phoneNav">*/}
-            {/*    <ul>*/}
-            {/*        <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>*/}
-            {/*        <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>*/}
-            {/*        /!*<li><NavLink to="/Blogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>*!/*/}
-            {/*        <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>*/}
-            {/*        <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>*/}
-            {/*        <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>*/}
-
-            {/*        <form action="/search" method="get">*/}
-            {/*            <input type="text" name="query" placeholder="Zoek..."/>*/}
-            {/*        </form>*/}
-            {/*    </ul>*/}
-            {/*</nav>*/}
-            {/*/!*End phone navigation bar*!/*/}
-
-
 
         </>
     );

@@ -95,12 +95,12 @@ ul {
     /*Styling phone query start*/
 
     .default-link {
-        font-size: calc(var(--navLinkSize) - 80%);
+        font-size: calc(var(--navLinkSize) - 30%);
         /*font-size: var(--navLinkSize);*/
     }
 
     .active-link {
-        font-size: calc(var(--navLinkSize) - 80%);
+        font-size: calc(var(--navLinkSize) - 30%);
         /*font-size: var(--navLinkSize);*/
     }
 
@@ -108,6 +108,10 @@ ul {
         list-style: none;
     }
 
+
+    .sidebar > nav > li {
+        padding: 10px;
+    }
 
 
 
@@ -262,8 +266,8 @@ ul {
         /*Sideback background*/
         background-color: var(--sideBarBackground);
         color: var(--background);
-        max-width: 10rem;
-        min-height: 40vh;
+        width: 12rem;
+        min-height: 100vh;
         border: 2px solid black;
         border-left: none;
         border-top: none;
@@ -271,6 +275,8 @@ ul {
         margin-top: 62px;
         z-index: 0;
         position: absolute;
+        display: flex;
+        align-items: center;
     }
 
     .sidebar li {
