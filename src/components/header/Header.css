@@ -28,7 +28,7 @@
 
 .bg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-    z-index: 1; /* Zet de z-index op 1 */
+    z-index: 1001;
     background-image: url(../../assets/headerimage.jpg);
     display: flex;
     flex-direction: row;

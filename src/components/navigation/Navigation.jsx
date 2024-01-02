@@ -8,8 +8,9 @@ function Navigation() {
 
 
     return (
-        <div className="navContainerSticky">  {/*Sticky container*/}
+        <>
 
+        <div className="navContainerSticky">  {/*Sticky container*/}
 
             {/*Start main navigation bar*/}
             <nav className="mainNav">
@@ -26,23 +27,23 @@ function Navigation() {
             {/*End main navigation bar*/}
 
 
-
+            <div className="phoneSearchBar">
+                <SearchBar />  {/*Searchbar component*/}
+            </div>
 
             <label className="hamburger-menu">
                 <input type="checkbox" />
             </label>
+
             <aside className="sidebar">
-                {/*<nav>*/}
+                <nav>
                     <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Telefoon</NavLink></li>
                     <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                     <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
                     <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
-                {/*</nav>*/}
+                </nav>
             </aside>
-
-        <div className="phoneSearchBar">
-            <SearchBar />  {/*Searchbar component*/}
         </div>
 
 
@@ -83,7 +84,9 @@ function Navigation() {
             {/*</nav>*/}
             {/*/!*End phone navigation bar*!/*/}
 
-        </div>
+
+
+        </>
     );
 }
 
