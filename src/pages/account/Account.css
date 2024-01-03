@@ -1,0 +1,153 @@
+/*Styling start*/
+
+
+
+/*Styling end*/
+
+
+
+/*Layout start*/
+.loginScreen {
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: var(--mainBackgroundColor);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 16px;
+    border: 2px solid black;
+    z-index: 3;
+}
+
+/*.accountPageButtonBox1 {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-evenly;*/
+/*    margin: -20px 0 30px 0;*/
+/*    border: 2px solid darkgoldenrod;*/
+/*}*/
+
+
+
+
+.loginScreen label, input {
+    text-align: center;
+    align-content: center;
+    display: block;
+}
+
+.loginOuterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 2px solid green;*/
+}
+
+.loginInnerContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0 15px 0;
+    /*border: 2px solid red;*/
+}
+
+.labelTextLeft {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    /*border: 2px solid #8b4208;*/
+
+}
+
+.inputField{
+    margin: 10px;
+    /*border: 2px solid green;*/
+}
+
+.registerButton{
+    margin-top: 15px;
+    padding: 5px;
+    width: 150px;
+    border-radius: 10px;
+    border: 5px solid black;
+    font-family: var(--titleFont);
+}
+
+.loginButton{
+    width: 150px;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 5px solid black;
+    font-family: var(--titleFont);
+}
+
+
+
+
+/*Layout end*/
+
+/*------------------------------*/
+
+.accountPageButtonBox2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 2px solid darkgoldenrod;*/
+    margin-bottom: -5px;
+}
+
+
+.loginButton,
+.registerButton {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginButton {
+    color: grey;
+    background-color: white;
+    border: 2px solid lightgrey;
+
+    padding: 5px 5px 20px 5px;
+    border-radius: 10px 10px 0 0;
+    width: 180px;
+    margin-top: 15px;
+    font-family: var(--titleFont);
+    margin-bottom: -10px;
+}
+
+.registerButton {
+    color: grey;
+    background-color: white;
+    border: 2px solid lightgrey;
+
+    padding: 5px 5px 20px 5px;
+    border-radius: 10px 10px 0 0;
+    width: 180px;
+    margin-top: 15px;
+    font-family: var(--titleFont);
+    margin-bottom: -10px;
+}
+
+
+.loginButton.active {
+    transform: scale(1.1);
+    z-index: 1;
+    color: black;
+    border: 2px solid black;
+    margin-bottom: -10px;
+}
+
+.registerButton.active {
+    transform:  scale(1.1);
+    color: black;
+    border: 2px solid black;
+    margin-bottom: -10px;
+}
+
+/*------------------------------*/
+

@@ -1,11 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Young+Serif&display=swap');
+
+
+
+
+/*----------Basic information start----------*/
+* {padding: 0; margin: 0; box-sizing: border-box}
+
+
+
 :root {
+  /*colors start*/
+  --brown: #8b4208;
+  --lightBrown: #a68d7a;
+  --black: #000000;
+  --darkerGrey: #242424;
+  --grey: #9B9A9C;
+  --lightGrey: #f2f2f2;
+  --white: #FFFFFF;
+  /*colors end*/
+
+  --mainBackgroundColor: #FFFFFF;
+  --secondBackgroundColor: #242424;
+
+  /*font-family`s start*/
+  --titleFont: "Young Serif";
+  --mainFont: "Roboto";
+  /*font-family`s end*/
+
+
+  /*font-sizes start*/
+  --mainTitleFontSize: 5rem;
+  --h1FontSize: 2.2rem;
+  --h2FontSize: 1.8rem;
+  --h3FontSize: 1.6rem;
+  --h4FontSize: 1.4rem;
+  --h5FontSize: 1.2rem;
+  --h6FontSize: 1rem;
+  --pFontSize: 1.1rem;
+  --navLinkSize: 1.7rem;
+  /*--aTitleFontSize: 2rem;*/
+  /*--aHoverEaseOutFontSize: 2.5rem;*/
+  /*--postDateFontSize: 1.2rem;*/
+  /*font-sizes end*/
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--mainBackgroundColor);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +58,255 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/*Edit texts*/
+p {
+  font-size: var(--pFontSize);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--h1FontSize);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+h2 {
+  font-size: var(--h2FontSize);
+}
+
+h3 {
+  font-size: var(--h3FontSize);
+}
+
+h4 {
+  font-size: var(--h4FontSize);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--black);
+  font-family: var(--titleFont);
+}
+
+p {
+  color: var(--black);
+  font-family: var(--mainFont);
+}
+
+label {
+  color: var(--black);
+  font-family: var(--mainFont);
+}
+
+/*Background colors*/
+.mainBackground {
+  background-color: var(--mainBackgroundColor);
+  height: 100vh;
+}
+
+.secondBackground {
+  background-color: var(--secondBackgroundColor);
+  height: 100vh;
+}
+
+/*Link styling*/
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: var(--titleFont);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/*Button styling*/
+button:hover {
+  cursor: pointer;
 }
+
+button{
+  background-color: var(--white);
+  color: var(--black);
+font-family: var(--mainFont);
+  font-size: var(--pFontSize);
+}
+
+
+/*imput field layout*/
+input {
+  background-color: var(--white);
+  padding: 5px;
+  border: 1px solid var(--black);
+  border-radius: 9px;
+  font-size: var(--pFontSize);
+}
+
+/*Other stylings*/
+img {
+  max-width:100%
+}
+
+button, select, textarea {
+  font-family: inherit;
+}
+
+section {
+  text-align: center;
+}
+
+/*basic information end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------- INNER- EN OUTER CONTAINERS ------------------- */
+
+.outer-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*border: 2px solid red*/
+}
+
+.inner-content-container {
+  margin: 0 20px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: row;
+  /*border: 2px solid deeppink;*/
+}
+
+.innerContentContainerColumn {
+  margin: 0 20px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  /*border: 2px solid lightpink;*/
+}
+
+
+
+/*!* Brede inner container*!*/
+/*.inner-content-container {*/
+/*  flex-basis: 1400px;*/
+/*  flex-shrink: 1;*/
+/*  flex-grow: 0;*/
+/*  align-items: center;*/
+/*}*/
+
+ /*Smalle inner container voor tekst etc.*/
+.textContainer {
+  max-width: 1200px;
+  flex-shrink: 1;
+  flex-grow: 0;
+  align-items: flex-start;
+  /*border: 2px solid green;*/
+}
+
+
+
+
+/*Begin media query telefoon*/
+@media only screen and (max-width: 767px) {
+  /*font-sizes start*/
+  :root {
+    /*--mainTitleFontSize: 2.7rem;*/
+    /*--h1FontSize: 2.2rem;*/
+    /*--h2FontSize: 1.8rem;*/
+    /*--h3FontSize: 1.6rem;*/
+    /*--h4FontSize: 1.4rem;*/
+    /*--pFontSize: 1.1rem;*/
+    /*--navLinkSize: 1.1rem;*/
+
+    --mainTitleFontSize: 5rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.8rem;
+    --h3FontSize: 1.6rem;
+    --h4FontSize: 1.4rem;
+    --pFontSize: 1.1rem;
+    --navLinkSize: 1.7rem;
+  }
+
+    /*Edit texts*/
+
+  .homeTitle, .homeTitle:hover, .homeTitle:visited {
+    font-size: calc(var(--mainTitleFontSize) - 290%);
+    /*font-size: var(--mainTitleFontSize);*/
+  }
+
+    p {
+      font-size: calc(var(--pFontSize) - 10%);
+      /*font-size: var(--pFontSize);*/
+    }
+
+    h1 {
+      font-size: calc(var(--h1FontSize) - 20%);
+      /*font-size: var(--h1FontSize);*/
+    }
+
+    h2 {
+      font-size: calc(var(--h2FontSize) - 20%);
+      /*font-size: var(--h2FontSize);*/
+    }
+
+    h3 {
+      font-size: calc(var(--h3FontSize) - 20%);
+      /*font-size: var(--h3FontSize);*/
+    }
+
+    h4 {
+      font-size: calc(var(--h4FontSize) - 20%);
+      /*font-size: var(--h4FontSize);*/
+    }
+
+  h5 {
+    font-size: calc(var(--h5FontSize) - 20%);
+    /*font-size: var(--h3FontSize);*/
+  }
+
+  h6 {
+    font-size: calc(var(--h6FontSize) - 20%);
+    /*font-size: var(--h4FontSize);*/
+  }
+
+  /*Aanpassen van de main title*/
+  .homeTitle, .homeTitle:hover, .homeTitle:visited {
+    margin: 20rem 0 2rem 3rem;
+  }
+
+  /*imput field layout*/
+  input {
+    padding: 1px;
+    font-size: calc(var(--pFontSize) - 10%);
+  }
+
+  }
+/*Einde media query telefoon*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
