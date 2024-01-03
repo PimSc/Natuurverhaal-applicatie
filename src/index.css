@@ -11,17 +11,14 @@
 
 :root {
   /*colors start*/
-  --brown: #8b4208;
-  --lightBrown: #a68d7a;
-  --black: #000000;
-  --darkerGrey: #242424;
-  --grey: #9B9A9C;
-  --lightGrey: #f2f2f2;
-  --white: #FFFFFF;
+  --black: hsl(0, 0%, 0%);
+  --darkerGrey: hsl(0, 0%, 14%);
+  --lightGrey: hsl(0, 0%, 95%);
+  --white: hsl(0, 0%, 100%);
   /*colors end*/
 
-  --mainBackgroundColor: #FFFFFF;
-  --secondBackgroundColor: #242424;
+  --mainBackgroundColor: hsl(0, 0%, 100%);
+  --secondBackgroundColor: hsl(0, 0%, 14%);
 
   /*font-family`s start*/
   --titleFont: "Young Serif";
