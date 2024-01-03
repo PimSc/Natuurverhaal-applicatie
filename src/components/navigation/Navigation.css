@@ -113,6 +113,10 @@ ul {
         padding: 10px;
     }
 
+    .sidebar > nav {
+        margin-bottom: 80vh;
+    }
+
 
 
     /*Styling end*/
@@ -142,11 +146,6 @@ ul {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
-
-
-
-
 
 
     /*Layout end*/
@@ -294,6 +293,8 @@ ul {
     .active-link {
         border-bottom: 1px solid white;
     }
+
+
     /*Hamburger menu end*/
 
 
