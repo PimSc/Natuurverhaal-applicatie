@@ -171,7 +171,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px solid red
+  /*border: 2px solid red*/
 }
 
 .inner-content-container {
@@ -180,7 +180,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 
 .innerContentContainerColumn {
@@ -189,7 +189,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
 }
 
 .headerContainer {
@@ -198,7 +198,7 @@ section {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 5px solid turquoise;
+  /*border: 5px solid turquoise;*/
 }
 
 

@@ -8,7 +8,7 @@ return (
     <div className="headerContainer centerHeaderTitle">
         <div className="excursionBannerBg"></div>
 
-        <h3 className="excursionTitle">Boek nu een excursie! Let`s gooo</h3>
+        {/*<h3 className="excursionTitle">Boek nu een excursie! Let`s gooo</h3>*/}
 
     </div>
 </>
