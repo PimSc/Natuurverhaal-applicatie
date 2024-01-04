@@ -19,7 +19,7 @@
 
 
 
-.excursionSideImage {
+.excursionSideImageMain {
     margin-left: auto;
     margin-top: -40px;
     margin-right: -40px;
@@ -38,8 +38,9 @@
 }
 
 
-
-
+.excursionSideImagePhone{
+    display: none;
+}
 
 
 /*LAYOUT END*/
@@ -61,6 +62,29 @@
         overflow: hidden;
         /*border: 2px solid purple;*/
     }
+
+    .excursionSideImageMain{
+        display: none;
+    }
+
+    .excursionSideImagePhone{
+        display: block;
+    }
+
+    .excursionSideImagePhone {
+        margin-left: auto;
+        margin-top: -40px;
+        margin-right: -40px;
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        height: auto;
+        overflow: hidden;
+        /*border: 2px solid purple;*/
+    }
+
+
+
 
 
 
