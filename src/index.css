@@ -170,15 +170,16 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 2px solid red*/
+  border: 2px solid red
 }
 
 .inner-content-container {
-  margin: 0 20px;
-  padding: 40px 0;
+  /*margin: 0 20px;*/
+  padding: 40px 40px;
   display: flex;
   flex-direction: row;
-  /*border: 2px solid deeppink;*/
+  justify-content: center;
+  border: 2px solid green;
 }
 
 .innerContentContainerColumn {
@@ -186,7 +187,8 @@ section {
   padding: 40px 0;
   display: flex;
   flex-direction: column;
-  /*border: 2px solid lightpink;*/
+  align-items: center;
+  border: 2px solid blue;
 }
 
 
