@@ -61,5 +61,19 @@ background-size: cover;
     display: none;
 }
 
+    .excursionBannerBg{
+        position: relative;
+        background-image: url(../../assets/excursionBanner1.jpg);
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+
+
 }
 /*end media query telephone*/
