@@ -24,7 +24,7 @@
 
 .excursionBannerBg{
 position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-background-image: url(src/assets/excursionBanner1.jpg);
+background-image: url(../../assets/excursionBanner1.jpg);
 display: flex;
 flex-direction: row;
     width: 100%;
