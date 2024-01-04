@@ -12,6 +12,7 @@
 :root {
   /*colors start*/
   --black: hsl(0, 0%, 0%);
+  --black50Transparant: hsl(0, 0%, 0%, 0.5);
   --darkerGrey: hsl(0, 0%, 14%);
   --lightGrey: hsl(0, 0%, 95%);
   --white: hsl(0, 0%, 100%);
@@ -189,6 +190,15 @@ section {
   flex-direction: column;
   align-items: center;
   border: 2px solid blue;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: 5px solid turquoise;
 }
 
 

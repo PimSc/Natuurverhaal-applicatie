@@ -4,11 +4,13 @@ function ExcursionBanner() {
 
 return (
 <>
-{/*<div className="excursionBanner">*/}
-{/*    <img src="src/assets/excursionBanner1.jpg" alt="A group of people is walking along a river in nature; it's early in the morning, and the sun is rising slowly." />*/}
-{/*</div>*/}
 
-    <div className="excursionBannerBg"></div>
+    <div className="headerContainer centerHeaderTitle">
+        <div className="excursionBannerBg"></div>
+
+        <h3 className="excursionTitle">Boek nu een excursie! Let`s gooo</h3>
+
+    </div>
 </>
 );
 }
