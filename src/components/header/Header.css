@@ -26,7 +26,7 @@
     background-size: cover;
 }
 
-.bg {
+.headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
     background-image: url(../../assets/headerimage.jpg);
     display: flex;
