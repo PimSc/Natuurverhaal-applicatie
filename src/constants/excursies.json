@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "foto": "src/assets/websiteImages/SquirrelPhoto.jpg",
+    "caption": "eekhoorn",
+    "titel": "Opzoek naar eekhoorns",
+    "subtitel": "Opzoek naar 2 soorten eekhoorns, leerzame excursie voor beginners+",
+    "datum": "17 september 2024",
+    "tijd": "8:00 - 13.30",
+    "prijs": "€15",
+    "locatie": "Limburg - Parkeerplaats Wandelbos",
+    "onderwerp": "(water) vogels",
+    "gids": "Pim",
+    "ProfielFoto": "",
+    "Omschrijving": "Ga er lekker opuit met deze avontuurlijke excursie op zoek naar wilde eenhoorns. Onze ervaren gidsen leiden je door afgelegen natuurgebieden, waar je de kans krijgt om in stilte de natuurlijke habitat van deze mysterieuze wezens te verkennen. Tijdens deze unieke reis zul je meer te weten komen over het leefgebied van de eekhoorns, terwijl je hoopt een glimp op te vangen van deze intrigerende en zeldzame wezens. Een opwindend avontuur voor degenen die de wildernis willen verkennen en een vleugje magie van de natuur aan hun reis willen toevoegen.",
+    "MaximaalAantalDeelnemers": 10,
+    "IngeschrevenDeelnemers": 3
+  },
+  {
+    "id": 2,
+    "foto": "src/assets/websiteImages/kingfisherPhoto.jpg",
+    "caption": "eekhoorn",
+    "titel": "Vogels in de Amsterdamse waterleidingduinen",
+    "subtitel": "Opzoek naar vogelsoorten in en rondom het water, leerzame excursie voor beginners+",
+    "datum": "23 september 2024",
+    "tijd": "8:00 - 14.00",
+    "prijs": "€15",
+    "locatie": "Amsterdamse waterleiding duinen - parkeerplaats ingang Panneland",
+    "onderwerp": "europese & siberische eekhoorns",
+    "gids": "Pim",
+    "ProfielFoto": "",
+    "Omschrijving": "Verken de Amsterdamse Waterleidingduinen met onze deskundige gids en laat je verwonderen door een overvloed aan vogelleven. Terwijl we langs de waterwegen wandelen, is de kans groot dat we majestueuze zwanen en elegante ganzen aantreffen. Ontdek bijzondere eendensoorten, zoals de kuifeend, en bewonder de eilanden vol aalscholvers. Met wat geluk kunnen we zelfs de kleurrijke ijsvogel spotten. Onze gids kent de perfecte plekjes om deze prachtige dieren te spotten, waardoor deze excursie een onvergetelijk avontuur wordt voor natuurliefhebbers.",
+    "MaximaalAantalDeelnemers": 10,
+    "IngeschrevenDeelnemers": 1
+  }
+  ]
