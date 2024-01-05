@@ -7,14 +7,14 @@ function BlogOverview() {
 
 
     // This code converts \n into <br />
-    const convertNewlinesToBr = (text) => {
-        return text.split('\n').map((item, key) => (
-            <React.Fragment key={key}>
-                {item}
-                <br />
-            </React.Fragment>
-        ));
-    };
+    // const convertNewlinesToBr = (text) => {
+    //     return text.split('\n').map((item, key) => (
+    //         <React.Fragment key={key}>
+    //             {item}
+    //             <br />
+    //         </React.Fragment>
+    //     ));
+    // };
 
 
 
@@ -25,22 +25,22 @@ function BlogOverview() {
                 {/*standard inner container (Row)*/}
                 <div className="inner-content-container">
 
-                    {/*post-list Flexbox (clumn)*/}
+                    {/*post-list Flexbox (column)*/}
                     <ul className="post-list">
                         {posts.map((post) => (
-                            <li key={post.id} className="post-item">
-                                <h2>
-                                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
-                                </h2>
-                                <p>Geschreven door {post.author}</p>
-                                <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
-                                <br/>
-                                <div className="post-content">
-                                    {convertNewlinesToBr(post.content)}
-                                </div>
-                            </li>
+                            <Link to={`/posts/${post.id}`} key={post.id} className="post-item-link">
+                                <li className="post-item">
+                                    <h2>{post.title}</h2>
+                                    <p>Geschreven door {post.author}</p>
+                                    <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
+                                    <br/>
+                                    {/*<div className="post-content">*/}
+                                    {/*    {convertNewlinesToBr(post.content)}*/}
+                                    {/*</div>*/}
+                                </li>
+                            </Link>
                         ))}
-                    </ul>  {/*END post-list Flexbox (clumn)*/}
+                    </ul>  {/*END post-list Flexbox (column)*/}
                 </div>
             </section>
         </>

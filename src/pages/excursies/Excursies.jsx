@@ -50,6 +50,8 @@ function Excursies() {
 
                            <div className="excursionComponentBox">
                                <h1>Hier komt het excursie component</h1>
+
+
                            </div>
 
 
