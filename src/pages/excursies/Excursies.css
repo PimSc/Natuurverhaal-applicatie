@@ -1,15 +1,103 @@
-/*Styling start*/
+/*STYLING START*/
 
 
 
-/*Styling end*/
+/*STYLING END/
 
 
 
-/*Layout start*/
+/*LAYOUT START*/
+
+/*Box with side image*/
+.excursionFirstBlockImageMain {
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin:30px 0 0 0px;
+    /*border: 2px solid purple;*/
+}
 
 
 
 
-/*Layout end*/
 
+
+
+
+/*The flexbox with all the content of the page*/
+.excursionContentBox1{
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    /*border: 2px dotted black;*/
+}
+
+
+/*First text field on the page EXCURSIES*/
+.excursionIntroduction1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:30px 0 0 0;
+    height: fit-content;
+    width: 500px
+    /*border: 2px solid darkgoldenrod;*/
+}
+
+/*first text field on the page*/
+.excursionIntroduction2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 500px;
+    /*margin:30px 0 0 50px;*/
+    margin:0 0 0 50px;
+    height: fit-content;
+    /*border: 2px solid darkgoldenrod;*/
+}
+
+/*Excursion components inside (Column)*/
+.excursionComponentBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:30px 0 0 0;
+    height: fit-content;
+    width: 1000px;
+    border: 2px solid darkgoldenrod;
+}
+
+
+
+
+/*LAYOUT END*/
+
+
+
+
+
+
+
+
+
+
+
+/*Start media query telephone*/
+@media only screen and (max-width: 767px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/*end media query telephone*/

@@ -11,17 +11,15 @@
 
 :root {
   /*colors start*/
-  --brown: #8b4208;
-  --lightBrown: #a68d7a;
-  --black: #000000;
-  --darkerGrey: #242424;
-  --grey: #9B9A9C;
-  --lightGrey: #f2f2f2;
-  --white: #FFFFFF;
+  --black: hsl(0, 0%, 0%);
+  --black50Transparant: hsl(0, 0%, 0%, 0.5);
+  --darkerGrey: hsl(0, 0%, 14%);
+  --lightGrey: hsl(0, 0%, 95%);
+  --white: hsl(0, 0%, 100%);
   /*colors end*/
 
-  --mainBackgroundColor: #FFFFFF;
-  --secondBackgroundColor: #242424;
+  --mainBackgroundColor: hsl(0, 0%, 100%);
+  --secondBackgroundColor: hsl(0, 0%, 14%);
 
   /*font-family`s start*/
   --titleFont: "Young Serif";
@@ -155,54 +153,46 @@ section {
 /*basic information end*/
 
 
+/*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
-
-
-
-
-
-
-
-
-
-
-/*----------- INNER- EN OUTER CONTAINERS ------------------- */
-
+/*Outer content container (Row)*/
 .outer-content-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 2px solid red*/
+  border: 5px solid purple;
 }
 
+/*Inner content container (Row)*/
 .inner-content-container {
-  margin: 0 20px;
-  padding: 40px 0;
+  /*margin: 0 20px;*/
+  margin: 40px 40px;
   display: flex;
   flex-direction: row;
-  /*border: 2px solid deeppink;*/
+  justify-content: center;
+  border: 2px solid red;
 }
 
+/*Inner content container (column)*/
 .innerContentContainerColumn {
-  margin: 0 20px;
-  padding: 40px 0;
+  margin: 40px 40px;
   display: flex;
   flex-direction: column;
-  /*border: 2px solid lightpink;*/
+  align-items: center;
+  border: 2px solid blue;
 }
 
+/*Extra Inner content container (column)*/
+.Extra-inner-content-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  /*border: 4px solid turquoise;*/
+}
 
-
-/*!* Brede inner container*!*/
-/*.inner-content-container {*/
-/*  flex-basis: 1400px;*/
-/*  flex-shrink: 1;*/
-/*  flex-grow: 0;*/
-/*  align-items: center;*/
-/*}*/
-
- /*Smalle inner container voor tekst etc.*/
+/*Smalle inner container for text etc.*/
 .textContainer {
   max-width: 1200px;
   flex-shrink: 1;
@@ -210,6 +200,20 @@ section {
   align-items: flex-start;
   /*border: 2px solid green;*/
 }
+
+/*Container for header background images*/
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: 2px solid turquoise;
+}
+
+/*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
+
+
 
 
 

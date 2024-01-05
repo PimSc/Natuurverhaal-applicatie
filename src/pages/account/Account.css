@@ -7,6 +7,10 @@
 
 
 /*Layout start*/
+
+
+
+/*Whole login / register box*/
 .loginScreen {
     width: 400px;
     height: 600px;
@@ -17,23 +21,6 @@
     padding: 16px;
     border: 2px solid black;
     z-index: 3;
-}
-
-/*.accountPageButtonBox1 {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: space-evenly;*/
-/*    margin: -20px 0 30px 0;*/
-/*    border: 2px solid darkgoldenrod;*/
-/*}*/
-
-
-
-
-.loginScreen label, input {
-    text-align: center;
-    align-content: center;
-    display: block;
 }
 
 .loginOuterContainer {
@@ -53,12 +40,19 @@
     /*border: 2px solid red;*/
 }
 
+/*input field labels*/
 .labelTextLeft {
     display: flex;
     flex-direction: row;
     text-align: left;
     /*border: 2px solid #8b4208;*/
+}
 
+/*input field labels*/
+.loginScreen label, input {
+    text-align: center;
+    align-content: center;
+    display: block;
 }
 
 .inputField{
@@ -66,31 +60,17 @@
     /*border: 2px solid green;*/
 }
 
-.registerButton{
-    margin-top: 15px;
-    padding: 5px;
-    width: 150px;
-    border-radius: 10px;
-    border: 5px solid black;
-    font-family: var(--titleFont);
-}
-
-.loginButton{
-    width: 150px;
-    margin-top: 15px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 5px solid black;
-    font-family: var(--titleFont);
-}
 
 
 
 
 /*Layout end*/
 
-/*------------------------------*/
 
+
+
+
+/*-------------Register & login button styling-----------------*/
 .accountPageButtonBox2 {
     display: flex;
     flex-direction: row;
@@ -98,7 +78,6 @@
     /*border: 2px solid darkgoldenrod;*/
     margin-bottom: -5px;
 }
-
 
 .loginButton,
 .registerButton {
@@ -132,8 +111,6 @@
     font-family: var(--titleFont);
     margin-bottom: -10px;
 }
-
-
 .loginButton.active {
     transform: scale(1.1);
     z-index: 1;
@@ -148,6 +125,5 @@
     border: 2px solid black;
     margin-bottom: -10px;
 }
-
-/*------------------------------*/
+/*-------------Register & login button styling-----------------*/
 

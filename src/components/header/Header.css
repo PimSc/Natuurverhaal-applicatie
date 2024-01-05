@@ -18,23 +18,13 @@
     margin: 15rem 0 4rem 5rem;
 }
 
-.headerContainer {
-    display: flex;
-    flex-direction: row;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-.bg {
+.headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
     background-image: url(../../assets/headerimage.jpg);
     display: flex;
     flex-direction: row;
     height: 400px;
     width: 100%;
-    margin: 0;
-    padding: 0;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

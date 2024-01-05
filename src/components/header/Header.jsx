@@ -8,7 +8,7 @@ function Header() {
     return (
 <>
         <div className="headerContainer">
-            <div className="bg"></div>
+            <div className="headerBg"></div>
 
             <div className="homeTitle">
                 <Link to="/">Natuurverhaal.nl</Link>
