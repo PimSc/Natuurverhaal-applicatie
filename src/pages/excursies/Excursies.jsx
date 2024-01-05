@@ -1,7 +1,7 @@
 import './Excursies.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
 import AdderPhoto from "../../assets/PhotoReal_een_adder_in_het_hoge_geel_gekleurde_gras_in_een_hei_0.jpg"
-import SquirrelPhoto from "../../assets/PhotoReal_A_squirrel_at_4_meter_height_on_the_side_of_a_conife_0 (gespiegeld).jpg"
+
 
 
 
@@ -47,9 +47,6 @@ function Excursies() {
                         <div className="excursionContentBox1" >
 
                             {/*Box with excursions */}
-                            <div className="excursionSecondBlockImageMain">
-                                    <img src={SquirrelPhoto} alt=""/>
-                            </div>
 
                            <div className="excursionComponentBox">
                                <h1>Hier komt het excursie component</h1>
