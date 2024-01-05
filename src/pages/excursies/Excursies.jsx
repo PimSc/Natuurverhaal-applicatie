@@ -1,7 +1,8 @@
 import './Excursies.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
-import ExcursionSideImageMain from "../../assets/ExcursionSideImageMain.jpg"
-import ExcursionSideImagePhone from "../../assets/ExcursionSideImagePhone.jpg"
+import AdderPhoto from "../../assets/PhotoReal_een_adder_in_het_hoge_geel_gekleurde_gras_in_een_hei_0.jpg"
+import SquirrelPhoto from "../../assets/PhotoReal_A_squirrel_at_4_meter_height_on_the_side_of_a_conife_0 (gespiegeld).jpg"
+
 
 
 function Excursies() {
@@ -9,7 +10,6 @@ function Excursies() {
 
     return (
         <>
-
             {/*ExcursionBanner = top image banner (group of people)*/}
             <ExcursionBanner />
 
@@ -20,7 +20,7 @@ function Excursies() {
                 <div className="inner-content-container">
 
                     {/*extra inner container(column) for A and B*/}
-                    <div className="Excursion-inner-content-container">
+                    <div className="Extra-inner-content-container">
 
                         {/*box A (Row)*/}
                         <div className="excursionContentBox1" >
@@ -36,7 +36,9 @@ function Excursies() {
 
                             {/*Box with introduction text of image? (column)*/}
                             <div className="excursionIntroduction2">
-                                <h2>hier nog wat zetten</h2>
+                                <div className="excursionFirstBlockImageMain">
+                                <img src={AdderPhoto} alt=""/>
+                                </div>
                             </div>
                         </div>
 
@@ -45,12 +47,11 @@ function Excursies() {
                         <div className="excursionContentBox1" >
 
                             {/*Box with excursions */}
-                            <div className="excursionsListBox">
-                            <h2>Box with excursions</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorem doloremque eos eum ipsa iure maiores neque numquam, porro qui quisquam, ratione recusandae. Aliquid esse fugiat, </p>
+                            <div className="excursionSecondBlockImageMain">
+                                    <img src={SquirrelPhoto} alt=""/>
                             </div>
 
-                           <div className="excursioncomponentBox">
+                           <div className="excursionComponentBox">
                                <h1>Hier komt het excursie component</h1>
                            </div>
 
@@ -68,23 +69,10 @@ function Excursies() {
                     </div>{/*Excursion-inner-content-container closing*/}
 
 
+                </div>{/*End standard inner container (Row)*/}
 
 
-                    {/*Sidebar image main*/}
-                    <div className="excursionSideImageMain">
-                        <img src={ExcursionSideImageMain} alt="Een aantal mensen lopen door een natuurlijke vallei van watervallen en naaldbos, met een achtergrond waarin bergen opgaan in de mist en een voorgrond met prachtig gekleurde bloemen in roze, geel en oranje" />
-                    </div>
-                    {/*Sidebar image phone*/}
-                    <div className="excursionSideImagePhone">
-                        <img src={ExcursionSideImagePhone} alt="Een aantal mensen lopen door een natuurlijke vallei van watervallen en naaldbos, met een achtergrond waarin bergen opgaan in de mist en een voorgrond met prachtig gekleurde bloemen in roze, geel en oranje" />
-                    </div>
-
-
-
-
-
-                </div>
-            </div>
+            </div>{/*End standard outer container (Row)*/}
 
 
 

@@ -12,7 +12,8 @@
     border-right: none;
     border-left: none;
     border-top: none;
-    /*border: 5px solid pink;*/
+    /*border-bottom: 2px solid black;*/
+    border: 5px solid pink;
 }
 
 .excursionBanner img {
