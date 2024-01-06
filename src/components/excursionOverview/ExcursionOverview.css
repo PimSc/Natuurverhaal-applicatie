@@ -1,28 +1,46 @@
 /*STYLING START*/
 .iconSmall{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     /*border: 2px solid pink;*/
 }
 
+/*----------Image part-----------*/
+/*images outer box*/
 .excursieBox1{
+    border: 2px solid darkolivegreen;
+    width: 300px;
+    height: 300px;
+}
+
+/*actual image box*/
+.excursieImageBox{
+    overflow: hidden;
+}
+
+/*image inside the box*/
+.excursieImageBox img {
+    min-width: 300px;
+    min-height: 300px;
+    object-fit: cover;
+}
+/*---------------------*/
+
+.excursionContentTextCenter {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    max-height: 200px;
-    overflow: hidden;
-    /*border: 2px solid pink;*/
+    justify-content: center;
 }
 
-.containerPim{
+
+.excursieContentBox{
     display: flex;
     flex-direction: row;
-    /*border: 10px solid blue;*/
+    margin: 0 0 30px 0;
+    column-gap: 40px;
+    border: 1px solid black;
 }
 
-.excursieBox2 {
-    /*border: 2px solid red;*/
-}
 
 /*STYLING END/
 

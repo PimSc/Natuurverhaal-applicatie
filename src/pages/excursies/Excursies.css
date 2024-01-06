@@ -31,7 +31,7 @@
     flex-direction: row;
     width: fit-content;
     height: fit-content;
-    border: 2px dotted black;
+    /*border: 2px dotted black;*/
 }
 
 
@@ -62,8 +62,8 @@
 .excursionComponentBox{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    margin:30px 0 0 0;
+    justify-content: center;
+    margin:40px 0 0 0;
     height: fit-content;
     width: 1000px;
     /*border: 2px solid goldenrod;*/

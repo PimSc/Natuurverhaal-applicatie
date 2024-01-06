@@ -161,7 +161,15 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 5px solid purple;
+  /*border: 5px solid purple;*/
+}
+
+.outer-content-container-column {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -171,7 +179,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px solid red;
+  /*border: 5px solid red;*/
 }
 
 /*Inner content container (column)*/
@@ -180,7 +188,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -208,7 +216,7 @@ section {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 2px solid turquoise;
+  /*border: 2px solid turquoise;*/
 }
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */

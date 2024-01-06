@@ -20,7 +20,7 @@ function BlogOverview() {
 
     return (
         <>
-            <section className="blogOverviewSection outer-content-container">
+            <section className="outer-content-container">
 
                 {/*standard inner container (Row)*/}
                 <div className="inner-content-container">
@@ -28,15 +28,11 @@ function BlogOverview() {
                     {/*post-list Flexbox (column)*/}
                     <ul className="post-list">
                         {posts.map((post) => (
-                            <Link to={`/posts/${post.id}`} key={post.id} className="post-item-link">
+                            <Link to={`/posts/${post.id}`} key={post.id}>
                                 <li className="post-item">
                                     <h2>{post.title}</h2>
                                     <p>Geschreven door {post.author}</p>
                                     <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
-                                    <br/>
-                                    {/*<div className="post-content">*/}
-                                    {/*    {convertNewlinesToBr(post.content)}*/}
-                                    {/*</div>*/}
                                 </li>
                             </Link>
                         ))}
