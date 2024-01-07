@@ -41,16 +41,15 @@ input {
 .navContainerStickyTop {
     background-color: var(--white);
     position: sticky;
-    /* Set top to 0 to stick to the top of the viewport */
-    top: 0;
+    top: 0; /* Stick to the top of the viewport */
     z-index: 10;
     flex-basis: 100vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
-    /*removes border on both sides*/
     border-left: none;
     border-right: none;
 }
@@ -75,11 +74,7 @@ ul {
     align-items: center;
 }
 
-.stripeMenu {
-    color: black;
-    font-size: 35px;
-    line-height: 1.6;
-}
+
 
 .phoneSearchBar{
     display: none;
@@ -94,7 +89,6 @@ ul {
 
 @media only screen and (max-width: 767px) {
     /*Styling phone query start*/
-
     .default-link {
         font-size: calc(var(--navLinkSize) - 30%);
         /*font-size: var(--navLinkSize);*/
@@ -122,10 +116,6 @@ ul {
 
     /*Styling end*/
     /*Layout start*/
-
-
-
-
     /*Original nav disable*/
     .mainNav{
         display: none;
@@ -139,14 +129,14 @@ ul {
     /*Phone search bar visible and styling*/
     .phoneSearchBar{
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        align-content: center;
+        justify-content: center;
     }
+
+
+
+
+
 
 
     /*Layout end*/
@@ -190,13 +180,12 @@ ul {
         display: flex;
         flex-direction: column;
         gap: var(--hamburger-gap);
-        /*width: max-content;*/
-        position: absolute;
-        top: var(--hamburger-margin);
-        left: var(--hamburger-margin);
+        margin-top: var(--hamburger-margin);
+        margin-left: var(--hamburger-margin);
         z-index: 2;
         cursor: pointer;
         padding: 4px 0 0 8px;
+        border: 2px solid orangered;
     }
 
 

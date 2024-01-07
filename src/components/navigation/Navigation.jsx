@@ -10,7 +10,7 @@ function Navigation() {
 
     return (
         <>
-
+<div className="outer-content-container">
         <div className="navContainerStickyTop">  {/*Sticky container*/}
 
             {/*Start main navigation bar (computer screen)*/}
@@ -29,9 +29,7 @@ function Navigation() {
             {/*End main navigation bar*/}
 
             {/*Start telephone navigation bar (phone screen)*/}
-            <div className="phoneSearchBar">
-                <SearchBar />  {/*Searchbar component*/}
-            </div>
+
 
             <label className="hamburger-menu">
                 <input type="checkbox" />
@@ -46,8 +44,12 @@ function Navigation() {
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                 </nav>
             </aside>
-        </div>
 
+            <div className="phoneSearchBar">
+                <SearchBar />  {/*Searchbar component*/}
+            </div>
+        </div>
+</div>
         </>
     );
 }
