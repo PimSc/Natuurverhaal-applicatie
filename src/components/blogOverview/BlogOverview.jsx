@@ -1,4 +1,3 @@
-import React from 'react';
 import './BlogOverview.css';
 import posts from "../../constants/data.json";
 import { Link } from "react-router-dom";

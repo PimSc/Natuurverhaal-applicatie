@@ -62,13 +62,14 @@ input {
     font-family: var(--titleFont);
     display: flex;
     justify-content: center;
+    /*border: 4px dashed saddlebrown;*/
 }
 
 
 
 ul {
     list-style-type: none;
-    flex-basis: 65%;
+    flex-basis: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,10 +170,6 @@ ul {
         box-sizing: border-box;
     }
 
-    body {
-        margin: 0;
-    }
-
     :root {
         --bar-width: 60px;
         --bar-height: 8px;
@@ -194,7 +191,7 @@ ul {
         /*width: max-content;*/
         position: absolute;
         top: var(--hamburger-margin);
-        left: var(--hamburger-margin);
+        right: var(--hamburger-margin);
         z-index: 2;
         cursor: pointer;
         padding: 4px 0 0 8px;
@@ -259,7 +256,7 @@ ul {
 
     .sidebar {
         transition: translate var(--animation-timing);
-        translate: -100%;
+        translate: 100%;
         padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.5rem) 1rem 0.5rem 1rem;
 
         /*Sideback background*/
@@ -268,12 +265,13 @@ ul {
         width: 12rem;
         min-height: 100vh;
         border: 2px solid black;
-        border-left: none;
+        border-right: none;
         border-top: none;
         border-bottom-right-radius: 10px;
         margin-top: 62px;
         z-index: 0;
         position: absolute;
+        right: 0;
         display: flex;
         align-items: center;
     }

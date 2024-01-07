@@ -53,3 +53,37 @@
 
 /*LAYOUT END*/
 
+@media only screen and (max-width: 767px) {
+    .excursieContentBox{
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 30px 0;
+        row-gap: 20px;
+        border: 1px solid black;
+    }
+
+    /*----------Image part-----------*/
+    /*images outer box*/
+    .excursieBox1{
+        border: 2px solid darkolivegreen;
+        width: 300px;
+        height: 300px;
+    }
+
+    /*actual image box*/
+    .excursieImageBox{
+        overflow: hidden;
+    }
+
+    /*image inside the box*/
+    .excursieImageBox img {
+        min-width: 300px;
+        min-height: 300px;
+        object-fit: cover;
+    }
+    /*---------------------*/
+
+
+
+
+}

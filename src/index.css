@@ -161,7 +161,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 5px solid purple;*/
+  border: 5px solid purple;
 }
 
 .outer-content-container-column {
@@ -202,7 +202,7 @@ section {
 
 /*Smalle inner container for text etc.*/
 .textContainer {
-  max-width: 1200px;
+  max-width: 1100px;
   flex-shrink: 1;
   flex-grow: 0;
   align-items: flex-start;
@@ -300,6 +300,17 @@ section {
     padding: 1px;
     font-size: calc(var(--pFontSize) - 10%);
   }
+
+
+
+  /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
+
+
+
+
+  /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
+
+
 
   }
 /*Einde media query telefoon*/

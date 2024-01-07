@@ -19,6 +19,7 @@ function Account() {
 
 
     return (
+        <>
         <div className="outer-content-container">
             <div className="innerContentContainerColumn">
                 <div className="accountPageButtonBox2">
@@ -46,6 +47,7 @@ function Account() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

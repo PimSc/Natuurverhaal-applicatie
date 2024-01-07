@@ -13,6 +13,7 @@ import Header from "./components/header/Header.jsx";
 import Registreer from "./pages/registreer/Registreer.jsx";
 import PostDetail from "./pages/postDetail/PostDetail.jsx";
 import TermsAndPrivacy from "./pages/TermsAndPrivacy/TermsAndPrivacy.jsx";
+import Prikbord from "./pages/prikbord/Prikbord.jsx";
 // import ViewBlog from "./components/viewBlog/ViewBlog.jsx";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/onsVerhaal" element={<div><Helmet><title>Natuurverhaal | Ons verhaal</title></Helmet><OnsVerhaal /></div>}/>
             <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><Blogs /></div>}/>
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
+            <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
             <Route path="/account" element={<div><Helmet><title>Natuurverhaal | Account</title></Helmet><Account /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
 
