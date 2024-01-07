@@ -20,7 +20,7 @@
 
 .headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-    background-image: url(../../assets/headerimage.jpg);
+    background-image: url(./../../assets/websiteImages/headerimage.jpg);
     display: flex;
     flex-direction: row;
     height: 400px;

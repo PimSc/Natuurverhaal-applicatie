@@ -1,6 +1,7 @@
 import './Excursies.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
-import AdderPhoto from "../../assets/PhotoReal_een_adder_in_het_hoge_geel_gekleurde_gras_in_een_hei_0.jpg"
+import AdderPhoto from "../../assets/websiteImages/AdderPhoto.jpg"
+import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx"; // Excursie component
 
 
 
@@ -49,7 +50,8 @@ function Excursies() {
                             {/*Box with excursions */}
 
                            <div className="excursionComponentBox">
-                               <h1>Hier komt het excursie component</h1>
+
+                               <ExcursionOverview />
 
 
                            </div>

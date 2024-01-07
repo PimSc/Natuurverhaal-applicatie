@@ -1,0 +1,23 @@
+/*STYLING START*/
+.SearchBar{
+    width: 210px;
+}
+
+
+/*STYLING END/
+
+
+
+/*LAYOUT START*/
+
+
+
+
+/*LAYOUT END*/
+
+@media only screen and (max-width: 767px) {
+    .SearchBar{
+        width: 240px;
+    }
+
+}

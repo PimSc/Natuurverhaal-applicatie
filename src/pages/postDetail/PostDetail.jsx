@@ -14,7 +14,8 @@ function PostDetail() {
     return (
         <>
             <section className="outer-content-container">
-                <div className=".inner-content-container">
+                <div className="inner-content-container">
+                    <div className="textContainer">
                     <h1>{title}</h1>
                     <h2>{subtitle}</h2>
                     <p className="post-detail-author">Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
@@ -31,6 +32,7 @@ function PostDetail() {
                         <br/>
                         <br/>
                     </Link>
+                    </div>
                 </div>
             </section>
         </>
