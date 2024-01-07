@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './Account.css';
+import './Login.css';
 import LoginScreen from '../../components/loginScreen/LoginScreen.jsx';
 import RegisterScreen from '../../components/registerScreen/RegisterScreen.jsx';
 
-function Account() {
+function Login() {
 
     // Code for switch between inloggen and registeren start
     const [activeButton, setActiveButton] = useState('login');
@@ -51,4 +51,4 @@ function Account() {
     );
 }
 
-export default Account;
+export default Login;

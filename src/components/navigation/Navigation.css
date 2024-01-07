@@ -83,7 +83,15 @@ ul {
 .hamburger-menu, .hamburger-menu input, .sidebar{
     display: none;
 }
+
+
+
+
 /*LAYOUT END*/
+
+
+
+
 
 
 
@@ -166,9 +174,6 @@ ul {
         --bar-width: 60px;
         --bar-height: 8px;
         --hamburger-gap: 6px;
-        --foreground: var(--darkerGrey);
-        --background: white;
-        --sideBarBackground: hsla(0, 0%, 20%, 0.8);;
         --hamburger-margin: 8px;
         --animation-timing: 200ms ease-in-out;
         --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -192,8 +197,6 @@ ul {
 
     /*Stripes & cross*/
     .hamburger-menu:has(input:checked) {
-        --foreground: #333;
-        --background: #333;
         padding: 4px 0 0 8px;
         z-index: 5
     }
@@ -201,8 +204,8 @@ ul {
     .hamburger-menu:has(input:focus-visible)::before,
     .hamburger-menu:has(input:focus-visible)::after,
     .hamburger-menu input:focus-visible {
-        border: 1px solid var(--background);
-        box-shadow: 0 0 0 1px var(--foreground);
+        border: 1px solid var(--darkerGrey);
+        box-shadow: 0 0 0 1px var(--darkerGrey);
     }
 
     .hamburger-menu::before,
@@ -211,7 +214,7 @@ ul {
         content: "";
         width: var(--bar-width);
         height: var(--bar-height);
-        background-color: var(--foreground);
+        background-color: var(--darkerGrey);
         border-radius: 9999px;
         transform-origin: left center;
         transition: opacity var(--animation-timing), width var(--animation-timing),
@@ -251,14 +254,13 @@ ul {
         padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.5rem) 1rem 0.5rem 1rem;
 
         /*Sideback background*/
-        background-color: var(--sideBarBackground);
-        color: var(--background);
+        background-color: var(--menuBarBackground);
+        color: var(--white);
         width: 12rem;
         min-height: 100vh;
         border: 2px solid black;
         border-left: none;
         border-top: none;
-        border-bottom-right-radius: 10px;
         margin-top: 62px;
         z-index: 0;
         position: absolute;

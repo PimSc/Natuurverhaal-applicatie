@@ -13,9 +13,10 @@
   /*colors start*/
   --black: hsl(0, 0%, 0%);
   --black50Transparant: hsl(0, 0%, 0%, 0.5);
-  --darkerGrey: hsl(0, 0%, 14%);
+  --darkerGrey: hsl(0, 0%, 20%);
   --lightGrey: hsl(0, 0%, 95%);
   --white: hsl(0, 0%, 100%);
+  --menuBarBackground: hsla(0, 0%, 20%, 0.8);
   /*colors end*/
 
   --mainBackgroundColor: hsl(0, 0%, 100%);
@@ -36,11 +37,8 @@
   --h5FontSize: 1.2rem;
   --h6FontSize: 1rem;
   --pFontSize: 1.1rem;
-  --navLinkSize: 1.7rem;
-  /*--aTitleFontSize: 2rem;*/
-  /*--aHoverEaseOutFontSize: 2.5rem;*/
-  /*--postDateFontSize: 1.2rem;*/
-  /*font-sizes end*/
+  --navLinkSize: 1.5rem;
+
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -161,7 +159,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed purple;
+  /*border: 2px dashed purple;*/
 }
 
 .outer-content-container-column {
@@ -169,7 +167,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dot-dot-dash purple;
+  /*border: 2px dot-dot-dash purple;*/
 }
 
 /*Inner content container (Row)*/
