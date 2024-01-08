@@ -50,7 +50,11 @@ function Navigation() {
                     <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                     <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                     <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
-                    <li><NavLink to="/Login" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink></li>
+                    <li><NavLink to="/Prikbord" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink></li>
+                    <li><NavLink to="/login" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink></li>
+                    <li><NavLink to="/mijnBlogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>
+                    <li><NavLink to="/Profiel" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink></li>
+                    <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink></li>
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                 </nav>
             </aside>
