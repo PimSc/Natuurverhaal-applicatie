@@ -13,6 +13,8 @@ import Header from "./components/header/Header.jsx";
 import PostDetail from "./pages/postDetail/PostDetail.jsx";
 import TermsAndPrivacy from "./pages/TermsAndPrivacy/TermsAndPrivacy.jsx";
 import Prikbord from "./pages/prikbord/Prikbord.jsx";
+import MijnBlogs from "./pages/mijnBlogs/MijnBlogs.jsx";
+import Profiel from "./pages/profiel/Profiel.jsx";
 
 function App() {
 
@@ -31,12 +33,20 @@ function App() {
             <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><Blogs /></div>}/>
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
-            <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
+
+            {/*Pages in account dropdrop menu*/}
+            <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
+            <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn Blogs</title></Helmet><MijnBlogs /></div>}/>
+            <Route path="/Profiel" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><Profiel /></div>}/>
 
             {/*Pages outside the nav*/}
             <Route path="//posts/:id" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><PostDetail /></div>}/>
-            <Route path="/TermsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
+            <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
+
+
+
+
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>

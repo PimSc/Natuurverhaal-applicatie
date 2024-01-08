@@ -1,6 +1,7 @@
 import './Navigation.css';
 import { NavLink } from 'react-router-dom';
 import SearchBar from "./../searchBar/SearchBar.jsx"
+import { Link } from 'react-router-dom';
 
 
 function Navigation() {
@@ -20,7 +21,17 @@ function Navigation() {
                             <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                             <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
                             <li><NavLink to="/Prikbord" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink></li>
-                            <li><NavLink to="/Login" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink></li>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">Account</button>
+                                <div className="dropdown-content">
+                                    <Link to="/login" >Login</Link>
+                                    <Link to="/mijnBlogs" >Blogs</Link>
+                                    <Link to="/Profiel" >Profiel</Link>
+                                    <Link to="/" >Uitloggen</Link>
+                                </div>
+                            </div>
+
                             <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                             <SearchBar />  {/*Searchbar component*/}
                         </ul>

@@ -21,7 +21,11 @@ function Login() {
     return (
         <>
         <div className="outer-content-container">
-            <div className="innerContentContainerColumn">
+            <div className="inner-content-container-column">
+
+                <p >voordelen van inloggen</p>
+
+
                 <div className="accountPageButtonBox2">
                     <button
                         // handleButtonClick is for changing the login and register button

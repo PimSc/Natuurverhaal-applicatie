@@ -181,7 +181,7 @@ section {
 }
 
 /*Inner content container (column)*/
-.innerContentContainerColumn {
+.inner-content-container-column {
   margin: 40px 40px;
   display: flex;
   flex-direction: column;

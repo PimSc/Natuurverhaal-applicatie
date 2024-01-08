@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DropdownMenu = ({ setDropdownHovered }) => {
     const dropdownLinks = [
         { path: "/dashboard", text: "Dashboard" },
-        { path: "/profile", text: "Profiel" },
+        { path: "/profile", text: "profiel" },
         // Voeg meer links toe indien nodig
     ];
 
