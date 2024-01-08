@@ -56,15 +56,13 @@ background-size: cover;
 
 
 /*Start media query telephone*/
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
 
-.excursionTitle {
-    display: none;
-}
+
 
     .excursionBannerBg{
         position: relative;
-        background-image: url(WebsiteImages/excursionBanner1.jpg);
+        background-image: url(./../../assets/websiteImages/excursionBanner1.jpg);
         display: flex;
         flex-direction: row;
         height: 100px;

@@ -11,10 +11,11 @@ import NotFound from "./pages/notFound/NotFound.jsx";
 import Navigation from './components/navigation/Navigation.jsx';
 import Header from "./components/header/Header.jsx";
 import PostDetail from "./pages/postDetail/PostDetail.jsx";
-import TermsAndPrivacy from "./pages/TermsAndPrivacy/TermsAndPrivacy.jsx";
+import TermsAndPrivacy from "./pages/termsAndPrivacy/TermsAndPrivacy.jsx";
 import Prikbord from "./pages/prikbord/Prikbord.jsx";
 import MijnBlogs from "./pages/mijnBlogs/MijnBlogs.jsx";
 import Profiel from "./pages/profiel/Profiel.jsx";
+import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
 
             {/*Pages outside the nav*/}
             <Route path="//posts/:id" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><PostDetail /></div>}/>
+            <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal |   Blog schrijven</title></Helmet><  WriteBlog /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 
 

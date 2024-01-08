@@ -14,17 +14,6 @@ function ExcursionOverview() {
 
 
 
-        {/*    <div className="excursieBox1">*/}
-        {/*    {excursies.map((excursie) => (*/}
-        {/*        <div key={excursie.id} className="excursieImageBox" >*/}
-        {/*            <img src={excursie.foto} alt={excursie.caption}/>*/}
-        {/*        </div>*/}
-        {/*    ))}*/}
-        {/*</div>*/}
-
-
-
-
 <div className=".outer-content-container-column">
     {excursies.map((excursie) => (
         <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
@@ -40,8 +29,13 @@ function ExcursionOverview() {
 
 
 
+
+
+
+
                 <li className="excursionContentTextCenter">
                     <h2>{excursie.titel}</h2>
+                    <br />
                     <p>
                         <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.datum}{' '}
                         <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {' '} {excursie.tijd} {' '} {excursie.prijs}{' '}
@@ -56,9 +50,9 @@ function ExcursionOverview() {
                         <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.gids} {' '}
                         <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
                     </p>
-                    <br/>
+                    <br />
                     <h4>{excursie.subtitel}</h4>
-                    <br/>
+                    <br />
                     {/*<hr/>*/}
                 </li>
 

@@ -36,7 +36,7 @@
   --h4FontSize: 1.4rem;
   --h5FontSize: 1.2rem;
   --h6FontSize: 1rem;
-  --pFontSize: 1.1rem;
+  --pFontSize: 1rem;
   --navLinkSize: 1.5rem;
 
 
@@ -167,7 +167,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 2px dot-dot-dash purple;*/
+  /*border: 2px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -177,7 +177,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dot-dot-dash red;
+  /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
@@ -186,7 +186,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dot-dot-dash blue;
+  /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -195,7 +195,7 @@ section {
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  border: 2px dot-dot-dash turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -204,7 +204,7 @@ section {
   flex-shrink: 1;
   flex-grow: 0;
   align-items: flex-start;
-  border: 2px dot-dot-dash green;
+  /*border: 2px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -214,7 +214,7 @@ section {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 2px dot-dot-dash turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
@@ -226,37 +226,18 @@ section {
 
 /*Begin media query telefoon*/
 @media only screen and (max-width: 767px) {
+
   /*font-sizes start*/
-  :root {
-    /*--mainTitleFontSize: 2.7rem;*/
-    /*--h1FontSize: 2.2rem;*/
-    /*--h2FontSize: 1.8rem;*/
-    /*--h3FontSize: 1.6rem;*/
-    /*--h4FontSize: 1.4rem;*/
-    /*--pFontSize: 1.1rem;*/
-    /*--navLinkSize: 1.1rem;*/
-
-    --mainTitleFontSize: 5rem;
-    --h1FontSize: 2.2rem;
-    --h2FontSize: 1.8rem;
-    --h3FontSize: 1.6rem;
-    --h4FontSize: 1.4rem;
-    --h5FontSize: 1.5rem;
-    --pFontSize: 1.5rem;
-    --navLinkSize: 1.7rem;
-  }
-
-    /*Edit texts*/
-
+  /*Edit texts*/
   .homeTitle, .homeTitle:hover, .homeTitle:visited {
     font-size: calc(var(--mainTitleFontSize) - 290%);
     /*font-size: var(--mainTitleFontSize);*/
   }
 
-    p {
-      font-size: calc(var(--pFontSize) - 10%);
-      /*font-size: var(--pFontSize);*/
-    }
+    /*p {*/
+    /*  font-size: calc(var(--pFontSize) - 10%);*/
+    /*  !*font-size: var(--pFontSize);*!*/
+    /*}*/
 
     h1 {
       font-size: calc(var(--h1FontSize) - 20%);

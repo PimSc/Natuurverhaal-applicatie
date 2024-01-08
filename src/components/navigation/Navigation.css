@@ -35,9 +35,7 @@ input {
 
 /*--STYLING END--*/
 
-
-
-/*LAYOUT START*/
+/*LAYOUT START, (mag niet op center worden gezet!!!!) */
 .navContainerStickyTop {
     background-color: var(--white);
     position: sticky;
@@ -46,7 +44,6 @@ input {
     flex-basis: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
@@ -55,26 +52,22 @@ input {
 }
 
 .mainNav{
-    width: 100%;
-    max-width: 1600px;
+    min-width: 100%;
     background-color: var(--white);
     font-family: var(--titleFont);
     display: flex;
     justify-content: center;
+    padding: 0 20px;
     /*border: 4px dashed saddlebrown;*/
 }
 
-
-
 ul {
     list-style-type: none;
-    flex-basis: 85%;
+    flex-basis: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
-
-
 
 .phoneSearchBar{
     display: none;
@@ -160,7 +153,7 @@ ul {
 
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
     /*Styling phone query start*/
     .default-link {
         font-size: calc(var(--navLinkSize) - 30%);
@@ -202,8 +195,10 @@ ul {
     /*Phone search bar visible and styling*/
     .phoneSearchBar{
         display: flex;
-        align-content: center;
-        justify-content: center;
+        align-self: center;
+        margin-left: auto;
+        margin-right: 10px;
+        /*border: 3px solid red;*/
     }
 
 
@@ -213,13 +208,6 @@ ul {
 
 
     /*Layout end*/
-
-
-
-
-
-
-
 
 
 
@@ -250,14 +238,15 @@ ul {
         display: flex;
         flex-direction: column;
         gap: var(--hamburger-gap);
-        margin-top: var(--hamburger-margin);
-        margin-left: var(--hamburger-margin);
+        width: max-content;
+        position: absolute;
+        top: var(--hamburger-margin);
+        left: var(--hamburger-margin);
         z-index: 2;
         cursor: pointer;
         padding: 4px 0 0 8px;
-        border: 2px solid orangered;
+        /*border: 2px solid orangered;*/
     }
-
 
 
     /*Stripes & cross*/
@@ -318,7 +307,7 @@ ul {
         translate: -100%;
         padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.5rem) 1rem 0.5rem 1rem;
 
-        /*Sideback background*/
+        /*Side bar background*/
         background-color: var(--menuBarBackground);
         color: var(--white);
         width: 12rem;
@@ -329,9 +318,8 @@ ul {
         margin-top: 62px;
         z-index: 0;
         position: absolute;
-        display: flex;
-        align-items: center;
     }
+
 
     .sidebar li {
         padding: 4px 0;

@@ -37,9 +37,7 @@ function Excursies() {
 
                             {/*Box with introduction text of image? (column)*/}
                             <div className="excursionIntroduction2">
-                                <div className="excursionFirstBlockImageMain">
                                 <img src={AdderPhoto} alt=""/>
-                                </div>
                             </div>
                         </div>
 
@@ -48,24 +46,11 @@ function Excursies() {
                         <div className="excursionContentBox1" >
 
                             {/*Box with excursions */}
-
                            <div className="excursionComponentBox">
-
                                <ExcursionOverview />
-
-
                            </div>
 
-
-
-
                         </div>
-
-
-
-
-
-
 
                     </div>{/*Excursion-inner-content-container closing*/}
 

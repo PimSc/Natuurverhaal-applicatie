@@ -5,7 +5,7 @@ function Profiel() {
 return (
 <>
     <div className="outer-content-container">
-        <div className="inner-content-container">
+        <div className="inner-content-container-column">
             <p>Profiel foto aanpassen</p>
             <p>openbaar e-mail</p>
             <p>account verwijderen</p>
