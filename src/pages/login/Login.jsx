@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './Account.css';
+import './Login.css';
 import LoginScreen from '../../components/loginScreen/LoginScreen.jsx';
 import RegisterScreen from '../../components/registerScreen/RegisterScreen.jsx';
 
-function Account() {
+function Login() {
 
     // Code for switch between inloggen and registeren start
     const [activeButton, setActiveButton] = useState('login');
@@ -21,7 +21,11 @@ function Account() {
     return (
         <>
         <div className="outer-content-container">
-            <div className="innerContentContainerColumn">
+            <div className="inner-content-container-column">
+
+                <p >voordelen van inloggen</p>
+
+
                 <div className="accountPageButtonBox2">
                     <button
                         // handleButtonClick is for changing the login and register button
@@ -51,4 +55,4 @@ function Account() {
     );
 }
 
-export default Account;
+export default Login;

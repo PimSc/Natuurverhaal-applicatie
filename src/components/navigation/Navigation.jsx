@@ -1,6 +1,7 @@
 import './Navigation.css';
 import { NavLink } from 'react-router-dom';
 import SearchBar from "./../searchBar/SearchBar.jsx"
+import { Link } from 'react-router-dom';
 
 
 function Navigation() {
@@ -10,7 +11,7 @@ function Navigation() {
 
     return (
         <>
-
+<div className="outer-content-container">
         <div className="navContainerStickyTop">  {/*Sticky container*/}
 
             {/*Start main navigation bar (computer screen)*/}
@@ -18,10 +19,19 @@ function Navigation() {
                         <ul>
                             <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                             <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
-                            {/*<li><NavLink to="/Blogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>*/}
                             <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
                             <li><NavLink to="/Prikbord" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink></li>
-                            <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>
+
+                            <div className="dropdown">
+                                <button className="dropbtn">Account</button>
+                                <div className="dropdown-content">
+                                    <Link to="/login" >Login</Link>
+                                    <Link to="/mijnBlogs" >Blogs</Link>
+                                    <Link to="/Profiel" >Profiel</Link>
+                                    <Link to="/" >Uitloggen</Link>
+                                </div>
+                            </div>
+
                             <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                             <SearchBar />  {/*Searchbar component*/}
                         </ul>
@@ -29,9 +39,7 @@ function Navigation() {
             {/*End main navigation bar*/}
 
             {/*Start telephone navigation bar (phone screen)*/}
-            <div className="phoneSearchBar">
-                <SearchBar />  {/*Searchbar component*/}
-            </div>
+
 
             <label className="hamburger-menu">
                 <input type="checkbox" />
@@ -42,12 +50,20 @@ function Navigation() {
                     <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                     <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
                     <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
-                    <li><NavLink to="/Account" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Account</NavLink></li>
+                    <li><NavLink to="/Prikbord" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink></li>
+                    <li><NavLink to="/login" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink></li>
+                    <li><NavLink to="/mijnBlogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>
+                    <li><NavLink to="/Profiel" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink></li>
+                    <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink></li>
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                 </nav>
             </aside>
-        </div>
 
+            <div className="phoneSearchBar">
+                <SearchBar />  {/*Searchbar component*/}
+            </div>
+        </div>
+</div>
         </>
     );
 }

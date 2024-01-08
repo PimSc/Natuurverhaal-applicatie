@@ -5,16 +5,16 @@ import Home from './pages/home/Home.jsx';
 import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
 import Blogs from './pages/blogs/Blogs.jsx';
 import Excursies from './pages/excursies/Excursies.jsx';
-import Account from './pages/account/Account.jsx';
+import Login from './pages/login/Login.jsx';
 import Contact from './pages/contact/Contact.jsx';
 import NotFound from "./pages/notFound/NotFound.jsx";
 import Navigation from './components/navigation/Navigation.jsx';
 import Header from "./components/header/Header.jsx";
-import Registreer from "./pages/registreer/Registreer.jsx";
 import PostDetail from "./pages/postDetail/PostDetail.jsx";
 import TermsAndPrivacy from "./pages/TermsAndPrivacy/TermsAndPrivacy.jsx";
 import Prikbord from "./pages/prikbord/Prikbord.jsx";
-// import ViewBlog from "./components/viewBlog/ViewBlog.jsx";
+import MijnBlogs from "./pages/mijnBlogs/MijnBlogs.jsx";
+import Profiel from "./pages/profiel/Profiel.jsx";
 
 function App() {
 
@@ -22,9 +22,9 @@ function App() {
     <>
 
 
-
-        <Header/>      {/*visible on every page*/}
-        <Navigation/>  {/*visible on every page*/}
+        {/*components visible on every page*/}
+        <Header/>
+        <Navigation/>
 
         <Routes> {/*Switch between these pages*/}
             {/*Pages in the nav*/}
@@ -33,16 +33,22 @@ function App() {
             <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><Blogs /></div>}/>
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
-            <Route path="/account" element={<div><Helmet><title>Natuurverhaal | Account</title></Helmet><Account /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
 
+            {/*Pages in account dropdrop menu*/}
+            <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
+            <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn Blogs</title></Helmet><MijnBlogs /></div>}/>
+            <Route path="/Profiel" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><Profiel /></div>}/>
+
             {/*Pages outside the nav*/}
-            <Route path="/registreer" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><Registreer /></div>}/>
             <Route path="//posts/:id" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><PostDetail /></div>}/>
-            <Route path="/TermsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
+            <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 
 
-            {/*<Route path="/Blog/:id" element={<ViewBlog/>}/>*/}
+
+
+
+            {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>
         </Routes>
 
@@ -51,7 +57,6 @@ function App() {
 
 
 
-        {/*sticky navigation element*/}
 
         {/*Footer element*/}
 

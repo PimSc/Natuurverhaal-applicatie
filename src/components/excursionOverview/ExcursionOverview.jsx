@@ -26,70 +26,51 @@ function ExcursionOverview() {
 
 
 <div className=".outer-content-container-column">
-                {excursies.map((excursie) => (
-                    <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
+    {excursies.map((excursie) => (
+        <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
 
-                        <div className="excursieContentBox">
+            <div className="excursieContentBox">
 
 
-                        <div className="excursieBox1">
-                            <div className="excursieImageBox" >
+                <div className="excursieBox1">
+                    <div className="excursieImageBox" >
                                 <img src={excursie.foto} alt={excursie.caption}/>
-                            </div>
-                        </div>
+                    </div>
+                </div>
 
 
 
-                        <li className="excursionContentTextCenter">
-                            <h2>{excursie.titel}</h2>
-                            <p>
-                                <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.datum}{' '}
-                                <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {' '} {excursie.tijd} {' '} {excursie.prijs}{' '}
-                            </p>
+                <li className="excursionContentTextCenter">
+                    <h2>{excursie.titel}</h2>
+                    <p>
+                        <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.datum}{' '}
+                        <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {' '} {excursie.tijd} {' '} {excursie.prijs}{' '}
+                    </p>
 
-                            <p>
-                                <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {excursie.locatie}
-                            </p>
+                    <p>
+                        <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {excursie.locatie}
+                    </p>
 
-                            <p>
-                                <img className="iconSmall" src={animalIcon} alt="dier-icoon"/> {' '} {excursie.onderwerp} {' '}
-                                <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.gids} {' '}
-                                <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
-                            </p>
-                            <br/>
-                            <h4>{excursie.subtitel}</h4>
-                            <br/>
-                            {/*<hr/>*/}
-                        </li>
+                    <p>
+                        <img className="iconSmall" src={animalIcon} alt="dier-icoon"/> {' '} {excursie.onderwerp} {' '}
+                        <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.gids} {' '}
+                        <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
+                    </p>
+                    <br/>
+                    <h4>{excursie.subtitel}</h4>
+                    <br/>
+                    {/*<hr/>*/}
+                </li>
 
-                        </div>
+            </div>
 
-                    </Link>
-                ))}
+        </Link>
+    ))}
 
 </div>
 
 
 
-
-            {/*<div className="excursieBox2">*/}
-            {/*    {excursies.map((excursie) => (*/}
-            {/*        <Link to={`/excursies/${excursie.id}`} key={excursie.id}>*/}
-            {/*            <li>*/}
-            {/*                <h2>{excursie.titel}</h2>*/}
-            {/*                <p> <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {excursie.datum} <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {excursie.tijd} {excursie.prijs}</p>*/}
-
-            {/*                <p> <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {excursie.locatie}  </p>*/}
-
-            {/*                <p><img className="iconSmall"src={animalIcon}alt="dier-icoon icoon"/> {excursie.onderwerp} <img className="iconSmall" src={guideIcon} alt="gids-icoon icoon"/> {excursie.gids}</p>*/}
-            {/*                <br/>*/}
-            {/*                <h4>{excursie.subtitel}</h4>*/}
-            {/*                <br/>*/}
-            {/*                <hr/>*/}
-            {/*            </li>*/}
-            {/*        </Link>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
 
 
         </>

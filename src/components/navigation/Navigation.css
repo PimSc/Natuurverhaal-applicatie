@@ -41,16 +41,15 @@ input {
 .navContainerStickyTop {
     background-color: var(--white);
     position: sticky;
-    /* Set top to 0 to stick to the top of the viewport */
-    top: 0;
+    top: 0; /* Stick to the top of the viewport */
     z-index: 10;
     flex-basis: 100vw;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
-    /*removes border on both sides*/
     border-left: none;
     border-right: none;
 }
@@ -75,11 +74,7 @@ ul {
     align-items: center;
 }
 
-.stripeMenu {
-    color: black;
-    font-size: 35px;
-    line-height: 1.6;
-}
+
 
 .phoneSearchBar{
     display: none;
@@ -88,13 +83,85 @@ ul {
 .hamburger-menu, .hamburger-menu input, .sidebar{
     display: none;
 }
+
+
+
+
+/*------Drop down menu start------*/
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: var(--lightGrey);
+    color: var(--black);
+    padding: 14px;
+    border: none;
+    font-size: var(--navLinkSize);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: calc(var(--navLinkSize) - 20%);
+}
+
+.dropdown-content{
+    border: 2px solid black;
+    border-top: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/*------Drop down menu end------*/
+
+
+
 /*LAYOUT END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 @media only screen and (max-width: 767px) {
     /*Styling phone query start*/
-
     .default-link {
         font-size: calc(var(--navLinkSize) - 30%);
         /*font-size: var(--navLinkSize);*/
@@ -122,10 +189,6 @@ ul {
 
     /*Styling end*/
     /*Layout start*/
-
-
-
-
     /*Original nav disable*/
     .mainNav{
         display: none;
@@ -139,14 +202,14 @@ ul {
     /*Phone search bar visible and styling*/
     .phoneSearchBar{
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%, -50%);
+        align-content: center;
+        justify-content: center;
     }
+
+
+
+
+
 
 
     /*Layout end*/
@@ -176,9 +239,6 @@ ul {
         --bar-width: 60px;
         --bar-height: 8px;
         --hamburger-gap: 6px;
-        --foreground: var(--darkerGrey);
-        --background: white;
-        --sideBarBackground: hsla(0, 0%, 20%, 0.8);;
         --hamburger-margin: 8px;
         --animation-timing: 200ms ease-in-out;
         --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
@@ -190,21 +250,18 @@ ul {
         display: flex;
         flex-direction: column;
         gap: var(--hamburger-gap);
-        /*width: max-content;*/
-        position: absolute;
-        top: var(--hamburger-margin);
-        left: var(--hamburger-margin);
+        margin-top: var(--hamburger-margin);
+        margin-left: var(--hamburger-margin);
         z-index: 2;
         cursor: pointer;
         padding: 4px 0 0 8px;
+        border: 2px solid orangered;
     }
 
 
 
     /*Stripes & cross*/
     .hamburger-menu:has(input:checked) {
-        --foreground: #333;
-        --background: #333;
         padding: 4px 0 0 8px;
         z-index: 5
     }
@@ -212,8 +269,8 @@ ul {
     .hamburger-menu:has(input:focus-visible)::before,
     .hamburger-menu:has(input:focus-visible)::after,
     .hamburger-menu input:focus-visible {
-        border: 1px solid var(--background);
-        box-shadow: 0 0 0 1px var(--foreground);
+        border: 1px solid var(--darkerGrey);
+        box-shadow: 0 0 0 1px var(--darkerGrey);
     }
 
     .hamburger-menu::before,
@@ -222,7 +279,7 @@ ul {
         content: "";
         width: var(--bar-width);
         height: var(--bar-height);
-        background-color: var(--foreground);
+        background-color: var(--darkerGrey);
         border-radius: 9999px;
         transform-origin: left center;
         transition: opacity var(--animation-timing), width var(--animation-timing),
@@ -262,14 +319,13 @@ ul {
         padding: calc(var(--hamburger-height) + var(--hamburger-margin) + 1.5rem) 1rem 0.5rem 1rem;
 
         /*Sideback background*/
-        background-color: var(--sideBarBackground);
-        color: var(--background);
+        background-color: var(--menuBarBackground);
+        color: var(--white);
         width: 12rem;
         min-height: 100vh;
         border: 2px solid black;
         border-left: none;
         border-top: none;
-        border-bottom-right-radius: 10px;
         margin-top: 62px;
         z-index: 0;
         position: absolute;
