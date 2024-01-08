@@ -30,6 +30,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 100%;
+    border: 4px solid pink;
 }
 
 
@@ -53,7 +55,7 @@
 
 /*LAYOUT END*/
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
     .excursieContentBox{
         display: flex;
         flex-direction: column;
@@ -89,6 +91,7 @@
         justify-content: center;
         width: 300px;
         padding: 10px;
+        /*border: 4px solid pink;*/
     }
 
 

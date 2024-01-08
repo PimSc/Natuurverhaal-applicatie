@@ -35,7 +35,7 @@ function ExcursionOverview() {
 
                 <li className="excursionContentTextCenter">
                     <h2>{excursie.titel}</h2>
-                    <br/>
+                    <br />
                     <p>
                         <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.datum}{' '}
                         <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {' '} {excursie.tijd} {' '} {excursie.prijs}{' '}
@@ -50,9 +50,9 @@ function ExcursionOverview() {
                         <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.gids} {' '}
                         <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
                     </p>
-                    <br/>
+                    <br />
                     <h4>{excursie.subtitel}</h4>
-                    <br/>
+                    <br />
                     {/*<hr/>*/}
                 </li>
 
