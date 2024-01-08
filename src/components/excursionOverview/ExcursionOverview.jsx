@@ -14,17 +14,6 @@ function ExcursionOverview() {
 
 
 
-        {/*    <div className="excursieBox1">*/}
-        {/*    {excursies.map((excursie) => (*/}
-        {/*        <div key={excursie.id} className="excursieImageBox" >*/}
-        {/*            <img src={excursie.foto} alt={excursie.caption}/>*/}
-        {/*        </div>*/}
-        {/*    ))}*/}
-        {/*</div>*/}
-
-
-
-
 <div className=".outer-content-container-column">
     {excursies.map((excursie) => (
         <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
@@ -37,6 +26,10 @@ function ExcursionOverview() {
                                 <img src={excursie.foto} alt={excursie.caption}/>
                     </div>
                 </div>
+
+
+
+
 
 
 

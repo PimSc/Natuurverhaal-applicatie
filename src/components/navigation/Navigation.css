@@ -46,7 +46,7 @@ input {
     flex-basis: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
@@ -54,9 +54,11 @@ input {
     border-right: none;
 }
 
+
+
+
 .mainNav{
-    width: 100%;
-    max-width: 1600px;
+    width: 80%;
     background-color: var(--white);
     font-family: var(--titleFont);
     display: flex;
