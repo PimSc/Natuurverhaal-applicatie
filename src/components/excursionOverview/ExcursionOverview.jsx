@@ -20,7 +20,6 @@ function ExcursionOverview() {
 
             <div className="excursieContentBox">
 
-
                 <div className="excursieBox1">
                     <div className="excursieImageBox" >
                                 <img src={excursie.foto} alt={excursie.caption}/>
@@ -55,6 +54,7 @@ function ExcursionOverview() {
                     <br />
                     {/*<hr/>*/}
                 </li>
+
 
             </div>
 

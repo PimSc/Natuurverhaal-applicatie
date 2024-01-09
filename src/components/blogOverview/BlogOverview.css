@@ -15,7 +15,7 @@
     flex-direction: column;
     row-gap: 30px;
     column-gap: 16px;
-    Border: 2px dashed blue;
+    /*Border: 2px dashed blue;*/
 }
 
 .post-item {
@@ -29,7 +29,7 @@
     width: 80vw;
     flex-grow: 1;
     flex-shrink: 1;
-    Border: 2px solid orangered;
+    /*Border: 2px solid orangered;*/
 }
 
 .post-content{
