@@ -1,6 +1,6 @@
 import './ExcursionOverview.css';
 import { Link } from "react-router-dom";
-import excursies from "../../constants/excursies.json";
+import excursies from "../../constants/Excursies.json";
 import calendarIcon from "./../../assets/icons/calendar-icon.png";
 import clockIcon from "./../../assets/icons/clock-icon.png";
 import locationIcon from "./../../assets/icons/location-icon.png";
@@ -18,7 +18,7 @@ function ExcursionOverview() {
     {excursies.map((excursie) => (
         <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
 
-            <div className="excursieContentBox">
+            <div className="excursieContentBox post-item">
 
                 <div className="excursieBox1">
                     <div className="excursieImageBox" >

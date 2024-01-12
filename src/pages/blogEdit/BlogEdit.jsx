@@ -1,6 +1,6 @@
-import './Blogs.css'
+import './BlogEdit.css'
 
-function Blogs() {
+function BlogEdit() {
 
 
     return (
@@ -13,4 +13,4 @@ Mijn blog bewerk pagina
     )
 }
 
-export default Blogs
+export default BlogEdit

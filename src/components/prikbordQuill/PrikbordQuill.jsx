@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import './WriteBulletin.css';
+import './PrikbordQuill.css';
 
-function WriteBulletin() {
+function PrikbordQuill() {
     const [content, setContent] = useState('');
 
     const modules = {
@@ -29,8 +29,8 @@ function WriteBulletin() {
         <>
 
 
-                    <h3>Typ hier je prikbord bericht</h3>
-                    <i id="iGrey">(gebruik de streepjes rechts onderin de hoek om het scherm groter te maken)</i>
+                    <h3>Jouw prikbord bericht</h3>
+                    <i className="iGrey">(gebruik de streepjes rechts onderin de hoek om het scherm groter te maken)</i>
                     <br/>
                     <ReactQuill
                         value={content}
@@ -46,4 +46,4 @@ function WriteBulletin() {
     );
 }
 
-export default WriteBulletin;
+export default PrikbordQuill;

@@ -1,14 +1,14 @@
 import './BlogCounter.css';
-import posts from "../../constants/data.json";
+import posts from "../../constants/Blogs.json";
 
 function BlogCounter() {
-    {/*blogs counter*/}
+    {/*blogEdit counter*/}
     const totalPosts = posts.length;
 
 
 return (
 <>
-    {/*blogs counter*/}
+    {/*blogEdit counter*/}
     <h4 className="totalBlogsCounter">Totaal aantal natuurblogs: {totalPosts}</h4>
 </>
 );
