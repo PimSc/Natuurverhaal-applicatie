@@ -1,5 +1,40 @@
 /*STYLING START*/
 
+.profileFirstTextBox{
+    margin-bottom: 50px;
+}
+
+.ProfileEditContentBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /*border: 1px solid blue;*/
+}
+
+.ProfileEditBox1{
+    width: 200px;
+    /*min-height: 200px;*/
+    /*border: 1px solid grey;*/
+}
+
+.ProfileEditBox2{
+    width: 300px;
+    min-height: 200px;
+    /*border: 1px solid grey;*/
+}
+
+
+.ProfileEditBox3{
+    width: 200px;
+    min-height: 200px;
+    /*border: 1px solid grey;*/
+}
+
+.ProfileEditBox3 > p{
+    color: lightGrey;
+}
+
+
 
 
 /*STYLING END/
