@@ -1,31 +1,49 @@
+import { useState } from 'react';
 import './Prikbord.css';
-import WriteBulletin from "../../components/writeBulletin/WriteBulletin.jsx";
+import WriteBulletin from '../../components/writeBulletin/WriteBulletin.jsx';
 
 function Prikbord() {
+    const [isWriteBulletinVisible, setWriteBulletinVisible] = useState(false);
 
-return (
-<>
-    <div className="outer-content-container">
-        <div className="inner-content-container-column">
+    const toggleWriteBulletinVisibility = () => {
+        setWriteBulletinVisible(!isWriteBulletinVisible);
+    };
 
-            <div className="bulletinBoardButtons">
-                <button type="button">Prikbord bericht aanmaken</button>
+    const handleVersturenClick = () => {
+        // Plaats hier de logica voor het versturen van het bericht
+        console.log('Bericht wordt verstuurd...');
+    };
+
+    return (
+        <>
+            <div className="inner-content-container-quill">
+                <div className="bulletinBoardButtons" id="bulletinBoardButton1">
+                    <button type="button" onClick={toggleWriteBulletinVisibility}>
+                        {isWriteBulletinVisible ? 'Verberg prikbord bericht aanmaken ' : 'Prikbord bericht aanmaken'}
+                    </button>
+                </div>
+
+                {isWriteBulletinVisible && (
+                    <div className="inner-content-container-quill">
+                        <WriteBulletin />
+                    </div>
+                )}
+
+                {isWriteBulletinVisible && (
+                    <div className="bulletinBoardButtons">
+                        <button type="button" onClick={handleVersturenClick}>
+                            Prikbord bericht plaatsen
+                        </button>
+                    </div>
+                )}
+
+                <h2>prikbord pagina</h2>
+                <br />
+                <p>prikbord bericht plaatsen</p>
+                <p>prikbord overzicht</p>
             </div>
-
-<WriteBulletin/>
-
-            <h2>prikbord pagina</h2>
-                    <br/>
-            <p>prikbord bericht plaatsen</p>
-            <p>prikbord overzicht</p>
-
-
-
-        </div>
-    </div>
-
-</>
-);
+        </>
+    );
 }
 
 export default Prikbord;
