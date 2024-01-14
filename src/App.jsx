@@ -3,19 +3,21 @@ import {Helmet} from "react-helmet";
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
-import Blogs from './pages/blogs/Blogs.jsx';
+import BlogEdit from './pages/blogEdit/BlogEdit.jsx';
 import Excursies from './pages/excursies/Excursies.jsx';
 import Login from './pages/login/Login.jsx';
 import Contact from './pages/contact/Contact.jsx';
 import NotFound from "./pages/notFound/NotFound.jsx";
 import Navigation from './components/navigation/Navigation.jsx';
 import Header from "./components/header/Header.jsx";
-import PostDetail from "./pages/postDetail/PostDetail.jsx";
+import PostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 import TermsAndPrivacy from "./pages/termsAndPrivacy/TermsAndPrivacy.jsx";
 import Prikbord from "./pages/prikbord/Prikbord.jsx";
 import MijnBlogs from "./pages/mijnBlogs/MijnBlogs.jsx";
 import Profiel from "./pages/profiel/Profiel.jsx";
 import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
+import PrikbordPostDetail from "./pages/prikbordPostDetail/PrikbordPostDetail.jsx";
+import BlogPostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 
 function App() {
 
@@ -31,7 +33,7 @@ function App() {
             {/*Pages in the nav*/}
             <Route path="/" element={<div><Helmet><title>Natuurverhaal | Home</title></Helmet><Home /></div>}/>
             <Route path="/onsVerhaal" element={<div><Helmet><title>Natuurverhaal | Ons verhaal</title></Helmet><OnsVerhaal /></div>}/>
-            <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><Blogs /></div>}/>
+            <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><BlogEdit /></div>}/>
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
@@ -42,7 +44,8 @@ function App() {
             <Route path="/Profiel" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><Profiel /></div>}/>
 
             {/*Pages outside the nav*/}
-            <Route path="//posts/:id" element={<div><Helmet><title>Natuurverhaal | Registreer</title></Helmet><PostDetail /></div>}/>
+            <Route path="//blogposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><BlogPostDetail /></div>}/>
+            <Route path="//prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal |   Blog schrijven</title></Helmet><  WriteBlog /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 
@@ -55,7 +58,7 @@ function App() {
         </Routes>
 
 {/*Route voorbeeld zonder helmet*/}
-        {/*<Route path="/blogs" element={<Blogs/>}/>*/}
+        {/*<Route path="/blogEdit" element={<BlogEdit/>}/>*/}
 
 
 

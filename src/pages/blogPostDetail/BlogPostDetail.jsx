@@ -1,10 +1,13 @@
-import './PostDetail.css';
+import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
-import posts from '../../constants/data.json';
+import posts from '../../constants/Blogs.json';
 import formatDateString from '../../helpers/formatDateString.js';
 import { CaretLeft, Clock } from "@phosphor-icons/react";
 
-function PostDetail() {
+
+// Op deze pagina wordt 1 specifieke blogpost getoond wanneer deze op de homepage wordt aangeklikt.
+
+function BlogPostDetail() {
     const { id } = useParams();
 
     const { title, readTime, subtitle, author, created, content, comments, shares } = posts.find((post) => {
@@ -39,4 +42,4 @@ function PostDetail() {
     );
 }
 
-export default PostDetail;
+export default BlogPostDetail;

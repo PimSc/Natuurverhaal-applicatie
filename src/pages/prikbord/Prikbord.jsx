@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Prikbord.css';
-import WriteBulletin from '../../components/writeBulletin/WriteBulletin.jsx';
+import PrikbordQuill from '../../components/prikbordQuill/PrikbordQuill.jsx';
+import PrikbordOverview from "../../components/prikbordOverview/PrikbordOverview.jsx";
+
 
 function Prikbord() {
     const [isWriteBulletinVisible, setWriteBulletinVisible] = useState(false);
@@ -25,7 +27,7 @@ function Prikbord() {
 
                 {isWriteBulletinVisible && (
                     <div className="inner-content-container-quill">
-                        <WriteBulletin />
+                        <PrikbordQuill />
                     </div>
                 )}
 
@@ -37,10 +39,7 @@ function Prikbord() {
                     </div>
                 )}
 
-                <h2>prikbord pagina</h2>
-                <br />
-                <p>prikbord bericht plaatsen</p>
-                <p>prikbord overzicht</p>
+             <PrikbordOverview />
             </div>
         </>
     );
