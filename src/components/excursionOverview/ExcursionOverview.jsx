@@ -1,6 +1,6 @@
 import './ExcursionOverview.css';
 import { Link } from "react-router-dom";
-import excursies from "../../constants/Excursies.json";
+import excursies from '../../constants/ExcursiePosts.json';
 import calendarIcon from "./../../assets/icons/calendar-icon.png";
 import clockIcon from "./../../assets/icons/clock-icon.png";
 import locationIcon from "./../../assets/icons/location-icon.png";
@@ -16,7 +16,7 @@ function ExcursionOverview() {
 
 <div className=".outer-content-container-column">
     {excursies.map((excursie) => (
-        <Link to={`/excursies/${excursie.id}`} key={excursie.id}>
+        <Link to={`/excursiePosts/${excursie.id}`} key={excursie.id}>
 
             <div className="excursieContentBox post-item">
 

@@ -26,7 +26,7 @@ function PrikbordPostDetail() {
                         <p>{content}</p>
                         <p>{comments} reacties - {shares} keer gedeeld</p>
 
-                        <Link to="/" className="back-link">
+                        <Link to="/prikbord" className="back-link">
                             <br/>
                             <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>
                             <br/>

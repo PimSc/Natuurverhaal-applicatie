@@ -1,5 +1,5 @@
 import './BlogOverview.css';
-import posts from "../../constants/Blogs.json";
+import posts from "../../constants/BlogPosts.json";
 import { Link } from "react-router-dom";
 
 function BlogOverview() {
