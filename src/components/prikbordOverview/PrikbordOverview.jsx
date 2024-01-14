@@ -7,7 +7,12 @@ function PrikbordOverview() {
     return (
         <>
             <section className="blogOverviewSection outer-content-container">
-                <div className="inner-content-container">
+                <div className="inner-content-container-column">
+
+                    <h1>Prikbord</h1>
+                    <p className="textCenter">Hier kan je een oproep doen aan alle gebruikers. <br/> je kan bijvoorbeeld een opzoek doen voor het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het beste insecten kan fotogrageren. </p>
+                    <br/>  <br/>
+
                     <ul className="post-list">
                         {PrikbordPosts.map((post) => (
                             <li key={post.id} className="post-item">

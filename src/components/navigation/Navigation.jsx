@@ -1,13 +1,15 @@
 import './Navigation.css';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import SearchBar from "./../searchBar/SearchBar.jsx"
-import { Link } from 'react-router-dom';
+
+const handleLogout = () => {
+    // Hier komt de logica om uit te loggen
+
+    console.log('Gebruiker uitgelogd');
+};
 
 
 function Navigation() {
-
-
-
 
     return (
         <>
@@ -40,12 +42,12 @@ function Navigation() {
 
             {/*Start telephone navigation bar (phone screen)*/}
 
-
-            <label className="hamburger-menu">
+            <div className="hamburgerEffect">
+                <label className="hamburger-menu">
                 <input type="checkbox" />
-            </label>
+                </label>
 
-            <aside className="sidebar">
+                <aside className="sidebar">
                 <nav>
                     <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink></li>
                     <li><NavLink to="/OnsVerhaal" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink></li>
@@ -55,12 +57,13 @@ function Navigation() {
                     <li><NavLink to="/mijnBlogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>
                     <li><NavLink to="/Profiel" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink></li>
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
-                    <li><NavLink to="/" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink></li>
+                    <NavLink to="/" onClick={handleLogout} className={({ isActive }) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink>
                 </nav>
-            </aside>
+                </aside>
 
             <div className="phoneSearchBar">
                 <SearchBar />  {/*Searchbar component*/}
+            </div>
             </div>
         </div>
 </div>

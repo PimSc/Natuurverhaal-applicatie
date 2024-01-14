@@ -1,5 +1,5 @@
 import './ExcursionOverview.css';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import excursies from '../../constants/ExcursiePosts.json';
 
 import calendarIcon from "./../../assets/icons/calendar-icon.png";
@@ -34,6 +34,7 @@ function ExcursionOverview() {
 
 
                 <li className="excursionContentTextCenter">
+                    <div className="textStart">
                     <h2>{excursie.title}</h2>
                     <br />
                     <p>
@@ -50,10 +51,10 @@ function ExcursionOverview() {
                         <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.guide} {' '}
                         <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
                     </p>
-                    <br />
+                        <br />
                     <h4>{excursie.subtitle}</h4>
                     <br />
-                    {/*<hr/>*/}
+                    </div>
                 </li>
             </div>
         </Link>

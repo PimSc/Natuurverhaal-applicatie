@@ -1,39 +1,40 @@
 import './ExcursiePostDetail.css';
 import { Link, useParams } from "react-router-dom";
-import excursies from '../../constants/ExcursiePosts.json';
+import ExcursiePosts from '../../constants/ExcursiePosts.json';
+
 
 function ExcursiePostDetail() {
     const { id } = useParams();
-    const matchingPosts = excursies.filter((post) => post.id.toString() === id);
 
-    if (!matchingPosts.length) {
-        window.location.replace("/Excursies");
-        return null;
-    }
-
+    const { title, currentParticipants, maxParticipants, image, caption, subtitle, content, comments, shares } = ExcursiePosts.find((post) => {
+        return post.id.toString() === id;
+    });
 
     return (
         <>
-            {matchingPosts.map((excursie) => (
-                <section key={excursie.id} className="outer-content-container">
+                <section className="outer-content-container">
                     <div className="inner-content-container-column">
 
                         <div className="excursieDetailImageOuterBox">
-                            {/*<img className="excursieDetailImage" src={excursie.image} alt={excursie.caption} />*/}
-                           <p><img className="excursieDetailImage" src="../../assets/websiteImages/squirrelPhoto.jpg" alt="voorbeeld" /></p>
+                            <p><img  src={image} alt={caption}/></p>
+                           <p><img  src="../../assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 2" /></p>
+                            <p><img src="src/assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 3"/></p>
                     </div>
+
+                        {/*className="excursieDetailImage"*/}
 
 
                         <br/>
-                        <h1>{excursie.title}</h1>
-                        <h2>{excursie.subtitle}</h2>
-                        <p>Aantal ingeschreven deelnemers: {excursie.currentParticipants} maximaal aantal deelnemers: {excursie.maxParticipants}</p>
+                        <h1>{title}</h1>
+                        <h2>{subtitle}</h2>
+                        <p>Aantal ingeschreven deelnemers: {currentParticipants} maximaal aantal deelnemers: {maxParticipants}</p>
 
                             <span className="post-detail-read-time">
-              </span>
+                            </span>
                             <br/>
-                            <p>{excursie.content}</p>
-                            <p>{excursie.comments} reacties - {excursie.shares} keer gedeeld</p>
+                            <p className="textStart">{content}</p>
+                            <br/>
+                            <p>{comments} reacties - {shares} keer gedeeld</p>
 
                             <Link to="/Excursies" className="back-link">
                                 <br/>
@@ -44,7 +45,7 @@ function ExcursiePostDetail() {
 
                         </div>
                 </section>
-            ))}
+            )
         </>
     );
 }
