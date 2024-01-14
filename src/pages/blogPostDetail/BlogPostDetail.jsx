@@ -31,7 +31,7 @@ function BlogPostDetail() {
 
                     <Link to="/" className="back-link">
                         <br/>
-                        <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>
+                        <button className="SimpleButtons"> Terug naar het blogs overzicht</button>
                         <br/>
                         <br/>
                     </Link>

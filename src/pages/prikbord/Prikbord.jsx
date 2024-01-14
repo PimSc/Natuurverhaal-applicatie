@@ -19,11 +19,9 @@ function Prikbord() {
     return (
         <>
             <div className="inner-content-container-quill">
-                <div className="bulletinBoardButtons" id="bulletinBoardButton1">
-                    <button type="button" onClick={toggleWriteBulletinVisibility}>
+                    <button className="SimpleButtons" id="bulletinBoardButton1" type="button" onClick={toggleWriteBulletinVisibility}>
                         {isWriteBulletinVisible ? 'Verberg prikbord bericht aanmaken ' : 'Prikbord bericht aanmaken'}
                     </button>
-                </div>
 
                 {isWriteBulletinVisible && (
                     <div className="inner-content-container-quill">
@@ -32,11 +30,9 @@ function Prikbord() {
                 )}
 
                 {isWriteBulletinVisible && (
-                    <div className="bulletinBoardButtons">
-                        <button type="button" onClick={handleVersturenClick}>
+                        <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
                             Prikbord bericht plaatsen
                         </button>
-                    </div>
                 )}
 
              <PrikbordOverview />

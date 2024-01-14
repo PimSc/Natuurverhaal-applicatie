@@ -1,63 +1,50 @@
 import './ExcursiePostDetail.css';
-import {CaretLeft, Clock} from "@phosphor-icons/react";
-import {Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import excursies from '../../constants/ExcursiePosts.json';
-import formatDateString from '../../helpers/formatDateString.js';
 
 function ExcursiePostDetail() {
     const { id } = useParams();
+    const matchingPosts = excursies.filter((post) => post.id.toString() === id);
 
-    const { title, readTime, subtitle, author, created, content, comments, shares } = excursies.find((post) => {
-        return post.id.toString() === id;
-    });
+    if (!matchingPosts.length) {
+        window.location.replace("/Excursies");
+        return null;
+    }
+
 
     return (
         <>
-            <section className="outer-content-container">
-                <div className="inner-content-container">
-                    <div className="textContainer">
-                        <h1>{title}</h1>
-                        <h2>{subtitle}</h2>
-                        <p className="post-detail-author">Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
-                        <span className="post-detail-read-time">
-                        <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>
-                    </span>
-                        <br/>
-                        <p>{content}</p>
-                        <p>{comments} reacties - {shares} keer gedeeld</p>
+            {matchingPosts.map((excursie) => (
+                <section key={excursie.id} className="outer-content-container">
+                    <div className="inner-content-container-column">
 
-                        <Link to="/Excursies" className="back-link">
-                            <br/>
-                            <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>
-                            <br/>
-                            <br/>
-                        </Link>
+                        <div className="excursieDetailImageOuterBox">
+                            {/*<img className="excursieDetailImage" src={excursie.image} alt={excursie.caption} />*/}
+                           <p><img className="excursieDetailImage" src="../../assets/websiteImages/squirrelPhoto.jpg" alt="voorbeeld" /></p>
                     </div>
-                </div>
-            </section>
 
-            {/*<section className="outer-content-container">*/}
-            {/*    <div className="inner-content-container">*/}
-            {/*        <div className="textContainer">*/}
-            {/*            <h1>{title}</h1>*/}
-            {/*            <h2>{subtitle}</h2>*/}
-            {/*            <p className="post-detail-author">Geschreven door <em>{author}</em> op {formatDateString(created)}</p>*/}
-            {/*            <span className="post-detail-read-time">*/}
-            {/*            <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>*/}
-            {/*        </span>*/}
-            {/*            <br/>*/}
-            {/*            <p>{content}</p>*/}
-            {/*            <p>{comments} reacties - {shares} keer gedeeld</p>*/}
 
-            {/*            <Link to="/" className="back-link">*/}
-            {/*                <br/>*/}
-            {/*                <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>*/}
-            {/*                <br/>*/}
-            {/*                <br/>*/}
-            {/*            </Link>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</section>*/}
+                        <br/>
+                        <h1>{excursie.title}</h1>
+                        <h2>{excursie.subtitle}</h2>
+                        <p>Aantal ingeschreven deelnemers: {excursie.currentParticipants} maximaal aantal deelnemers: {excursie.maxParticipants}</p>
+
+                            <span className="post-detail-read-time">
+              </span>
+                            <br/>
+                            <p>{excursie.content}</p>
+                            <p>{excursie.comments} reacties - {excursie.shares} keer gedeeld</p>
+
+                            <Link to="/Excursies" className="back-link">
+                                <br/>
+                                <button className="SimpleButtons"> Terug naar de excursie pagina</button>
+                                <br/>
+                                <br/>
+                            </Link>
+
+                        </div>
+                </section>
+            ))}
         </>
     );
 }
