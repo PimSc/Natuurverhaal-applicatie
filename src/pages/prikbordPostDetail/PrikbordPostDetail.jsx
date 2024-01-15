@@ -13,6 +13,8 @@ function PrikbordPostDetail() {
 
     return (
         <>
+
+
             <section className="outer-content-container">
                 <div className="inner-content-container">
                     <div className="textCenter">

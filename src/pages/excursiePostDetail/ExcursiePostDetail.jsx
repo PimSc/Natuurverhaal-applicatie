@@ -1,7 +1,7 @@
 import './ExcursiePostDetail.css';
 import { Link, useParams } from "react-router-dom";
 import ExcursiePosts from '../../constants/ExcursiePosts.json';
-
+import {useEffect} from "react";
 
 function ExcursiePostDetail() {
     const { id } = useParams();
@@ -10,15 +10,20 @@ function ExcursiePostDetail() {
         return post.id.toString() === id;
     });
 
+    useEffect(() =>{
+        console.log(image)
+
+
+    },[image])
+
     return (
         <>
                 <section className="outer-content-container">
                     <div className="inner-content-container-column">
 
-                        <div className="excursieDetailImageOuterBox">
-                            <p><img  src={image} alt={caption}/></p>
-                           <p><img  src="../../assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 2" /></p>
-                            <p><img src="src/assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 3"/></p>
+                    <div className="pimContainer">
+                            <img  src={image} alt={caption}/>
+
                     </div>
 
                         {/*className="excursieDetailImage"*/}

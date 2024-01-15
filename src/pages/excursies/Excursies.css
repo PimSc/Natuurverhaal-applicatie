@@ -10,7 +10,6 @@
 
 /*The flexbox with all the content of the page*/
 .excursionContentBox1{
-    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     width: fit-content;
