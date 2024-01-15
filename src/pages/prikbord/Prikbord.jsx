@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './Prikbord.css';
-import PrikbordQuill from '../../components/prikbordQuill/PrikbordQuill.jsx';
 import PrikbordOverview from "../../components/prikbordOverview/PrikbordOverview.jsx";
 
 
@@ -25,13 +24,14 @@ function Prikbord() {
 
                 {isWriteBulletinVisible && (
                     <div className="inner-content-container-quill">
-                        <PrikbordQuill />
                     </div>
                 )}
 
                 {isWriteBulletinVisible && (
                         <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
                             Prikbord bericht plaatsen
+
+                            {/*Quill element*/}
                         </button>
                 )}
 

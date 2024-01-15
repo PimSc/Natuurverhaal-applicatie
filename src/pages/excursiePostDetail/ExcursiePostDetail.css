@@ -26,9 +26,10 @@
     height: 300px;
 }
 
-.pimContainer{
-    width: 300px;
-    height: 300px;
+.excursionDetailImageContainer{
+    width: 500px;
+    object-fit: cover;
+
 
 }
 /*---------------------*/

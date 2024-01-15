@@ -20,7 +20,7 @@ function ExcursionOverview() {
     {excursies.map((excursie) => (
         <Link to={`/excursiePosts/${excursie.id}`} key={excursie.id}>
 
-            <div className="excursieContentBox post-item">
+            <div className="excursieContentBox excursie-post-item">
 
                 <div className="excursieBox1">
                     <div className="excursieImageBox" >

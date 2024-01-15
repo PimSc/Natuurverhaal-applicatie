@@ -15,13 +15,6 @@ function Contact() {
                     </div>
                 </div>
             </div>
-
-            <img src="../../assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 2"/>
-            <img src="src/assets/websiteImages/squirrelPhoto.jpg" alt="eekhoorn 3"/>
-
-
-
-
         </>
     )
 }

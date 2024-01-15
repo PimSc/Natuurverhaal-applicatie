@@ -21,7 +21,7 @@ function ExcursiePostDetail() {
                 <section className="outer-content-container">
                     <div className="inner-content-container-column">
 
-                    <div className="pimContainer">
+                    <div className="excursionDetailImageContainer">
                             <img  src={image} alt={caption}/>
 
                     </div>
