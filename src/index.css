@@ -282,7 +282,7 @@ button, select, textarea {
   width: 80vw;
   flex-grow: 1;
   flex-shrink: 1;
-  /*Border: 2px solid orangered;*/
+  Border: 1px solid hsla(0, 0%, 50%, 0.01);
 }
 
 .iconSmall{

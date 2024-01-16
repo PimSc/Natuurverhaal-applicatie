@@ -10,14 +10,13 @@ function OnsVerhaal() {
         <section>
             <h1>Het ontstaan van Natuurverhaal.nl</h1>
 
-            <p className="textStart">Natuurverhaal.nl is begonnen als eindproject voor de opleiding tot fullstack developer bij Novi Hogeschool. <br/>Ik kan dan ook niet anders dan 2 emoji`s toevoegen. 🍌🦄</p>
+            <p className="textStart">Natuurverhaal.nl is begonnen als eindproject voor de opleiding tot fullstack developer bij Novi Hogeschool. Ik kan dan ook niet anders dan 2 emoji`s toevoegen. 🍌🦄</p>
                 <br />
 
             <h4>Even voorstellen</h4>
 
             <p className="textStart">Ik ben Pim Schuitema, bijna afgestudeerd voor fullstack developer en daarnaast natuurliefhebber.
-            In mijn vrije tijd ben ik vaak met mijn camera in de bosjes te vinden opzoek naar wilde dieren.
-            Omdat ik niet altijd naar buiten ga vind ik mijn ontspanning regelmatig met het zoeken en lezen van natuurblogs. <br/>Vooral het vinden van natuurblogs ervaar ik als ingewikkeld. <br/><br/>
+            Omdat ik niet altijd naar buiten ga vind ik mijn ontspanning regelmatig met het zoeken en lezen van natuurblogs. Vooral het vinden van natuurblogs ervaar ik als ingewikkeld. <br/><br/>
             Zo kwam ik op het idee om een platform te maken waar mensen natuur blogs op kunnen schrijven. Omdat de natuurblogs van verschillende auteurs op het platform samenkomen is het makkelijker om ze te vinden.</p>
                 <br />
 
