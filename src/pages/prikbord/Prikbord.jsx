@@ -28,12 +28,13 @@ function Prikbord() {
                 )}
 
                 {isWriteBulletinVisible && (
+                    <>
+                        <h1>Test</h1>
 
-                    Test
-
-                    <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
+                        <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
                             Prikbord bericht plaatsen
                         </button>
+                    </>
                 )}
 
              <PrikbordOverview />
