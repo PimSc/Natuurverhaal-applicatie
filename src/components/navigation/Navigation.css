@@ -214,10 +214,8 @@ ul {
 
 
     /*Hamburger menu start*/
-
-    *,
-    *::after,
-    *::before {
+    .hamburgerEffect::after,
+    .hamburgerEffect::before {
         box-sizing: border-box;
     }
 

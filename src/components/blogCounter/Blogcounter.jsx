@@ -1,5 +1,5 @@
 import './BlogCounter.css';
-import posts from "../../constants/Blogs.json";
+import posts from "../../constants/BlogPosts.json";
 
 function BlogCounter() {
     {/*blogEdit counter*/}

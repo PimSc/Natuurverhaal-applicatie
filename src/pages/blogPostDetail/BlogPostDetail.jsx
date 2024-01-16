@@ -1,6 +1,6 @@
 import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
-import posts from '../../constants/Blogs.json';
+import posts from '../../constants/BlogPosts.json';
 import formatDateString from '../../helpers/formatDateString.js';
 import { CaretLeft, Clock } from "@phosphor-icons/react";
 
@@ -10,7 +10,7 @@ import { CaretLeft, Clock } from "@phosphor-icons/react";
 function BlogPostDetail() {
     const { id } = useParams();
 
-    const { title, readTime, subtitle, author, created, content, comments, shares } = posts.find((post) => {
+    const { title, readTime, subtitle, author, created, content,} = posts.find((post) => {
         return post.id.toString() === id;
     });
 
@@ -18,20 +18,20 @@ function BlogPostDetail() {
         <>
             <section className="outer-content-container">
                 <div className="inner-content-container">
-                    <div className="textContainer">
+                    <div className="textCenter">
                     <h1>{title}</h1>
-                    <h2>{subtitle}</h2>
-                    <p className="post-detail-author">Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
-                    <span className="post-detail-read-time">
+                        <br/>
+                    <h3>{subtitle}</h3>
+                        <div className="textStart">
+                        </div>
+                    <p>Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
                         <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>
-                    </span>
                     <br/>
                     <p>{content}</p>
-                    <p>{comments} reacties - {shares} keer gedeeld</p>
 
                     <Link to="/" className="back-link">
                         <br/>
-                        <p><CaretLeft color="#38E991" size={22} /> Terug naar de overzichtspagina</p>
+                        <button className="SimpleButtons"> Terug naar het blogs overzicht</button>
                         <br/>
                         <br/>
                     </Link>

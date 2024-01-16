@@ -18,19 +18,6 @@
     /*Border: 2px dashed blue;*/
 }
 
-.post-item {
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    border-radius: 4px;
-    background-color: var(--mainBackgroundColor);
-    padding: 16px;
-
-    flex-basis: 50px;
-    width: 80vw;
-    flex-grow: 1;
-    flex-shrink: 1;
-    /*Border: 2px solid orangered;*/
-}
 
 .post-content{
     color: black

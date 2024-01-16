@@ -5,7 +5,7 @@
 
 
 /*----------Basic information start----------*/
-* {padding: 0; margin: 0; box-sizing: border-box}
+* {padding: 0; margin: 0; }
 
 
 
@@ -163,12 +163,20 @@ button, select, textarea {
   font-family: inherit;
 }
 
-section {
-  text-align: center;
-}
-
 /*basic information end*/
 
+.SimpleButtons{
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0 0 20px 0;
+}
+
+.SimpleButtons{
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 0 0 20px 0;
+  font-family: var(--mainFont);
+}
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
@@ -178,7 +186,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 2px dashed purple;*/
+  /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
@@ -213,7 +221,6 @@ section {
   flex-direction: column;
   align-items: center;
   /*border: 2px dashed blue;*/
-  margin-bottom: 40px;
 }
 
 /*Extra Inner content container (column)*/
@@ -226,12 +233,25 @@ section {
 }
 
 /*Smalle inner container for text etc.*/
-.textContainer {
+.textStart {
+  display: flex;
+  flex-direction: column;
   max-width: 1100px;
   flex-shrink: 1;
   flex-grow: 0;
   align-items: flex-start;
-  /*border: 2px dashed green;*/
+  /*border: 1px dashed lightgreen;*/
+}
+
+/*Smalle inner container for text etc.*/
+.textCenter {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  flex-shrink: 1;
+  flex-grow: 0;
+  text-align: center;
+  /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -242,6 +262,19 @@ section {
   background-position: center center;
   background-size: cover;
   /*border: 2px dashed turquoise;*/
+}
+
+.post-item {
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  background-color: var(--mainBackgroundColor);
+  padding: 8px;
+  flex-basis: 50px;
+  width: 80vw;
+  flex-grow: 1;
+  flex-shrink: 1;
+  /*Border: 2px solid orangered;*/
 }
 
 .iconSmall{
