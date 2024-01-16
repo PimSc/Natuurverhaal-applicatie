@@ -25,7 +25,7 @@ function PrikbordPostDetail() {
                         <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>
 
                         <br/>
-                        <p className="textCenter">{content}</p>
+                        <p className="textStart">{content}</p>
                         <Link to="/prikbord" className="back-link">
                             <br/>
                             <button className="SimpleButtons"> Terug naar het prikbord overzicht</button>

@@ -1,6 +1,11 @@
 import './ExcursieAdmin.css';
  
 function ExcursieAdmin() {
+    const handleVersturenClick = () => {
+        // Plaats hier de logica voor het versturen van het bericht
+        console.log('Bericht wordt verstuurd...');
+    };
+
 
 return (
 <>
@@ -14,7 +19,7 @@ return (
     </div>
 
 
-
+        {/*<form onSubmit={handleSubmit}>*/}
     <label className="Input-Margin">
         Image: <br/>
         <textarea className="textAreaOneLine"
@@ -135,6 +140,10 @@ return (
     </label>
 
 <p>currentParticipants automatisch</p>
+
+        <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
+            Excursie <strong>plaatsen</strong> in het excursie overzicht
+        </button>
 
 </div>
 

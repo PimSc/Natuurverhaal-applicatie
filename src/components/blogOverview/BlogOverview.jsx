@@ -9,7 +9,7 @@ function BlogOverview() {
         <>
 
 
-            <section className="blogOverviewSection outer-content-container">
+            <section className="outer-content-container">
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {posts.map((post) => (
