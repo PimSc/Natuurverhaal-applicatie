@@ -15,7 +15,6 @@
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
     "react-helmet": "^6.1.0",
-    "react-quill": "^2.0.0",
     "react-router-dom": "^6.20.1"
   },
   "devDependencies": {
