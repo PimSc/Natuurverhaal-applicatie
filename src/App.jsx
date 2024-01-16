@@ -18,6 +18,7 @@ import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
 import PrikbordPostDetail from "./pages/prikbordPostDetail/PrikbordPostDetail.jsx";
 import BlogPostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 import ExcursiePostDetail from "./pages/excursiePostDetail/ExcursiePostDetail.jsx";
+import ExcursieAdmin from "./pages/excursieAdmin/ExcursieAdmin.jsx";
 
 function App() {
 
@@ -49,8 +50,7 @@ function App() {
             <Route path="//excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal |   Blog schrijven</title></Helmet><  WriteBlog /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
-
-
+            <Route path="/excursiesAdmin" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><ExcursieAdmin /></div>}/>
 
 
 
