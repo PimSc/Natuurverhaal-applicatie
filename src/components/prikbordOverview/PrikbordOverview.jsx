@@ -11,7 +11,7 @@ function PrikbordOverview() {
 
                     <div className="prikbordTextMargin textCenter">
                     <h1>Prikbord</h1>
-                    <p>Hier kan je een oproep doen aan alle gebruikers. <br/> je kan bijvoorbeeld een opzoek doen voor het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het beste insecten kan fotogrageren. </p>
+                    <p>Hier kan je een oproep doen aan alle gebruikers. <br/> Je kan bijvoorbeeld een opzoek doen voor het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het beste insecten kan fotogrageren. </p>
                 </div>
 
                     <ul className="post-list">
