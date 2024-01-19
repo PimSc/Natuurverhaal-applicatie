@@ -149,6 +149,8 @@ input {
   border: 1px solid var(--black);
   border-radius: 10px;
   font-size: var(--pFontSize);
+  font-family: var(--mainFont);
+  color: var(--black);
 }
 
 label {
