@@ -41,7 +41,6 @@ function Excursies() {
                             </div>
                         </div>
 
-
                         {/*box B (Row)*/}
                         <div className="excursionContentBox1" >
 

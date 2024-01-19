@@ -28,8 +28,12 @@ function Prikbord() {
                 )}
                 {isWriteBulletinVisible && (
                     <>
+                        <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
                         <h1>Prikbord bericht aanmaken</h1>
-                        <p>u kunt het venster groter maken in de rechter onderhoek</p>
+                        <p>Om een prikbord bericht te kunnen maken <strong>moet je ingelogd zijn.</strong></p>
+                        <p>je kan het venster groter maken in de rechter onderhoek</p>
+                        </div>
+
                         {/*<form onSubmit={handleSubmit}>*/}
 
                             <p>ID automatisch genereren</p>

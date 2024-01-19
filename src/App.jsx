@@ -18,6 +18,7 @@ import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
 import PrikbordPostDetail from "./pages/prikbordPostDetail/PrikbordPostDetail.jsx";
 import BlogPostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 import ExcursiePostDetail from "./pages/excursiePostDetail/ExcursiePostDetail.jsx";
+import ExcursieAdmin from "./pages/excursieAdmin/ExcursieAdmin.jsx";
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
 
-            {/*Pages in account dropdrop menu*/}
+            {/*Pages inside account dropdown menu*/}
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
             <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn Blogs</title></Helmet><MijnBlogs /></div>}/>
             <Route path="/Profiel" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><Profiel /></div>}/>
@@ -49,10 +50,7 @@ function App() {
             <Route path="//excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal |   Blog schrijven</title></Helmet><  WriteBlog /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
-
-
-
-
+            <Route path="/excursiesAdmin" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><ExcursieAdmin /></div>}/>
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>

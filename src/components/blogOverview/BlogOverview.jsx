@@ -9,15 +9,16 @@ function BlogOverview() {
         <>
 
 
-            <section className="blogOverviewSection outer-content-container">
+            <section className="outer-content-container">
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {posts.map((post) => (
                             <li key={post.id} className="post-item">
                                 <Link to={`/blogposts/${post.id}`} className="post-link">
                                     <h2 className="post-title">{post.title}</h2>
+                                    <p>{post.created}</p>
                                     <p>Geschreven door {post.author}</p>
-                                    <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
+
                                 </Link>
                             </li>
                         ))}

@@ -27,7 +27,7 @@ function BlogPostDetail() {
                     <p>Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
                         <p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>
                     <br/>
-                    <p>{content}</p>
+                    <p className="textStart">{content}</p>
 
                     <Link to="/" className="back-link">
                         <br/>
