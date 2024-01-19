@@ -46,7 +46,7 @@ nav ul a:visited {
 
 .mainNav{
     min-width: 100%;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
+    background-color: var(--white);
     font-family: var(--titleFont);
     display: flex;
     justify-content: center;
