@@ -5,7 +5,7 @@
 
 
 /*----------Basic information start----------*/
-* {padding: 0; margin: 0; }
+* {padding: 0; margin: 0; box-sizing: border-box}
 
 
 
@@ -105,11 +105,6 @@ i {
   font-size: 0.8em;
 }
 
-label {
-  color: var(--black);
-  font-family: var(--mainFont);
-}
-
 /*Background colors*/
 .mainBackground {
   background-color: var(--mainBackgroundColor);
@@ -145,18 +140,26 @@ font-family: var(--mainFont);
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-
-/*imput field layout*/
+/*input field layout*/
 input {
   background-color: var(--white);
   padding: 5px;
   border: 1px solid var(--black);
-  border-radius: 9px;
+  border-radius: 10px;
   font-size: var(--pFontSize);
 }
 
-.Input-Margin{
-  margin: 10px 0;
+label {
+  color: var(--black);
+  font-family: var(--mainFont);
+}
+
+input::file-selector-button {
+  border: var(--white);
+  background-color: var(--darkerGrey);
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-family: var(--mainFont);
 }
 
 textarea{
@@ -185,6 +188,7 @@ button, select, textarea {
   font-family: var(--mainFont);
 }
 
+
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
 /*Outer content container (Row)*/
@@ -206,7 +210,7 @@ button, select, textarea {
 
 /*Inner content container (Row)*/
 .inner-content-container {
-  /*margin: 0 20px;*/
+
   margin: 40px 40px;
   display: flex;
   flex-direction: row;
@@ -272,6 +276,7 @@ button, select, textarea {
   /*border: 2px dashed turquoise;*/
 }
 
+/*Container with styling for (blog) posts*/
 .post-item {
   text-align: center;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -285,6 +290,7 @@ button, select, textarea {
   Border: 1px solid hsla(0, 0%, 50%, 0.01);
 }
 
+/*Container to make icons small*/
 .iconSmall{
   width: 15px;
   height: 15px;
@@ -295,6 +301,7 @@ button, select, textarea {
 .textAreaOneLine{
   padding: 10px;
   width: 500px;
+  margin: 0 0 15px 0;
 }
 
 .textAreaStory{

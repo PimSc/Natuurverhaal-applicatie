@@ -12,44 +12,40 @@ return (
         <div className="loginOuterContainer">
             <div className="loginInnerContainer">
 
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
                         <label htmlFor="email"><b>Email</b></label>
                     </div>
-                    <input type="text" placeholder="Enter Email" name="email" id="email" required />
+                    <input type="email" placeholder="E-mail" name="email" id="email" required autoComplete="on"/>
                 </div>
 
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
                         <label htmlFor="username"><b>Gebruikersnaam</b></label>
                     </div>
-                    <input type="text" placeholder="Enter Username" name="username" id="username" required />
+                    <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required autoComplete="on"/>
                 </div>
 
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
-                        <label htmlFor="psw"><b>Wachtwoord</b></label>
+                        <label htmlFor="wachtwoord"><b>Wachtwoord</b></label>
                     </div>
-                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required />
+                    <input type="password" placeholder="Wachtwoord" name="wachtwoord" id="wachtwoord" required />
                 </div>
 
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
-                        <label htmlFor="psw-repeat"><b>Herhaal wachtwoord</b></label>
+                        <label htmlFor="herhaal-wachtwoord"><b>Herhaal wachtwoord</b></label>
                     </div>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required />
+                    <input type="password" placeholder="Herhaal wachtwoord" name="herhaal-wachtwoord" id="herhaal-wachtwoord" required />
                 </div>
 
-                <button className="registerButton2" type="button" >Registeren</button>
+                <button className="registerButton2" type="submit">Registreren</button>
 
             </div>
         </div>
-
         <hr />
-
-        <p>Door een account te maken zit je voor eeuwig vast aan onze <Link to="/TermsAndPrivacy">Voorwaarden</Link><p/>
-            {/* <button type="submit" className="registerbtn">Register</button> */}</p>
-
+        {/*<p>Door een account te maken zit je voor eeuwig vast aan onze <Link to="/TermsAndPrivacy">Voorwaarden</Link></p>*/}
     </form>
 
 
