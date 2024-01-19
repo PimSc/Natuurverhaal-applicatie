@@ -187,10 +187,12 @@ ul {
     /*Phone search bar visible and styling*/
     .phoneSearchBar{
         display: flex;
-        align-self: center;
-        margin-left: auto;
-        margin-right: 10px;
-        /*border: 3px solid red;*/
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100svw;
+        height: 100%;
+        border: 3px solid red;
     }
 
 

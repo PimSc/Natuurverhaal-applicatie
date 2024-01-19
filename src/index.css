@@ -32,14 +32,14 @@
 
 
   /*font-sizes start*/
-  --mainTitleFontSize: 5rem;
+  --mainTitleFontSize: 6.5rem;
   --h1FontSize: 2.2rem;
   --h2FontSize: 1.8rem;
   --h3FontSize: 1.6rem;
   --h4FontSize: 1.5rem;
   --h5FontSize: 1.2rem;
   --h6FontSize: 1rem;
-  --pFontSize: 1rem;
+  --pFontSize: 1.2rem;
   --navLinkSize: 1.5rem;
 
 
@@ -201,7 +201,7 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
@@ -209,7 +209,7 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed purple;
+  /*border: 2px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -219,7 +219,7 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed red;
+  /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
@@ -228,14 +228,14 @@ button, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px dashed green;
+  /*border: 5px dashed green;*/
 }
 /*Inner content container voor text fields*/
 .inner-content-container-textFields{
  display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -244,7 +244,7 @@ button, select, textarea {
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  border: 2px dashed turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -256,7 +256,7 @@ button, select, textarea {
   flex-grow: 0;
   text-align: start;
   align-items: flex-start;
-  border: 1px dashed lightgreen;
+  /*border: 1px dashed lightgreen;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -267,7 +267,7 @@ button, select, textarea {
   flex-shrink: 1;
   flex-grow: 0;
   text-align: center;
-  border: 3px dashed green;
+  /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -277,7 +277,7 @@ button, select, textarea {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 2px dashed turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*Container with styling for (blog) posts*/
@@ -318,20 +318,17 @@ button, select, textarea {
 
 
 
+
+
+
 /*Begin media query telefoon*/
 @media only screen and (max-width: 767px) {
 
-  /*font-sizes start*/
-  /*Edit texts*/
-  .homeTitle, .homeTitle:hover, .homeTitle:visited {
-    font-size: calc(var(--mainTitleFontSize) - 290%);
-    /*font-size: var(--mainTitleFontSize);*/
-  }
 
-    /*p {*/
-    /*  font-size: calc(var(--pFontSize) - 10%);*/
-    /*  !*font-size: var(--pFontSize);*!*/
-    /*}*/
+    p {
+      font-size: calc(var(--pFontSize) - 20%);
+      /*font-size: var(--pFontSize);*/
+    }
 
     h1 {
       font-size: calc(var(--h1FontSize) - 20%);
@@ -363,30 +360,25 @@ button, select, textarea {
     /*font-size: var(--h4FontSize);*/
   }
 
-  /*Aanpassen van de main title*/
-  .homeTitle, .homeTitle:hover, .homeTitle:visited {
-    margin: 20rem 0 2rem 3rem;
-  }
-
   /*imput field layout*/
   input {
     padding: 1px;
     font-size: calc(var(--pFontSize) - 10%);
   }
 
-
-
-  /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
-
-
-
-
-  /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
-
-
-
-  }
+}
 /*Einde media query telefoon*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
