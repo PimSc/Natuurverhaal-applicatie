@@ -44,7 +44,6 @@ input {
     flex-basis: 100vw;
     display: flex;
     flex-direction: row;
-    transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
     border-left: none;
@@ -214,12 +213,6 @@ ul {
 
 
     /*Hamburger menu start*/
-    .hamburgerEffect::after,
-    .hamburgerEffect::before {
-        box-sizing: border-box;
-    }
-
-
 
     :root {
         --bar-width: 60px;

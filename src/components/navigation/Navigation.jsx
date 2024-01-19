@@ -2,18 +2,11 @@ import './Navigation.css';
 import {Link, NavLink} from 'react-router-dom';
 import SearchBar from "./../searchBar/SearchBar.jsx"
 
-const handleLogout = () => {
-    // Hier komt de logica om uit te loggen
-
-    console.log('Gebruiker uitgelogd');
-};
-
 
 function Navigation() {
 
     return (
         <>
-<div className="outer-content-container">
         <div className="navContainerStickyTop">  {/*Sticky container*/}
 
             {/*Start main navigation bar (computer screen)*/}
@@ -24,15 +17,17 @@ function Navigation() {
                             <li><NavLink to="/Excursies" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink></li>
                             <li><NavLink to="/Prikbord" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink></li>
 
-                            <div className="dropdown">
+                            <li>
+                                <div className="dropdown">
                                 <button className="dropbtn">Account</button>
                                 <div className="dropdown-content">
-                                    <Link to="/login" >Login</Link>
-                                    <Link to="/mijnBlogs" >Blogs</Link>
-                                    <Link to="/Profiel" >Profiel</Link>
-                                    <Link to="/" >Uitloggen</Link>
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/mijnBlogs">Blogs</Link></li>
+                                    <li><Link to="/Profiel">Profiel</Link></li>
+                                    <li><Link to="/">Uitloggen</Link></li>
                                 </div>
                             </div>
+                            </li>
 
                             <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
                             <SearchBar />  {/*Searchbar component*/}
@@ -57,7 +52,7 @@ function Navigation() {
                     <li><NavLink to="/mijnBlogs" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink></li>
                     <li><NavLink to="/Profiel" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink></li>
                     <li><NavLink to="/Contact" className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink></li>
-                    <NavLink to="/" onClick={handleLogout} className={({ isActive }) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink>
                 </nav>
                 </aside>
 
@@ -66,7 +61,6 @@ function Navigation() {
             </div>
             </div>
         </div>
-</div>
         </>
     );
 }
