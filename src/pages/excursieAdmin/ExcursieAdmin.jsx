@@ -14,8 +14,8 @@ return (
 
         <div className="inner-content-container-column">
             <h1>Welkom admin</h1>
-        <h4>Maak hier een activiteit aan voor het overzicht</h4>
-            <p>of scroll naar onderen om een activiteit te verwijderen</p>
+        <h4>Maak hier een excursie aan voor het overzicht</h4>
+            <p>Een activiteit verwijderen kan in het algemene excursie overzicht</p>
     </div>
 
 
