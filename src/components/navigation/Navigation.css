@@ -1,15 +1,9 @@
 /*STYLING START*/
-a {
-    font-family: var(--mainFont);
-}
 
-.default-link {
-    font-size: var(--navLinkSize);
-}
 
-.active-link {
-    font-size: var(--navLinkSize);
-}
+
+
+
 
 nav ul a,
 nav ul a:visited {
@@ -17,6 +11,9 @@ nav ul a:visited {
     text-decoration: none;
 }
 
+.default-link {
+    font-size: var(--navLinkSize);
+}
 
 .default-link {
     border-bottom: 1px solid transparent;
@@ -26,25 +23,21 @@ nav ul a:visited {
     border-bottom: 1px solid black;
 }
 
-/*Search bar*/
-input {
-    color: var(--black);
-    font-family: var(--mainFont);
-    z-index: 5;
+.active-link {
+    font-size: var(--navLinkSize);
 }
 
 /*--STYLING END--*/
 
 /*LAYOUT START, (mag niet op center worden gezet!!!!) */
 .navContainerStickyTop {
-    background-color: var(--white);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
     position: sticky;
     top: 0; /* Stick to the top of the viewport */
     z-index: 10;
     flex-basis: 100vw;
     display: flex;
     flex-direction: row;
-    transition: .3s ease-in-out;
     height: 65px;
     Border: 2px solid var(--darkerGrey);
     border-left: none;
@@ -53,7 +46,6 @@ input {
 
 .mainNav{
     min-width: 100%;
-    background-color: var(--white);
     font-family: var(--titleFont);
     display: flex;
     justify-content: center;
@@ -195,10 +187,12 @@ ul {
     /*Phone search bar visible and styling*/
     .phoneSearchBar{
         display: flex;
-        align-self: center;
-        margin-left: auto;
-        margin-right: 10px;
-        /*border: 3px solid red;*/
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100svw;
+        height: 100%;
+        border: 3px solid red;
     }
 
 
@@ -214,12 +208,6 @@ ul {
 
 
     /*Hamburger menu start*/
-    .hamburgerEffect::after,
-    .hamburgerEffect::before {
-        box-sizing: border-box;
-    }
-
-
 
     :root {
         --bar-width: 60px;

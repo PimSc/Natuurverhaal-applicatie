@@ -15,8 +15,12 @@
     text-decoration: none;
     position: absolute;
     z-index: 2;
-    margin: 15rem 0 4rem 5rem;
+    margin-left: 0.5em;
+    align-self: end;
+    letter-spacing: 0.2rem;
 }
+
+
 
 .headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
@@ -32,6 +36,45 @@
 /*Layout end*/
 
 
+@media only screen and (max-width: 1200px) {
 
+    /*Natuurverhaal.nl Main Title*/
+    .homeTitle, .homeTitle:hover, .homeTitle:visited {
+        font-size: calc(var(--mainTitleFontSize) - 200%);
+        font-family: var(--titleFont);
+        color: var(--black);
+        text-decoration: none;
+        position: absolute;
+        z-index: 2;
+        letter-spacing: 0.05rem;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    /*Natuurverhaal.nl Main Title*/
+    .homeTitle, .homeTitle:hover, .homeTitle:visited {
+        font-size: calc(var(--mainTitleFontSize) - 480%);
+        font-family: var(--titleFont);
+        color: var(--black);
+        text-decoration: none;
+        position: absolute;
+        z-index: 2;
+        letter-spacing: 0.05rem;
+    }
+
+    .headerBg {
+        position: relative; /* Voeg position: relative toe aan het achtergrondelement */
+        background-image: url(./../../assets/websiteImages/headerimage.jpg);
+        display: flex;
+        flex-direction: row;
+        height: 250px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+}
 
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './Prikbord.css';
 import PrikbordOverview from "../../components/prikbordOverview/PrikbordOverview.jsx";
 
@@ -18,9 +18,12 @@ function Prikbord() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                    <button className="SimpleButtons" id="bulletinBoardButton1" type="button" onClick={toggleWriteBulletinVisibility}>
-                        {isWriteBulletinVisible ? 'Verberg' : 'Prikbord bericht aanmaken'}
-                    </button>
+
+                {/*Prikbord bericht aanmaken button*/}
+                <button className="SimpleButtons" id="bulletinBoardButton1" type="button"
+                        onClick={toggleWriteBulletinVisibility}>
+                    {isWriteBulletinVisible ? 'Verberg' : 'Prikbord bericht aanmaken'}
+                </button>
 
                 {isWriteBulletinVisible && (
                     <div className="inner-content-container-textFields">
@@ -29,44 +32,51 @@ function Prikbord() {
                 {isWriteBulletinVisible && (
                     <>
                         <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
-                        <h1>Prikbord bericht aanmaken</h1>
-                        <p>Om een prikbord bericht te kunnen maken <strong>moet je ingelogd zijn.</strong></p>
-                        <p>je kan het venster groter maken in de rechter onderhoek</p>
-                        </div>
+                            <h1>Prikbord bericht aanmaken</h1>
+                            <p>Om een prikbord bericht te kunnen maken <strong>moet je ingelogd zijn.</strong></p>
+                            <p>je kan het venster groter maken in de rechter onderhoek</p>
 
-                        {/*<form onSubmit={handleSubmit}>*/}
 
-                            <p>ID automatisch genereren</p>
 
-                            <label className="Input-Margin">
-                                Title: <br/>
-                                <textarea className="textAreaOneLine"
-                                    name="title"
-                                    // value={formData.title}
-                                    // onChange={handleChange}
-                                />
-                            </label>
+                        <p>ID automatisch genereren</p>
 
-                            <label className="Input-Margin">
-                                Content: <br/>
-                                <textarea className="textAreaStory"
-                                    name="content"
-                                    // value={formData.content}
-                                    // onChange={handleChange}
-                                />
-                            </label>
+                        <br/>
+
+                        <label className="textStart" htmlFor="title">
+                            <b>Title:</b>
+                        </label>
+                        <textarea className="textAreaOneLine"
+                                  placeholder="Korte pakkende titel"
+                                  name="title"
+                                  id="title"
+                                  autoComplete="on"
+                        />
+
+
+                        <label className="textStart" htmlFor="content">
+                            <b>Content:</b>
+                        </label>
+                        <textarea className="textAreaStory"
+                                  placeholder="Je bericht"
+                                  name="content"
+                                  id="content"
+                                  autoComplete="on"
+                        />
+
 
                         <p>Date automatisch genereren</p>
 
                         <p>Author automatisch genereren</p>
+                        </div>
 
-                        <button className="SimpleButtons" type="button" onClick={handleVersturenClick}>
+                        <button className="SimpleButtons" type="submit" onClick={handleVersturenClick}>
                             Prikbord bericht plaatsen
                         </button>
+
                     </>
                 )}
 
-             <PrikbordOverview />
+                <PrikbordOverview/>
             </div>
         </>
     );

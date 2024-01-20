@@ -14,39 +14,27 @@ return (
         <div className="loginOuterContainer">
             <div className="loginInnerContainer">
 
-                {/*<div className="inputField">*/}
-                {/*    <div className="labelTextLeft">*/}
-                {/*        <label htmlFor="email"><b>Email</b></label>*/}
-                {/*    </div>*/}
-                {/*    <input type="text" placeholder="Enter Email" name="email" id="email" required />*/}
-                {/*</div>*/}
-
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
                         <label htmlFor="username"><b>Gebruikersnaam</b></label>
                     </div>
-                    <input type="text" placeholder="Enter Username" name="username" id="username" required />
+                    <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required autoComplete="on"/>
                 </div>
 
-                <div className="inputField">
+                <div className="inputFieldmargin">
                     <div className="labelTextLeft">
-                        <label htmlFor="psw"><b>Wachtwoord</b></label>
+                        <label htmlFor="wachtwoord"><b>Wachtwoord</b></label>
                     </div>
-                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required />
+                    <input type="password" placeholder="Wachtwoord" name="wachtwoord" id="wachtwoord" required />
                 </div>
 
 
-
-                <button className="loginButton2" type="button" >Inloggen</button>
+                <button className="registerButton2" type="submit">Inloggen</button>
 
             </div>
         </div>
-
         <hr />
-
-        <p>Wachtwoord  <Link to="/TermsAndPrivacy">resetten</Link><p/>
-            {/* <button type="submit" className="registerbtn">Register</button> */}</p>
-
+        {/*<p>Wachtwoord  <Link to="/TermsAndPrivacy">resetten</Link></p>*/}
     </form>
 
 </>
