@@ -40,13 +40,6 @@
     /*border: 2px solid red;*/
 }
 
-/*input field labels*/
-.labelTextLeft {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    /*border: 2px solid #8b4208;*/
-}
 
 /*input field labels*/
 .loginScreen label, input {
@@ -55,7 +48,7 @@
     display: block;
 }
 
-.inputFieldmargin{
+.inputFieldMargin{
     margin: 10px;
     /*border: 2px solid green;*/
 }

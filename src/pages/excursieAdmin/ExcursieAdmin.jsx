@@ -28,10 +28,9 @@ function ExcursieAdmin() {
                                 <input
                                     className="textAreaOneLine"
                                     type="file"
+                                    accept=".jpg, .jpeg, .png"
                                     name="image"
-                                    accept="image/*"
                                     id="image"
-                                    autoComplete="on"
 
                                 />
 

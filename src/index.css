@@ -152,6 +152,9 @@ input {
   font-family: var(--mainFont);
   color: var(--black);
 }
+textarea{
+  padding: 5px;
+}
 
 label {
   color: var(--black);
@@ -314,7 +317,18 @@ button, select, textarea {
   height: 400px;
 }
 
+/*input field labels*/
+.labelTextLeft {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  /*border: 2px solid #8b4208;*/
+}
 
+/*Maakt elke profiel foto rond :D*/
+.profilePictureCircle{
+  border-radius: 50px;
+}
 
 
 
