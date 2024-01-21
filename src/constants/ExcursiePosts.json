@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "./../../../public/assets/websiteImages/squirrelPhoto.jpg",
+    "image": "../../../public/assets/websiteImages/squirrelPhoto.jpg",
     "caption": "eekhoorn test",
     "title": "Opzoek naar eekhoorns",
     "subtitle": "Opzoek naar 2 soorten eekhoorns, leerzame excursie",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "image": "./../../../public/assets/websiteImages/kingfisherPhoto.jpg",
+    "image": "../../../public/assets/websiteImages/kingfisherPhoto.jpg",
     "caption": "eekhoorn",
     "title": "Vogels in de Amsterdamse waterleidingduinen",
     "subtitle": "Opzoek naar vogelsoorten in en rondom het water, leerzame excursie",
@@ -37,7 +37,7 @@
   },
   {
     "id": 3,
-    "image": "./../../../public/assets/websiteImages/foxPhoto.jpg",
+    "image": "../../../public/assets/websiteImages/foxPhoto.jpg",
     "caption": "Vossen spotten in de duinen",
     "title": "Ontmoeten en fotograferen van vossen in het duingebied",
     "subtitle": "Excursie voor natuurliefhebbers en fotograven",
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "image":  "./../../../public/assets/websiteImages/owlPhoto.jpg",
+    "image":  "../../../public/assets/websiteImages/owlPhoto.jpg",
     "caption": "Een uil in de nacht",
     "title": "Opzoek naar de uil",
     "subtitle": "Excursie voor natuurliefhebbers",
@@ -72,7 +72,7 @@
   },
   {
     "id": 5,
-    "image":"./../../../public/assets/websiteImages/haasPhoto.jpg",
+    "image":"../../../public/assets/websiteImages/haasPhoto.jpg",
     "caption": "Hazen in het buitengebied",
     "title": "Hazen wandeling in het buitengebied",
     "subtitle": "Excursie voor natuurliefhebbers",
@@ -90,7 +90,7 @@
   },
   {
     "id": 6,
-    "image":  "./../../../public/assets/websiteImages/horsesPhoto.jpg",
+    "image":  "../../../public/assets/websiteImages/horsesPhoto.jpg",
     "caption":  "silhouetten van paarden tijdens onsondergang",
     "title": "silhouetten van paarden fotograferen tijdens zonsondergang",
     "subtitle": "Excursie voor fotograven",
