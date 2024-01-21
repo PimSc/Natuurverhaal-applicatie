@@ -1,6 +1,6 @@
 import './Excursies.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
-import AdderPhoto from "../../assets/websiteImages/AdderPhoto.jpg"
+import AdderPhoto from "./../../../public/assets/websiteImages/AdderPhoto.jpg"
 import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx"; // Excursie component
 
 

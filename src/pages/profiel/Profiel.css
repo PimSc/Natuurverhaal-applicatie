@@ -29,7 +29,6 @@
     /*border: 5px solid greenyellow;*/
 }
 
-
 .ProfileEditBox3{
     width: 50px;
     min-height: 200px;
@@ -88,12 +87,6 @@ justify-content: center;
 /*------Icon overlay tekst End------*/
 
 
-
-
-
-
-
-
 /*STYLING END*/
 
 
@@ -104,3 +97,77 @@ justify-content: center;
 
 
 /*LAYOUT END*/
+
+
+@media only screen and (max-width: 767px) {
+    .ProfileEditBox1{
+        width: 90px;
+        min-height: 200px;
+        /*border: 5px solid red;*/
+    }
+
+    .ProfileEditBox2{
+        width: 200px;
+        min-height: 200px;
+        /*border: 5px solid greenyellow;*/
+    }
+
+    .ProfileEditBox3{
+        width: 50px;
+        min-height: 200px;
+        padding: 10px;
+        /*border: 5px solid grey;*/
+    }
+
+    .profilePageProfileImageContainer{
+        width: 80px;
+        height: 80px;
+    }
+
+    /*------Icon overlay tekst------*/
+
+    .iconContainer {
+        position: relative;
+        display: inline-block;
+    }
+
+    .iconOverlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: auto;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border: 1px solid var(--darkerGrey);
+        border-radius: 10px;
+        padding: 15px;
+        pointer-events: none;
+    }
+
+    .closeButton {
+        cursor: pointer;
+        align-self: flex-end;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .iconContainer:hover .iconOverlay {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .ProfilePictureUpload {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    /*------Icon overlay tekst End------*/
+
+}

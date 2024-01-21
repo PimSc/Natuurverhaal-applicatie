@@ -204,15 +204,15 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  border: 5px dashed purple;
+  /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -222,7 +222,7 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed red;
+  /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
@@ -231,14 +231,14 @@ button, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px dashed green;
+  /*border: 5px dashed green;*/
 }
 /*Inner content container voor text fields*/
 .inner-content-container-textFields{
  display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -247,7 +247,7 @@ button, select, textarea {
   flex-direction: column;
   width: fit-content;
   height: fit-content;
-  border: 2px dashed turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -259,7 +259,7 @@ button, select, textarea {
   flex-grow: 0;
   text-align: start;
   align-items: flex-start;
-  border: 1px dashed lightgreen;
+  /*border: 1px dashed lightgreen;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -267,10 +267,8 @@ button, select, textarea {
   display: flex;
   flex-direction: column;
   max-width: 1100px;
-  flex-shrink: 1;
-  flex-grow: 0;
   text-align: center;
-  border: 3px dashed green;
+  /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -280,7 +278,7 @@ button, select, textarea {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 2px dashed turquoise;
+  /*border: 2px dashed turquoise;*/
 }
 
 /*Container with styling for (blog) posts*/
@@ -380,10 +378,28 @@ button, select, textarea {
     font-size: calc(var(--pFontSize) - 10%);
   }
 
+  .textAreaOneLine{
+    padding: 10px;
+    width: 290px;
+    margin: 0 0 15px 0;
+  }
 
+  .textAreaStory{
+    padding: 10px;
+    width: 290px;
+    height: 400px;
+  }
 
+  .textCenter {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: center;
+  }
 
-
+  .inputSize {
+    width: 170px;
+  }
 
 }
 /*Einde media query telefoon*/

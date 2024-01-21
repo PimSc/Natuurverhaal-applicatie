@@ -82,7 +82,7 @@
         width: 300px;
         height: 300px;
         overflow: hidden;
-        border: 3px dashed hotpink;
+        /*border: 3px dashed hotpink;*/
     }
 
 
@@ -91,14 +91,14 @@
         overflow: hidden;
         width: 250px;
         height: 250px;
-        border: 3px dashed hotpink;
+        /*border: 3px dashed hotpink;*/
     }
 
 
     /*image inside the box*/
     .excursieImageBox img {
         object-fit: cover;
-        border: 3px solid hotpink;
+        /*border: 3px solid hotpink;*/
     }
     /*---------------------*/
 
