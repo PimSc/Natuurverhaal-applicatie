@@ -1,5 +1,7 @@
 import './Profiel.css';
 import question from "./../../../public/assets/icons/question-icon.png"
+import profiles from '../../constants/Profile.json';
+
 
 
 function Profiel() {
@@ -39,9 +41,11 @@ function Profiel() {
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
 
-                                <div className="profilePageProfileImageContainer">
-                                {/*<img className="profilePictureCircle" src={profilePicture} alt={caption}/>*/}
+                                {profiles.map((profile) => (
+                                <div className="profilePageProfileImageContainer" key={profile.id}>
+                                        <img className="profilePictureCircle" src={profile.profileImage} alt={profile.caption}/>
                                 </div>
+                                ))}
                             </div>
 
                             {/*Middelste rij verticaal*/}
