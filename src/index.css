@@ -395,7 +395,6 @@ button, select, textarea {
     flex-direction: column;
     max-width: 300px;
     text-align: center;
-    border: 3px dashed green;
   }
 
   .inputSize {
