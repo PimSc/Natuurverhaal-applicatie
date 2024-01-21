@@ -10,10 +10,11 @@ function MijnBlogs() {
                 <div className="inner-content-container-column">
 
                     <button className="SimpleButtons" id="WriteBlogButton" type="submit" onClick="">
-                        Blog schrijven
+                        <strong>Blog schrijven</strong>
                     </button>
+
                     <br/>
-                    <h1 id="myBlogsTitleMargin">Mijn blogs</h1>
+                    <h1>Mijn blogs</h1>
                     <BlogOverview />
 
 
