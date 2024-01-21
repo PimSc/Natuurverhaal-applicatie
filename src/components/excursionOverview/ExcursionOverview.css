@@ -14,8 +14,8 @@
 /*actual image box*/
 .excursieImageBox{
     overflow: hidden;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 /*image inside the box*/
@@ -50,7 +50,7 @@
     background-color: var(--mainBackgroundColor);
     padding: 8px;
     flex-basis: 50px;
-    max-width: 80vw;
+    max-width: 60vw;
     flex-grow: 1;
     flex-shrink: 1;
     /*Border: 2px solid orangered;*/
