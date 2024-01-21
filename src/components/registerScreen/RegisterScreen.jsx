@@ -12,28 +12,28 @@ return (
         <div className="loginOuterContainer">
             <div className="loginInnerContainer">
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="email"><b>Email</b></label>
                     </div>
                     <input type="email" placeholder="E-mail" name="email" id="email" required autoComplete="on"/>
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="username"><b>Gebruikersnaam</b></label>
                     </div>
                     <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required autoComplete="on"/>
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="wachtwoord"><b>Wachtwoord</b></label>
                     </div>
                     <input type="password" placeholder="Wachtwoord" name="wachtwoord" id="wachtwoord" required />
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="herhaal-wachtwoord"><b>Herhaal wachtwoord</b></label>
                     </div>

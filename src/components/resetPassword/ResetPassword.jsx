@@ -13,28 +13,28 @@ return (
         <div className="loginOuterContainer">
             <div className="loginInnerContainer">
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="email"><b>Email</b></label>
                     </div>
                     <input type="text" placeholder="Enter Email" name="email" id="email" required />
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="username"><b>Gebruikersnaam</b></label>
                     </div>
                     <input type="text" placeholder="Enter Username" name="username" id="username" required />
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="psw"><b>Wachtwoord</b></label>
                     </div>
                     <input type="password" placeholder="Enter Password" name="psw" id="psw" required />
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="psw-repeat"><b>Herhaal wachtwoord</b></label>
                     </div>

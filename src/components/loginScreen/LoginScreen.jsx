@@ -14,14 +14,14 @@ return (
         <div className="loginOuterContainer">
             <div className="loginInnerContainer">
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="username"><b>Gebruikersnaam</b></label>
                     </div>
                     <input type="text" placeholder="Gebruikersnaam" name="username" id="username" required autoComplete="on"/>
                 </div>
 
-                <div className="inputFieldmargin">
+                <div className="inputFieldMargin">
                     <div className="labelTextLeft">
                         <label htmlFor="wachtwoord"><b>Wachtwoord</b></label>
                     </div>

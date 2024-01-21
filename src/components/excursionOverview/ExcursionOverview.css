@@ -3,20 +3,25 @@
 /*----------Image part-----------*/
 /*images outer box*/
 .excursieBox1{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /*border: 2px solid darkolivegreen;*/
 }
 
 /*actual image box*/
 .excursieImageBox{
     overflow: hidden;
+    width: 300px;
+    height: 300px;
 }
 
 /*image inside the box*/
 .excursieImageBox img {
-    min-width: 300px;
-    min-height: 300px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 /*---------------------*/
@@ -45,7 +50,7 @@
     background-color: var(--mainBackgroundColor);
     padding: 8px;
     flex-basis: 50px;
-    width: 80vw;
+    max-width: 80vw;
     flex-grow: 1;
     flex-shrink: 1;
     /*Border: 2px solid orangered;*/
@@ -76,19 +81,24 @@
     .excursieBox1{
         width: 300px;
         height: 300px;
-        /*border: 2px solid darkolivegreen;*/
+        overflow: hidden;
+        border: 3px dashed hotpink;
     }
+
 
     /*actual image box*/
     .excursieImageBox{
         overflow: hidden;
+        width: 250px;
+        height: 250px;
+        border: 3px dashed hotpink;
     }
+
 
     /*image inside the box*/
     .excursieImageBox img {
-        min-width: 300px;
-        min-height: 300px;
         object-fit: cover;
+        border: 3px solid hotpink;
     }
     /*---------------------*/
 
