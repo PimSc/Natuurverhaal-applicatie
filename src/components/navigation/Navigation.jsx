@@ -31,7 +31,7 @@ function Navigation() {
                                 <div className="dropdown-content">
                                     <li><Link to="/login">Login</Link></li>
                                     <li><Link to="/mijnBlogs">Blogs</Link></li>
-                                    <li><Link to="/Profiel">Profiel</Link></li>
+                                    <li><Link to="/ProfileEdit">Profiel</Link></li>
                                     <li><Link to="/">Uitloggen</Link></li>
                                 </div>
                             </div>
@@ -72,8 +72,8 @@ function Navigation() {
                             <li><NavLink to="/mijnBlogs"
                                          className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Blogs</NavLink>
                             </li>
-                            <li><NavLink to="/Profiel"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink>
+                            <li><NavLink to="/ProfileEdit"
+                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>ProfileEdit</NavLink>
                             </li>
                             <li><NavLink to="/Contact"
                                          className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink>

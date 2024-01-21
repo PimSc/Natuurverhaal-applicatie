@@ -31,6 +31,11 @@ function Prikbord() {
                 )}
                 {isWriteBulletinVisible && (
                     <>
+
+                        <button className="SimpleButtons" type="submit" onClick={handleVersturenClick}>
+                            Prikbord bericht plaatsen
+                        </button>
+
                         <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
                             <h1>Prikbord bericht aanmaken</h1>
                             <p>Om een prikbord bericht te kunnen maken <strong>moet je ingelogd zijn.</strong></p>
@@ -68,9 +73,7 @@ function Prikbord() {
                             <p>Author automatisch genereren</p>
                         </div>
 
-                        <button className="SimpleButtons" type="submit" onClick={handleVersturenClick}>
-                            Prikbord bericht plaatsen
-                        </button>
+
 
                     </>
                 )}

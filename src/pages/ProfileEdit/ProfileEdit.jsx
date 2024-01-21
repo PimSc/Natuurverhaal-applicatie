@@ -1,10 +1,10 @@
-import './Profiel.css';
+import './ProfileEdit.css';
 import question from "./../../../public/assets/icons/question-icon.png"
 import profiles from '../../constants/Profile.json';
 
 
 
-function Profiel() {
+function ProfileEdit() {
 
     const handleFileChange = (event) => {
         const selectedFile = event.target.files[0];
@@ -173,4 +173,4 @@ function Profiel() {
     );
 }
 
-export default Profiel;
+export default ProfileEdit;

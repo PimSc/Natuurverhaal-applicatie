@@ -13,12 +13,13 @@ import Header from "./components/header/Header.jsx";
 import TermsAndPrivacy from "./pages/termsAndPrivacy/TermsAndPrivacy.jsx";
 import Prikbord from "./pages/prikbord/Prikbord.jsx";
 import MijnBlogs from "./pages/mijnBlogs/MijnBlogs.jsx";
-import Profiel from "./pages/profiel/Profiel.jsx";
-import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
+import ProfileEdit from "./pages/ProfileEdit/ProfileEdit.jsx";
 import PrikbordPostDetail from "./pages/prikbordPostDetail/PrikbordPostDetail.jsx";
 import BlogPostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 import ExcursiePostDetail from "./pages/excursiePostDetail/ExcursiePostDetail.jsx";
 import ExcursieAdmin from "./pages/excursieAdmin/ExcursieAdmin.jsx";
+import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
+import ProfileDetail from "./pages/profileDetail/ProfileDetail.jsx";
 
 function App() {
 
@@ -42,15 +43,16 @@ function App() {
             {/*Pages inside account dropdown menu*/}
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
             <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn Blogs</title></Helmet><MijnBlogs /></div>}/>
-            <Route path="/Profiel" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><Profiel /></div>}/>
+            <Route path="/ProfileEdit" element={<div><Helmet><title>Natuurverhaal | ProfileEdit</title></Helmet><ProfileEdit /></div>}/>
 
             {/*Pages outside the nav*/}
             <Route path="//blogposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><BlogPostDetail /></div>}/>
             <Route path="//prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
             <Route path="//excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
-            <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal |   Blog schrijven</title></Helmet><  WriteBlog /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
-            <Route path="/excursiesAdmin" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><ExcursieAdmin /></div>}/>
+            <Route path="/excursiesAdmin" element={<ExcursieAdmin/>}/>
+            <Route path="/ProfileDetail" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail /></div>}/>
+            <Route path="/WriteBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>
