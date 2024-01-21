@@ -2,12 +2,12 @@ import './ExcursionOverview.css';
 import {Link} from "react-router-dom";
 import excursies from '../../constants/ExcursiePosts.json';
 
-import calendarIcon from "./../../assets/icons/calendar-icon.png";
-import clockIcon from "./../../assets/icons/clock-icon.png";
-import locationIcon from "./../../assets/icons/location-icon.png";
-import animalIcon from "./../../assets/icons/animal-icon.png";
-import guideIcon from "./../../assets/icons/guide-icon.png";
-import plusIcon from "./../../assets/icons/plus-icon.png";
+import calendarIcon from "./../../../public/assets/icons/calendar-icon.png";
+import clockIcon from "./../../../public/assets/icons/clock-icon.png";
+import locationIcon from "./../../../public/assets/icons/location-icon.png";
+import animalIcon from "./../../../public/assets/icons/animal-icon.png";
+import guideIcon from "./../../../public/assets/icons/guide-icon.png";
+import plusIcon from "./../../../public/assets/icons/plus-icon.png";
 
 function ExcursionOverview() {
     return (

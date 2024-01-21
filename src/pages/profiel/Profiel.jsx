@@ -1,5 +1,5 @@
 import './Profiel.css';
-import question from "../../assets/icons/question-icon.png"
+import question from "./../../../public/assets/icons/question-icon.png"
 
 
 function Profiel() {
