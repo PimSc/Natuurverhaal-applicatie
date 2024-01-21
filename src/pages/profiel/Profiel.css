@@ -14,26 +14,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 .ProfileEditBox1{
     width: 200px;
     min-height: 200px;
-    border: 5px solid red;
+    /*border: 5px solid red;*/
 }
 
 .ProfileEditBox2{
     width: 400px;
     min-height: 200px;
-    border: 5px solid greenyellow;
+    /*border: 5px solid greenyellow;*/
 }
 
 .ProfileEditBox3{
     width: 50px;
     min-height: 200px;
     padding: 10px;
-    border: 5px solid grey;
+    /*border: 5px solid grey;*/
 }
 
 .ProfileEditBox3 > i{
@@ -103,20 +103,20 @@ justify-content: center;
     .ProfileEditBox1{
         width: 90px;
         min-height: 200px;
-        border: 5px solid red;
+        /*border: 5px solid red;*/
     }
 
     .ProfileEditBox2{
         width: 200px;
         min-height: 200px;
-        border: 5px solid greenyellow;
+        /*border: 5px solid greenyellow;*/
     }
 
     .ProfileEditBox3{
         width: 50px;
         min-height: 200px;
         padding: 10px;
-        border: 5px solid grey;
+        /*border: 5px solid grey;*/
     }
 
     .profilePageProfileImageContainer{
