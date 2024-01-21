@@ -46,7 +46,7 @@ function Prikbord() {
                                     <b>Title:</b>
                                 </label>
                                 <textarea className="textAreaOneLine"
-                                          placeholder="Korte pakkende titel"
+                                          placeholder="Titel"
                                           name="title"
                                           id="title"
                                           autoComplete="on"
