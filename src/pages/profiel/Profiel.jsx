@@ -39,8 +39,9 @@ function Profiel() {
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
 
+                                <div className="profilePageProfileImageContainer">
                                 <img className="profilePictureCircle" src={profilePicture} alt=""/>
-
+                                </div>
                             </div>
 
                             {/*Middelste rij verticaal*/}
@@ -87,15 +88,15 @@ function Profiel() {
                             {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
                                 <label htmlFor="email"></label>
-                                <input type="email" placeholder="E-mail (openbaar)" name="email" id="email" required
+                                <input className="inputSize" type="email" placeholder="E-mail" name="email" id="email" required
                                        autoComplete="on"/>
                                 <br/>
                                 <label htmlFor="name"> </label>
-                                <input type="text" placeholder="Naam (openbaar)" name="name" id="name" required
+                                <input className="inputSize" type="text" placeholder="Naam" name="name" id="name" required
                                        autoComplete="on"/>
                                 <br/>
                                 <label htmlFor="regio"> </label>
-                                <input type="text" placeholder="Regio (openbaar)" name="regio" id="regio" required
+                                <input className="inputSize" type="text" placeholder="Regio" name="regio" id="regio" required
                                        autoComplete="on"/>
                                 <br/>
                             </div>
@@ -136,7 +137,7 @@ function Profiel() {
                             {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
                                 <label htmlFor="biografie"> </label>
-                                <textarea className="biografieTextField" placeholder="biografie (openbaar)"
+                                <textarea className="biografieTextField inputSize" placeholder="biografie (openbaar)"
                                           name="biografie"
                                           id="biografie" required autoComplete="on"/>
                                 <br/>

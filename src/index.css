@@ -398,6 +398,9 @@ button, select, textarea {
     border: 3px dashed green;
   }
 
+  .inputSize {
+    width: 170px;
+  }
 
 }
 /*Einde media query telefoon*/
