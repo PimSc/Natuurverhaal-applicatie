@@ -165,7 +165,7 @@ justify-content: center;
 
     .ProfilePictureUpload {
         max-width: 200px;
-        width: 100%; /* Zorg ervoor dat de breedte 100% blijft, maar niet meer dan 200px */
+        width: 100%;
     }
 
     /*------Icon overlay tekst End------*/

@@ -1,6 +1,6 @@
 import './Profiel.css';
 import question from "../../assets/icons/question-icon.png"
-import profilePicture from "../../../public/assets/profilePictures/ProfielFotoKat 100x100.jpg"
+
 
 function Profiel() {
 
@@ -40,7 +40,7 @@ function Profiel() {
                                 <p>profiel foto</p>
 
                                 <div className="profilePageProfileImageContainer">
-                                <img className="profilePictureCircle" src={profilePicture} alt=""/>
+                                {/*<img className="profilePictureCircle" src={profilePicture} alt={caption}/>*/}
                                 </div>
                             </div>
 
@@ -88,15 +88,15 @@ function Profiel() {
                             {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
                                 <label htmlFor="email"></label>
-                                <input className="inputSize" type="email" placeholder="E-mail" name="email" id="email" required
+                                <input className="inputSize" type="email" placeholder="E-mail" name="email" id="email"
                                        autoComplete="on"/>
                                 <br/>
                                 <label htmlFor="name"> </label>
-                                <input className="inputSize" type="text" placeholder="Naam" name="name" id="name" required
+                                <input className="inputSize" type="text" placeholder="Naam" name="name" id="name"
                                        autoComplete="on"/>
                                 <br/>
                                 <label htmlFor="regio"> </label>
-                                <input className="inputSize" type="text" placeholder="Regio" name="regio" id="regio" required
+                                <input className="inputSize" type="text" placeholder="Regio" name="regio" id="regio"
                                        autoComplete="on"/>
                                 <br/>
                             </div>
@@ -139,7 +139,7 @@ function Profiel() {
                                 <label htmlFor="biografie"> </label>
                                 <textarea className="biografieTextField inputSize" placeholder="biografie (openbaar)"
                                           name="biografie"
-                                          id="biografie" required autoComplete="on"/>
+                                          id="biografie" autoComplete="on"/>
                                 <br/>
                             </div>
 
