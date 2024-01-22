@@ -8,7 +8,7 @@ function Home() {
         <>
 
 
-            <BlogCounter />
+            {/*<BlogCounter />*/}
             <BlogOverview />
 
 

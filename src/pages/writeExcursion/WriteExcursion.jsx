@@ -1,4 +1,5 @@
 import './WriteExcursion.css';
+import {Link} from "react-router-dom";
 
 function WriteExcursion() {
 
@@ -15,6 +16,12 @@ function WriteExcursion() {
                         <h1>Welkom admin</h1>
                         <h4>Maak hier een excursie aan voor het overzicht</h4>
                         <p>Een activiteit verwijderen kan in het algemene excursie overzicht</p>
+                    </div>
+
+                    <div className="elementCenterContainer">
+                        <button className="excursionAdminButton" id="" type="button">
+                            <Link to="/excursies">Terug naar de excursie pagina</Link>
+                        </button>
                     </div>
 
                     <div className="textCenter">
@@ -171,7 +178,8 @@ function WriteExcursion() {
                             </div>
 
                             <button className="SimpleButtons" type="submit">
-                                Excursie <strong>plaatsen</strong> in het excursie overzicht
+                                <Link to="/excursies">Excursie <strong>plaatsen</strong> in het excursie overzicht</Link>
+
                             </button>
 
                         </form>
