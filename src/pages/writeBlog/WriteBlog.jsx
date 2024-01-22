@@ -27,18 +27,6 @@ function WriteBlog() {
 
                         <p>image</p>
 
-                        {/*Caption*/}
-                        <label className="textStart" htmlFor="title">
-                            <b>Caption:</b>
-                        </label>
-                        <textarea className="textAreaOneLine"
-                                  placeholder="Afbeelding omschrijving"
-                                  name="title"
-                                  id="title"
-                                  autoComplete="on"
-                                  required
-                        />
-
                         {/*Title*/}
                         <label className="textStart" htmlFor="title">
                             <b>Titel:</b>
@@ -57,6 +45,29 @@ function WriteBlog() {
                         </label>
                         <textarea className="textAreaOneLine"
                                   placeholder="Ondertitel"
+                                  name="title"
+                                  id="title"
+                                  autoComplete="on"
+                                  required
+                        />
+
+                        <label className="textStart" htmlFor="image">
+                            <b>Afbeelding:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            type="file"
+                            accept=".jpg, .jpeg, .png"
+                            name="image"
+                            id="image"
+                        />
+
+                        {/*Caption*/}
+                        <label className="textStart" htmlFor="title">
+                            <b>Caption:</b>
+                        </label>
+                        <textarea className="textAreaOneLine"
+                                  placeholder="Afbeelding omschrijving"
                                   name="title"
                                   id="title"
                                   autoComplete="on"

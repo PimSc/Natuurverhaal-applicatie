@@ -13,7 +13,6 @@ function Prikbord() {
 
                 <button className="SimpleButtons" id="bulletinBoardButton1" type="button">
                     <Link to="/WriteBulletin"><strong>Prikbord bericht aanmaken</strong></Link>
-
                 </button>
 
                 <PrikbordOverview/>

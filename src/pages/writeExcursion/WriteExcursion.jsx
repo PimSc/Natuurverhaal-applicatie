@@ -1,6 +1,6 @@
-import './ExcursieAdmin.css';
+import './WriteExcursion.css';
 
-function ExcursieAdmin() {
+function WriteExcursion() {
 
 
 
@@ -183,4 +183,4 @@ function ExcursieAdmin() {
     );
 }
 
-export default ExcursieAdmin;
+export default WriteExcursion;
