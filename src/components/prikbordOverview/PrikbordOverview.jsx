@@ -19,7 +19,7 @@ function PrikbordOverview() {
                             <li key={post.id} className="post-item">
                                 <Link to={`/prikbordPosts/${post.id}`} className="post-link">
                                     <h2 className="post-title">{post.title}</h2>
-                                    <p>Geschreven door {post.author}</p>
+                                    <p>Auteur:  {post.author}</p>
                                     <i className="iGrey">Datum - {post.created}</i>
                                 </Link>
                             </li>

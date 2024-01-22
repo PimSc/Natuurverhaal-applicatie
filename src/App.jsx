@@ -17,9 +17,10 @@ import ProfileEdit from "./pages/ProfileEdit/ProfileEdit.jsx";
 import PrikbordPostDetail from "./pages/prikbordPostDetail/PrikbordPostDetail.jsx";
 import BlogPostDetail from "./pages/blogPostDetail/BlogPostDetail.jsx";
 import ExcursiePostDetail from "./pages/excursiePostDetail/ExcursiePostDetail.jsx";
-import ExcursieAdmin from "./pages/excursieAdmin/ExcursieAdmin.jsx";
+import WriteExcursion from "./pages/writeExcursion/WriteExcursion.jsx";
 import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
 import ProfileDetail from "./pages/profileDetail/ProfileDetail.jsx";
+import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 
 function App() {
 
@@ -50,9 +51,10 @@ function App() {
             <Route path="//prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
             <Route path="//excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
-            <Route path="/excursiesAdmin" element={<ExcursieAdmin/>}/>
+            <Route path="/writeExcursion" element={<WriteExcursion/>}/>
             <Route path="/ProfileDetail" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail /></div>}/>
-            <Route path="/WriteBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>
+            <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>
+            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBulletin /></div>}/>
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>
