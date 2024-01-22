@@ -15,8 +15,8 @@ function ExcursionOverview() {
 
 
 
-<div className="outer-content-container-column">
-    <div className="inner-content-container-column">
+
+    <div className="inner-excursionContent-container">
     {excursies.map((excursie) => (
         <Link to={`/excursiePosts/${excursie.id}`} key={excursie.id}>
 
@@ -61,7 +61,6 @@ function ExcursionOverview() {
         </Link>
     ))}
 
-</div>
 </div>
 
 
