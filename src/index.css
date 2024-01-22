@@ -328,7 +328,7 @@ button, select, textarea {
   border-radius: 50px;
 }
 
-.buttonCenterContainer{
+.elementCenterContainer{
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,7 +1,7 @@
 import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import posts from '../../constants/BlogPosts.json';
-import formatDateString from '../../helpers/formatDateString.js';
+import formatDateString from '../../helpers/formatDateString.jsx';
 import { CaretLeft, Clock } from "@phosphor-icons/react";
 
 
