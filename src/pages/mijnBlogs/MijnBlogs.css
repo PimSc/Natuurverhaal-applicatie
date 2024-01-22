@@ -1,28 +1,26 @@
 /*STYLING START*/
 #WriteBlogButton{
-    font-size: 30px;
-    height: 100px;
-    width: 300px;
-    margin-bottom: -50px;
+    font-size: 25px;
+    height: 80px;
+    width: 220px;
+    border: 5px solid goldenrod;
+    transition: height 0.3s ease, width 0.3s ease, border 0.3s ease;
+    white-space: nowrap;
 }
 
 #WriteBlogButton:hover{
-    height: 150px;
-    width: 350px;
+    height: 80px;
+    width: 270px;
 }
 
-#myBlogsTitleMargin{
-    margin-top: 50px;
+#myBlogsTitleStyling{
+    margin: 50px 0 -10px 0;
 }
 
-.confettiCanvas {
-    position: fixed;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+#buttonPostBlog{
+    margin-bottom: 40px;
 }
+
 /*STYLING END*/
 
 

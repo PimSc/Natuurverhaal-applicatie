@@ -14,7 +14,7 @@
     flex-direction: row;
     width: fit-content;
     height: fit-content;
-    /*border: 2px dotted black;*/
+    /*border: 2px dotted red;*/
     gap: 40px;
 }
 

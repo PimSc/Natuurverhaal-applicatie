@@ -35,12 +35,12 @@
   {
     "id": 4,
     "image": "",
-    "caption": "",
-    "title": "Een Reis door de Franse Gastronomie",
+    "caption": "Lorem Test Blog",
+    "title": "Een blog met lorem tekst",
     "subtitle": "Ontdek de verfijnde smaken van la douce France",
-    "content": "Frankrijk staat wereldwijd bekend om zijn verfijnde keuken en culinaire tradities. In deze blog nemen we je mee op een gastronomische reis door la douce France. Leer over de kunst van het wijnproeven, proef heerlijke Franse kazen en ontdek de geheimen van klassieke gerechten zoals coq au vin en bouillabaisse. Bereid je voor op een smaakvolle reis door het land van de liefde voor eten.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec aliquam mauris. Mauris ornare lacinia orci, finibus imperdiet lacus euismod et. Pellentesque eleifend leo vel dui fermentum, dapibus posuere erat gravida. Vestibulum in dictum nibh. Cras felis nisl, tincidunt sed ullamcorper ac, facilisis vulputate felis. Nulla non scelerisque erat. Curabitur in dignissim libero. Fusce sit amet augue a purus elementum hendrerit a at libero.Donec posuere nibh sit amet tincidunt egestas. Sed placerat nibh mauris, dapibus consequat lorem blandit vel. Vestibulum at magna euismod leo pellentesque cursus eget eget justo. Donec et eros quis dolor venenatis luctus. Fusce auctor, odio.",
     "created": "2023-09-18T10:30:00Z",
-    "author": "Sophie Leclerc",
+    "author": "Natuurkenner",
     "upVotes": ""
   },
   {
