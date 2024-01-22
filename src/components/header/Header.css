@@ -24,7 +24,7 @@
 
 .headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-    background-image: url(./../../../public/assets/websiteImages/headerimage.jpg);
+    background-image: url(./../../../public/assets/websiteImages/moosePhoto.jpg);
     display: flex;
     flex-direction: row;
     height: 400px;
@@ -64,17 +64,10 @@
     }
 
     .headerBg {
-        position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-        background-image: url(./../../assets/websiteImages/headerimage.jpg);
-        display: flex;
-        flex-direction: row;
         height: 250px;
         width: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
 
+    }
 }
 
 

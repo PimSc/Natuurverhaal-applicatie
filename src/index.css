@@ -288,13 +288,14 @@ button, select, textarea {
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   border-radius: 4px;
   background-color: var(--mainBackgroundColor);
-  padding: 8px;
+  /*padding: 8px;*/
   flex-basis: 50px;
   width: 80vw;
   flex-grow: 1;
   flex-shrink: 1;
   Border: 1px solid hsla(0, 0%, 50%, 0.01);
 }
+
 
 /*Container to make icons small*/
 .iconSmall{
