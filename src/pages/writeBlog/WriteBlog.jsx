@@ -86,7 +86,7 @@ function WriteBlog() {
                                   required
                         />
                     </div>
-                    <div className="buttonCenterContainer">
+                    <div className="elementCenterContainer">
                         <button className="SimpleButtons" id="buttonPostBlog" type="submit">
                             Blog bericht plaatsen
                         </button>

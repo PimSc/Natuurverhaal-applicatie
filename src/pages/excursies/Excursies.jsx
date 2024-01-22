@@ -22,6 +22,12 @@ function Excursies() {
                     {/*extra inner container(column) for A and B*/}
                     <div className="Extra-inner-content-container">
 
+                        <div className="elementCenterContainer">
+                            <button className="excursionAdminButton" type="button">
+                                <Link to="/writeExcursion">Activiteit plaatsen</Link>
+                            </button>
+                        </div>
+
                         {/*box A (Row)*/}
                         <div className="excursionContentBox1">
 
@@ -44,12 +50,6 @@ function Excursies() {
                             <div className="excursionIntroduction2">
                                 <img src={AdderPhoto} alt=""/>
                             </div>
-                        </div>
-
-                        <div className="buttonCenterContainer">
-                            <button className="excursionAdminButton" type="button">
-                                <Link to="/writeExcursion">Activiteit plaatsen</Link>
-                            </button>
                         </div>
 
                         {/*box B (Row)*/}

@@ -40,7 +40,7 @@ function Navigation() {
                         <li><NavLink to="/Contact"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink>
                         </li>
-                        <SearchBar/> {/*Searchbar component*/}
+                        {/*<SearchBar/> /!*Searchbar component*!/*/}
                     </ul>
                 </nav>
                 {/*End main navigation bar*/}
@@ -83,9 +83,9 @@ function Navigation() {
                         </nav>
                     </aside>
 
-                    <div className="phoneSearchBar">
-                        <SearchBar/> {/*Searchbar component*/}
-                    </div>
+                    {/*<div className="phoneSearchBar">*/}
+                    {/*    <SearchBar /> /!*Searchbar component*!/*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </>

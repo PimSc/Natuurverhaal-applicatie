@@ -24,6 +24,8 @@ import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 
 function App() {
 
+
+
   return (
     <>
 

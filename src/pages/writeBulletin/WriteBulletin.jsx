@@ -11,7 +11,7 @@ return (
 
 
         <form action="" method="post">
-            <div className="buttonCenterContainer">
+            <div className="elementCenterContainer">
         <button className="SimpleButtons" type="button">
             <Link to="/prikbord"><strong>Terug naar het prikbord</strong></Link>
         </button>
@@ -56,7 +56,7 @@ return (
                 <p>Author automatisch genereren</p>
             </div>
 
-            <div className="buttonCenterContainer">
+            <div className="elementCenterContainer">
         <button className="SimpleButtons"  type="submit">
             <Link to="/prikbord"><strong>Prikbord bericht plaatsen</strong></Link>
         </button>

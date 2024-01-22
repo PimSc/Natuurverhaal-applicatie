@@ -1,7 +1,7 @@
 import './PrikbordPostDetail.css';
 import {Link, useParams} from "react-router-dom";
 import PrikbordPosts from "../../constants/PrikbordPosts.json";
-import formatDateString from "../../helpers/formatDateString.js";
+import formatDateString from "../../helpers/formatDateString.jsx";
 import {Clock} from "@phosphor-icons/react";
 
 function PrikbordPostDetail() {
