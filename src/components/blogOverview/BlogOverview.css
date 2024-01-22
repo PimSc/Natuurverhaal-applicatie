@@ -42,6 +42,8 @@
 /*Layout start*/
 
 
+
+
 .post-list {
     list-style: none;
     display: flex;
@@ -51,14 +53,40 @@
     /*Border: 2px dashed blue;*/
 }
 
-
 .post-content{
     color: black
 }
 
-
 #searchbarBlogOvervieuw{
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.searchBar{
+    width: 300px;
+    margin: 0 auto;
+    border: 2px solid var(--black);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+
+
+/*Layout End*/
+
+
+@media only screen and (max-width: 1200px) {
+
+    /*Phone search bar visible and styling*/
+
+
+    .SearchBar{
+        width: 80%;
+        margin: 0 auto;
+    }
+
 }
 
 

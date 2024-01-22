@@ -54,7 +54,7 @@
 @media only screen and (max-width: 767px) {
     /*Natuurverhaal.nl Main Title*/
     .homeTitle, .homeTitle:hover, .homeTitle:visited {
-        font-size: calc(var(--mainTitleFontSize) - 480%);
+        font-size: calc(var(--mainTitleFontSize) - 410%);
         font-family: var(--titleFont);
         color: var(--black);
         text-decoration: none;

@@ -61,9 +61,6 @@ ul {
     align-items: center;
 }
 
-.phoneSearchBar{
-    display: none;
-}
 
 .hamburger-menu, .hamburger-menu input, .sidebar{
     display: none;
@@ -187,16 +184,6 @@ ul {
         display: block;
     }
 
-    /*Phone search bar visible and styling*/
-    .phoneSearchBar{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100svw;
-        height: 100%;
-        /*border: 3px solid red;*/
-    }
 
 
 

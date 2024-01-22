@@ -1,6 +1,6 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "image": "../../../public/assets/blogPostImages/marmotPhoto.jpg",
     "caption": "Het Vastleggen van Alpine Magie",
     "title": "Betoverende Momenten met Alpine Marmotten",
@@ -11,7 +11,7 @@
     "upVotes": ""
   },
   {
-    "id": 3,
+    "id": 2,
     "image": "../../../public/assets/blogPostImages/bearPhoto.jpg",
     "caption": "Bruine beren",
     "title": "Wilde Beren: Bruin versus Zwart",
@@ -22,7 +22,7 @@
     "upVotes": ""
   },
   {
-    "id": 1,
+    "id": 3,
     "image": "../../../public/assets/blogPostImages/catPhoto.jpg",
     "caption": "Het Raadsel van de Pupillen: Een Blik op Roof- en Prooidieren",
     "title": "De Geheimen van de Pupillen",
