@@ -1,7 +1,11 @@
 /*STYLING START*/
 
 
+/*STYLING END*/
 
+
+
+/*LAYOUT START*/
 #bulletinBoardButton1{
     margin-top: 40px;
 }
@@ -10,20 +14,4 @@
     margin-top: 20px;
     /*border: 2px solid hotpink;*/
 }
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
-
-
-
-
 /*LAYOUT END*/
-
-@media only screen and (max-width: 767px) {
-
-
-
-}

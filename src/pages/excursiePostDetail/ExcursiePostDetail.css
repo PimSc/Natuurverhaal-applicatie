@@ -1,12 +1,11 @@
 /*STYLING START*/
 
-
-
 /*STYLING END*/
 
 
 
 /*LAYOUT START*/
+
 /*----------Image part-----------*/
 /*images outer box*/
 .excursieDetailImage{
@@ -29,8 +28,6 @@
 .excursionDetailImageContainer{
     width: 500px;
     object-fit: cover;
-
-
 }
 /*---------------------*/
 

@@ -4,25 +4,20 @@
 /* STYLING END */
 
 /* LAYOUT START */
-
-
-
-
+.excursionBannerBg{
+    position: relative;
+    background-image: url(./../../../public/assets/websiteImages/excursionBanner1.jpg);
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
 /* LAYOUT END */
 
 
-
-.excursionBannerBg{
-position: relative;
-background-image: url(./../../../public/assets/websiteImages/excursionBanner1.jpg);
-display: flex;
-flex-direction: row;
-    height: 200px;
-    width: 100%;
-background-repeat: no-repeat;
-background-position: center center;
-background-size: cover;
-}
 
 
 
@@ -30,9 +25,12 @@ background-size: cover;
 
 /*Start media query telephone*/
 @media only screen and (max-width: 1200px) {
+    /*STYLING START*/
+
+    /*STYLING END*/
 
 
-
+    /*LAYOUT START*/
     .excursionBannerBg{
         position: relative;
         background-image: url(./../../../public/assets/websiteImages/excursionBanner1.jpg);
@@ -44,6 +42,19 @@ background-size: cover;
         background-position: center center;
         background-size: cover;
     }
+    /*LAYOUT END*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

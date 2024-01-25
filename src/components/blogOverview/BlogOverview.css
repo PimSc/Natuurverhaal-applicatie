@@ -1,4 +1,11 @@
 /*Styling start*/
+
+/*Styling end*/
+
+
+
+/*Layout start*/
+
 .post-image {
     width: 100%;
     height: 300px; /* Pas dit aan aan de gewenste hoogte */
@@ -33,17 +40,6 @@
     Border: 1px solid hsla(0, 0%, 50%, 0.01);
 }
 
-
-
-/*Styling end*/
-
-
-
-/*Layout start*/
-
-
-
-
 .post-list {
     list-style: none;
     display: flex;
@@ -71,28 +67,41 @@
 .searchBar:focus {
     outline: none;
 }
-
-
-
 /*Layout End*/
+
+
+
 
 
 @media only screen and (max-width: 1200px) {
 
+
+    /*STYLING START*/
+
+
+    /*STYLING END*/
+
+
+
+    /*LAYOUT START*/
+
     /*Phone search bar visible and styling*/
-
-
     .SearchBar{
         width: 80%;
         margin: 0 auto;
     }
-
+    /*LAYOUT END*/
 }
 
 
 @media only screen and (max-width: 767px) {
+/*STYLING START*/
+
+/*STYLING END*/
 
 
+
+/*LAYOUT START*/
     .onTopOfImageBox{
         z-index: 2;
         background-color: hsl(0, 0%, 100%, 0.4);
@@ -100,5 +109,13 @@
         min-height: 130px;
         overflow: hidden;
     }
+
+/*LAYOUT END*/
+
+
+
+
+
+
 
 }

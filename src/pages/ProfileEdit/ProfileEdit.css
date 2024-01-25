@@ -1,5 +1,45 @@
 /*STYLING START*/
 
+.ProfileEditBox3 > i{
+    color: lightGrey;
+}
+/*STYLING END*/
+
+
+
+/*LAYOUT START*/
+
+/*------Icon overlay tekst------*/
+.iconContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.iconOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: auto;
+    background-color: white; /* Doorzichtige achtergrondkleur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Verberg het tekstvlak standaard */
+    transition: opacity 0.3s ease; /* Voeg een vloeiende overgang toe */
+    margin: 15px 0 0 5px;
+    border: 1px solid var(--darkerGrey);
+    border-radius: 10px;
+    padding: 5px;
+    pointer-events: none; /* Voorkom dat het tekstvlak interactie ontvangt */
+}
+
+.iconContainer:hover .iconOverlay {
+    opacity: 1; /* Laat het tekstvlak zien wanneer erover wordt gehoverd */
+    z-index: 2;
+}
+/*------Icon overlay tekst End------*/
+
 .biografieTextField{
     width: 300px;
     height: 300px;
@@ -36,70 +76,30 @@
     /*border: 5px solid grey;*/
 }
 
-.ProfileEditBox3 > i{
-    color: lightGrey;
-}
-
 .ProfilePictureUpload{
     width: 380px;
     z-index: 2;
 }
 
-
 .profileButtonCenter{
-display: flex;
-flex-direction: row;
-justify-content: center;
-}
-
-/*------Icon overlay tekst------*/
-
-.iconContainer {
-    position: relative;
-    display: inline-block;
-}
-
-.iconOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: auto;
-    background-color: white; /* Doorzichtige achtergrondkleur */
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    opacity: 0; /* Verberg het tekstvlak standaard */
-    transition: opacity 0.3s ease; /* Voeg een vloeiende overgang toe */
-    margin: 15px 0 0 5px;
-    border: 1px solid var(--darkerGrey);
-    border-radius: 10px;
-    padding: 5px;
-    pointer-events: none; /* Voorkom dat het tekstvlak interactie ontvangt */
 }
-
-.iconContainer:hover .iconOverlay {
-    opacity: 1; /* Laat het tekstvlak zien wanneer erover wordt gehoverd */
-    z-index: 2;
-}
-
-
-/*------Icon overlay tekst End------*/
-
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
-
-
 
 
 /*LAYOUT END*/
-
-
 @media only screen and (max-width: 767px) {
+    /*STYLING START*/
+
+
+
+    /*STYLING END*/
+
+
+
+    /*LAYOUT START*/
+
     .ProfileEditBox1{
         width: 90px;
         min-height: 200px;
@@ -167,7 +167,10 @@ justify-content: center;
         max-width: 200px;
         width: 100%;
     }
-
     /*------Icon overlay tekst End------*/
+
+    /*LAYOUT END*/
+
+
 
 }

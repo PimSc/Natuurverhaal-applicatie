@@ -1,3 +1,4 @@
+/*STYLING START*/
 .registerButton2 {
     color: black;
     background-color: white;
@@ -6,9 +7,13 @@
     border-radius: 10px;
 
     padding: 5px 5px 5px 5px;
-    /*border-radius: 10px 10px 0 0;*/
-    /*width: 180px;*/
-    /*margin-top: 15px;*/
-    /*font-family: var(--titleFont);*/
-    /*margin-bottom: -10px;*/
 }
+/*STYLING END*/
+
+
+
+/*LAYOUT START*/
+
+/*LAYOUT END*/
+
+

@@ -1,8 +1,4 @@
 /*STYLING START*/
-.prikbordTextMargin{
-    margin-bottom: 40px;
-}
-
 
 /*STYLING END*/
 /*LAYOUT START*/
@@ -11,5 +7,8 @@
     display: block;
 }
 
+.prikbordTextMargin{
+    margin-bottom: 40px;
+}
 
 /*LAYOUT END*/

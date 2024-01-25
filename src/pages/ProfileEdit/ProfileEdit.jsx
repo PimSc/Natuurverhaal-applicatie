@@ -29,7 +29,9 @@ function ProfileEdit() {
                         <div className="profileFirstTextBox">
                             <h1>Openbaar profiel</h1>
                             <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
-                            <p>Hieronder vul je gegevens in die iedere lezen kan inzien</p>
+                            <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
+
+
 
                         </div>
 
