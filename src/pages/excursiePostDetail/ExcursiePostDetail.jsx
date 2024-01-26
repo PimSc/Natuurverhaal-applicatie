@@ -26,16 +26,12 @@ function ExcursiePostDetail() {
 
                     </div>
 
-                        {/*className="excursieDetailImage"*/}
-
 
                         <br/>
                         <h1>{title}</h1>
                         <h2>{subtitle}</h2>
                         <p>Aantal ingeschreven deelnemers: {currentParticipants} maximaal aantal deelnemers: {maxParticipants}</p>
 
-                            <span className="post-detail-read-time">
-                            </span>
                             <br/>
                             <p className="textStart">{content}</p>
                             <br/>
