@@ -269,6 +269,8 @@ button, select, textarea {
   flex-direction: column;
   max-width: 1100px;
   text-align: center;
+  align-items: center;
+  width: 100%;
   /*border: 3px dashed green;*/
 }
 
@@ -280,6 +282,15 @@ button, select, textarea {
   background-position: center center;
   background-size: cover;
   /*border: 2px dashed turquoise;*/
+}
+
+/*Smalle inner container for button.*/
+.buttonCenter {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+  /*border: 3px dashed green;*/
 }
 
 /*Container with styling for (blog) posts*/
@@ -407,6 +418,18 @@ button, select, textarea {
   .inputSize {
     width: 170px;
   }
+
+  .outer-content-container {
+min-width: 400px;
+    /*border: 2px dashed blue;*/
+  }
+
+  .outer-content-container-column {
+    min-width: 400px;
+    /*border: 5px dashed purple;*/
+  }
+
+
 
 }
 /*Einde media query telefoon*/

@@ -9,14 +9,18 @@ import formatDateString from '../../helpers/formatDateString.jsx';
 function BlogPostDetail() {
     const { id } = useParams();
 
-    const { title, subtitle, author, created, content,} = posts.find((post) => {
+    const { image, caption, title, subtitle, author, created, content,} = posts.find((post) => {
         return post.id.toString() === id;
     });
 
     return (
         <>
-            <section className="outer-content-container">
+            <section className="outer-content-container-column">
+                <img src={image} alt={caption}/>
+
                 <div className="inner-content-container">
+
+
                     <div className="textCenter">
                     <h1>{title}</h1>
                         <br/>

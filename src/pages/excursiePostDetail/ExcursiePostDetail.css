@@ -13,12 +13,30 @@
     object-fit: cover;
 }
 .excursionDetailImageContainer img{
-    width: 500px;
     object-fit: cover;
     border-radius: 4px;
 }
 /*---------------------*/
 
+/*LAYOUT END*/
+
+
+
+@media only screen and (max-width: 767px) {
+/*STYLING START*/
+    .excursionDetailImageContainer{
+        width: 300px;
+    }
+
+
+/*STYLING END*/
+
+
+
+/*LAYOUT START*/
+
+
 
 
 /*LAYOUT END*/
+}
