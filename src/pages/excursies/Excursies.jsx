@@ -23,7 +23,7 @@ function Excursies() {
                     <div className="Extra-inner-content-container">
 
                         <div className="elementCenterContainer">
-                            <button className="excursionAdminButton" type="button">
+                            <button className="excursionAdminButton" id="excursionAdminButton" type="button">
                                 <Link to="/writeExcursion">Activiteit plaatsen</Link>
                             </button>
                         </div>

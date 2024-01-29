@@ -2,6 +2,12 @@
 
 
 
+
+/*STYLING END*/
+
+
+
+/*LAYOUT START*/
 .totalBlogsCounter {
     padding: 10px 0 ;
     text-align: center;
@@ -10,13 +16,6 @@
     font-family: var(--mainFont);
     background-color: var(--secondBackgroundColor)
 }
-
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
 
 
 

@@ -1,6 +1,6 @@
 import './Navigation.css';
 import {Link, NavLink} from 'react-router-dom';
-import SearchBar from "./../searchBar/SearchBar.jsx"
+
 
 
 function Navigation() {
@@ -40,7 +40,6 @@ function Navigation() {
                         <li><NavLink to="/Contact"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink>
                         </li>
-                        {/*<SearchBar/> /!*Searchbar component*!/*/}
                     </ul>
                 </nav>
                 {/*End main navigation bar*/}
@@ -83,9 +82,6 @@ function Navigation() {
                         </nav>
                     </aside>
 
-                    {/*<div className="phoneSearchBar">*/}
-                    {/*    <SearchBar /> /!*Searchbar component*!/*/}
-                    {/*</div>*/}
                 </div>
             </div>
         </>

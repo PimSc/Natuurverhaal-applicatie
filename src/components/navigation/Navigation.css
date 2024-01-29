@@ -1,10 +1,4 @@
 /*STYLING START*/
-
-
-
-
-
-
 nav ul a,
 nav ul a:visited {
     color: black;
@@ -27,9 +21,11 @@ nav ul a:visited {
     font-size: var(--navLinkSize);
 }
 
-/*--STYLING END--*/
 
-/*LAYOUT START, (mag niet op center worden gezet!!!!) */
+
+
+/*--STYLING END--*/
+/*LAYOUT START, (Niet op center zetten) */
 .navContainerStickyTop {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
     position: sticky;
@@ -61,19 +57,13 @@ ul {
     align-items: center;
 }
 
-.phoneSearchBar{
-    display: none;
-}
-
 .hamburger-menu, .hamburger-menu input, .sidebar{
     display: none;
 }
 
 
 
-
 /*------Drop down menu start------*/
-
 /* Dropdown Button */
 .dropbtn {
     background-color: var(--lightGrey);
@@ -124,11 +114,7 @@ ul {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 /*------Drop down menu end------*/
-
-
-
 /*LAYOUT END*/
 
 
@@ -136,20 +122,9 @@ ul {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 1200px) {
-    /*Styling phone query start*/
+    /*STYLING START*/
+
     .default-link {
         font-size: calc(var(--navLinkSize) - 30%);
         /*font-size: var(--navLinkSize);*/
@@ -173,12 +148,20 @@ ul {
         margin-bottom: 80vh;
     }
 
+    .default-link {
+        border-bottom: 1px solid transparent;
+    }
+
+    .active-link {
+        border-bottom: 1px solid white;
+    }
 
 
-    /*Styling end*/
-    /*Layout start*/
+    /*STYLING END*/
+    /*LAYOUT START*/
+
     /*Original nav disable*/
-    .mainNav{
+       .mainNav{
         display: none;
     }
 
@@ -187,29 +170,15 @@ ul {
         display: block;
     }
 
-    /*Phone search bar visible and styling*/
-    .phoneSearchBar{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100svw;
-        height: 100%;
-        /*border: 3px solid red;*/
+    .sidebar li {
+        padding: 4px 0;
     }
 
+    .hamburger-menu:has(input:checked) + .sidebar {
+        translate: 0;
+    }
 
-
-
-
-
-
-    /*Layout end*/
-
-
-
-
-
+    /*LAYOUT END*/
     /*Hamburger menu start*/
 
     :root {
@@ -236,7 +205,6 @@ ul {
         padding: 4px 0 0 8px;
         /*border: 2px solid orangered;*/
     }
-
 
     /*Stripes & cross*/
     .hamburger-menu:has(input:checked) {
@@ -308,25 +276,6 @@ ul {
         z-index: 0;
         position: absolute;
     }
-
-
-    .sidebar li {
-        padding: 4px 0;
-    }
-
-    .hamburger-menu:has(input:checked) + .sidebar {
-        translate: 0;
-    }
-
-    .default-link {
-        border-bottom: 1px solid transparent;
-    }
-
-    .active-link {
-        border-bottom: 1px solid white;
-    }
-
-
     /*Hamburger menu end*/
 
 

@@ -15,8 +15,8 @@ function ExcursionOverview() {
 
 
 
-<div className="outer-content-container-column">
-    <div className="inner-content-container-column">
+
+    <div className="inner-excursionContent-container">
     {excursies.map((excursie) => (
         <Link to={`/excursiePosts/${excursie.id}`} key={excursie.id}>
 
@@ -36,7 +36,11 @@ function ExcursionOverview() {
 
                 <li className="excursionContentTextCenter">
                     <div className="textStart">
+
+                        <span className="textCenter">
                     <h2>{excursie.title}</h2>
+                        </span>
+
                     <br />
                     <p>
                         <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.activityDate}{' '}
@@ -53,7 +57,9 @@ function ExcursionOverview() {
                         <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
                     </p>
                         <br />
+                        <div className="textCenter">
                     <h4>{excursie.subtitle}</h4>
+                        </div>
                     <br />
                     </div>
                 </li>
@@ -61,7 +67,6 @@ function ExcursionOverview() {
         </Link>
     ))}
 
-</div>
 </div>
 
 

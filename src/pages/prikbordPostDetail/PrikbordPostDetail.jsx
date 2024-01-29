@@ -2,12 +2,11 @@ import './PrikbordPostDetail.css';
 import {Link, useParams} from "react-router-dom";
 import PrikbordPosts from "../../constants/PrikbordPosts.json";
 import formatDateString from "../../helpers/formatDateString.jsx";
-import {Clock} from "@phosphor-icons/react";
 
 function PrikbordPostDetail() {
     const { id } = useParams();
 
-    const { title, readTime, subtitle, author, created, content, } = PrikbordPosts.find((post) => {
+    const { title, subtitle, author, created, content, } = PrikbordPosts.find((post) => {
         return post.id.toString() === id;
     });
 

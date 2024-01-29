@@ -2,6 +2,8 @@ import './TermsAndPrivacy.css';
 
 function TermsAndPrivacy() {
 
+
+
 return (
 <>
 

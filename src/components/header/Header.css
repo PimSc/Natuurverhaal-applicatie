@@ -24,7 +24,7 @@
 
 .headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-    background-image: url(./../../../public/assets/websiteImages/headerimage.jpg);
+    background-image: url(./../../../public/assets/websiteImages/moosePhoto.jpg);
     display: flex;
     flex-direction: row;
     height: 400px;
@@ -37,7 +37,7 @@
 
 
 @media only screen and (max-width: 1200px) {
-
+    /*STYLING START*/
     /*Natuurverhaal.nl Main Title*/
     .homeTitle, .homeTitle:hover, .homeTitle:visited {
         font-size: calc(var(--mainTitleFontSize) - 200%);
@@ -48,13 +48,22 @@
         z-index: 2;
         letter-spacing: 0.05rem;
     }
+    /*STYLING END*/
+
+    /*LAYOUT START*/
+    /*LAYOUT END*/
 }
 
 
 @media only screen and (max-width: 767px) {
+    /*STYLING START*/
+    /*STYLING END*/
+
+
+    /*LAYOUT START*/
     /*Natuurverhaal.nl Main Title*/
     .homeTitle, .homeTitle:hover, .homeTitle:visited {
-        font-size: calc(var(--mainTitleFontSize) - 480%);
+        font-size: calc(var(--mainTitleFontSize) - 410%);
         font-family: var(--titleFont);
         color: var(--black);
         text-decoration: none;
@@ -64,17 +73,11 @@
     }
 
     .headerBg {
-        position: relative; /* Voeg position: relative toe aan het achtergrondelement */
-        background-image: url(./../../assets/websiteImages/headerimage.jpg);
-        display: flex;
-        flex-direction: row;
         height: 250px;
         width: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
 
+    }
+    /*LAYOUT END*/
 }
 
 
