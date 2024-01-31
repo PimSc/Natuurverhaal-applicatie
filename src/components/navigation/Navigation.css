@@ -161,10 +161,10 @@ ul {
     /*LAYOUT START*/
 
     /*Original nav disable*/
-    .mainNav > .default-link {
+    .mainNav  {
         display: none;
     }
-    .mainNav >  .active-link {
+    .mainNav  {
         display: none;
     }
 

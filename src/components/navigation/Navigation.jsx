@@ -66,7 +66,6 @@ function Navigation() {
 
                     <aside className="sidebar">
                         <nav>
-                            <ul>
                                 <li><NavLink to="/"
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                                 </li>
@@ -103,7 +102,6 @@ function Navigation() {
                                 <li><NavLink to="/"
                                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Uitloggen</NavLink>
                                 </li>
-                            </ul>
                         </nav>
                     </aside>
 
