@@ -161,9 +161,14 @@ ul {
     /*LAYOUT START*/
 
     /*Original nav disable*/
-       .mainNav{
+    .mainNav  {
         display: none;
     }
+    .mainNav  {
+        display: none;
+    }
+
+
 
     /*Telephone nav visible*/
     .hamburger-menu, .hamburger-menu input, .sidebar{

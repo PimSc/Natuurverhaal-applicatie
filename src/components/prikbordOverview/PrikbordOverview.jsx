@@ -1,8 +1,21 @@
 import './PrikbordOverview.css';
 import PrikbordPosts from "../../constants/PrikbordPosts.json";
-import {Link} from "react-router-dom";
+import { useContext } from 'react';
+import { Link } from "react-router-dom";
+import { AuthContextData } from "../../context/AuthContextProvider";
 
 function PrikbordOverview() {
+
+    const { userRoles, isAuthenticated } = useContext(AuthContextData);
+
+    if (!isAuthenticated) {
+        return (<p>Je moet ingelogd zijn om deze pagina te bezoeken.</p>)
+    }
+    
+    // const allowedRoles = ['ROLE_ADMIN']
+    // if (!userRoles.some(x => allowedRoles.includes(x))) {
+    //     return (<p>Je hebt geen rechten om deze pagina te bekijken.</p>)        
+    // }
 
     return (
         <>
