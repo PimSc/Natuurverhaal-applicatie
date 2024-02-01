@@ -4,7 +4,7 @@ import TokenService from "./token.service";
 class AuthService {
   login(username, password) {
     return api
-      .post("/auth/signin", {
+      .post("/authenticate", {
         username,
         password
       })

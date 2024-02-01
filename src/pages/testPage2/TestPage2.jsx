@@ -8,6 +8,7 @@ import axios from "axios";
 
 function TestPage2() {
 
+
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -34,9 +35,12 @@ function TestPage2() {
             const response = await axios.get('http://localhost:8080/users');
             console.log(response.data);
         } catch (error) {
-                console.error(error);
-            }
+            console.error(error);
         }
+    }
+
+
+
 
     return (
         <>
@@ -44,34 +48,79 @@ function TestPage2() {
                 <button>test page2</button>
             </Link>
 
-
-
             <form onSubmit={(e) => createUser(e)}>
-                <label htmlFor="username">Username</label>
-                <input
-                    type="text"
-                    name="username"
-                    value={username}
-                    onChange={(e) => setUserName(e.target.value)}/>
+                <h1>Registreren</h1>
+                <p>Vul de velden in om een account aan te maken</p>
+                <hr/>
+                <div className="loginOuterContainer">
+                    <div className="loginInnerContainer">
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="email">
+                                    <b>Email</b>
+                                </label>
+                            </div>
+                            <input
+                                // onChange={onChangeEmail}
+                                // id="email"
+                                placeholder="E-mail"
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                autoComplete="on"
+                                required
+                            />
+                        </div>
 
-                <label htmlFor="password">password</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}/>
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="username">
+                                    <b>Gebruikersnaam</b>
+                                </label>
+                            </div>
+                            <input
+                                // onChange={onChangeUsername}
+                                // id="username"
+                                placeholder="Gebruikersnaam"
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUserName(e.target.value)}
+                                autoComplete="on"
+                                required
+                            />
+                        </div>
 
-                <label htmlFor="email">email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="wachtwoord">
+                                    <b>Wachtwoord</b>
+                                </label>
+                            </div>
+                            <input
+                                // onChange={onChangePassword}
+                                // id="wachtwoord"
+                                placeholder="Wachtwoord"
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
 
-                <button type="submit">
-                    submit
-                </button>
+                        <button className="registerButton2" type="submit">Registreren</button>
+
+                    </div>
+                </div>
+                <hr/>
+                {/*<p>Door een account te maken zit je voor eeuwig vast aan onze <Link to="/TermsAndPrivacy">Voorwaarden</Link></p>*/}
             </form>
+
         </>
     );
 }
