@@ -21,6 +21,8 @@ import WriteExcursion from "./pages/writeExcursion/WriteExcursion.jsx";
 import WriteBlog from "./pages/writeBlog/WriteBlog.jsx";
 import ProfileDetail from "./pages/profileDetail/ProfileDetail.jsx";
 import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
+import TestPage from "./pages/testPage/TestPage.jsx";
+import TestPage2 from "./pages/testPage2/TestPage2.jsx";
 
 function App() {
 
@@ -56,7 +58,10 @@ function App() {
             <Route path="/writeExcursion" element={<WriteExcursion/>}/>
             <Route path="/ProfileDetail" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail /></div>}/>
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>
-            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBulletin /></div>}/>
+            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><WriteBulletin /></div>}/>
+
+            <Route path="/testpage" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><TestPage /></div>}/>
+            <Route path="/testpage2" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><TestPage2 /></div>}/>
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>

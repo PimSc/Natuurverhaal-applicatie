@@ -45,6 +45,8 @@ function LoginScreen() {
                             <input type="password" onChange={onChangePassword} placeholder="Wachtwoord" name="wachtwoord" id="wachtwoord" required />
                         </div>
 
+
+
                         <button className="registerButton2" type="submit">Inloggen</button>
                     </div>
                 </div>
