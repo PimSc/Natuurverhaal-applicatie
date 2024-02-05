@@ -22,12 +22,6 @@ class UserService {
 
 
 
-
-
-
-
-
-
 // class UserService {
 //   getPublicContent() {
 //     return api.get('/test/all');

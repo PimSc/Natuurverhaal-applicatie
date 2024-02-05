@@ -17,6 +17,9 @@ class AuthService {
       });
   }
 
+
+
+
   logout() {
     TokenService.removeUser();
   }
