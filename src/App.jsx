@@ -56,7 +56,7 @@ function App() {
             <Route path="/writeExcursion" element={<WriteExcursion/>}/>
             <Route path="/ProfileDetail" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail /></div>}/>
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>
-            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBulletin /></div>}/>
+            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><WriteBulletin /></div>}/>
 
             {/*Not found page*/}
             <Route path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}/>

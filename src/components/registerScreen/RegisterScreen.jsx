@@ -1,99 +1,115 @@
-import { useState } from 'react';
-import './RegisterScreen.css';
 
-import AuthService from "../../services/auth.service";
+import './RegisterScreen.css';
+import {useState} from "react";
+import axios from "axios";
+
 
 function RegisterScreen() {
 
-    const [responseMessage, setResponseMessage] = useState("");
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const enabled = true
 
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const onChangeUsername = (e) => {
-        setUsername(e.target.value)
-    }
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value)
-    }
-    const onChangePassword = (e) => {
-        setPassword(e.target.value)
-    }
-
-    const handleRegister = (e) => {
+    async function createUser(e) {
         e.preventDefault();
+        try {
 
-        AuthService.register(
-            username,
-            email,
-            password
-        ).then(
-            response => {
-                setResponseMessage(response?.data?.message)
-            },
-            error => {
-                const resMessage =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-
-                console.error(resMessage)
-            }
-        );
+            const response = await axios.post('http://localhost:8080/users', {
+                username: username,
+                password: password,
+                email: email,
+                enabled : enabled
+            });
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
     }
+
+    async function fetchData() {
+        try {
+            const response = await axios.get('http://localhost:8080/users');
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+
 
     return (
         <>
-            {!!responseMessage && (
-                <p>{responseMessage}</p>
-            )}
-            {!responseMessage && (
-                <form onSubmit={handleRegister}>
+                <form onSubmit={(e) => createUser(e)}>
                     <h1>Registreren</h1>
                     <p>Vul de velden in om een account aan te maken</p>
-                    <hr />
+                    <hr/>
                     <div className="loginOuterContainer">
                         <div className="loginInnerContainer">
+                            <div className="inputFieldMargin">
+                                <div className="labelTextLeft">
+                                    <label
+                                        htmlFor="email">
+                                        <b>Email</b>
+                                    </label>
+                                </div>
+                                <input
+                                    // id="email"
+                                    placeholder="E-mail"
+                                    type="email"
+                                    name="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    autoComplete="on"
+                                    required
+                                />
+                            </div>
 
                             <div className="inputFieldMargin">
                                 <div className="labelTextLeft">
-                                    <label htmlFor="email"><b>Email</b></label>
+                                    <label
+                                        htmlFor="username">
+                                        <b>Gebruikersnaam</b>
+                                    </label>
                                 </div>
-                                <input type="email" onChange={onChangeEmail} placeholder="E-mail" name="email" id="email" required autoComplete="on" />
+                                <input
+                                    // id="username"
+                                    placeholder="Gebruikersnaam"
+                                    type="text"
+                                    name="username"
+                                    value={username}
+                                    onChange={(e) => setUserName(e.target.value)}
+                                    autoComplete="on"
+                                    required
+                                />
                             </div>
 
                             <div className="inputFieldMargin">
                                 <div className="labelTextLeft">
-                                    <label htmlFor="username"><b>Gebruikersnaam</b></label>
+                                    <label
+                                        htmlFor="wachtwoord">
+                                        <b>Wachtwoord</b>
+                                    </label>
                                 </div>
-                                <input type="text" onChange={onChangeUsername} placeholder="Gebruikersnaam" name="username" id="username" required autoComplete="on" />
+                                <input
+                                    // id="wachtwoord"
+                                    placeholder="Wachtwoord"
+                                    type="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
                             </div>
-
-                            <div className="inputFieldMargin">
-                                <div className="labelTextLeft">
-                                    <label htmlFor="wachtwoord"><b>Wachtwoord</b></label>
-                                </div>
-                                <input type="password" onChange={onChangePassword} placeholder="Wachtwoord" name="wachtwoord" id="wachtwoord" required />
-                            </div>
-
-                            {/* <div className="inputFieldMargin">
-                            <div className="labelTextLeft">
-                                <label htmlFor="herhaal-wachtwoord"><b>Herhaal wachtwoord</b></label>
-                            </div>
-                            <input type="password" placeholder="Herhaal wachtwoord" name="herhaal-wachtwoord" id="herhaal-wachtwoord" required />
-                        </div> */}
 
                             <button className="registerButton2" type="submit">Registreren</button>
 
                         </div>
                     </div>
-                    <hr />
+                    <hr/>
                     {/*<p>Door een account te maken zit je voor eeuwig vast aan onze <Link to="/TermsAndPrivacy">Voorwaarden</Link></p>*/}
                 </form>
-            )}
         </>
     );
 }
