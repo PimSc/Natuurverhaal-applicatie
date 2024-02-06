@@ -50,7 +50,8 @@ function LoginScreen() {
                                 onChange={(e) => setUserName(e.target.value)}
                                 placeholder="Gebruikersnaam" name="username"
                                 id="username"
-                                required autoComplete="on"/>
+                                required
+                                autoComplete="on"/>
                         </div>
 
                         <div className="inputFieldMargin">

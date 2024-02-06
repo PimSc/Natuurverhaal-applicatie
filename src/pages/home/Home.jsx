@@ -9,9 +9,7 @@ import {Link} from "react-router-dom";
 function Home() {
     return (
         <>
-    <div className="textCenter">
-            <Link to="/testpage"><button>test page1</button></Link>
-        </div>
+
             {/*<img src={bearPhoto} alt="{}"/>*/}
 
             {/*<BlogCounter />*/}
