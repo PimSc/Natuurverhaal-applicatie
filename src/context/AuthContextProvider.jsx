@@ -41,7 +41,7 @@ function AuthContextProvider({ children }) {
         const decoded = jwtDecode(JWT);
 
         // geef de ID, token en redirect-link mee aan de fetchUserData functie (staat hieronder)
-        fetchUserData(decoded.sub, JWT, '/profile');
+        fetchUserData(decoded.sub, JWT, '/ProfileDetail');
         // link de gebruiker door naar de profielpagina
         // history.push('/profile');
     }
@@ -55,7 +55,7 @@ function AuthContextProvider({ children }) {
         });
 
         console.log('Gebruiker is uitgelogd!');
-        history.push('/');
+        navigate('/');
     }
 
     // Omdat we deze functie in login- en het mounting-effect gebruiken, staat hij hier gedeclareerd!
@@ -82,9 +82,9 @@ function AuthContextProvider({ children }) {
             });
 
             // als er een redirect URL is meegegeven (bij het mount-effect doen we dit niet) linken we hiernnaartoe door
-            // als we de history.push in de login-functie zouden zetten, linken we al door voor de gebuiker is opgehaald!
+            // als we de navigate in de login-functie zouden zetten, linken we al door voor de gebuiker is opgehaald!
             if (redirectUrl) {
-                history.push(redirectUrl);
+                navigate(redirectUrl);
             }
 
         } catch (e) {

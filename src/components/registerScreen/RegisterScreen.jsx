@@ -35,7 +35,7 @@ function RegisterScreen() {
             // als alles goed gegaan is, linken we door naar de login-pagina
 
             console.log(response.data);
-            // history.push('/login');
+            // navigate('/login');
             // navigate('/')
             window.location.reload(false);
         } catch(e) {
@@ -121,7 +121,12 @@ function RegisterScreen() {
                                 />
                             </div>
 
-                            <button className="registerButton2" type="submit">Registreren</button>
+                            {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
+
+                            <button
+                                className="registerButton2"
+                                disabled={loading}
+                                type="submit">Registreren</button>
 
                         </div>
                     </div>

@@ -24,10 +24,10 @@ function LoginScreen() {
             });
             // log het resultaat in de console
             console.log(response.data);
-
             // geef de JWT token aan de login-functie van de context mee
-            login(response.data.accessToken);
-            navigate('/')
+            // HIERDOOR GAAT HET MIS!!!!
+            login(response.data.jwt);
+            navigate('/ProfileDetail')
 
         } catch (e) {
             console.error(e);
@@ -81,7 +81,8 @@ function LoginScreen() {
                                 name="wachtwoord"
                                 value={password}
                                 id="wachtwoord"
-                                required/>
+                                required
+                                autoComplete="on"/>
                         </div>
 
                         {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}
