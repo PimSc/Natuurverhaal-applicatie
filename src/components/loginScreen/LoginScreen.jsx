@@ -1,39 +1,49 @@
-import {useState, useContext} from 'react';
 import './LoginScreen.css';
-
-import {AuthContextData} from "../../context/AuthContextProvider";
+// import { Link } from 'react-router-dom';
+import {useContext, useState} from 'react';
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import axios from "axios";
 
 function LoginScreen() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [error, toggleError] = useState(false);
+    const {login} = useContext(AuthContext);
 
-    async function loginUser(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
+        toggleError(false);
+
         try {
             const response = await axios.post('http://localhost:8080/authenticate', {
                 username: username,
                 password: password
             });
+            // log het resultaat in de console
             console.log(response.data);
-        } catch (error) {
-            console.error(error);
+
+            // geef de JWT token aan de login-functie van de context mee
+            login(response.data.accessToken);
+
+        } catch (e) {
+            console.error(e);
+            toggleError(true);
         }
     }
 
-    async function fetchData() {
-        try {
-            const response = await axios.get('http://localhost:8080/authenticated');
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    // async function fetchData() {
+    //     try {
+    //         const response = await axios.get('http://localhost:8080/authenticated');
+    //         console.log(response.data);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
 
     return (
         <>
-            <form onSubmit={(e) => loginUser(e)}>
+            <form onSubmit={handleSubmit}>
                 <h1>Inloggen</h1>
                 {/*<p>{session?.username} {userRoles}</p>*/}
                 <p>Welkom terug</p>
@@ -49,6 +59,7 @@ function LoginScreen() {
                                 type="text"
                                 onChange={(e) => setUserName(e.target.value)}
                                 placeholder="Gebruikersnaam" name="username"
+                                value={username}
                                 id="username"
                                 required
                                 autoComplete="on"/>
@@ -62,9 +73,12 @@ function LoginScreen() {
                                 type="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 name="wachtwoord"
+                                value={password}
                                 id="wachtwoord"
                                 required/>
                         </div>
+
+                        {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}
 
                         <button className="registerButton2" type="submit">Inloggen</button>
                     </div>
