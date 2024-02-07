@@ -1,14 +1,17 @@
 import './LoginScreen.css';
-// import { Link } from 'react-router-dom';
 import {useContext, useState} from 'react';
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
+
 
 function LoginScreen() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [error, toggleError] = useState(false);
     const {login} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -24,6 +27,7 @@ function LoginScreen() {
 
             // geef de JWT token aan de login-functie van de context mee
             login(response.data.accessToken);
+            navigate('/')
 
         } catch (e) {
             console.error(e);
@@ -58,7 +62,8 @@ function LoginScreen() {
                             <input
                                 type="text"
                                 onChange={(e) => setUserName(e.target.value)}
-                                placeholder="Gebruikersnaam" name="username"
+                                placeholder="Gebruikersnaam"
+                                name="username"
                                 value={username}
                                 id="username"
                                 required
@@ -72,6 +77,7 @@ function LoginScreen() {
                             <input
                                 type="password"
                                 onChange={(e) => setPassword(e.target.value)}
+                                placeholder="wachtwoord"
                                 name="wachtwoord"
                                 value={password}
                                 id="wachtwoord"

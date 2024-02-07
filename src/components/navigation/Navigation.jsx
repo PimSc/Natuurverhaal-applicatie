@@ -2,11 +2,11 @@ import './Navigation.css';
 import {Link, NavLink} from 'react-router-dom';
 
 import {useContext} from 'react';
-import {AuthContextData} from "../../context/AuthContextProvider";
+import {AuthContext} from "../../context/AuthContextProvider";
 
 function Navigation() {
 
-    const {isAuthenticated, logout} = useContext(AuthContextData);
+    const {isAuthenticated, logout} = useContext(AuthContext);
 
     return (
         <>

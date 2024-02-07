@@ -35,7 +35,9 @@ function RegisterScreen() {
             // als alles goed gegaan is, linken we door naar de login-pagina
 
             console.log(response.data);
-            navigate.push('/login');
+            // history.push('/login');
+            // navigate('/')
+            window.location.reload(false);
         } catch(e) {
             console.error(e);
             toggleError(true);
