@@ -33,7 +33,7 @@ function BlogPostDetail() {
 
                     <Link to="/" className="back-link">
                         <br/>
-                        <button className="SimpleButtons"> Terug naar het blogs overzicht</button>
+                        <button className="SimpleButtons"> Terug naar blogs</button>
                         <br/>
                         <br/>
                     </Link>

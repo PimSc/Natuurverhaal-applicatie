@@ -87,7 +87,7 @@ function LoginScreen() {
 
                         {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}
 
-                        <button className="registerButton2" type="submit">Inloggen</button>
+                        <button className="SimpleButtons" type="submit">Inloggen</button>
                     </div>
                 </div>
                 <hr/>

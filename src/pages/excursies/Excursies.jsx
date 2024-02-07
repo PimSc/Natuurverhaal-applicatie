@@ -5,6 +5,7 @@ import ExcursionOverview from "../../components/excursionOverview/ExcursionOverv
 import {Link} from "react-router-dom";
 
 
+
 function Excursies() {
 
 
@@ -23,7 +24,11 @@ function Excursies() {
                     <div className="Extra-inner-content-container">
 
                         <div className="elementCenterContainer">
-                            <button className="excursionAdminButton" id="excursionAdminButton" type="button">
+                            <button
+                                className="SimpleButtons"
+                                // className="excursionAdminButton"
+                                type="button"
+                            >
                                 <Link to="/writeExcursion">Activiteit plaatsen</Link>
                             </button>
                         </div>

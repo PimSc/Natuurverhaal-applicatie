@@ -124,7 +124,7 @@ function RegisterScreen() {
                             {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
 
                             <button
-                                className="registerButton2"
+                                className="SimpleButtons"
                                 disabled={loading}
                                 type="submit">Registreren</button>
 
