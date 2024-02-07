@@ -16,7 +16,7 @@ function Prikbord() {
         <>
             <div className="inner-content-container-textFields">
                 <button className="SimpleButtons" id="bulletinBoardButton1" type="button">
-                    <Link to="/WriteBulletin"><strong>Prikbord bericht aanmaken</strong></Link>
+                    <Link to="/WriteBulletin">Prikbord bericht aanmaken</Link>
                 </button>
 
                 {/*{isAllowed && (<button className="SimpleButtons" id="bulletinBoardButton1" type="button">*/}

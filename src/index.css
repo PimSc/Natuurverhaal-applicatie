@@ -134,7 +134,7 @@ a:active {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  font-family: var(--titleFont);
+  /*font-family: var(--titleFont);*/
 }
 
 /*Button styling*/

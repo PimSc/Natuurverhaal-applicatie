@@ -57,7 +57,7 @@ function WriteBulletin() {
                     </div>
 
                     <div className="elementCenterContainer">
-                        <button className="SimpleButtons" id="postBulletinButton" type="submit">
+                        <button className="SimpleButtons" type="submit">
                             <Link to="/prikbord"><strong>Prikbord bericht plaatsen</strong></Link>
                         </button>
                     </div>
