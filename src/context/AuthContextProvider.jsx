@@ -1,7 +1,9 @@
+import './AuthContextProvider.css';
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
+import LoadingGif from "./../../public/assets/icons/LoadingGif.gif"
 
 
 export const AuthContext = createContext({});
@@ -107,7 +109,8 @@ function AuthContextProvider({ children }) {
 
     return (
         <AuthContext.Provider value={contextData}>
-            {isAuth.status === 'done' ? children : <p>Loading...</p>}
+            {isAuth.status === 'done' ? children : <div className="loadingGif"> <img src={LoadingGif} alt="loading Gif"/></div>}
+            {/*{isAuth.status === 'done' ? children : <p>Loading...</p>}*/}
         </AuthContext.Provider>
     );
 }
