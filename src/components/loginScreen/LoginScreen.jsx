@@ -27,7 +27,7 @@ function LoginScreen() {
             // geef de JWT token aan de login-functie van de context mee
             // HIERDOOR GAAT HET MIS!!!!
             login(response.data.jwt);
-            navigate('/ProfileDetail')
+            // navigate('/')
 
         } catch (e) {
             console.error(e);

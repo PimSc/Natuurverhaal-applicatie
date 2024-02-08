@@ -35,17 +35,27 @@ function Navigation() {
                             <div className="dropdown">
                                 <button className="dropbtn">Account</button>
                                 <div className="dropdown-content">
-                                    {!isAuthenticated && (<li><Link to="/login">Login</Link></li>)}
-                                    {isAuthenticated && (<>
-                                            <li><Link to="/mijnBlogs">Blogs</Link></li>
-                                            <li><Link to="/ProfileEdit">Profiel</Link></li>
-                                            <li><Link onClick={(e) => {
-                                                e.preventDefault();
-                                                logout();
-                                            }} to="/">Uitloggen</Link></li>
-                                        </>
-                                    )}
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/mijnBlogs">Blogs</Link></li>
+                                    <li><Link to="/ProfileEdit">Profiel</Link></li>
+                                    <li><Link
+                                        onClick={(e) => {
+                                        e.preventDefault(); logout();}} to="/">Uitloggen
+                                    </Link></li>
+
                                 </div>
+                                {/*<div className="dropdown-content">*/}
+                                {/*    {!isAuthenticated && (<li><Link to="/login">Login</Link></li>)}*/}
+                                {/*    {isAuthenticated && (<>*/}
+                                {/*            <li><Link to="/mijnBlogs">Blogs</Link></li>*/}
+                                {/*            <li><Link to="/ProfileEdit">Profiel</Link></li>*/}
+                                {/*            <li><Link onClick={(e) => {*/}
+                                {/*                e.preventDefault();*/}
+                                {/*                logout();*/}
+                                {/*            }} to="/">Uitloggen</Link></li>*/}
+                                {/*        </>*/}
+                                {/*    )}*/}
+                                {/*</div>*/}
                             </div>
                             </ul>
                         </li>

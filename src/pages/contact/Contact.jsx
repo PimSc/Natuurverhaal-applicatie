@@ -11,7 +11,7 @@ function Contact() {
                     <div className="textCenter">
                         <br/>
                         <p>Vragen of opmerkingen? stuur ons een email</p>
-                        <p> <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
+                        <p>  <a href={`mailto:${emailAddress}`}><strong>{emailAddress}</strong></a></p>
                     </div>
                 </div>
             </div>
