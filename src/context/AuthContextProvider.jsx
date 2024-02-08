@@ -25,6 +25,7 @@ function AuthContextProvider({ children }) {
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
             const decoded = jwtDecode(token);
+            console.log(decoded)
             fetchUserData(decoded.sub, token);
         } else {
             // als er GEEN token is doen we niks, en zetten we de status op 'done'
@@ -43,6 +44,7 @@ function AuthContextProvider({ children }) {
         const decoded = jwtDecode(JWT);
 
         // geef de ID, token en redirect-link mee aan de fetchUserData functie (staat hieronder)
+        console.log('Gebruiker is ingelogd!');
         fetchUserData(decoded.sub, JWT, '/ProfileDetail');
         // link de gebruiker door naar de profielpagina
         // history.push('/profile');
@@ -57,7 +59,7 @@ function AuthContextProvider({ children }) {
         });
 
         console.log('Gebruiker is uitgelogd!');
-        navigate('/');
+        navigate('/login');
     }
 
     // Omdat we deze functie in login- en het mounting-effect gebruiken, staat hij hier gedeclareerd!
@@ -79,6 +81,7 @@ function AuthContextProvider({ children }) {
                     username: result.data.username,
                     email: result.data.email,
                     id: result.data.id,
+                    role: result.data.role
                 },
                 status: 'done',
             });
