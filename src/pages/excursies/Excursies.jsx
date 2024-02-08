@@ -3,11 +3,13 @@ import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.js
 import AdderPhoto from "./../../../public/assets/websiteImages/AdderPhoto.jpg"
 import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx";
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {AuthContext} from "../../context/AuthContextProvider.jsx";
 
 
 
 function Excursies() {
-
+    const {user} = useContext(AuthContext);
 
     return (
         <>
@@ -23,6 +25,7 @@ function Excursies() {
                     {/*extra inner container(column) for A and B*/}
                     <div className="Extra-inner-content-container">
 
+                        {user &&
                         <div className="elementCenterContainer">
                             <button
                                 className="SimpleButtons"
@@ -32,7 +35,7 @@ function Excursies() {
                                 <Link to="/writeExcursion">Activiteit plaatsen</Link>
                             </button>
                         </div>
-
+                        }
                         {/*box A (Row)*/}
                         <div className="excursionContentBox1">
 

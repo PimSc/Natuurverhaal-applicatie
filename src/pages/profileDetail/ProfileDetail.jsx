@@ -10,6 +10,9 @@ function ProfileDetail() {
     const [profileData, setProfileData] = useState({});
     const {user} = useContext(AuthContext);
 
+
+
+
     useEffect(() => {
         // we halen de pagina-content op in de mounting-cycle
         async function fetchProfileData() {
@@ -42,11 +45,15 @@ function ProfileDetail() {
                         <h2>Gegevens</h2>
                         <p><strong>Gebruikersnaam:</strong> {user.username}</p>
                         <p><strong>Email:</strong> {user.email}</p>
+
+
+
+
                     </section>
 
                     {/*Als er keys in ons object zitten hebben we data, en dan renderen we de content*/}
                     {/*{Object.keys(profileData).length > 0 &&      }*/}
-                    <p><strong>User role: {user.role}</strong> {}</p>
+                    <p><strong>User role:</strong> {user.role} </p>
 
 
                     <p>Terug naar de <Link to="/">Homepagina</Link></p>
