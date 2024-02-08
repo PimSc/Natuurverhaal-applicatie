@@ -14,11 +14,29 @@
 :root {
   /*colors start*/
 
+
+  /*---------- Text & border colors------------*/
+
   /*BLACK EDITION*/
   --mainFontColor: black;
 
   /*PINK EDITION*/
   /*--mainFontColor: hotpink;*/
+  /*----------------------*/
+
+
+
+  /*---------- Background color------------*/
+
+  /*--mainBackgroundColor: red;*/
+  --mainBackgroundColor: hsl(0, 0%, 100%);
+  /*----------------------*/
+
+  --SideNavbarColor: white;
+
+  /*other colors*/
+
+  --onHoverColor: #3e8e41;
 
   --black: hsl(0, 0%, 0%);
   --black50Transparant: hsl(0, 0%, 0%, 0.5);
@@ -30,7 +48,7 @@
   --menuBarBackground: hsla(0, 0%, 20%, 0.8);
   /*colors end*/
 
-  --mainBackgroundColor: hsl(0, 0%, 100%);
+
   --secondBackgroundColor: hsl(0, 0%, 14%);
 
   /*font-family`s start*/
@@ -56,7 +74,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--mainFontColor);
   background-color: var(--mainBackgroundColor);
 
   font-synthesis: none;
@@ -143,7 +161,7 @@ button:hover {
 }
 
 button{
-  background-color: var(--white);
+  background-color: var(--mainBackgroundColor);
   color: var(--mainFontColor);
 font-family: var(--mainFont);
   font-size: var(--pFontSize);
@@ -152,16 +170,13 @@ font-family: var(--mainFont);
 
 /*input field layout*/
 input {
-  background-color: var(--white);
+  background-color: var(--mainBackgroundColor);
   padding: 5px;
   border: 1px solid var(--mainFontColor);
   border-radius: 10px;
   font-size: var(--pFontSize);
   font-family: var(--mainFont);
   color: var(--mainFontColor);
-}
-textarea{
-  padding: 5px;
 }
 
 label {
@@ -171,18 +186,18 @@ label {
 
 input::file-selector-button {
   border: var(--white);
-  /*background-color: var(--darkerGrey);*/
   border-radius: 10px;
   padding: 5px 10px;
   font-family: var(--mainFont);
 }
 
 textarea{
-  background-color: var(--white);
+  background-color: var(--mainBackgroundColor);
   border: 1px solid var(--mainFontColor);
   border-radius: 9px;
   font-size: var(--pFontSize);
   color: var(--mainFontColor);
+  padding: 5px;
 }
 
 /*Other stylings*/
@@ -195,20 +210,6 @@ button, select, textarea {
 }
 
 /*basic information end*/
-
-/*.SimpleButtons{*/
-/*  border-radius: 10px;*/
-/*  !*padding: 5px 10px;*!*/
-/*    border: 4px solid  var(--grey);*/
-/*  margin: 30px 0 0 0;*/
-/*  padding: 20px;*/
-/*  font-family: var(--mainFont);*/
-/*}*/
-
-
-
-
-
 
 
 
@@ -237,8 +238,8 @@ button, select, textarea {
 
 }
 .SimpleButtons:hover {
-  color: #3e8e41;
-  border-color: #3e8e41;
+  color: var(--onHoverColor);
+  border-color: var(--onHoverColor);
   transition: all 0.3s ease 0s;
   border-radius: 22px 6px;
   /*background: rgb(46, 204, 113);*/
@@ -498,7 +499,9 @@ min-width: 400px;
     /*border: 5px dashed purple;*/
   }
 
-
+  button{
+    font-size: calc(var(--pFontSize) - 40%);
+  }
 
 }
 /*Einde media query telefoon*/

@@ -20,7 +20,7 @@ function WriteExcursion() {
 
                     <div className="elementCenterContainer">
                         <button className="SimpleButtons" type="button">
-                            <Link to="/excursies">Terug naar de excursie pagina</Link>
+                            <Link to="/excursies">Excursie overzicht</Link>
                         </button>
                     </div>
 
