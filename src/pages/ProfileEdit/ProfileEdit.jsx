@@ -1,21 +1,67 @@
 import './ProfileEdit.css';
 import question from "./../../../public/assets/icons/question-icon.png"
 import profiles from '../../constants/Profile.json';
+import axios from "axios";
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
+import {useContext, useEffect, useState} from "react";
 
 
 function ProfileEdit() {
 
-    const handleFileChange = (event) => {
-        const selectedFile = event.target.files[0];
-        const maxDimension = 101; // Maximale afmeting in pixels
+    const {user} = useContext(AuthContext);
+    const [selectedFile, setSelectedFile] = useState(null);
+const [profileImage, setProfileImage] = useState(null);
 
-        if (selectedFile && selectedFile.size > maxDimension) {
-            alert('Maximale toegestane grootte is 100x100 pixels');
-        } else {
-            // Voeg hier logica toe voor verdere afhandeling van het bestand
-        }
+
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+        // const maxDimension = 5000 * 5000; // Maximale afmeting in pixels
+        //
+        // if (selectedFile && selectedFile.size > maxDimension) {
+        //     alert('Maximale toegestane grootte is 100x100 pixels');
+        // } else {
+            // eslint-disable-next-line no-inner-declarations
+        console.log(event.target.files[0])
     };
 
+    async function uploadImage() {
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+        formData.append('username', "test");
+        console.log(selectedFile)
+
+
+        try {
+            const response = await axios.post('http://localhost:8080/image',
+                formData,
+                // username: 'test'
+            {headers: {
+                "Content-Type": "multipart/form-data",
+            }});
+            console.log(response);
+
+        } catch (error) {
+
+            console.error(error);
+        }
+        // }
+    }
+
+    useEffect(() => {
+    async function getImage() {
+        try {
+            // const username = "test"; // Replace "test" with the actual username
+            const response = await axios.get(`http://localhost:8080/image/test3`);
+            // const response = await axios.get('http://localhost:8080/image');
+            setProfileImage(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    void getImage();
+    console.log(profileImage);
+}, []);
 
     return (
         <>
@@ -43,7 +89,7 @@ function ProfileEdit() {
 
                                 {profiles.map((profile) => (
                                     <div className="profilePageProfileImageContainer" key={profile.id}>
-                                        <img className="profilePictureCircle" src={profile.profileImage}
+                                        <img className="profilePictureCircle" src={profileImage}
                                              alt={profile.caption}/>
                                     </div>
                                 ))}
@@ -68,6 +114,7 @@ function ProfileEdit() {
                                     id="profilePhotoUpload"
                                     onChange={handleFileChange}
                                 />
+                                <button type='button'onClick={uploadImage}>Upload mij!</button>
                             </div>
 
 
