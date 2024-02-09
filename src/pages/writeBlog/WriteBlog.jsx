@@ -8,7 +8,7 @@ function WriteBlog() {
             <div className="inner-content-container-textFields">
 
                 <button className="SimpleButtons" type="button">
-                    <Link to="/mijnBlogs"><strong>Terug naar mijn blogs</strong></Link>
+                    <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                 </button>
 
 

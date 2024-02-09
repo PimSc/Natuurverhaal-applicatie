@@ -50,17 +50,37 @@
 }
 
 .post-content{
-    color: black
+    color: var(--mainFontColor)
 }
 
-#searchbarBlogOvervieuw{
+#searchbarBlogOvervieuw {
     margin-top: 30px;
 }
+
+    #searchbarBlogOvervieuw input{
+        border: 4px solid var(--mainFontColor);
+        height: 55px;
+        border-radius: 6px 22px;
+    }
+
+
+#searchbarBlogOvervieuw input:hover {
+    color: var(--onHoverColor);
+    border-color: var(--onHoverColor);
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    /*background: rgb(46, 204, 113);*/
+    cursor: pointer;
+}
+
+
+
 
 .searchBar{
     width: 300px;
     margin: 0 auto;
-    border: 2px solid var(--black);
+    border: 2px solid;
+    border-color: var(--mainFontColor);
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 

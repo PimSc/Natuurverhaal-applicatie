@@ -1,7 +1,7 @@
 /*STYLING START*/
 nav ul a,
 nav ul a:visited {
-    color: black;
+    color: var(--mainFontColor);
     text-decoration: none;
 }
 
@@ -14,12 +14,19 @@ nav ul a:visited {
 }
 
 .active-link {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid;
+    border-color: var(--mainFontColor);
 }
 
 .active-link {
     font-size: var(--navLinkSize);
 }
+
+nav ul a:hover{
+color: var(--onHoverColor);
+}
+
+
 
 
 
@@ -35,10 +42,11 @@ nav ul a:visited {
     display: flex;
     flex-direction: row;
     height: 65px;
-    Border: 2px solid var(--darkerGrey);
+    Border: 2px solid var(--mainFontColor);
     border-left: none;
     border-right: none;
 }
+
 
 .mainNav{
     min-width: 100%;
@@ -66,13 +74,18 @@ ul {
 /*------Drop down menu start------*/
 /* Dropdown Button */
 .dropbtn {
-    background-color: var(--lightGrey);
-    color: var(--black);
-    padding: 13px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
+    color: var(--mainFontColor);
+    padding: 14px;
     border: none;
     font-size: var(--navLinkSize);
     transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: none;
 }
+
+
+
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -84,7 +97,8 @@ ul {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--white);
+    /*doorzichtig maken pim*/
+    background-color: rgba(255, 255, 255, 0.8);
     min-width: 160px;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
@@ -93,7 +107,7 @@ ul {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
+    color: var(--mainFontColor);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -102,7 +116,8 @@ ul {
 }
 
 .dropdown-content{
-    border: 2px solid black;
+    border: 2px solid;
+    border-color: var(--mainFontColor);
     border-top: none;
 }
 
@@ -113,8 +128,12 @@ ul {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/*.dropdown:hover .dropbtn {background-color: var(--onHoverColor)}*/
+.dropdown:hover .dropbtn {color: var(--onHoverColor)}
 /*------Drop down menu end------*/
+
+
+
 /*LAYOUT END*/
 
 
@@ -271,10 +290,11 @@ ul {
 
         /*Side bar background*/
         background-color: var(--menuBarBackground);
-        color: var(--white);
-        width: 12rem;
+        color: var(--SideNavbarColor);
+        /*width: 12rem;*/
         min-height: 100vh;
-        border: 2px solid black;
+        border: 2px solid;
+        border-color: var(--mainFontColor);
         border-left: none;
         border-top: none;
         margin-top: 62px;

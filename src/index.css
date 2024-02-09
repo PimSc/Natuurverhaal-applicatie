@@ -13,16 +13,42 @@
 
 :root {
   /*colors start*/
+
+
+  /*---------- Text & border colors------------*/
+
+  /*BLACK EDITION*/
+  --mainFontColor: black;
+
+  /*PINK EDITION*/
+  /*--mainFontColor: hotpink;*/
+  /*----------------------*/
+
+
+
+  /*---------- Background color------------*/
+
+  /*--mainBackgroundColor: red;*/
+  --mainBackgroundColor: hsl(0, 0%, 100%);
+  /*----------------------*/
+
+  --SideNavbarColor: white;
+
+  /*other colors*/
+
+  --onHoverColor: #3e8e41;
+
   --black: hsl(0, 0%, 0%);
   --black50Transparant: hsl(0, 0%, 0%, 0.5);
   --darkerGrey: hsl(0, 0%, 20%);
+  --grey: hsl(0, 0%, 28.2%);
   --lightGrey: hsl(0, 0%, 95%);
   --lighGreyTransparant: hsl(0, 0%, 83%, 0.2);
   --white: hsl(0, 0%, 100%);
   --menuBarBackground: hsla(0, 0%, 20%, 0.8);
   /*colors end*/
 
-  --mainBackgroundColor: hsl(0, 0%, 100%);
+
   --secondBackgroundColor: hsl(0, 0%, 14%);
 
   /*font-family`s start*/
@@ -48,7 +74,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--mainFontColor);
   background-color: var(--mainBackgroundColor);
 
   font-synthesis: none;
@@ -88,17 +114,17 @@ h6 {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--black);
+  color: var(--mainFontColor);
   font-family: var(--titleFont);
 }
 
 p {
-  color: var(--black);
+  color: var(--mainFontColor);
   font-family: var(--mainFont);
 }
 
 i {
-  color: var(--black);
+  color: var(--mainFontColor);
   font-family: var(--mainFont);
 }
 
@@ -126,7 +152,7 @@ a:active {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  font-family: var(--titleFont);
+  /*font-family: var(--titleFont);*/
 }
 
 /*Button styling*/
@@ -135,8 +161,8 @@ button:hover {
 }
 
 button{
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--mainBackgroundColor);
+  color: var(--mainFontColor);
 font-family: var(--mainFont);
   font-size: var(--pFontSize);
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -144,37 +170,34 @@ font-family: var(--mainFont);
 
 /*input field layout*/
 input {
-  background-color: var(--white);
+  background-color: var(--mainBackgroundColor);
   padding: 5px;
-  border: 1px solid var(--black);
+  border: 1px solid var(--mainFontColor);
   border-radius: 10px;
   font-size: var(--pFontSize);
   font-family: var(--mainFont);
-  color: var(--black);
-}
-textarea{
-  padding: 5px;
+  color: var(--mainFontColor);
 }
 
 label {
-  color: var(--black);
+  color: var(--mainFontColor);
   font-family: var(--mainFont);
 }
 
 input::file-selector-button {
   border: var(--white);
-  background-color: var(--darkerGrey);
   border-radius: 10px;
   padding: 5px 10px;
   font-family: var(--mainFont);
 }
 
 textarea{
-  background-color: var(--white);
-  border: 1px solid var(--black);
+  background-color: var(--mainBackgroundColor);
+  border: 1px solid var(--mainFontColor);
   border-radius: 9px;
   font-size: var(--pFontSize);
-  color: black;
+  color: var(--mainFontColor);
+  padding: 5px;
 }
 
 /*Other stylings*/
@@ -188,12 +211,58 @@ button, select, textarea {
 
 /*basic information end*/
 
-.SimpleButtons{
-  border-radius: 10px;
-  padding: 5px 10px;
-  margin: 30px 0 0 0;
+
+
+
+/*Button test*/
+
+
+
+.SimpleButtons {
   font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+
+  box-sizing: border-box;
+  text-align: center;
+
 }
+.SimpleButtons:hover {
+  color: var(--onHoverColor);
+  border-color: var(--onHoverColor);
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
+
+
+
+
+/*Button test*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -430,7 +499,9 @@ min-width: 400px;
     /*border: 5px dashed purple;*/
   }
 
-
+  button{
+    font-size: calc(var(--pFontSize) - 40%);
+  }
 
 }
 /*Einde media query telefoon*/

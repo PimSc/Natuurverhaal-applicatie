@@ -25,7 +25,6 @@ function Login() {
 
                 <p >voordelen van inloggen</p>
 
-
                 <div className="accountPageButtonBox2">
                     <button
                         // handleButtonClick is for changing the login and register button

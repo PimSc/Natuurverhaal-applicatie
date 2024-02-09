@@ -5,11 +5,11 @@
 
 
 /*LAYOUT START*/
-#WriteBlogButton{
-    font-size: 25px;
-    height: 80px;
-    width: 220px;
-    border: 5px solid goldenrod;
+
+
+#WriteBlogButton:hover {
+    border: 4px solid goldenrod;
+    color: goldenrod;
 }
 
 #myBlogsTitleStyling{

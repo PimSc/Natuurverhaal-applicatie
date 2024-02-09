@@ -75,10 +75,11 @@ function ExcursiePostDetail() {
                         deelnemers: {maxParticipants}</p>
 
                     <form action="">
-                        <div className="textCenter">
-                            <h1>Inschrijven</h1>
+                        <div className="textCenter" id="topMarginDeelnemen">
+                            <h2>Deelnemen</h2>
                         </div>
 
+                        <div className="textCenter">
                         <label className="textStart" htmlFor="title">
                             <b>Naam:</b>
                         </label>
@@ -100,6 +101,7 @@ function ExcursiePostDetail() {
                                autoComplete="on"
                                required
                         />
+                        </div>
                         <div className="buttonCenter">
                            <button className="SimpleButtons"> Inschrijven voor excursie <strong>{title}</strong></button>
                         </div>
