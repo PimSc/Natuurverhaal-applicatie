@@ -1,6 +1,5 @@
 import './ProfileEdit.css';
 import question from "./../../../public/assets/icons/question-icon.png"
-import profiles from '../../constants/Profile.json';
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import {useContext, useEffect, useState} from "react";
@@ -9,8 +8,9 @@ import {useContext, useEffect, useState} from "react";
 function ProfileEdit() {
 
     const {user} = useContext(AuthContext);
-    const [selectedFile, setSelectedFile] = useState(null);
-const [profileImage, setProfileImage] = useState(null);
+    const [selectedFile, setSelectedFile] = useState({});
+    const [profileImage, setProfileImage] = useState(null);
+    const [download, triggerDownload] = useState(false);
 
 
     const handleFileChange = (event) => {
@@ -27,9 +27,8 @@ const [profileImage, setProfileImage] = useState(null);
     async function uploadImage() {
         const formData = new FormData();
         formData.append('file', selectedFile);
-        formData.append('username', "test");
+        formData.append('username', "tester1");
         console.log(selectedFile)
-
 
         try {
             const response = await axios.post('http://localhost:8080/image',
@@ -39,7 +38,7 @@ const [profileImage, setProfileImage] = useState(null);
                 "Content-Type": "multipart/form-data",
             }});
             console.log(response);
-
+            triggerDownload(!download);
         } catch (error) {
 
             console.error(error);
@@ -49,22 +48,26 @@ const [profileImage, setProfileImage] = useState(null);
 
     useEffect(() => {
     async function getImage() {
+        console.log(user)
         try {
             // const username = "test"; // Replace "test" with the actual username
-            const response = await axios.get(`http://localhost:8080/image/test3`);
+            const response = await axios.get(`http://localhost:8080/image/tester1`, {responseType: 'arraybuffer'});
             // const response = await axios.get('http://localhost:8080/image');
-            setProfileImage(response.data);
+            console.log(response.data)
+            const blob = new Blob([response.data], { type: 'image/png' });
+            const dataUrl = URL.createObjectURL(blob);
+            setProfileImage(dataUrl);
+
         } catch (error) {
             console.error(error);
         }
     }
-
     void getImage();
-    console.log(profileImage);
-}, []);
+}, [download]);
 
     return (
         <>
+            {console.log(profileImage)}
             <div className="outer-content-container">
                 <div className="inner-content-container-column">
                     <form action="">
@@ -86,13 +89,13 @@ const [profileImage, setProfileImage] = useState(null);
                             {/*Linker rij verticaal*/}
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
+                                {profileImage && <img src={profileImage} alt="Profile" />}
 
-                                {profiles.map((profile) => (
-                                    <div className="profilePageProfileImageContainer" key={profile.id}>
-                                        <img className="profilePictureCircle" src={profileImage}
-                                             alt={profile.caption}/>
-                                    </div>
-                                ))}
+                                {/*<div className="profilePageProfileImageContainer">*/}
+                                {/*    <img className="profilePictureCircle" src={profileImage}*/}
+                                {/*         alt='hoi'/>*/}
+                                {/*</div>*/}
+
                             </div>
 
                             {/*Middelste rij verticaal*/}
