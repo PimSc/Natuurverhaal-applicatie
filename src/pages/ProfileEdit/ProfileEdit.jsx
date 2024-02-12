@@ -12,7 +12,7 @@ function ProfileEdit() {
     const [profileImage, setProfileImage] = useState(null);
     const [download, triggerDownload] = useState(false);
 
-
+    console.log("logje" + user.username);
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
         // const maxDimension = 5000 * 5000; // Maximale afmeting in pixels
@@ -27,7 +27,8 @@ function ProfileEdit() {
     async function uploadImage() {
         const formData = new FormData();
         formData.append('file', selectedFile);
-        formData.append('username', "tester1");
+        // formData.append('username', "test");
+        formData.append('username', user.username);
         console.log(selectedFile)
 
         try {
@@ -51,7 +52,7 @@ function ProfileEdit() {
         console.log(user)
         try {
             // const username = "test"; // Replace "test" with the actual username
-            const response = await axios.get(`http://localhost:8080/image/tester1`, {responseType: 'arraybuffer'});
+            const response = await axios.get(`http://localhost:8080/image/${user.username}`, {responseType: 'arraybuffer'});
             // const response = await axios.get('http://localhost:8080/image');
             console.log(response.data)
             const blob = new Blob([response.data], { type: 'image/png' });
@@ -89,12 +90,7 @@ function ProfileEdit() {
                             {/*Linker rij verticaal*/}
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
-                                {profileImage && <img src={profileImage} alt="Profile" />}
-
-                                {/*<div className="profilePageProfileImageContainer">*/}
-                                {/*    <img className="profilePictureCircle" src={profileImage}*/}
-                                {/*         alt='hoi'/>*/}
-                                {/*</div>*/}
+                                {profileImage && <img src={profileImage} alt="Profiel foto" />}
 
                             </div>
 
