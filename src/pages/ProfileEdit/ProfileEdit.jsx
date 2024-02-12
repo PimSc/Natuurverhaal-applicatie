@@ -6,7 +6,6 @@ import {useContext, useEffect, useState} from "react";
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
 
 
-
 function ProfileEdit() {
 
     const {user} = useContext(AuthContext);
@@ -45,47 +44,64 @@ function ProfileEdit() {
         }
     };
 
-    async function uploadImage() {
-        const formData = new FormData();
-        formData.append('file', selectedFile);
-        // formData.append('username', "test");
-        formData.append('username', user.username);
-        console.log(selectedFile)
 
+    async function deleteOldImage() {
         try {
-            const response = await axios.post('http://localhost:8080/image',
-                formData,
-                // username: 'test'
-            {headers: {
-                "Content-Type": "multipart/form-data",
-            }});
-            console.log(response);
-            // triggerDownload(!download);
+            await axios.delete(`http://localhost:8080/image/${user.username}`);
         } catch (error) {
-
-            console.error(error);
+            console.error("Fout bij het verwijderen van de oude afbeelding:", error);
         }
-        // }
     }
 
-//     useEffect(() => {
-//     async function getImage() {
-//         console.log(user)
-//         try {
-//             // const username = "test"; // Replace "test" with the actual username
-//             const response = await axios.get(`http://localhost:8080/image/${user.username}`, {responseType: 'arraybuffer'});
-//             // const response = await axios.get('http://localhost:8080/image');
-//             console.log(response.data)
-//             const blob = new Blob([response.data], { type: 'image/png' });
-//             const dataUrl = URL.createObjectURL(blob);
-//             setProfileImage(dataUrl);
-//
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     }
-//     void getImage();
-// }, [download]);
+    async function uploadImage() {
+        if (selectedFile) {
+            // Verwijder de oude afbeelding
+            await deleteOldImage();
+
+            // Upload de nieuwe afbeelding nadat de oude is verwijderd
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+            formData.append('username', user.username);
+
+            try {
+                const response = await axios.post('http://localhost:8080/image', formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    }
+                });
+                console.log(response);
+            } catch (error) {
+                console.error("Fout bij het uploaden van de afbeelding:", error);
+            }
+        } else {
+            console.warn("Selecteer een afbeelding om te uploaden.");
+        }
+    }
+
+    // async function uploadImage() {
+    //     const formData = new FormData();
+    //     formData.append('file', selectedFile);
+    //     // formData.append('username', "test");
+    //     formData.append('username', user.username);
+    //     console.log(selectedFile)
+    //
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/image',
+    //             formData,
+    //             // username: 'test'
+    //             {
+    //                 headers: {
+    //                     "Content-Type": "multipart/form-data",
+    //                 }
+    //             });
+    //         console.log(response);
+    //         // triggerDownload(!download);
+    //     } catch (error) {
+    //
+    //         console.error(error);
+    //     }
+    // }
+
 
     return (
         <>
@@ -112,14 +128,12 @@ function ProfileEdit() {
                                 <p>profiel foto</p>
 
 
-                                {profileImage && <img src={profileImage} alt="Profiel foto" style={{ width: '100px', height: '100px' }} />}
+                                {profileImage && <img src={profileImage} alt="Profiel foto"
+                                                      style={{width: '100px', height: '100px'}}/>}
                             </div>
 
                             {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
-
-
-
 
 
                                 {/*IMAGE UPLOAD*/}
@@ -141,16 +155,14 @@ function ProfileEdit() {
                             </div>
 
 
-
-
-
                             {/*laatste rij verticaal (uitleg bestandupload)*/}
                             <div className="ProfileEditBox3">
                                 <br/>
                                 <div className="iconContainer">
                                     <img className="iconSmall" src={question} alt="question icon"/>
                                     <div className="iconOverlay">
-                                        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg, .png</i>
+                                        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
+                                            .png</i>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +292,7 @@ function ProfileEdit() {
                         <div className="profileButtonCenter">
                             <button className="SimpleButtons"
                                     type="submit"
-                                    onClick={uploadImage} >
+                                    onClick={uploadImage}>
                                 <strong>Verzenden</strong>
                             </button>
                         </div>
