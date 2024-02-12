@@ -14,7 +14,6 @@ function Home() {
                 <button>Profielpagina</button>
             </Link>
 
-            {/*<img src={bearPhoto} alt="{}"/>*/}
 
             {/*<BlogCounter />*/}
             <BlogOverview />

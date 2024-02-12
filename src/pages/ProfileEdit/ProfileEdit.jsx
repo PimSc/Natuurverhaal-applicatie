@@ -3,25 +3,46 @@ import question from "./../../../public/assets/icons/question-icon.png"
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import {useContext, useEffect, useState} from "react";
+import useProfileImage from "../../Hooks/useProfileImage.jsx";
+
 
 
 function ProfileEdit() {
 
     const {user} = useContext(AuthContext);
     const [selectedFile, setSelectedFile] = useState({});
-    const [profileImage, setProfileImage] = useState(null);
-    const [download, triggerDownload] = useState(false);
+    // const [download, triggerDownload] = useState(false);
+    const [warning, setWarning] = useState('');
+    const {profileImage} = useProfileImage();
 
-    console.log("logje" + user.username);
     const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-        // const maxDimension = 5000 * 5000; // Maximale afmeting in pixels
-        //
-        // if (selectedFile && selectedFile.size > maxDimension) {
-        //     alert('Maximale toegestane grootte is 100x100 pixels');
-        // } else {
-            // eslint-disable-next-line no-inner-declarations
-        console.log(event.target.files[0])
+        const selected = event.target.files[0];
+        setWarning('');
+        // Controleer of er een bestand is geselecteerd
+        if (selected) {
+            // Gebruik een FileReader om het bestand in te lezen en de afmetingen te controleren
+            const reader = new FileReader();
+            reader.readAsDataURL(selected);
+            reader.onload = (e) => {
+                const img = new Image();
+                img.src = e.target.result;
+                img.onload = () => {
+                    // Afbeelding limiet van 400 x 400 pixels
+                    if (img.width <= 400 && img.height <= 400) {
+                        // Controleer of het bestand de maximale grootte niet overschrijdt (10000 bytes is gelijk aan 10 kilobytes (KB))
+                        if (selected.size <= 10000) {
+                            // Als het bestand binnen de grenzen valt, stel het in als geselecteerd bestand
+                            setSelectedFile(selected);
+                            console.log(selected);
+                        } else {
+                            setWarning('Maximale toegestane grootte is 10 KB');
+                        }
+                    } else {
+                        setWarning('Afbeelding is groter dan 100 x 100 pixels.');
+                    }
+                };
+            };
+        }
     };
 
     async function uploadImage() {
@@ -39,7 +60,7 @@ function ProfileEdit() {
                 "Content-Type": "multipart/form-data",
             }});
             console.log(response);
-            triggerDownload(!download);
+            // triggerDownload(!download);
         } catch (error) {
 
             console.error(error);
@@ -47,28 +68,27 @@ function ProfileEdit() {
         // }
     }
 
-    useEffect(() => {
-    async function getImage() {
-        console.log(user)
-        try {
-            // const username = "test"; // Replace "test" with the actual username
-            const response = await axios.get(`http://localhost:8080/image/${user.username}`, {responseType: 'arraybuffer'});
-            // const response = await axios.get('http://localhost:8080/image');
-            console.log(response.data)
-            const blob = new Blob([response.data], { type: 'image/png' });
-            const dataUrl = URL.createObjectURL(blob);
-            setProfileImage(dataUrl);
-
-        } catch (error) {
-            console.error(error);
-        }
-    }
-    void getImage();
-}, [download]);
+//     useEffect(() => {
+//     async function getImage() {
+//         console.log(user)
+//         try {
+//             // const username = "test"; // Replace "test" with the actual username
+//             const response = await axios.get(`http://localhost:8080/image/${user.username}`, {responseType: 'arraybuffer'});
+//             // const response = await axios.get('http://localhost:8080/image');
+//             console.log(response.data)
+//             const blob = new Blob([response.data], { type: 'image/png' });
+//             const dataUrl = URL.createObjectURL(blob);
+//             setProfileImage(dataUrl);
+//
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     }
+//     void getImage();
+// }, [download]);
 
     return (
         <>
-            {console.log(profileImage)}
             <div className="outer-content-container">
                 <div className="inner-content-container-column">
                     <form action="">
@@ -90,8 +110,9 @@ function ProfileEdit() {
                             {/*Linker rij verticaal*/}
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
-                                {profileImage && <img src={profileImage} alt="Profiel foto" />}
 
+
+                                {profileImage && <img src={profileImage} alt="Profiel foto" style={{ width: '100px', height: '100px' }} />}
                             </div>
 
                             {/*Middelste rij verticaal*/}
@@ -113,7 +134,10 @@ function ProfileEdit() {
                                     id="profilePhotoUpload"
                                     onChange={handleFileChange}
                                 />
-                                <button type='button'onClick={uploadImage}>Upload mij!</button>
+                                <span className="textRed">
+                                {warning && <p>{warning}</p>}
+                                </span>
+                                {/*<button type='button'onClick={uploadImage}>Upload mij!</button>*/}
                             </div>
 
 
@@ -126,8 +150,7 @@ function ProfileEdit() {
                                 <div className="iconContainer">
                                     <img className="iconSmall" src={question} alt="question icon"/>
                                     <div className="iconOverlay">
-                                        <i>Maximale afmeting: 100x100 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
-                                            .png</i>
+                                        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg, .png</i>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +278,9 @@ function ProfileEdit() {
                         </div>
 
                         <div className="profileButtonCenter">
-                            <button className="SimpleButtons" type="submit">
+                            <button className="SimpleButtons"
+                                    type="submit"
+                                    onClick={uploadImage} >
                                 <strong>Verzenden</strong>
                             </button>
                         </div>

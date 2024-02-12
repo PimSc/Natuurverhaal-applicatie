@@ -1,7 +1,9 @@
 import './Contact.css'
 
+
 function Contact() {
     const emailAddress = "info@natuurverhaal.nl";
+
 
     return (
         <>

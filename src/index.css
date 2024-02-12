@@ -48,6 +48,9 @@
   --menuBarBackground: hsla(0, 0%, 20%, 0.8);
   /*colors end*/
 
+  .textRed p{
+    color: red;
+  }
 
   --secondBackgroundColor: hsl(0, 0%, 14%);
 

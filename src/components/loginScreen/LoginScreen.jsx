@@ -25,7 +25,6 @@ function LoginScreen() {
             // log het resultaat in de console
             console.log(response.data);
             // geef de JWT token aan de login-functie van de context mee
-            // HIERDOOR GAAT HET MIS!!!!
             login(response.data.jwt);
             // navigate('/')
 
