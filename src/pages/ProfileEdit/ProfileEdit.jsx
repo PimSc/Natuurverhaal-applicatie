@@ -56,7 +56,7 @@ function ProfileEdit() {
     async function uploadImage() {
         if (selectedFile) {
             // Verwijder de oude afbeelding
-            await deleteOldImage();
+            deleteOldImage();
 
             // Upload de nieuwe afbeelding nadat de oude is verwijderd
             const formData = new FormData();
