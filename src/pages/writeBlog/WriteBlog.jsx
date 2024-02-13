@@ -41,7 +41,7 @@ function WriteBlog() {
 
                         {/*SubTitle*/}
                         <label className="textStart" htmlFor="title">
-                            <b>Subtitel:</b>
+                            <b>Subtitle:</b>
                         </label>
                         <textarea className="textAreaOneLine"
                                   placeholder="Ondertitel"

@@ -3,13 +3,14 @@ import {useContext, useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import axios from 'axios';
+import useProfileImage from "../../Hooks/useProfileImage.jsx";
 
 
 function ProfileDetail() {
 
     const [profileData, setProfileData] = useState({});
     const {user} = useContext(AuthContext);
-
+    const {profileImage} = useProfileImage();
 
 
 
@@ -42,6 +43,7 @@ function ProfileDetail() {
                 <div className="outer-content-container-column">
                     <h1>Profielpagina</h1>
                     <section>
+                        <img src={profileImage} alt=""/>
                         <h2>Gegevens</h2>
                         <p><strong>Gebruikersnaam:</strong> {user.username}</p>
                         <p><strong>Email:</strong> {user.email}</p>

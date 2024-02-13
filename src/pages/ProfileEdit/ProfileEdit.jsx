@@ -1,20 +1,106 @@
 import './ProfileEdit.css';
 import question from "./../../../public/assets/icons/question-icon.png"
-import profiles from '../../constants/Profile.json';
+import axios from "axios";
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
+import {useContext, useEffect, useState} from "react";
+import useProfileImage from "../../Hooks/useProfileImage.jsx";
 
 
 function ProfileEdit() {
 
-    const handleFileChange = (event) => {
-        const selectedFile = event.target.files[0];
-        const maxDimension = 101; // Maximale afmeting in pixels
+    const {user} = useContext(AuthContext);
+    const [selectedFile, setSelectedFile] = useState({});
+    // const [download, triggerDownload] = useState(false);
+    const [warning, setWarning] = useState('');
+    const {profileImage} = useProfileImage();
 
-        if (selectedFile && selectedFile.size > maxDimension) {
-            alert('Maximale toegestane grootte is 100x100 pixels');
-        } else {
-            // Voeg hier logica toe voor verdere afhandeling van het bestand
+    const handleFileChange = (event) => {
+        const selected = event.target.files[0];
+        setWarning('');
+        // Controleer of er een bestand is geselecteerd
+        if (selected) {
+            // Gebruik een FileReader om het bestand in te lezen en de afmetingen te controleren
+            const reader = new FileReader();
+            reader.readAsDataURL(selected);
+            reader.onload = (e) => {
+                const img = new Image();
+                img.src = e.target.result;
+                img.onload = () => {
+                    // Afbeelding limiet van 400 x 400 pixels
+                    if (img.width <= 400 && img.height <= 400) {
+                        // Controleer of het bestand de maximale grootte niet overschrijdt (10000 bytes is gelijk aan 10 kilobytes (KB))
+                        if (selected.size <= 10000) {
+                            // Als het bestand binnen de grenzen valt, stel het in als geselecteerd bestand
+                            setSelectedFile(selected);
+                            console.log(selected);
+                        } else {
+                            setWarning('Maximale toegestane grootte is 10 KB');
+                        }
+                    } else {
+                        setWarning('Afbeelding is groter dan 100 x 100 pixels.');
+                    }
+                };
+            };
         }
     };
+
+
+    async function deleteOldImage() {
+        try {
+            await axios.delete(`http://localhost:8080/image/${user.username}`);
+        } catch (error) {
+            console.error("Fout bij het verwijderen van de oude afbeelding:", error);
+        }
+    }
+
+    async function uploadImage() {
+        if (selectedFile) {
+            // Verwijder de oude afbeelding
+            deleteOldImage();
+
+            // Upload de nieuwe afbeelding nadat de oude is verwijderd
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+            formData.append('username', user.username);
+
+            try {
+                const response = await axios.post('http://localhost:8080/image', formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    }
+                });
+                console.log(response);
+            } catch (error) {
+                console.error("Fout bij het uploaden van de afbeelding:", error);
+            }
+        } else {
+            console.warn("Selecteer een afbeelding om te uploaden.");
+        }
+    }
+
+    // async function uploadImage() {
+    //     const formData = new FormData();
+    //     formData.append('file', selectedFile);
+    //     // formData.append('username', "test");
+    //     formData.append('username', user.username);
+    //     console.log(selectedFile)
+    //
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/image',
+    //             formData,
+    //             // username: 'test'
+    //             {
+    //                 headers: {
+    //                     "Content-Type": "multipart/form-data",
+    //                 }
+    //             });
+    //         console.log(response);
+    //         // triggerDownload(!download);
+    //     } catch (error) {
+    //
+    //         console.error(error);
+    //     }
+    // }
 
 
     return (
@@ -41,19 +127,13 @@ function ProfileEdit() {
                             <div className="ProfileEditBox1">
                                 <p>profiel foto</p>
 
-                                {profiles.map((profile) => (
-                                    <div className="profilePageProfileImageContainer" key={profile.id}>
-                                        <img className="profilePictureCircle" src={profile.profileImage}
-                                             alt={profile.caption}/>
-                                    </div>
-                                ))}
+
+                                {profileImage && <img src={profileImage} alt="Profiel foto"
+                                                      style={{width: '100px', height: '100px'}}/>}
                             </div>
 
                             {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
-
-
-
 
 
                                 {/*IMAGE UPLOAD*/}
@@ -68,10 +148,11 @@ function ProfileEdit() {
                                     id="profilePhotoUpload"
                                     onChange={handleFileChange}
                                 />
+                                <span className="textRed">
+                                {warning && <p>{warning}</p>}
+                                </span>
+                                {/*<button type='button'onClick={uploadImage}>Upload mij!</button>*/}
                             </div>
-
-
-
 
 
                             {/*laatste rij verticaal (uitleg bestandupload)*/}
@@ -80,7 +161,7 @@ function ProfileEdit() {
                                 <div className="iconContainer">
                                     <img className="iconSmall" src={question} alt="question icon"/>
                                     <div className="iconOverlay">
-                                        <i>Maximale afmeting: 100x100 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
+                                        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
                                             .png</i>
                                     </div>
                                 </div>
@@ -209,7 +290,9 @@ function ProfileEdit() {
                         </div>
 
                         <div className="profileButtonCenter">
-                            <button className="SimpleButtons" type="submit">
+                            <button className="SimpleButtons"
+                                    type="submit"
+                                    onClick={uploadImage}>
                                 <strong>Verzenden</strong>
                             </button>
                         </div>
