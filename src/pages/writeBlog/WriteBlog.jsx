@@ -51,7 +51,7 @@ function WriteBlog() {
                                   required
                         />
 
-                        <label className="textStart" htmlFor="image">
+                        <label className="textStart" htmlFor="imageUpload">
                             <b>Afbeelding:</b>
                         </label>
                         <input
@@ -59,7 +59,8 @@ function WriteBlog() {
                             type="file"
                             accept=".jpg, .jpeg, .png"
                             name="image"
-                            id="image"
+                            id="imageUpload"
+                            // onChange={handleFileChange}
                         />
 
                         {/*Caption*/}

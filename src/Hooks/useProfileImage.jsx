@@ -19,11 +19,8 @@ function useProfileImage() {
         async function getImage() {
             try {
                 const response = await axios.get(`http://localhost:8080/image/${user.username}`, {
-                    responseType: 'arraybuffer',
+
                 });
-                const blob = new Blob([response.data], { type: 'image/png' });
-                const dataUrl = URL.createObjectURL(blob);
-                setProfileImage(dataUrl);
             } catch (error) {
                 console.error(error);
             }

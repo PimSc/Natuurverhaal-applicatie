@@ -1,12 +1,13 @@
 import './Contact.css'
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
-import {AuthContext} from '../../context/AuthContextProvider.jsx';
+import useBlog from "../../Hooks/useBlog.jsx";
 import {useContext} from "react";
+
 
 function Contact() {
     const emailAddress = "info@natuurverhaal.nl";
-    const {profileImage} = useProfileImage();
-    const {isAuth} = useContext(AuthContext);
+    const {blogPosts} = useBlog();
+    // const {profileImage} = useProfileImage();
 
     return (
         <>
@@ -18,8 +19,26 @@ function Contact() {
                         <p>Vragen of opmerkingen? stuur ons een email</p>
                         <p>  <a href={`mailto:${emailAddress}`}><strong>{emailAddress}</strong></a></p>
 
-                        {isAuth &&
-                        <img src={profileImage} alt=""/>}
+
+                        {/*<img src={profileImage} alt=""/>*/}
+
+
+                        <div>
+                            <h1>Blog Post</h1>
+                            <ul>
+                                {blogPosts.map((post) => (
+                                    <li key={post.id}>
+                                        <h1>{post.title}</h1>
+                                        <h4>{post.subtitle}</h4>
+                                        {/*<h2>{post.caption}</h2>*/}
+                                        {post.content}
+                                        <p>Posted by: {post.username}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

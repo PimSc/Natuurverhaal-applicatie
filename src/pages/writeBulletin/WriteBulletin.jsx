@@ -26,7 +26,7 @@ function WriteBulletin() {
                         <p>ID automatisch genereren</p>
 
                         <br/>
-
+                        {/*TITLE*/}
                         <label className="textStart" htmlFor="title">
                             <b>Title:</b>
                         </label>
@@ -38,7 +38,20 @@ function WriteBulletin() {
                                   required
                         />
 
+                        {/*IMAGE*/}
+                        <label className="textStart" htmlFor="imageUpload">
+                            <b>Afbeelding:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            type="file"
+                            accept=".jpg, .jpeg, .png"
+                            name="image"
+                            id="imageUpload"
+                            // onChange={handleFileChange}
+                        />
 
+                        {/*CONTENT*/}
                         <label className="textStart" htmlFor="content">
                             <b>Content:</b>
                         </label>
@@ -57,7 +70,10 @@ function WriteBulletin() {
                     </div>
 
                     <div className="elementCenterContainer">
-                        <button className="SimpleButtons" type="submit">
+                        <button
+                            className="SimpleButtons"
+                            type="submit">
+                            {/*onClick={uploadImage}>*/}
                             <Link to="/prikbord"><strong>Prikbord bericht plaatsen</strong></Link>
                         </button>
                     </div>

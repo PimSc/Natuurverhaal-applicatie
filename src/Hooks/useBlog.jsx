@@ -1,29 +1,27 @@
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import {AuthContext} from "../context/AuthContextProvider.jsx";
 
+// Deze hook haalt de blog posts op en geeft deze door aan de andere pagina`s waar nodig
 
-function useBlog() {
+function useBlogPosts() {
+    const [blogPosts, setBlogPosts] = useState([]);
 
-    async function getBlogs() {
-        try {
-            const response = await axios.get(`http://localhost:8080/blog-posts/{test}`);
-            return response.data;
-        }
-        catch (error) {
-            console.error(error);
-        }
-        void getBlogs();
-    }
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/blog-posts');
+                setBlogPosts(response.data);
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+            }
+        };
 
+        fetchData();
+    }, []);
 
-return (
-<>
-
-
-
-</>
-);
+    return { blogPosts };
 }
 
-export default useBlog;
+export default useBlogPosts;
+
+

@@ -47,7 +47,7 @@ function ProfileEdit() {
 
     async function deleteOldImage() {
         try {
-            await axios.delete(`http://localhost:8080/image/${user.username}`);
+            axios.delete(`http://localhost:8080/image/${user.username}`);
         } catch (error) {
             console.error("Fout bij het verwijderen van de oude afbeelding:", error);
         }
@@ -143,7 +143,7 @@ function ProfileEdit() {
                                 <input
                                     className="ProfilePictureUpload"
                                     type="file"
-                                    accept=".jpg, .jpeg, .png"
+                                    accept=".jpg,  .jpeg, .png"
                                     name="profilePhotoUpload"
                                     id="profilePhotoUpload"
                                     onChange={handleFileChange}
