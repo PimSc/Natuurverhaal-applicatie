@@ -1,20 +1,27 @@
 import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import useBlog from "../../Hooks/useBlog.jsx";
+import { useNavigate } from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.jsx';
 
 
 function BlogPostDetail() {
 
 
-        const { id } = useParams(); // Haal het ID uit de URL-parameters
+    const navigate = useNavigate();
+
+    const handleTerugClick = () => {
+        navigate(-1); // Navigeer terug naar de vorige pagina
+    };
+
+
+    const { id } = useParams(); // Haal het ID uit de URL-parameters
         const { blogPosts } = useBlog();
         const post = blogPosts.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 
         if (!post) {
             return <div>Blogpost niet gevonden</div>; // Toon een foutmelding als de blogpost niet wordt gevonden
         }
-
 
 
     return (
@@ -31,7 +38,7 @@ function BlogPostDetail() {
                         <h1>{post.title}</h1>
                         <br/>
                         <h3>{post.subtitle}</h3>
-                        <p>author: <Link to={`/ProfileDetail/${post.username}`}>{post.username}</Link></p>
+                        <p>Geschreven door: <Link to={`/ProfileDetail/${post.username}`}> <strong>{post.username}</strong> </Link></p>
                         <div className="textStart">
                         </div>
                         {/*<p>Geschreven door <em>{post.author}</em> op {formatDateString(post.created)}</p>*/}
@@ -42,7 +49,7 @@ function BlogPostDetail() {
 
                         <Link to="/" className="back-link">
                             <br/>
-                            <button className="SimpleButtons"> Terug naar blogs</button>
+                            <button className="SimpleButtons" onClick={handleTerugClick}> Terug naar de vorige pagina</button>
                             <br/>
                             <br/>
                         </Link>
