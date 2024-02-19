@@ -10,6 +10,7 @@ function LoginScreen() {
     const [password, setPassword] = useState("");
     const [error, toggleError] = useState(false);
     const {login} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -49,7 +50,16 @@ function LoginScreen() {
             <form onSubmit={handleSubmit}>
                 <h1>Inloggen</h1>
                 {/*<p>{session?.username} {userRoles}</p>*/}
-                <p>Welkom terug</p>
+                {/*<p>Welkom terug   {user && <>{user.username}</>}</p>*/}
+
+                {user ? (
+                    // Als user bestaat, geef dit weer
+                    <div>Ingelogd als {user.username}</div>
+                ) : (
+                    // Als user niet bestaat, geef dit weer
+                    <div>U bent niet ingelogd</div>
+                )}
+
                 <hr/>
                 <div className="loginOuterContainer">
                     <div className="loginInnerContainer">

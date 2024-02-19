@@ -1,6 +1,21 @@
 /*STYLING START*/
 
 
+
+.blogDetailImageHeader{
+    width: 100%;
+    object-fit: cover;
+    max-height: 700px;
+}
+
+
+.blogDetailImage {
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
 /*STYLING END*/
 
 
