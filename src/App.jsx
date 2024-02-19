@@ -50,9 +50,9 @@ function App() {
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
 
             {/*Pages outside the nav*/}
-            <Route path="//blogposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><BlogPostDetail /></div>}/>
-            <Route path="//prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
-            <Route path="//excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
+            <Route path="/blogposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><BlogPostDetail /></div>}/>
+            <Route path="/prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
+            <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 
             {/*<Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>*/}
@@ -63,7 +63,8 @@ function App() {
             {/*</Route>*/}
 
             {/*User pagina`s*/}
-            <Route path="/ProfileDetail" element={isAuth ? <ProfileDetail /> : <Navigate to="/login" />} />
+            {/*<Route path="/ProfileDetail" element={isAuth ? <ProfileDetail /> : <Navigate to="/login" />} />*/}
+            <Route path="/ProfileDetail/:username" element={<ProfileDetail/>}/>
             <Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />
             <Route path="/mijnBlogs" element={isAuth ? <MijnBlogs /> : <Navigate to="/login" />} />
             <Route path="/writeBulletin" element={isAuth ? <WriteBulletin /> : <Navigate to="/login" />} />
@@ -84,7 +85,7 @@ function App() {
         </Routes>
 
 {/*Route voorbeeld zonder helmet*/}
-        {/*<Route path="/blogEdit" element={<BlogEdit/>}/>*/}
+{/*        <Route path="/blogEdit" element={<BlogEdit/>}/>*/}
 
 
 

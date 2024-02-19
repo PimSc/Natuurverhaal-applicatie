@@ -47,11 +47,11 @@ function BlogOverview() {
                                 {/*<Link to={`/blogposts/${post.id}`} className="post-link">*/}
                                 {/*<div className="post-image" style={{ backgroundImage: `url(${post.image})` }}>*/}
                                 <Link to={`/blogposts/${post.id}`} className="post-link">
-                                    <div className="post-image" style={{ backgroundImage: `url(${image})` }}>
+                                    <div className="post-image" style={{ backgroundImage: `url(${"data:image/png;base64," + post.fileContent})` }}>
                                 <div className="onTopOfImageBox">
                                     <h2 className="post-title">{post.title}</h2>
                                     <h4>{post.subtitle}</h4>
-                                    {/*{post.content}*/}
+                                    <p>author:  <Link to={`/ProfileDetail/${post.username}`}>{post.username}</Link></p>
                                     {/*<p>Geschreven door <strong>{post.author}</strong></p>*/}
                                     {/*<i>{post.created}</i>*/}
                                 </div>

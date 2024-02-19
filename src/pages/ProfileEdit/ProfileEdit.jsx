@@ -29,7 +29,7 @@ function ProfileEdit() {
                     // Afbeelding limiet van 400 x 400 pixels
                     if (img.width <= 400 && img.height <= 400) {
                         // Controleer of het bestand de maximale grootte niet overschrijdt (10000 bytes is gelijk aan 10 kilobytes (KB))
-                        if (selected.size <= 10000) {
+                        if (selected.size <= 10000000) {
                             // Als het bestand binnen de grenzen valt, stel het in als geselecteerd bestand
                             setSelectedFile(selected);
                             console.log(selected);
