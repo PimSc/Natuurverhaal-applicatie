@@ -4,19 +4,18 @@ import useBlog from "../../Hooks/useBlogAll.jsx";
 import { Link } from 'react-router-dom';
 
 function BlogOverview() {
-    // Haal de blogposts uit useBlog() indien nodig
-    const { blogPosts } = useBlog();
+    const { blogPostsAll } = useBlog();
 
     const [searchTerm, setSearchTerm] = useState('');
     // Initialiseer filteredPosts met de blogposts
-    const [filteredPosts, setFilteredPosts] = useState(blogPosts);
+    const [filteredPosts, setFilteredPosts] = useState(blogPostsAll);
 
     const handleChange = (event) => {
         const newSearchTerm = event.target.value;
         setSearchTerm(newSearchTerm);
 
         // Filter de blogposts
-        const filtered = blogPosts.filter(post =>
+        const filtered = blogPostsAll.filter(post =>
             post.title.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
             post.subtitle.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
             post.content.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
@@ -27,8 +26,8 @@ function BlogOverview() {
 
     // Update filteredPosts wanneer blogPosts verandert
     useEffect(() => {
-        setFilteredPosts(blogPosts);
-    }, [blogPosts]);
+        setFilteredPosts(blogPostsAll);
+    }, [blogPostsAll]);
 
     return (
         <>

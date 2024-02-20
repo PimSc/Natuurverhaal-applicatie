@@ -4,7 +4,7 @@ import axios from 'axios';
 // Deze hook haalt de blog posts op en geeft deze door aan de andere pagina`s waar nodig
 
 function useBlogPosts() {
-    const [blogPosts, setBlogPosts] = useState([]);
+    const [blogPostsAll, setBlogPosts] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -19,7 +19,7 @@ function useBlogPosts() {
         fetchData();
     }, []);
 
-    return { blogPosts };
+    return { blogPostsAll };
 }
 
 export default useBlogPosts;

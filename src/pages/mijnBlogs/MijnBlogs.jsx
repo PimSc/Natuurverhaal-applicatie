@@ -6,14 +6,14 @@ import {AuthContext} from '../../context/AuthContextProvider.jsx';
 
 
 function MijnBlogs() {
-    const { blogPosts } = useBlog();
+    const { blogPostsAll } = useBlog();
 
 
 
     const {user} = useContext(AuthContext);
 
     // Filter de blogposts op gebruikersnaam "test"
-    const filteredPosts = blogPosts.filter(post => post.username === user.username);
+    const filteredPosts = blogPostsAll.filter(post => post.username === user.username);
     const totalPosts = filteredPosts.length;
 
 

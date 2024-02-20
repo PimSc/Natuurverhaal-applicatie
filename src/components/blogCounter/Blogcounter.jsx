@@ -3,11 +3,11 @@ import useBlog from "../../Hooks/useBlogAll.jsx";
 
 function BlogCounter() {
 
-    const { blogPosts } = useBlog();
+    const { blogPostsAll } = useBlog();
 
 
     {/*blogEdit counter*/}
-    const totalPosts = blogPosts.length;
+    const totalPosts = blogPostsAll.length;
 
 
 return (

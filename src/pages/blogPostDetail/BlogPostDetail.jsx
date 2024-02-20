@@ -17,8 +17,8 @@ function BlogPostDetail() {
 
 
     const { id } = useParams(); // Haal het ID uit de URL-parameters
-        const { blogPosts } = useBlog();
-        const post = blogPosts.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
+        const { blogPostsAll } = useBlog();
+        const post = blogPostsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 
         if (!post) {
             return <div>Blogpost niet gevonden</div>; // Toon een foutmelding als de blogpost niet wordt gevonden
@@ -38,6 +38,7 @@ function BlogPostDetail() {
                     <div className="textCenter">
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
+                        <p>Categorie: {post.categories}</p>
                         <p><Link to={`/ProfileDetail/${post.username}`}>Geschreven door {post.username} </Link></p>
                         <i>{post.date}</i>
                         <div className="textStart">
@@ -48,7 +49,7 @@ function BlogPostDetail() {
                         <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                              alt={post.caption}/>
                         <br/>
-                        <p>Blog categorie: {post.categories}</p>
+
                         <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
                             van {post.username}</strong> </Link>
 
