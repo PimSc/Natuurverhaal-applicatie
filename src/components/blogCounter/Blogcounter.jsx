@@ -1,9 +1,13 @@
 import './BlogCounter.css';
-import posts from "../../constants/BlogPosts.json";
+import useBlog from "../../Hooks/useBlogAll.jsx";
 
 function BlogCounter() {
+
+    const { blogPosts } = useBlog();
+
+
     {/*blogEdit counter*/}
-    const totalPosts = posts.length;
+    const totalPosts = blogPosts.length;
 
 
 return (

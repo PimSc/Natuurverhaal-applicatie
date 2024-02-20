@@ -1,6 +1,6 @@
 import './Contact.css'
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
-import useBlog from "../../Hooks/useBlog.jsx";
+import useBlog from "../../Hooks/useBlogAll.jsx";
 import {useContext} from "react";
 
 

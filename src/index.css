@@ -416,7 +416,7 @@ button, select, textarea {
 
 .elementCenterContainer{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   width: 100%;
@@ -471,9 +471,7 @@ button, select, textarea {
   }
 
   .textAreaOneLine{
-    padding: 10px;
     width: 290px;
-    margin: 0 0 15px 0;
   }
 
   .textAreaStory{

@@ -250,7 +250,10 @@ function ProfileEdit() {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
+
 
 
                         <div className="ProfileEditContentBox">
@@ -286,7 +289,6 @@ function ProfileEdit() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className="profileButtonCenter">

@@ -34,7 +34,8 @@ color: var(--onHoverColor);
 /*--STYLING END--*/
 /*LAYOUT START, (Niet op center zetten) */
 .navContainerStickyTop {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
+    /*background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);*/
+    background: white;
     position: sticky;
     top: 0; /* Stick to the top of the viewport */
     z-index: 10;
@@ -74,9 +75,8 @@ ul {
 /*------Drop down menu start------*/
 /* Dropdown Button */
 .dropbtn {
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 80%);
     color: var(--mainFontColor);
-    padding: 14px;
+    padding: 13px;
     border: none;
     font-size: var(--navLinkSize);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -98,7 +98,7 @@ ul {
     display: none;
     position: absolute;
     /*doorzichtig maken pim*/
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     min-width: 160px;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
@@ -132,7 +132,9 @@ ul {
 .dropdown:hover .dropbtn {color: var(--onHoverColor)}
 /*------Drop down menu end------*/
 
-
+#dropdownWhileLogin{
+    background-color: HSL(124, 40%, 32%, 0.2);
+}
 
 /*LAYOUT END*/
 

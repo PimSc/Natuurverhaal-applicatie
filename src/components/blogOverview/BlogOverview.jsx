@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BlogOverview.css';
-import useBlog from "../../Hooks/useBlog.jsx";
+import useBlog from "../../Hooks/useBlogAll.jsx";
 import { Link } from 'react-router-dom';
 
 function BlogOverview() {
@@ -55,8 +55,8 @@ function BlogOverview() {
                                         <div className="onTopOfImageBox">
                                             <h2 className="post-title">{post.title}</h2>
                                             {/*<p>Geschreven door <strong>{post.author}</strong></p>*/}
-                                            <p>Geschreven door: <Link to={`/ProfileDetail/${post.username}`}><strong>{post.username}</strong> </Link></p>
-                                            <i>{post.created}</i>
+                                            <p>Geschreven door {post.username}</p>
+                                            <i>{post.date}</i>
                                         </div>
                                     </div>
                                 </Link>

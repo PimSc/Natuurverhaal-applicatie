@@ -46,7 +46,7 @@ function AuthContextProvider({ children }) {
         // geef de ID, token en redirect-link mee aan de fetchUserData functie (staat hieronder)
         console.log('Gebruiker is ingelogd!');
         fetchUserData(decoded.sub, JWT);
-        // fetchUserData(decoded.sub, JWT, '/ProfileDetail');
+        fetchUserData(decoded.sub, JWT, '/');
         // link de gebruiker door naar de profielpagina
         // history.push('/profile');
     }

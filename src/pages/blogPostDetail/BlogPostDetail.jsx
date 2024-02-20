@@ -1,8 +1,9 @@
 import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
-import useBlog from "../../Hooks/useBlog.jsx";
+import useBlog from "../../Hooks/useBlogAll.jsx";
 import { useNavigate } from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.jsx';
+import React from "react";
 
 
 function BlogPostDetail() {
@@ -36,9 +37,9 @@ function BlogPostDetail() {
 
                     <div className="textCenter">
                         <h1>{post.title}</h1>
-                        <br/>
-                        <h3>{post.subtitle}</h3>
-                        <p>Geschreven door: <Link to={`/ProfileDetail/${post.username}`}> <strong>{post.username}</strong> </Link></p>
+                        <h4>{post.subtitle}</h4>
+                        <p><Link to={`/ProfileDetail/${post.username}`}>Geschreven door {post.username} </Link></p>
+                        <i>{post.date}</i>
                         <div className="textStart">
                         </div>
                         {/*<p>Geschreven door <em>{post.author}</em> op {formatDateString(post.created)}</p>*/}
@@ -46,10 +47,15 @@ function BlogPostDetail() {
                         <p className="textStart">{post.content}</p>
                         <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                              alt={post.caption}/>
+                        <br/>
+                        <p>Blog categorie: {post.categories}</p>
+                        <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
+                            van {post.username}</strong> </Link>
 
                         <Link to="/" className="back-link">
                             <br/>
-                            <button className="SimpleButtons" onClick={handleTerugClick}> Terug naar de vorige pagina</button>
+                            <button className="SimpleButtons" onClick={handleTerugClick}> Terug naar de vorige pagina
+                            </button>
                             <br/>
                             <br/>
                         </Link>
