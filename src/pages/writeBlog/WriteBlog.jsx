@@ -46,9 +46,15 @@ function WriteBlog() {
         setFormData({ ...formData, [name]: value });
     };
 
+    // const handleChangeCategories = (event) => {
+    //     const {name, value} = event.target;
+    //     setFormData({...formData, [name]: value});
+    // };
+
     const handleChangeCategories = (event) => {
-        const {name, value} = event.target;
-        setFormData({...formData, [name]: value});
+        const {value} = event.target;
+
+        setFormData({...formData, categories: value});
     };
 
 
@@ -186,19 +192,43 @@ function WriteBlog() {
                                   required
                         />
 
-                        {/* Categorie */}
-                        <label className="textStart" htmlFor="categories">
-                            <b>Categorie:</b>
-                        </label>
-                        <input className="textAreaOneLine"
-                               placeholder="wandelroute"
-                               name="categories"
-                               id="categories"
-                               autoComplete="on"
-                               value={formData.categories}
-                               onChange={handleChangeCategories}
-                               required
-                        />
+                        {/*/!* Categorie *!/*/}
+                        {/*<label className="textStart" htmlFor="categories">*/}
+                        {/*    <b>Categorie:</b>*/}
+                        {/*</label>*/}
+                        {/*<input className="textAreaOneLine"*/}
+                        {/*       placeholder="wandelroute"*/}
+                        {/*       name="categories"*/}
+                        {/*       id="categories"*/}
+                        {/*       autoComplete="on"*/}
+                        {/*       value={formData.categories}*/}
+                        {/*       onChange={handleChangeCategories}*/}
+                        {/*       required*/}
+                        {/*/>*/}
+
+                        <div className="elementCenterContainer categoryContainer">
+                            <p>Categorieën: </p>
+                            <select onChange={handleChangeCategories}>
+                                <option value="please select a category">please select a category</option>
+                                <option value="natuurgebied">natuurgebied</option>
+                                <option value="wandelroute">wandelroute</option>
+                                <option value="fietsroute">fietsroute</option>
+                                <option value="fotografie">fotografie</option>
+                                <option value="diersoort">diersoort</option>
+                                <option value="sport">sport</option>
+                                <option value="educatie">educatie</option>
+                                <option value="reizen">reizen</option>
+                                <option value="tuinieren">tuinieren</option>
+                                <option value="stadsnatuur">stadsnatuur</option>
+                                <option value="creativiteit">creativiteit</option>
+                                <option value="natuurbehoud">natuurbehoud</option>
+                                <option value="voedsel">voedsel</option>
+                                <option value="verhalen">verhalen</option>
+                                <option value="overig">overig</option>
+                            </select>
+                        </div>
+
+
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
@@ -227,13 +257,6 @@ export default WriteBlog;
 // console.log("formdata.subtitle", formData.subtitle)
 // console.log("formdata.file", formData.file)
 //
-
-
-
-
-
-
-
 
 
 //

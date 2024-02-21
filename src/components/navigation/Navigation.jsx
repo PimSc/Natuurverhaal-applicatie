@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 
 import {useContext} from 'react';
 import {AuthContext} from "../../context/AuthContextProvider";
+import Searchbar from "../searchbar/Searchbar.jsx";
 
 function Navigation() {
 
@@ -25,6 +26,9 @@ function Navigation() {
                         <li><NavLink to="/Excursies"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink>
                         </li>
+
+                        <Searchbar />
+
                         <li><NavLink to="/Prikbord"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
                         </li>
