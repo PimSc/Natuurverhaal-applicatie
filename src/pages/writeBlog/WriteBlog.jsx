@@ -1,8 +1,8 @@
 import './WriteBlog.css';
-import { Link } from "react-router-dom";
-import React, {useContext, useEffect, useState} from "react";
+import {Link} from "react-router-dom";
+import React, {useContext, useState} from "react";
 import axios from "axios"; // Importeer Axios
-import { AuthContext } from '../../context/AuthContextProvider.jsx';
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
 
 function WriteBlog() {
     const { user } = useContext(AuthContext);
@@ -13,7 +13,10 @@ function WriteBlog() {
         file: null,
         caption: "",
         content: "",
-        username: `${user.username}`
+        username: `${user.username}`,
+        categories: [],
+        date: ""
+
     });
 
     const [uploadStatus, setUploadStatus] = useState(null);
@@ -43,35 +46,31 @@ function WriteBlog() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleChangeCategories = (event) => {
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: [value]});
+    };
+
     async function uploadGegevens(event) {
         event.preventDefault();
 
-
-console.log("formdata.username", formData.username)
-console.log("formdata.caption", formData.caption)
-console.log("formdata.title", formData.title)
-console.log("formdata.content", formData.content)
-console.log("formdata.subtitle", formData.subtitle)
-console.log("formdata.file", formData.file)
-
-
         const url = `http://localhost:8080/blog-posts/${user.username}`;
 
+        const formDataToSend = new FormData();
+        formDataToSend.append("title", formData.title);
+        formDataToSend.append("subtitle", formData.subtitle);
+        formDataToSend.append("file", formData.file); // Voeg het bestand toe aan de FormData
 
-        console.log("urlToSend:", url); // Log de URL om te verzenden
-        // console.log("formData:", formData);
-        console.log("formdata.username", formData.username)
-        console.log("formdata.caption", formData.caption)
-        console.log("formdata.title", formData.title)
-        console.log("formdata.content", formData.content)
-        console.log("formdata.subtitle", formData.subtitle)
-        console.log("formdata.file", formData.file)
-
+        // Voeg de overige velden toe aan de FormData
+        formDataToSend.append("caption", formData.caption);
+        formDataToSend.append("content", formData.content);
+        formDataToSend.append("categorie", formData.categories);
+        formDataToSend.append("username", formData.username);
 
         try {
-            const response = await axios.post(url, formData, {
+            const response = await axios.post(url, formDataToSend, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
+                    "Content-Type": "multipart/form-data", // Stel de juiste Content-Type header in
                 }
             }); // Verstuur POST-verzoek met Axios
 
@@ -87,8 +86,17 @@ console.log("formdata.file", formData.file)
             setUploadStatus("Er is een netwerkfout opgetreden.");
         }
         console.log("urlToSend:", url); // Log de URL om te verzenden
-        console.log("formData:", formData);
+
     }
+
+    console.log("formdata.username", formData.username)
+    console.log("formdata.caption", formData.caption)
+    console.log("formdata.title", formData.title)
+    console.log("formdata.content", formData.content)
+    console.log("formdata.subtitle", formData.subtitle)
+    console.log("formdata.file", formData.file)
+    console.log("formdata.catergories", formData.categories)
+    console.log("formDatabata:", formData);
 
 
     return (
@@ -172,6 +180,20 @@ console.log("formdata.file", formData.file)
                                   onChange={handleChangeContent}
                                   required
                         />
+
+                        {/* Categorie */}
+                        <label className="textStart" htmlFor="categories">
+                            <b>Categorie:</b>
+                        </label>
+                        <input className="textAreaOneLine"
+                               placeholder="wandelroute"
+                               name="categories"
+                               id="categories"
+                               autoComplete="on"
+                               value={formData.categories}
+                               onChange={handleChangeCategories}
+                               required
+                        />
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
@@ -192,6 +214,7 @@ export default WriteBlog;
 
 // console.log("urlToSend:", url); // Log de URL om te verzenden
 // // console.log("formData:", formData);
+
 // console.log("formdata.username", formData.username)
 // console.log("formdata.caption", formData.caption)
 // console.log("formdata.title", formData.title)
