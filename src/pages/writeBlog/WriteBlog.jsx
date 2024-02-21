@@ -10,20 +10,13 @@ function WriteBlog() {
     const [formData, setFormData] = useState({
         title: "",
         subtitle: "",
-        // file: null,
+        file: null,
         caption: "",
         content: "",
         username: `${user.username}`
     });
 
     const [uploadStatus, setUploadStatus] = useState(null);
-
-    useEffect(() => {
-        console.log("FormData", formData )
-
-    }, [formData]);
-
-
 
     const handleChangeTitle = (event) => {
         const { name, value } = event.target;
@@ -50,21 +43,37 @@ function WriteBlog() {
         setFormData({ ...formData, [name]: value });
     };
 
-    async function uploadGegevens() {
+    async function uploadGegevens(event) {
+        event.preventDefault();
+
+
+console.log("formdata.username", formData.username)
+console.log("formdata.caption", formData.caption)
+console.log("formdata.title", formData.title)
+console.log("formdata.content", formData.content)
+console.log("formdata.subtitle", formData.subtitle)
+console.log("formdata.file", formData.file)
+
 
         const url = `http://localhost:8080/blog-posts/${user.username}`;
-        // const formDataToSend = new FormData();
-        //
-        // for (const key in formData) {
-        //     formDataToSend.append(key, formData[key]);
-        // }
 
-        // console.log("formDataToSend:", formDataToSend); // Log de FormData
 
         console.log("urlToSend:", url); // Log de URL om te verzenden
-        console.log("formData:", formData);
+        // console.log("formData:", formData);
+        console.log("formdata.username", formData.username)
+        console.log("formdata.caption", formData.caption)
+        console.log("formdata.title", formData.title)
+        console.log("formdata.content", formData.content)
+        console.log("formdata.subtitle", formData.subtitle)
+        console.log("formdata.file", formData.file)
+
+
         try {
-            const response = await axios.post(url, formData); // Verstuur POST-verzoek met Axios
+            const response = await axios.post(url, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                }
+            }); // Verstuur POST-verzoek met Axios
 
             if (response.status === 200) {
                 console.log("Blog post successful!");
@@ -77,7 +86,10 @@ function WriteBlog() {
             console.error("Error posting blog:", error);
             setUploadStatus("Er is een netwerkfout opgetreden.");
         }
+        console.log("urlToSend:", url); // Log de URL om te verzenden
+        console.log("formData:", formData);
     }
+
 
     return (
         <>
@@ -176,6 +188,19 @@ function WriteBlog() {
 }
 
 export default WriteBlog;
+
+
+// console.log("urlToSend:", url); // Log de URL om te verzenden
+// // console.log("formData:", formData);
+// console.log("formdata.username", formData.username)
+// console.log("formdata.caption", formData.caption)
+// console.log("formdata.title", formData.title)
+// console.log("formdata.content", formData.content)
+// console.log("formdata.subtitle", formData.subtitle)
+// console.log("formdata.file", formData.file)
+//
+
+
 
 
 
