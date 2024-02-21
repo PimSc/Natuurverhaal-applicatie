@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 
 function BlogOverview() {
     const { blogPostsAll } = useBlog();
-
     const [searchTerm, setSearchTerm] = useState('');
     // Initialiseer filteredPosts met de blogposts
     const [filteredPosts, setFilteredPosts] = useState(blogPostsAll);
+
+    console.log(blogPostsAll)
 
     const handleChange = (event) => {
         const newSearchTerm = event.target.value;

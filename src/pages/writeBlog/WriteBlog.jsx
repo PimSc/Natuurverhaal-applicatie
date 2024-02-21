@@ -14,7 +14,7 @@ function WriteBlog() {
         caption: "",
         content: "",
         username: `${user.username}`,
-        categories: [],
+        categories: [''],
         date: ""
 
     });
@@ -48,14 +48,15 @@ function WriteBlog() {
 
     const handleChangeCategories = (event) => {
         const {name, value} = event.target;
-        setFormData({...formData, [name]: [value]});
+        setFormData({...formData, [name]: value});
     };
+
 
     async function uploadGegevens(event) {
         event.preventDefault();
 
         const url = `http://localhost:8080/blog-posts/${user.username}`;
-
+        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("subtitle", formData.subtitle);
@@ -64,8 +65,10 @@ function WriteBlog() {
         // Voeg de overige velden toe aan de FormData
         formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
-        formDataToSend.append("categorie", formData.categories);
+        formDataToSend.append("categories", formData.categories);
         formDataToSend.append("username", formData.username);
+
+        console.log('form', formDataToSend)
 
         try {
             const response = await axios.post(url, formDataToSend, {
@@ -74,12 +77,14 @@ function WriteBlog() {
                 }
             }); // Verstuur POST-verzoek met Axios
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
+                console.log('form', formDataToSend)
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
+                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
@@ -88,14 +93,14 @@ function WriteBlog() {
         console.log("urlToSend:", url); // Log de URL om te verzenden
 
     }
-
-    console.log("formdata.username", formData.username)
-    console.log("formdata.caption", formData.caption)
-    console.log("formdata.title", formData.title)
-    console.log("formdata.content", formData.content)
-    console.log("formdata.subtitle", formData.subtitle)
-    console.log("formdata.file", formData.file)
-    console.log("formdata.catergories", formData.categories)
+    //
+    // console.log("formdata.username", formData.username)
+    // console.log("formdata.caption", formData.caption)
+    // console.log("formdata.title", formData.title)
+    // console.log("formdata.content", formData.content)
+    // console.log("formdata.subtitle", formData.subtitle)
+    // console.log("formdata.file", formData.file)
+    // console.log("formdata.catergories", formData.categories)
     console.log("formDatabata:", formData);
 
 
