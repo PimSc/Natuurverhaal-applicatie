@@ -60,8 +60,10 @@ function ProfileEdit() {
 
             // Upload de nieuwe afbeelding nadat de oude is verwijderd
             const formData = new FormData();
+
             formData.append('file', selectedFile);
             formData.append('username', user.username);
+            console.log(selectedFile)
 
             try {
                 const response = await axios.post('http://localhost:8080/image', formData, {
@@ -250,7 +252,10 @@ function ProfileEdit() {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
+
 
 
                         <div className="ProfileEditContentBox">
@@ -286,7 +291,6 @@ function ProfileEdit() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className="profileButtonCenter">

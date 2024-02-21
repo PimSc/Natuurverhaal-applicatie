@@ -10,10 +10,6 @@ function Home() {
     return (
         <>
 
-            <Link to="/ProfileDetail">
-                <button>Profielpagina</button>
-            </Link>
-
 
             {/*<BlogCounter />*/}
             <BlogOverview />

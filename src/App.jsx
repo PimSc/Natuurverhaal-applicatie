@@ -58,11 +58,9 @@ function App() {
             {/*<Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>*/}
             {/*<Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><WriteBulletin /></div>}/>*/}
 
-            {/*<Route path="/ProfileDetail">*/}
-            {/*    {isAuth ? <ProfileDetail /> : to="/" />}*/}
-            {/*</Route>*/}
 
-            {/*User pagina`s*/}
+
+            {/*USER PAGINA`S*/}
             {/*<Route path="/ProfileDetail" element={isAuth ? <ProfileDetail /> : <Navigate to="/login" />} />*/}
             <Route path="/ProfileDetail/:username" element={<ProfileDetail/>}/>
             <Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />
@@ -71,7 +69,7 @@ function App() {
             <Route path="/writeBlog" element={isAuth ? <WriteBlog /> : <Navigate to="/login" />} />
 
 
-            {/*Admin pagina`s*/}
+            {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
 
 

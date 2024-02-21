@@ -100,7 +100,6 @@ function LoginScreen() {
                     </div>
                 </div>
                 <hr/>
-                {/*<p>Wachtwoord  <Link to="/TermsAndPrivacy">resetten</Link></p>*/}
             </form>
 
         </>
