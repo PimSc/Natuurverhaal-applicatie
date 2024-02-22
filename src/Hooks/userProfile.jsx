@@ -9,7 +9,7 @@ function UserProfile() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/user-profile/piet`);
+                const response = await axios.get(`http://localhost:8080/user-profile`);
                 setUserProfile(response.data);
             } catch (error) {
                 console.error('Error fetching blog posts:', error);
