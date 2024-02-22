@@ -1,14 +1,27 @@
-import React, { useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './BlogOverview.css';
-import useBlog from "../../Hooks/useBlogAll.jsx";
 import { Link } from 'react-router-dom';
 import SearchContext from "../../context/SearchContext.jsx";
+import useBlog from "../../Hooks/useBlogAll.jsx";
 
 
 function BlogOverview() {
 
 
-    const {filteredPosts} = useContext(SearchContext);
+    const {searchQuery, setSearchQuery, handleChange} = useContext(SearchContext);
+    const { blogPostsAll } = useBlog();
+
+    const [filteredPosts, setFilteredPosts] = useState(blogPostsAll);
+
+    useEffect(() => {
+        const filtered = blogPostsAll.filter(post =>
+            post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            post.username.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setFilteredPosts(filtered);
+    }, [searchQuery, blogPostsAll]);
+
 
 
     return (

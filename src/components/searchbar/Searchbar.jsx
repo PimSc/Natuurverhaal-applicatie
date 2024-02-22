@@ -1,51 +1,41 @@
 import './Searchbar.css';
-import {useContext} from 'react';
+import { useContext } from 'react';
 import SearchContext from './../../context/SearchContext.jsx';
+import { useLocation } from "react-router-dom";
 
-
-const Searchbar = () => {
-    const {searchQuery, setSearchQuery} = useContext(SearchContext);
-
+function Searchbar() {
+    const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const handleChange = (event) => {
         setSearchQuery(event.target.value);
     };
 
+    // Haal de huidige locatie op met behulp van useLocation() van react-router-dom.
+    const location = useLocation();
+
+    // bepaalt op welke pagina`s het zoekbalk component zichtbaar is
+    const allowedPages = ['/', "/mijnBlogs"];
+    const showSearchBar = allowedPages.includes(location.pathname);
+
+
     return (
-
-
         <>
-            {(window.location.pathname === "/" || window.location.pathname === "/mijnBlogs") ? (
-                <div className="searchbarBlogOvervieuwVisible">
-                    <form action="">
-                        <input
-                            className="searchBar"
-                            type="text"
-                            name="query"
-                            placeholder="Zoek..."
-                            value={searchQuery}
-                            onChange={handleChange}
-                        />
-                    </form>
-                </div>
-            ) : (
-                <div className="searchbarBlogOvervieuwHidden">
-                    <form action="">
-                        <input
-                            className="searchBar"
-                            type="text"
-                            name="query"
-                            placeholder="Zoek..."
-                            value={searchQuery}
-                            onChange={handleChange}
-                        />
+
+            {showSearchBar && (
+                <div id="searchbarBlogOvervieuw">
+                    <form>
+                        <input className="searchBar"
+                               type="text"
+                               name="query"
+                               placeholder="Zoek..."
+                               value={searchQuery}
+                               onChange={handleChange}/>
                     </form>
                 </div>
             )}
 
 
         </>
-
     );
-};
+}
 
 export default Searchbar;

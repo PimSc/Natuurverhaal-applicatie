@@ -2,14 +2,14 @@
 
 
 
-.searchbarBlogOvervieuwVisible input{
+#searchbarBlogOvervieuw input{
     border: 4px solid var(--mainFontColor);
     height: 55px;
     border-radius: 6px 22px;
 }
 
 
-.searchbarBlogOvervieuwVisible input:hover {
+#searchbarBlogOvervieuw input:hover {
     color: var(--onHoverColor);
     border-color: var(--onHoverColor);
     transition: all 0.3s ease 0s;
@@ -25,23 +25,19 @@
     border: 2px solid;
     border-color: var(--mainFontColor);
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    overflow: hidden;
-    transition: all 0.5s ease 0s;
-}
-
-.searchBarHidden{
-    display: none;
+    transition: transform 0.3s ease;
 }
 
 .searchBar:focus {
     outline: none;
+    transition: transform 0.3s ease;
 }
 
 /*STYLING END*/
 /*LAYOUT START*/
 
-
-.searchbarBlogOvervieuwVisible {
+#searchbarBlogOvervieuw {
+    /*margin-top: 30px;*/
     margin-top: 30px;
 }
 

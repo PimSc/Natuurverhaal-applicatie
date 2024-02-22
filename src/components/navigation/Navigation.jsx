@@ -27,8 +27,8 @@ function Navigation() {
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink>
                         </li>
 
-                        {(window.location.pathname === "/" || window.location.pathname === "/mijnBlogs") && <Searchbar />}
-
+                        {/*{(window.location.pathname === "/" || window.location.pathname === "/mijnBlogs") && <Searchbar />}*/}
+                       <Searchbar />
 
                         <li><NavLink to="/Prikbord"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
