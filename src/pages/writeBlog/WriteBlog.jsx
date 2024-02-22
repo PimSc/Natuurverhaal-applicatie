@@ -107,7 +107,7 @@ function WriteBlog() {
     // console.log("formdata.subtitle", formData.subtitle)
     // console.log("formdata.file", formData.file)
     // console.log("formdata.catergories", formData.categories)
-    console.log("formDatabata:", formData);
+    // console.log("formDatabata:", formData);
 
 
     return (
@@ -236,7 +236,6 @@ function WriteBlog() {
                         <button className="SimpleButtons" id="buttonPostBlog" type="submit" onClick={uploadGegevens}>
                             Blog bericht plaatsen
                         </button>
-
                     </div>
                 </form>
             </div>
