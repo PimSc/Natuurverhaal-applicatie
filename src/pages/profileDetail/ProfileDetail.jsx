@@ -2,12 +2,17 @@ import './ProfileDetail.css';
 import {Link} from 'react-router-dom';
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
 import { useParams } from 'react-router-dom';
+import useBlog from "../../Hooks/useBlogAll.jsx";
+
 
 function ProfileDetail() {
 
 
     // const {profileImage} = useProfileImage();
-    const { username } = useParams();
+    // const { username } = useParams();
+    const { userProfile } = useBlog();
+
+    console.log("userProfile log", userProfile)
 
 
 
@@ -21,7 +26,7 @@ function ProfileDetail() {
 
 
             <div>
-                <h2>Profielpagina van {username}</h2>
+                {/*<h2>Profielpagina van {username}</h2>*/}
                 {/*<img src={profileImage} alt=""/>*/}
                 {/* Voeg hier de rest van de profielpagina-inhoud toe */}
             </div>

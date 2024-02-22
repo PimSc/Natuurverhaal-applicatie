@@ -424,6 +424,19 @@ button, select, textarea {
 
 
 
+.loadingGif{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  overflow: hidden;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 
 /*Begin media query telefoon*/
 @media only screen and (max-width: 767px) {

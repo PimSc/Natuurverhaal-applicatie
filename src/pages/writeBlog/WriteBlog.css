@@ -7,7 +7,28 @@
 
 /*STYLING END*/
 
+.categoryContainer {
 
+    /*background-color: #f2f2f2;*/
+    padding: 10px;
+    width: 500px;
+    margin: 0 0 15px 0;
+}
+
+.categoryContainer select {
+    width: 500px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    /*width: calc(100% - 20px); !* Adjusted width to accommodate padding *!*/
+    margin-top: 5px; /* Added margin-top for spacing */
+}
+
+.categoryContainer p {
+    color: black;
+    margin-bottom: 5px; /* Added margin-bottom for spacing */
+}
 
 /*LAYOUT START*/
 

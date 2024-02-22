@@ -1,15 +1,33 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './MijnBlogs.css';
 import useBlog from "../../Hooks/useBlogUser.jsx";
 import { Link } from "react-router-dom";
-import {AuthContext} from '../../context/AuthContextProvider.jsx';
+import SearchContext from "../../context/SearchContext.jsx";
 
 
 function MijnBlogs() {
     const { blogPostsUser } = useBlog();
-
-
     const totalPosts = blogPostsUser.length;
+
+    const {searchQuery, setSearchQuery, handleChange} = useContext(SearchContext);
+
+
+    const [filteredPosts, setFilteredPosts] = useState(blogPostsUser);
+
+    useEffect(() => {
+        const filtered = blogPostsUser.filter(post =>
+            post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            post.username.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setFilteredPosts(filtered);
+    }, [searchQuery, blogPostsUser]);
+
+
+
+
+
+
 
 
     return (
@@ -24,7 +42,7 @@ function MijnBlogs() {
                     <h4 className="totalBlogsCounter">Je hebt al {totalPosts} natuurblogs</h4>
                     <br/>
                     <ul className="post-list">
-                        {blogPostsUser.map((post) => (
+                        {filteredPosts.map((post) => (
                             <li key={post.id} className="blog-post-item">
                                 <Link to={`/blogposts/${post.id}`} className="post-link">
                                     <div className="post-image"
