@@ -1,5 +1,5 @@
 import './BlogCounter.css';
-import useBlog from "../../Hooks/useBlogAll.jsx";
+import useBlog from "../../Hooks/useAllBlogs.jsx";
 
 function BlogCounter() {
 

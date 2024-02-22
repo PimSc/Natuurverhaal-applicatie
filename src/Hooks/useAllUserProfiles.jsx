@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContextProvider.jsx";
 import axios from "axios";
 
-function UserProfile() {
+function UseAllUserProfiles() {
     const [userProfile, setUserProfile] = useState([]);
     const { user } = useContext(AuthContext);
 
@@ -22,4 +22,4 @@ function UserProfile() {
     return { userProfile };
 }
 
-export default UserProfile;
+export default UseAllUserProfiles;

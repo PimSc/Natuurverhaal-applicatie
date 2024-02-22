@@ -1,36 +1,65 @@
 import './ProfileDetail.css';
-import useProfile from "../../Hooks/userProfile.jsx";
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // Importeer useParams uit react-router-dom
+import useProfile from "../../Hooks/useAllUserProfiles.jsx";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
+import useBlog from "../../Hooks/useAllBlogs.jsx";
 
 function ProfileDetail() {
+    const { blogPostsAll } = useBlog();
     const { userProfile } = useProfile();
     const { username } = useParams(); // Haal de gebruikersnaam op uit de URL
 
     // Filter de gebruikersprofielen op basis van de gebruikersnaam in de URL
     const filteredProfile = userProfile.filter(prof => prof.username === username);
 
+    // Filter blog posts by username
+    const filteredPosts = blogPostsAll.filter(post => post.username === username);
+
+    const totalPosts = filteredPosts.length;
+
     return (
         <>
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
-                    <div className="elementCenterContainer">
-                        {filteredProfile.map((prof) => (
+                    {/* Als er een gebruikersprofiel is gevonden, toon dan de gegevens */}
+                    {filteredProfile.length > 0 ? (
+                        filteredProfile.map((prof) => (
                             <>
+                                <img
+                                    src={"data:image/png;base64," + prof.fileContent}
+                                    alt="Profiel foto"
+                                    style={{ width: 400, height: 400 }} />
+
                                 <h2>Username: {prof.username}</h2>
                                 <h2>Profielpagina van {prof.name}</h2>
                                 <h2>Email: {prof.email}</h2>
                                 <h2>Regio: {prof.regio}</h2>
                                 <h2>Bio: {prof.bio}</h2>
-                                <img
-                                    src={"data:image/png;base64," + prof.fileContent}
-                                    alt="Profiel foto"
-                                    style={{width: 400, height: 400}}
-                                />
+                                <br /><br />
+
+                                <h2 className="totalBlogsCounter"> {username} heeft al {totalPosts} natuurblogs</h2>
+
+                                {/* Render filtered blog posts */}
+                                {filteredPosts.map((post) => (
+                                    <li key={post.id} className="blog-post-item">
+                                        <Link to={`/blogposts/${post.id}`} className="post-link">
+                                            <div className="post-image" style={{ backgroundImage: `url(data:image/png;base64,${post.fileContent})` }}>
+                                                <div className="onTopOfImageBox">
+                                                    <h2 className="post-title">{post.title}</h2>
+                                                    <p>Geschreven door <strong>{post.username}</strong></p>
+                                                    <i>{post.date}</i>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                ))}
                             </>
-                        ))}
-                    </div>
+                        ))
+                    ) : (
+                        // Als er geen gebruikersprofiel is gevonden, toon dan dit bericht
+                        <p>Deze gebruiker heeft geen openbaar profiel</p>
+                    )}
                 </div>
             </div>
         </>
@@ -39,104 +68,3 @@ function ProfileDetail() {
 
 export default ProfileDetail;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-//
-// import './ProfileDetail.css';
-// import useProfile from "../../Hooks/userProfile.jsx";
-// import {useContext, useEffect, useState} from "react";
-// import useBlog from "../../Hooks/useBlogUser.jsx";
-// import SearchContext from "../../context/SearchContext.jsx";
-//
-//
-// function ProfileDetail() {
-//     const {userProfile} = useProfile();
-//
-//     console.log("userProfile log", userProfile);
-//
-//
-//     // const {blogPostsAll} = useBlog();
-//     // // const totalPosts = blogPostsAll.length;
-//     //
-//     // const {searchQuery, setSearchQuery, handleChange} = useContext(SearchContext);
-//     //
-//     //
-//     // const [filteredPosts, setFilteredPosts] = useState(blogPostsAll);
-//     //
-//     // useEffect(() => {
-//     //     const filtered = blogPostsAll.filter(post =>
-//     //         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//     //         post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-//     //         post.username.toLowerCase().includes(searchQuery.toLowerCase())
-//     //     );
-//     //     setFilteredPosts(filtered);
-//     // }, [searchQuery, blogPostsAll]);
-//
-//
-//     return (
-//         <>
-//             <div className="outer-content-container-column">
-//                 <div className="inner-content-container-column">
-//                     <div className="elementCenterContainer">
-//                         {userProfile.map((prof) => (
-//                             <>
-//                                 <h2>Username: {prof.username}</h2>
-//                                 <h2>Profielpagina van {prof.name}</h2>
-//                                 <h2>Email: {prof.email}</h2>
-//                                 <h2>Regio: {prof.regio}</h2>
-//                                 <h2>Bio: {prof.bio}</h2>
-//                                 {/*<img src={"data:image/png;base64," + prof.fileContent} alt="Profiel foto"/>*/}
-//
-//                                 <img
-//                                     src={"data:image/png;base64," + prof.fileContent}
-//                                     alt="Profiel foto"
-//                                     style={{width: 400, height: 400}}
-//                                 />
-//
-//
-//
-//
-//                                 {/*{filteredPosts.map((prof) => (*/}
-//                                 {/*    <>*/}
-//                                 {/*        <div key={prof.id}>*/}
-//                                 {/*            /!* Inhoud hier toevoegen *!/*/}
-//                                 {/*        </div>*/}
-//                                 {/*    </>*/}
-//                                 {/*))}*/}
-//
-//
-//
-//                             </>
-//                         ))}
-//
-//
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     );
-// }
-//
-// export default ProfileDetail;

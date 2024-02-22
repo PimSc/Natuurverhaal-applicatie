@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContext from "../../context/SearchContext.jsx";
-import useBlog from "../../Hooks/useBlogAll.jsx";
+import useBlog from "../../Hooks/useAllBlogs.jsx";
 
 
 function BlogOverview() {
@@ -74,7 +74,7 @@ export default BlogOverview;
 //
 // import React, { useState, useEffect } from 'react';
 // import './BlogOverview.css';
-// import useBlog from "../../Hooks/useBlogAll.jsx";
+// import useBlog from "../../Hooks/useAllBlogs.jsx";
 // import { Link } from 'react-router-dom';
 //
 // function BlogOverview() {

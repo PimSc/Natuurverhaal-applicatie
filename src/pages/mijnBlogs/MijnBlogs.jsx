@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import './MijnBlogs.css';
-import useBlog from "../../Hooks/useBlogUser.jsx";
+import useBlog from "../../Hooks/useUserBlogs.jsx";
 import { Link } from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
 

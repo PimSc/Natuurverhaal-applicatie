@@ -1,8 +1,8 @@
 import './Contact.css'
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
-// import useBlog from "../../Hooks/useBlogAll.jsx";
+// import useBlog from "../../Hooks/useAllBlogs.jsx";
 import {useContext} from "react";
-import useBlog from "../../Hooks/useBlogUser.jsx";
+import useBlog from "../../Hooks/useUserBlogs.jsx";
 
 function Contact() {
     const emailAddress = "info@natuurverhaal.nl";

@@ -1,6 +1,6 @@
 import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
-import useBlog from "../../Hooks/useBlogAll.jsx";
+import useBlog from "../../Hooks/useAllBlogs.jsx";
 import { useNavigate } from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.jsx';
 import React from "react";
