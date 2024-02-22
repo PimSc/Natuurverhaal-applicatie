@@ -1,4 +1,3 @@
-import './userProfile.css';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContextProvider.jsx";
 import axios from "axios";
@@ -10,7 +9,7 @@ function UserProfile() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/user-profile/${user.username}`);
+                const response = await axios.get(`http://localhost:8080/user-profile/piet`);
                 setUserProfile(response.data);
             } catch (error) {
                 console.error('Error fetching blog posts:', error);
@@ -18,7 +17,7 @@ function UserProfile() {
         };
 
         fetchData();
-    }, [user.username]); // Herladen wanneer de gebruikersnaam verandert
+    }, []);
 
     return { userProfile };
 }

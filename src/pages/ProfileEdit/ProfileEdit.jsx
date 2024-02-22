@@ -2,8 +2,9 @@ import './ProfileEdit.css';
 import question from "./../../../public/assets/icons/question-icon.png"
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
-import {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
+import {Link} from "react-router-dom";
 
 
 function ProfileEdit() {
@@ -80,30 +81,6 @@ function ProfileEdit() {
         }
     }
 
-    // async function uploadImage() {
-    //     const formData = new FormData();
-    //     formData.append('file', selectedFile);
-    //     // formData.append('username', "test");
-    //     formData.append('username', user.username);
-    //     console.log(selectedFile)
-    //
-    //     try {
-    //         const response = await axios.post('http://localhost:8080/image',
-    //             formData,
-    //             // username: 'test'
-    //             {
-    //                 headers: {
-    //                     "Content-Type": "multipart/form-data",
-    //                 }
-    //             });
-    //         console.log(response);
-    //         // triggerDownload(!download);
-    //     } catch (error) {
-    //
-    //         console.error(error);
-    //     }
-    // }
-
 
     return (
         <>
@@ -117,6 +94,8 @@ function ProfileEdit() {
                             <h1>Openbaar profiel</h1>
                             <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
                             <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
+                            <br/><br/><br/>
+                            <button className="SimpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Link hier naar jouw openbaar profiel</Link></button>
 
 
                         </div>
