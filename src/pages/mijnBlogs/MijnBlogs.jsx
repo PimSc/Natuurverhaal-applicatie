@@ -6,12 +6,17 @@ import SearchContext from "../../context/SearchContext.jsx";
 
 
 function MijnBlogs() {
+
+    //Hier komen alle blogs van de ingelogde user binnen uit de Hook
     const { blogPostsUser } = useBlog();
+
+    //Telt hoeveel blogs de user heeft
     const totalPosts = blogPostsUser.length;
 
+    //Hier komt de zoekterm uit de zoekbalk binnen
     const {searchQuery, setSearchQuery, handleChange} = useContext(SearchContext);
 
-
+    // Hier worden alle blogs door een filter gehaald
     const [filteredPosts, setFilteredPosts] = useState(blogPostsUser);
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContextProvider.jsx";
 import axios from "axios";
 
 function UseAllUserProfiles() {
-    const [userProfile, setUserProfile] = useState([]);
+    const [AllUserProfiles, setUserProfile] = useState([]);
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function UseAllUserProfiles() {
         fetchData();
     }, []);
 
-    return { userProfile };
+    return { AllUserProfiles };
 }
 
 export default UseAllUserProfiles;

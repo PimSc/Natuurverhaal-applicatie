@@ -1,20 +1,30 @@
 import './ProfileDetail.css';
-import useProfile from "../../Hooks/useAllUserProfiles.jsx";
-import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import SearchContext from "../../context/SearchContext.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
+import useProfile from "../../Hooks/useAllUserProfiles.jsx";
 
 function ProfileDetail() {
+
+
+    // ALLEEN NOG REVERSE TOEVOEGEN
+    //
+
+
+    //Alle blogs komen binnen uit de hook
     const { blogPostsAll } = useBlog();
-    const { userProfile } = useProfile();
+
+    //Haal de gebruikersprofielen op uit de hook
+    const { AllUserProfiles } = useProfile();
+
     const { username } = useParams(); // Haal de gebruikersnaam op uit de URL
 
     // Filter de gebruikersprofielen op basis van de gebruikersnaam in de URL
-    const filteredProfile = userProfile.filter(prof => prof.username === username);
+    const filteredProfile = AllUserProfiles.filter(prof => prof.username === username);
 
     // Filter blog posts by username
     const filteredPosts = blogPostsAll.filter(post => post.username === username);
+
+
 
     const totalPosts = filteredPosts.length;
 
