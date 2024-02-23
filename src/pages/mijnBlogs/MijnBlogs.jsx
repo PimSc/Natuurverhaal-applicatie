@@ -6,7 +6,6 @@ import SearchContext from "../../context/SearchContext.jsx";
 
 
 function MijnBlogs() {
-
     //Hier komen alle blogs van de ingelogde user binnen uit de Hook
     const { blogPostsUser } = useBlog();
 
@@ -14,26 +13,19 @@ function MijnBlogs() {
     const totalPosts = blogPostsUser.length;
 
     //Hier komt de zoekterm uit de zoekbalk binnen
-    const {searchQuery, setSearchQuery, handleChange} = useContext(SearchContext);
+    const {searchQuery, setSearchQuery} = useContext(SearchContext);
 
-    // Hier worden alle blogs door een filter gehaald
-    const [filteredPosts, setFilteredPosts] = useState(blogPostsUser);
+    // Filter en keer de blogposts om
+    const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
             post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.username.toLowerCase().includes(searchQuery.toLowerCase())
+            post.content.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setFilteredPosts(filtered);
+        const reversedFilteredPosts = filtered.slice().reverse();
+        setFilteredPosts(reversedFilteredPosts);
     }, [searchQuery, blogPostsUser]);
-
-
-
-
-
-
-
 
     return (
         <>

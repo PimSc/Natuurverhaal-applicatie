@@ -40,9 +40,14 @@
 }
 /*------Icon overlay tekst End------*/
 
-.biografieTextField{
-    width: 300px;
+.profileBiografieTextField{
+    width: 400px;
     height: 300px;
+}
+
+.ProfileTextField{
+    width: 400px;
+    height: 2lh;
 }
 
 .profileFirstTextBox{
@@ -50,30 +55,56 @@
     text-align: center;
 }
 
-.ProfileEditContentBox{
+.ProfileEditContentBox1{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    /*border: 1px solid blue;*/
+    border: 5px solid blue;
+}
+
+.ProfileEditContentBox2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 5px solid turquoise;
+}
+
+.ProfileEditContentBox3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 5px solid teal;
 }
 
 .ProfileEditBox1{
-    width: 200px;
+    width: 150px;
     min-height: 200px;
-    /*border: 5px solid red;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid red;
 }
 
 .ProfileEditBox2{
-    width: 400px;
+    width: 500px;
     min-height: 200px;
-    /*border: 5px solid greenyellow;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid greenyellow;
 }
 
 .ProfileEditBox3{
     width: 50px;
     min-height: 200px;
     padding: 10px;
-    /*border: 5px solid grey;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid purple;
 }
 
 .ProfilePictureUpload{
@@ -109,6 +140,8 @@
     .ProfileEditBox2{
         width: 200px;
         min-height: 200px;
+        display: flex;
+        flex-direction: column;
         /*border: 5px solid greenyellow;*/
     }
 
@@ -116,7 +149,7 @@
         width: 50px;
         min-height: 200px;
         padding: 10px;
-        /*border: 5px solid grey;*/
+        /*border: 5px solid purple;*/
     }
 
     .profilePageProfileImageContainer{

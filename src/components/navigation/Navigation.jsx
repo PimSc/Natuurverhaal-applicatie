@@ -49,7 +49,7 @@ function Navigation() {
                                     <div className="dropdown-content">
                                         {!isAuth && (<li><Link to="/login">Login</Link></li>)}
                                         {isAuth && (<>
-                                                <li><Link to="/mijnBlogs">Blogs</Link></li>
+                                                <li><Link to="/mijnBlogs">Mijn blogs</Link></li>
                                                 <li><Link to="/ProfileEdit">Profiel</Link></li>
                                                 <li><Link onClick={(e) => {
                                                     e.preventDefault();

@@ -69,7 +69,7 @@ function App() {
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
 
-
+            {/*/PublicProfile/${post.username}*/}
 
             {/*Not found page*/}
             <Route

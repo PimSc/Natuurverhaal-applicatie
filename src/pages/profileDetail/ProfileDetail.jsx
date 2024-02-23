@@ -7,7 +7,6 @@ function ProfileDetail() {
 
 
     // ALLEEN NOG REVERSE TOEVOEGEN
-    //
 
 
     //Alle blogs komen binnen uit de hook
@@ -23,7 +22,6 @@ function ProfileDetail() {
 
     // Filter blog posts by username
     const filteredPosts = blogPostsAll.filter(post => post.username === username);
-
 
 
     const totalPosts = filteredPosts.length;

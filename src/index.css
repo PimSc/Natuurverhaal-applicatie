@@ -176,7 +176,7 @@ font-family: var(--mainFont);
 input {
   background-color: var(--mainBackgroundColor);
   padding: 5px;
-  border: 1px solid var(--mainFontColor);
+  border: 2px solid var(--mainFontColor);
   border-radius: 10px;
   font-size: var(--pFontSize);
   font-family: var(--mainFont);
@@ -197,7 +197,7 @@ input::file-selector-button {
 
 textarea{
   background-color: var(--mainBackgroundColor);
-  border: 1px solid var(--mainFontColor);
+  border: 2px solid var(--mainFontColor);
   border-radius: 9px;
   font-size: var(--pFontSize);
   color: var(--mainFontColor);
