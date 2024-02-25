@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import useBlog from "../hooks/useBlogAll.jsx";
+import useBlog from "../Hooks/useAllBlogs.jsx";
 
 const SearchContext = createContext();
 
@@ -43,7 +43,7 @@ export default SearchContext;
 //
 //
 // import React, { createContext, useState, useEffect } from 'react';
-// import useBlog from "../hooks/useBlogAll.jsx";
+// import useBlog from "../hooks/useAllBlogs.jsx";
 //
 // const SearchContext = createContext();
 //

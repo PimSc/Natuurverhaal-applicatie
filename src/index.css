@@ -30,13 +30,14 @@
 
   /*--mainBackgroundColor: red;*/
   --mainBackgroundColor: hsl(0, 0%, 100%);
+  /*--mainBackgroundColor: hsl(0, 0%, 100%);*/
   /*----------------------*/
 
   --SideNavbarColor: white;
 
   /*other colors*/
 
-  --onHoverColor: #3e8e41;
+  --onHoverColor: #078d43;
 
   --black: hsl(0, 0%, 0%);
   --black50Transparant: hsl(0, 0%, 0%, 0.5);
@@ -175,7 +176,7 @@ font-family: var(--mainFont);
 input {
   background-color: var(--mainBackgroundColor);
   padding: 5px;
-  border: 1px solid var(--mainFontColor);
+  border: 2px solid var(--mainFontColor);
   border-radius: 10px;
   font-size: var(--pFontSize);
   font-family: var(--mainFont);
@@ -196,7 +197,7 @@ input::file-selector-button {
 
 textarea{
   background-color: var(--mainBackgroundColor);
-  border: 1px solid var(--mainFontColor);
+  border: 2px solid var(--mainFontColor);
   border-radius: 9px;
   font-size: var(--pFontSize);
   color: var(--mainFontColor);
@@ -386,6 +387,11 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
+
+
+
+
+
 }
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
@@ -434,6 +440,8 @@ button, select, textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 10px;
 }
 
 

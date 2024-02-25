@@ -50,29 +50,26 @@ function App() {
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
 
             {/*Pages outside the nav*/}
-            <Route path="/blogposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><BlogPostDetail /></div>}/>
-            <Route path="/prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><PrikbordPostDetail /></div>}/>
-            <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal</title></Helmet><ExcursiePostDetail /></div>}/>
+            <Route path="/blogposts/:id" element={<div><Helmet><title>Natuurverhaal | Blogpost</title></Helmet><BlogPostDetail /></div>}/>
+            <Route path="/prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal | Prikbordpost</title></Helmet><PrikbordPostDetail /></div>}/>
+            <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal | Excursie</title></Helmet><ExcursiePostDetail /></div>}/>
+            <Route path="/ProfileDetail/:username" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail/></div>}/>
+
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
-
-            {/*<Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet><WriteBlog /></div>}/>*/}
-            {/*<Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><WriteBulletin /></div>}/>*/}
-
 
 
             {/*USER PAGINA`S*/}
-            {/*<Route path="/ProfileDetail" element={isAuth ? <ProfileDetail /> : <Navigate to="/login" />} />*/}
-            <Route path="/ProfileDetail/:username" element={<ProfileDetail/>}/>
-            <Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />
-            <Route path="/mijnBlogs" element={isAuth ? <MijnBlogs /> : <Navigate to="/login" />} />
-            <Route path="/writeBulletin" element={isAuth ? <WriteBulletin /> : <Navigate to="/login" />} />
-            <Route path="/writeBlog" element={isAuth ? <WriteBlog /> : <Navigate to="/login" />} />
+            {/*<Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />*/}
+            <Route path="/ProfileEdit" element={<div><Helmet><title>Natuurverhaal | Profiel bewerken</title></Helmet>{isAuth ? <ProfileEdit /> : <Navigate to="/login" />}</div>} />
+            <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs /> : <Navigate to="/login" />}</div>} />
+            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
+            <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
 
 
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
 
-
+            {/*/PublicProfile/${post.username}*/}
 
             {/*Not found page*/}
             <Route

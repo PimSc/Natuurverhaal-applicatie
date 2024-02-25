@@ -1,112 +1,78 @@
 import './ProfileDetail.css';
-import {Link} from 'react-router-dom';
-import useProfileImage from "../../Hooks/useProfileImage.jsx";
-import { useParams } from 'react-router-dom';
-import useBlog from "../../Hooks/useBlogAll.jsx";
-
+import { Link, useParams } from "react-router-dom";
+import useBlog from "../../Hooks/useAllBlogs.jsx";
+import useProfile from "../../Hooks/useAllUserProfiles.jsx";
 
 function ProfileDetail() {
 
 
-    // const {profileImage} = useProfileImage();
-    // const { username } = useParams();
-    const { userProfile } = useBlog();
-
-    console.log("userProfile log", userProfile)
+    // ALLEEN NOG REVERSE TOEVOEGEN
 
 
+    //Alle blogs komen binnen uit de hook
+    const { blogPostsAll } = useBlog();
+
+    //Haal de gebruikersprofielen op uit de hook
+    const { AllUserProfiles } = useProfile();
+
+    const { username } = useParams(); // Haal de gebruikersnaam op uit de URL
+
+    // Filter de gebruikersprofielen op basis van de gebruikersnaam in de URL
+    const filteredProfile = AllUserProfiles.filter(prof => prof.username === username);
+
+    // Filter blog posts by username
+    const filteredPosts = blogPostsAll.filter(post => post.username === username);
 
 
+    const totalPosts = filteredPosts.length;
 
     return (
         <>
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
-                    <div className="elementCenterContainer">
+                    {/* Als er een gebruikersprofiel is gevonden, toon dan de gegevens */}
+                    {filteredProfile.length > 0 ? (
+                        filteredProfile.map((prof) => (
+                            <>
+                                <img
+                                    src={"data:image/png;base64," + prof.fileContent}
+                                    alt="Profiel foto"
+                                    style={{ width: 400, height: 400 }} />
 
+                                <h2>Username: {prof.username}</h2>
+                                <h2>Profielpagina van {prof.name}</h2>
+                                <h2>Email: {prof.email}</h2>
+                                <h2>Regio: {prof.regio}</h2>
+                                <h2>Bio: {prof.bio}</h2>
+                                <br /><br />
 
-            <div>
-                {/*<h2>Profielpagina van {username}</h2>*/}
-                {/*<img src={profileImage} alt=""/>*/}
-                {/* Voeg hier de rest van de profielpagina-inhoud toe */}
+                                <h2 className="totalBlogsCounter"> {username} heeft al {totalPosts} natuurblogs</h2>
+
+                                {/* Render filtered blog posts */}
+                                {filteredPosts.map((post) => (
+                                    <li key={post.id} className="blog-post-item">
+                                        <Link to={`/blogposts/${post.id}`} className="post-link">
+                                            <div className="post-image" style={{ backgroundImage: `url(data:image/png;base64,${post.fileContent})` }}>
+                                                <div className="onTopOfImageBox">
+                                                    <h2 className="post-title">{post.title}</h2>
+                                                    <p>Geschreven door <strong>{post.username}</strong></p>
+                                                    <i>{post.date}</i>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </>
+                        ))
+                    ) : (
+                        // Als er geen gebruikersprofiel is gevonden, toon dan dit bericht
+                        <p>Deze gebruiker heeft geen openbaar profiel</p>
+                    )}
+                </div>
             </div>
-
-                    </div>
-            </div>
-    </div>
         </>
     );
 }
 
 export default ProfileDetail;
 
-
-// import './ProfileDetail.css';
-// import {useContext, useEffect, useState} from 'react';
-// import {Link} from 'react-router-dom';
-// import {AuthContext} from '../../context/AuthContextProvider.jsx';
-// import axios from 'axios';
-// import useProfileImage from "../../Hooks/useProfileImage.jsx";
-// import { useParams } from 'react-router-dom';
-//
-// function ProfileDetail() {
-//
-//     const [profileData, setProfileData] = useState({});
-//     const {user} = useContext(AuthContext);
-//     const {profileImage} = useProfileImage();
-//     const { username } = useParams();
-//
-//
-//
-//     useEffect(() => {
-//         // we halen de pagina-content op in de mounting-cycle
-//         async function fetchProfileData() {
-//             // haal de token uit de Local Storage om in het GET-request te bewijzen dat we geauthoriseerd zijn
-//             const token = localStorage.getItem('token');
-//
-//             try {
-//                 const result = await axios.get('http://localhost:8080/authenticated', {
-//                     headers: {
-//                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${token}`,
-//                     },
-//                 });
-//                 setProfileData(result.data);
-//             } catch (e) {
-//                 console.error(e);
-//             }
-//         }
-//
-//         fetchProfileData();
-//     }, [])
-//
-//
-//     return (
-//         <>
-//             {user &&
-//                 <div className="outer-content-container-column">
-//                     <h1>Profielpagina</h1>
-//                     <section>
-//                         <img src={profileImage} alt=""/>
-//                         <h2>Gegevens</h2>
-//                         <p><strong>Gebruikersnaam:</strong> {user.username}</p>
-//                         <p><strong>Email:</strong> {user.email}</p>
-//
-//
-//
-//
-//                     </section>
-//
-//                     {/*Als er keys in ons object zitten hebben we data, en dan renderen we de content*/}
-//                     {/*{Object.keys(profileData).length > 0 &&      }*/}
-//                     <p><strong>User role:</strong> {user.role} </p>
-//
-//
-//                     <p>Terug naar de <Link to="/">Homepagina</Link></p>
-//                 </div>
-//             }
-//         </>
-//     );
-// }
-//
-// export default ProfileDetail;

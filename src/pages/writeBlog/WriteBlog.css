@@ -18,12 +18,15 @@
 .categoryContainer select {
     width: 500px;
     border-radius: 10px;
+    border: 2px solid var(--mainFontColor);
+    height: 4lh;
     color: black;
     background-color: white;
     padding: 10px;
     /*width: calc(100% - 20px); !* Adjusted width to accommodate padding *!*/
     margin-top: 5px; /* Added margin-top for spacing */
 }
+
 
 .categoryContainer p {
     color: black;
