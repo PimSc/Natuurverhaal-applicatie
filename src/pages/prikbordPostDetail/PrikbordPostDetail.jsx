@@ -20,7 +20,7 @@ function PrikbordPostDetail() {
 
                         <h1>{title}</h1>
                         <h2>{subtitle}</h2>
-                        <p>Geschreven door <em>{author}</em> op {formatDateString(created)}</p>
+                        <p>Geschreven door <em>{author.charAt(0).toUpperCase() + author.slice(1)}</em> op {formatDateString(created)}</p>
                         {/*<p> <Clock color="#50535C" size={18} /> Leestijd {readTime} minuten</p>*/}
 
                         <br/>

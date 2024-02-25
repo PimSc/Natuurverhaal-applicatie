@@ -6,31 +6,28 @@ import useBlog from "../../Hooks/useAllBlogs.jsx";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function BlogOverview() {
-
-    //Hier komt de zoekterm uit de zoekbalk binnen
-    const { searchQuery, setSearchQuery, handleChange } = useContext(SearchContext);
-    //Hier komen alle blogs binnen uit de Hook
+    const { searchQuery } = useContext(SearchContext);
     const { blogPostsAll } = useBlog();
 
-    // Omkeren van de blogPostsAll array zodat de nieuwe blogposts bovenaan komen te staan
-    const reversedPosts = blogPostsAll.slice().reverse();
+    // Define a state to hold filtered posts
+    const [filteredPosts, setFilteredPosts] = useState([]);
 
-    // Hier worden alle blogs door een filter gehaald
     useEffect(() => {
-        const filtered = reversedPosts.filter(post =>
-            post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            post.username.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        // Define a function to calculate filtered posts
+        const calculateFilteredPosts = () => {
+            // Omkeren van de blogPostsAll array zodat de nieuwe blogposts bovenaan komen te staan
+            const reversedPosts = blogPostsAll.slice().reverse();
+            const filtered = reversedPosts.filter(post =>
+                post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                post.username.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setFilteredPosts(filtered);
+        };
 
-        setFilteredPosts(filtered);
-    }, [searchQuery, reversedPosts]);
-
-    //Hier worden de gefilterde blogs in een state gezet om te kunnen worden gebruikt in de tekst
-    const [filteredPosts, setFilteredPosts] = useState(reversedPosts);
-
-
-
+        // Call the function to calculate filtered posts
+        calculateFilteredPosts();
+    }, [searchQuery, blogPostsAll]); // Include searchQuery and blogPostsAll as dependencies
 
     return (
         <>
@@ -45,7 +42,7 @@ function BlogOverview() {
 
                                         <div className="onTopOfImageBox">
                                             <h2 className="post-title">{post.title}</h2>
-                                            <p>Geschreven door {post.username}</p>
+                                            <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
                                             <i>{post.date}</i>
                                         </div>
                                     </div>
@@ -60,80 +57,3 @@ function BlogOverview() {
 }
 
 export default BlogOverview;
-
-
-
-//
-//
-// import React, { useState, useEffect } from 'react';
-// import './BlogOverview.css';
-// import useBlog from "../../Hooks/useAllBlogs.jsx";
-// import { Link } from 'react-router-dom';
-//
-// function BlogOverview() {
-//     const { blogPostsAll } = useBlog();
-//     const [searchTerm, setSearchTerm] = useState('');
-//     // Initialiseer filteredPosts met de blogposts
-//     const [filteredPosts, setFilteredPosts] = useState(blogPostsAll);
-//
-//     console.log(blogPostsAll)
-//
-//     const handleChange = (event) => {
-//         const newSearchTerm = event.target.value;
-//         setSearchTerm(newSearchTerm);
-//
-//         // Filter de blogposts
-//         const filtered = blogPostsAll.filter(post =>
-//             post.title.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
-//             post.subtitle.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
-//             post.content.toLowerCase().includes(newSearchTerm.toLowerCase()) ||
-//             post.username.toLowerCase().includes(newSearchTerm.toLowerCase())
-//         );
-//         setFilteredPosts(filtered);
-//     };
-//
-//     // Update filteredPosts wanneer blogPosts verandert
-//     useEffect(() => {
-//         setFilteredPosts(blogPostsAll);
-//     }, [blogPostsAll]);
-//
-//     return (
-//         <>
-//             {/*<div className="elementCenterContainer" id="searchbarBlogOvervieuw">*/}
-//             {/*    <form>*/}
-//             {/*        <input*/}
-//             {/*            className="searchBar"*/}
-//             {/*            type="text"*/}
-//             {/*            name="query"*/}
-//             {/*            placeholder="Zoek..."*/}
-//             {/*            value={searchTerm}*/}
-//             {/*            onChange={handleChange}*/}
-//             {/*        />*/}
-//             {/*    </form>*/}
-//             {/*</div>*/}
-//             <section className="outer-content-container">
-//                 <div className="inner-content-container">
-//                     <ul className="post-list">
-//                         {filteredPosts.map((post) => (
-//                             <li key={post.id} className="blog-post-item ">
-//                                 <Link to={`/blogposts/${post.id}`} className="post-link">
-//                                     <div className="post-image"
-//                                          style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
-//                                         <div className="onTopOfImageBox">
-//                                             <h2 className="post-title">{post.title}</h2>
-//                                             {/*<p>Geschreven door <strong>{post.author}</strong></p>*/}
-//                                             <p>Geschreven door {post.username}</p>
-//                                             <i>{post.date}</i>
-//                                         </div>
-//                                     </div>
-//                                 </Link>
-//                             </li>
-//                         ))}
-//                     </ul>
-//                 </div>
-//             </section>
-//         </>
-//     );
-// }
-//
-// export default BlogOverview;

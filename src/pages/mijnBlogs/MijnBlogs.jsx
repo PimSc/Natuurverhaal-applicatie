@@ -3,6 +3,8 @@ import './MijnBlogs.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 import {Link} from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
+import {AuthContext} from "../../context/AuthContextProvider.jsx";
+import axios from "axios";
 
 
 function MijnBlogs() {
@@ -27,6 +29,20 @@ function MijnBlogs() {
         setFilteredPosts(reversedFilteredPosts);
     }, [searchQuery, blogPostsUser]);
 
+
+    // const {user} = useContext(AuthContext);
+    // const handleDelete = () => {
+    //     axios.delete(`http://blog-posts/${user.username}/${post.id}`)
+    //         .then(response => {
+    //             // Handle success, maybe show a message or update state
+    //             console.log('Post deleted successfully');
+    //         })
+    //         .catch(error => {
+    //             // Handle error, maybe show an error message
+    //             console.error('Error deleting post:', error);
+    //         });
+    // };
+
     return (
         <>
             <section className="outer-content-container">
@@ -45,42 +61,54 @@ function MijnBlogs() {
                 <div className="inner-content-container">
                     <ul className="myPostList">
                         {filteredPosts.map((post) => (
-                            <>
-                                <li key={post.id} className="myBlogPostItem">
+                            <li key={post.id} className="myBlogPostItem">
 
-                                    <Link to={`/blogposts/${post.id}`} className="post-link">
+                                {/*<Link to={`/blogposts/${post.id}`} className="post-link">*/}
 
-                                        <div className="myPostImg"
-                                             style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+                                <div className="myPostImg"
+                                     style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
 
-                                            <div className="myBlogsOnTopButtonContainer">
-                                                {/*REMOVE BUTTON*/}
-                                                <div className="myPostButtons">
-                                                    <div className="myBlogButtonContainer">
-                                                        <button className="SimpleButtonsRemove myBlogButton">Blog verwijderen</button>
-                                                    </div>
-                                                </div>
 
-                                                {/*EDIT BUTTON*/}
-                                                <div className="myPostButtons">
-                                                    <div className="myBlogButtonContainer">
-                                                        <button className="SimpleButtonsEdit myBlogButton"> <Link to="/contact"> Blog aanpassen</Link></button>
-                                                    </div>
-                                                </div>
+                                    {/*--REMOVE BLOG--*/}
+                                    <div className="myBlogsOnTopButtonContainer">
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <button className="SimpleButtonsRemove myBlogButtonRemove">
+                                                    <Link to={`/blogposts/${post.id}`} className="post-link">Blog
+                                                        verwijderen</Link>
+                                                </button>
                                             </div>
-
-                                            <div className="onTopOfImageBox">
-                                                <div>
-                                                    <h2 className="post-title">{post.title}</h2>
-                                                    <p>Geschreven door <strong>{post.username}</strong></p>
-                                                    <i>{post.date}</i>
-                                                </div>
-                                            </div>
-
                                         </div>
-                                    </Link>
-                                </li>
-                            </>
+
+                                        {/*--READ BLOG--*/}
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <button className="SimpleButtonsNormal myBlogButton"><Link
+                                                    to={`/blogposts/${post.id}`} className="post-link">Blog
+                                                    bekijken</Link></button>
+                                            </div>
+                                        </div>
+
+                                        {/*--EDIT BLOG--*/}
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <button className="SimpleButtonsEdit myBlogButtonEdit"><Link
+                                                    to="/contact"> Blog aanpassen</Link></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="onTopOfImageBox">
+                                        <div>
+                                            <h2 className="post-title">{post.title}</h2>
+                                            <p>Geschreven door <strong>{post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong></p>
+                                            <i>{post.date}</i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {/*</Link>*/}
+                            </li>
                         ))}
                     </ul>
                 </div>

@@ -37,7 +37,7 @@ function BlogPostDetail() {
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
                         <p>Categorie: {post.categories}</p>
-                        <p><Link to={`/ProfileDetail/${post.username}`}>Geschreven door {post.username} </Link></p>
+                        <p><Link to={`/ProfileDetail/${post.username}`}>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)} </Link></p>
                         <i>{post.date}</i>
                         <div className="textStart">
                         </div>
@@ -49,7 +49,7 @@ function BlogPostDetail() {
                         <br/>
 
                         <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
-                            van {post.username}</strong> </Link>
+                            van {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong> </Link>
 
                         <Link to="/" className="back-link">
                             <br/>

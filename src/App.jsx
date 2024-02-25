@@ -23,6 +23,7 @@ import ProfileDetail from "./pages/profileDetail/ProfileDetail.jsx";
 import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 import {AuthContext} from "././context/AuthContextProvider.jsx";
 import {useContext} from "react";
+import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
 
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
+            <Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />
 
             {/*/PublicProfile/${post.username}*/}
 

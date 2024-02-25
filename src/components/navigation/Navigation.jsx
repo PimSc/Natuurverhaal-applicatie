@@ -51,6 +51,7 @@ function Navigation() {
                                         {isAuth && (<>
                                                 <li><Link to="/mijnBlogs">Mijn blogs</Link></li>
                                                 <li><Link to="/ProfileEdit">Profiel</Link></li>
+                                                <li><Link to="/adminpanel">Admin</Link></li>
                                                 <li><Link onClick={(e) => {
                                                     e.preventDefault();
                                                     logout();
