@@ -21,11 +21,8 @@
     justify-content: flex-end;
 }
 
-.onTopOfImageBox{
-    z-index: 2;
-    background-color: hsl(0, 0%, 100%, 0.4);
-    height: 105px;
-}
+
+
 
 .blog-post-item {
     text-align: center;
@@ -91,13 +88,7 @@
 
 
 /*LAYOUT START*/
-    .onTopOfImageBox{
-        z-index: 2;
-        background-color: hsl(0, 0%, 100%, 0.4);
-        max-height: 300px;
-        min-height: 130px;
-        overflow: hidden;
-    }
+
 
 /*LAYOUT END*/
 

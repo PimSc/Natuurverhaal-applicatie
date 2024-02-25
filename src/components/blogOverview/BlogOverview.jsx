@@ -3,6 +3,7 @@ import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContext from "../../context/SearchContext.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function BlogOverview() {
 
@@ -28,6 +29,9 @@ function BlogOverview() {
     //Hier worden de gefilterde blogs in een state gezet om te kunnen worden gebruikt in de tekst
     const [filteredPosts, setFilteredPosts] = useState(reversedPosts);
 
+
+
+
     return (
         <>
             <section className="outer-content-container">
@@ -38,6 +42,7 @@ function BlogOverview() {
                                 <Link to={`/blogposts/${post.id}`} className="post-link">
                                     <div className="post-image"
                                          style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+
                                         <div className="onTopOfImageBox">
                                             <h2 className="post-title">{post.title}</h2>
                                             <p>Geschreven door {post.username}</p>
@@ -58,17 +63,6 @@ export default BlogOverview;
 
 
 
-
-
-
-
-
-
-
-
-
-
-//
 //
 //
 // import React, { useState, useEffect } from 'react';

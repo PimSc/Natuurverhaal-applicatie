@@ -104,8 +104,7 @@ function ProfileEdit() {
     return (
         <>
             <div className="outer-content-container">
-                <div className="inner-content-container-column">
-                    <form action="">
+                    <form className="inner-content-container-column" action="">
 
 
                         {/*Box geeft alleen margin button*/}
@@ -119,13 +118,8 @@ function ProfileEdit() {
                         </div>
 
 
-                        {/*Row space evenly*/}
-                        <div className="ProfileEditContentBox3">
-
-
-
-
-                            {/*Middelste rij verticaal*/}
+                        {/*Middelste rij verticaal*/}
+                        <div className="ProfileRowContainer">
                             <div className="ProfileEditBox2">
                                 <p>profiel foto</p>
 
@@ -146,178 +140,182 @@ function ProfileEdit() {
                                 {/*</span>*/}
 
 
-                                <div className="inner-content-container-column">
+
                                     {previewUrl &&
                                         <img src={previewUrl} alt="Preview"
                                              style={{maxWidth: "500px", maxHeight: "500px"}}/>}
-                                </div>
 
                             </div>
 
 
-                            {/*laatste rij verticaal (uitleg bestandupload)*/}
-                            <div className="ProfileEditBox3">
-                                <br/>
-                                <div className="iconContainer">
-                                    <img className="iconSmall" src={question} alt="question icon"/>
-                                    <div className="iconOverlay">
-                                        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
-                                            .png</i>
+                                {/*laatste rij verticaal (uitleg bestandupload)*/}
+                                <div className="ProfileEditBox3">
+                                    <br/>
+                                    <div className="iconContainer">
+                                        <img className="iconSmall" src={question} alt="question icon"/>
+                                        <div className="iconOverlay">
+                                            <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
+                                                .png</i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                        <div className="ProfileEditContentBox1">
+                            <div className="ProfileEditContentBox1">
 
+                                <div className="ProfileRowContainer">
+                                    {/*Middelste rij verticaal*/}
+                                    <div className="ProfileEditBox2">
+                                        {/*EMAIL*/}
+                                        <label className="textStart" htmlFor="email">
+                                            <b>Email:</b>
+                                        </label>
+                                        <input className="ProfileTextField"
+                                               placeholder="email"
+                                               name="email"
+                                               id="email"
+                                               autoComplete="on"
+                                               value={formData.email}
+                                               onChange={handleChangeEmail}
+                                               required
+                                        />
+                                        <br/>
+                                    </div>
+                                    <div className="ProfileEditBox3">
+                                        <div className="iconContainer">
+                                            <img className="iconSmall"
+                                                 src={question}
+                                                 alt="question icon"
+                                            />
+                                            <div className="iconOverlay">
+                                                <i>Via dit e-mail adres kan iedereen contact met je opnemen</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div className="ProfileRowContainer">
+                                    <div className="ProfileEditBox2">
+                                        {/*NAAM*/}
+                                        <label className="textStart" htmlFor="name">
+                                            <b>Naam:</b>
+                                        </label>
+                                        <input className="ProfileTextField"
+                                               placeholder="name"
+                                               name="name"
+                                               id="name"
+                                               autoComplete="on"
+                                               value={formData.name}
+                                               onChange={handleChangeName}
+                                               required
+                                        />
+                                        <br/>
+                                    </div>
+                                    <div className="ProfileEditBox3">
+                                        <div className="iconContainer">
+                                            <img
+                                                className="iconSmall"
+                                                src={question}
+                                                alt="question icon"
+                                            />
 
-
-                            {/*Middelste rij verticaal*/}.
-                            <div className="ProfileEditBox2">
-                                {/*EMAIL*/}
-                                <label className="textStart" htmlFor="email">
-                                    <b>Email:</b>
-                                </label>
-                                <input className="ProfileTextField"
-                                       placeholder="email"
-                                       name="email"
-                                       id="email"
-                                       autoComplete="on"
-                                       value={formData.email}
-                                       onChange={handleChangeEmail}
-                                       required
-                                />
-                                <br/>
-                                {/*NAAM*/}
-                                <label className="textStart" htmlFor="name">
-                                    <b>Naam:</b>
-                                </label>
-                                <input className="ProfileTextField"
-                                       placeholder="name"
-                                       name="name"
-                                       id="name"
-                                       autoComplete="on"
-                                       value={formData.name}
-                                       onChange={handleChangeName}
-                                       required
-                                />
-                                <br/>
-                                {/*REGIO*/}
-                                <label className="textStart" htmlFor="regio">
-                                    <b>Regio:</b>
-                                </label>
-                                <input className="ProfileTextField"
-                                       placeholder="regio"
-                                       name="regio"
-                                       id="regio"
-                                       autoComplete="on"
-                                       value={formData.regio}
-                                       onChange={handleChangeRegio}
-                                       required
-                                />
-                                <br/>
+                                            <div className="iconOverlay">
+                                                <i>Onder welke naam wil je bekend worden?</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-
-                            {/*laatste rij verticaal (uitleg email naam regio)*/}
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img className="iconSmall"
-                                         src={question}
-                                         alt="question icon"
+                            <div className="ProfileRowContainer">
+                                <div className="ProfileEditBox2">
+                                    {/*REGIO*/}
+                                    <label className="textStart" htmlFor="regio">
+                                        <b>Regio:</b>
+                                    </label>
+                                    <input className="ProfileTextField"
+                                           placeholder="regio"
+                                           name="regio"
+                                           id="regio"
+                                           autoComplete="on"
+                                           value={formData.regio}
+                                           onChange={handleChangeRegio}
+                                           required
                                     />
-                                    <div className="iconOverlay">
-                                        <i>Via dit e-mail adres kan iedereen contact met je opnemen</i>
-                                    </div>
+                                    <br/>
                                 </div>
-                                <br/> <br/>
-                                <div className="iconContainer">
-                                    <img
-                                        className="iconSmall"
-                                        src={question}
-                                        alt="question icon"
-                                    />
-
-                                    <div className="iconOverlay">
-                                        <i>Onder welke naam wil je bekend worden?</i>
-                                    </div>
-                                </div>
-                                <br/> <br/>
-                                <div className="iconContainer">
-                                    <img
-                                        className="iconSmall"
-                                        src={question}
-                                        alt="question icon"
-                                    />
-                                    <div className="iconOverlay">
-                                        <i>In welke regio ben je actief?</i>
+                                <div className="ProfileEditBox3">
+                                    <div className="iconContainer">
+                                        <img
+                                            className="iconSmall"
+                                            src={question}
+                                            alt="question icon"
+                                        />
+                                        <div className="iconOverlay">
+                                            <i>In welke regio ben je actief?</i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                        </div>
+
+                            <div className="ProfileRowContainer">
+                                {/*Middelste rij verticaal*/}
+                                <div className="ProfileEditBox2">
+
+                                    {/*BIOGRAFIE*/}
+                                    <label className="inputSize" htmlFor="bio">
+                                        <b>Content:</b>
+                                    </label>
+                                    <textarea className="profileBiografieTextField"
+                                              placeholder="bio"
+                                              name="bio"
+                                              id="bio"
+                                              autoComplete="on"
+                                              value={formData.bio}
+                                              onChange={handleChangeBio}
+                                              required
+                                    />
+                                    <br/>
+                                </div>
+
+                                <div className="ProfileEditBox3">
+                                    <div className="iconContainer">
+                                        <img
+                                            className="iconSmall"
+                                            src={question}
+                                            alt="question icon"
+                                        />
+                                        <div className="iconOverlay">
+                                            <i>Doorlinken naar een externe pagina is toegestaan</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-                        <div className="ProfileEditContentBox2">
-
-
-
-                            {/*Middelste rij verticaal*/}
-                            <div className="ProfileEditBox2">
-
-                                {/*BIOGRAFIE*/}
-                                <label className="inputSize" htmlFor="bio">
-                                    <b>Content:</b>
-                                </label>
-                                <textarea className="profileBiografieTextField"
-                                          placeholder="bio"
-                                          name="bio"
-                                          id="bio"
-                                          autoComplete="on"
-                                          value={formData.bio}
-                                          onChange={handleChangeBio}
-                                          required
-                                />
+                            <div className="profileButtonCenter">
                                 <br/>
+                                {uploadStatus && <p>{uploadStatus}</p>}
+
+                                <button className="SimpleButtons" id="buttonPostBlog" type="submit"
+                                        onClick={uploadGegevens}>
+                                    <Link to={`/ProfileDetail/${user.username}`} className="post-link">
+                                        Blog bericht plaatsen
+                                    </Link>
+                                </button>
+
                             </div>
-
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img
-                                        className="iconSmall"
-                                        src={question}
-                                        alt="question icon"
-                                    />
-                                    <div className="iconOverlay">
-                                        <i>Doorlinken naar een externe pagina is toegestaan</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="profileButtonCenter">
-                            <br/>
-                            {uploadStatus && <p>{uploadStatus}</p>}
-
-                            <button className="SimpleButtons" id="buttonPostBlog" type="submit"
-                                    onClick={uploadGegevens}>
-                                <Link to={`/ProfileDetail/${user.username}`} className="post-link">
-                                    Blog bericht plaatsen
-                                </Link>
-                            </button>
-
-                        </div>
 
                     </form>
                 </div>
-            </div>
+
 
 
         </>
-    );
+)
+;
 }
 
 export default ProfileEdit;

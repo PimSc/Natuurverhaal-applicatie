@@ -37,7 +37,7 @@
 
   /*other colors*/
 
-  --onHoverColor: #3e8e41;
+  --onHoverColor: #078d43;
 
   --black: hsl(0, 0%, 0%);
   --black50Transparant: hsl(0, 0%, 0%, 0.5);
@@ -387,6 +387,11 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
+
+
+
+
+
 }
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
@@ -435,6 +440,8 @@ button, select, textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 10px;
 }
 
 

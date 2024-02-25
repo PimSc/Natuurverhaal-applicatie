@@ -1,10 +1,10 @@
 /*STYLING START*/
 
-.ProfileEditBox3 > i{
+.ProfileEditBox3 > i {
     color: lightGrey;
 }
-/*STYLING END*/
 
+/*STYLING END*/
 
 
 /*LAYOUT START*/
@@ -38,81 +38,58 @@
     opacity: 1; /* Laat het tekstvlak zien wanneer erover wordt gehoverd */
     z-index: 2;
 }
+
 /*------Icon overlay tekst End------*/
 
-.profileBiografieTextField{
+.profileBiografieTextField {
     width: 400px;
     height: 300px;
 }
 
-.ProfileTextField{
+.ProfileTextField {
     width: 400px;
     height: 2lh;
 }
 
-.profileFirstTextBox{
+.profileFirstTextBox {
     margin-bottom: 50px;
     text-align: center;
 }
 
-.ProfileEditContentBox1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border: 5px solid blue;
-}
-
-.ProfileEditContentBox2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border: 5px solid turquoise;
-}
-
-.ProfileEditContentBox3{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border: 5px solid teal;
-}
-
-.ProfileEditBox1{
-    width: 150px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid red;
-}
-
-.ProfileEditBox2{
+.ProfileRowContainer {
     width: 500px;
-    min-height: 200px;
+    display: flex;
+    flex-direction: row;
+    /*border: 3px solid deeppink;*/
+}
+
+
+.ProfileEditBox2 {
+    min-width: 450px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid greenyellow;
+    /*border: 5px solid greenyellow;*/
 }
 
-.ProfileEditBox3{
+.ProfileEditBox3 {
     width: 50px;
-    min-height: 200px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid purple;
+    /*border: 5px solid purple;*/
 }
 
-.ProfilePictureUpload{
+.ProfilePictureUpload {
     width: 380px;
     z-index: 2;
 }
 
-.profileButtonCenter{
+.profileButtonCenter {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -122,22 +99,15 @@
 /*LAYOUT END*/
 @media only screen and (max-width: 767px) {
     /*STYLING START*/
-
-
-
     /*STYLING END*/
-
-
-
     /*LAYOUT START*/
-
-    .ProfileEditBox1{
+    .ProfileEditBox1 {
         width: 90px;
         min-height: 200px;
         /*border: 5px solid red;*/
     }
 
-    .ProfileEditBox2{
+    .ProfileEditBox2 {
         width: 200px;
         min-height: 200px;
         display: flex;
@@ -145,20 +115,19 @@
         /*border: 5px solid greenyellow;*/
     }
 
-    .ProfileEditBox3{
+    .ProfileEditBox3 {
         width: 50px;
         min-height: 200px;
         padding: 10px;
         /*border: 5px solid purple;*/
     }
 
-    .profilePageProfileImageContainer{
+    .profilePageProfileImageContainer {
         width: 80px;
         height: 80px;
     }
 
     /*------Icon overlay tekst------*/
-
     .iconContainer {
         position: relative;
         display: inline-block;
@@ -200,10 +169,9 @@
         max-width: 200px;
         width: 100%;
     }
+
     /*------Icon overlay tekst End------*/
-
     /*LAYOUT END*/
-
 
 
 }

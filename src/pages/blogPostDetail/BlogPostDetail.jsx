@@ -4,6 +4,7 @@ import useBlog from "../../Hooks/useAllBlogs.jsx";
 import { useNavigate } from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.jsx';
 import React from "react";
+import LoadingGif from "./../../../public/assets/icons/LoadingGif.gif"
 
 
 function BlogPostDetail() {
@@ -21,7 +22,7 @@ function BlogPostDetail() {
         const post = blogPostsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 
         if (!post) {
-            return <div>Blogpost niet gevonden</div>; // Toon een foutmelding als de blogpost niet wordt gevonden
+            return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>
         }
 
 

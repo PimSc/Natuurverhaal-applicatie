@@ -178,34 +178,6 @@ function WriteBlog() {
                                   required
                         />
 
-                        {/* Content */}
-                        <label className="textStart" htmlFor="content">
-                            <b>Content:</b>
-                        </label>
-                        <textarea className="textAreaStory"
-                                  placeholder="Jouw blog"
-                                  name="content"
-                                  id="content"
-                                  autoComplete="on"
-                                  value={formData.content}
-                                  onChange={handleChangeContent}
-                                  required
-                        />
-
-                        {/*/!* Categorie *!/*/}
-                        {/*<label className="textStart" htmlFor="categories">*/}
-                        {/*    <b>Categorie:</b>*/}
-                        {/*</label>*/}
-                        {/*<input className="textAreaOneLine"*/}
-                        {/*       placeholder="wandelroute"*/}
-                        {/*       name="categories"*/}
-                        {/*       id="categories"*/}
-                        {/*       autoComplete="on"*/}
-                        {/*       value={formData.categories}*/}
-                        {/*       onChange={handleChangeCategories}*/}
-                        {/*       required*/}
-                        {/*/>*/}
-
                         <div className="elementCenterContainer categoryContainer">
                             <p>Categorieën: </p>
                             <select onChange={handleChangeCategories}>
@@ -227,6 +199,21 @@ function WriteBlog() {
                                 <option value="overig">overig</option>
                             </select>
                         </div>
+
+
+                        {/* Content */}
+                        <label className="textStart" htmlFor="content">
+                            <b>Content:</b>
+                        </label>
+                        <textarea className="textAreaStory"
+                                  placeholder="Jouw blog"
+                                  name="content"
+                                  id="content"
+                                  autoComplete="on"
+                                  value={formData.content}
+                                  onChange={handleChangeContent}
+                                  required
+                        />
 
 
                     </div>
