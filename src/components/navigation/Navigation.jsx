@@ -7,7 +7,8 @@ import Searchbar from "../searchbar/Searchbar.jsx";
 
 function Navigation() {
 
-    const {isAuth, logout} = useContext(AuthContext);
+    const {isAuth, user, logout} = useContext(AuthContext);
+
 
     return (
         <>
@@ -51,7 +52,32 @@ function Navigation() {
                                         {isAuth && (<>
                                                 <li><Link to="/mijnBlogs">Mijn blogs</Link></li>
                                                 <li><Link to="/ProfileEdit">Profiel</Link></li>
-                                                <li><Link to="/adminpanel">Admin</Link></li>
+
+                                                {user && user.role === 'ROLE_ADMIN' && (
+                                                    <li>
+                                                        <NavLink
+                                                            to="/adminpanel"
+                                                            className={({ isActive }) =>
+                                                                isActive === true ? 'active-link' : 'default-link'
+                                                            }
+                                                        >
+                                                            Admin
+                                                        </NavLink>
+                                                    </li>
+                                                )}
+                                                {/*{user.role === 'ROLE_ADMIN' && (*/}
+                                                {/*    <li>*/}
+                                                {/*        <NavLink*/}
+                                                {/*            to="/adminpanel"*/}
+                                                {/*            className={({ isActive }) =>*/}
+                                                {/*                isActive === true ? 'active-link' : 'default-link'}*/}
+                                                {/*        >*/}
+                                                {/*            Admin*/}
+                                                {/*        </NavLink>*/}
+                                                {/*    </li>*/}
+                                                {/*)}*/}
+
+
                                                 <li><Link onClick={(e) => {
                                                     e.preventDefault();
                                                     logout();
@@ -130,10 +156,32 @@ function Navigation() {
                                     </li>
 
 
-                                    <li>
-                                        <NavLink to="/adminpanel"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Admin</NavLink>
-                                    </li>
+
+                                    {/*{user.role === 'ROLE_ADMIN' && (*/}
+                                    {/*    <li>*/}
+                                    {/*        <NavLink*/}
+                                    {/*            to="/adminpanel"*/}
+                                    {/*            className={({ isActive }) =>*/}
+                                    {/*                isActive === true ? 'active-link' : 'default-link'*/}
+                                    {/*            }*/}
+                                    {/*        >*/}
+                                    {/*            Admin*/}
+                                    {/*        </NavLink>*/}
+                                    {/*    </li>)}*/}
+                                    {user && user.role === 'ROLE_ADMIN' && (
+                                        <li>
+                                            <NavLink
+                                                to="/adminpanel"
+                                                className={({ isActive }) =>
+                                                    isActive === true ? 'active-link' : 'default-link'
+                                                }
+                                            >
+                                                Admin
+                                            </NavLink>
+                                        </li>
+                                    )}
+
+
 
                                     <li><Link onClick={(e) => {
                                         e.preventDefault();

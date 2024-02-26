@@ -28,7 +28,7 @@ import EditBlog from "./pages/editBlog/EditBlog.jsx";
 
 function App() {
 
-    const { isAuth } = useContext(AuthContext);
+    const { isAuth, user} = useContext(AuthContext);
 
   return (
     <>
@@ -70,7 +70,11 @@ function App() {
 
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
-            <Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />
+            {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
+            <Route
+                path="/AdminPanel"
+                element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
+
 
             {/*/PublicProfile/${post.username}*/}
 

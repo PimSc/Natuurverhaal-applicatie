@@ -11,6 +11,7 @@ function ProfileEdit() {
 
 
     const {user} = useContext(AuthContext);
+    console.log("role", user.role)
 
     const [formData, setFormData] = useState({
         email: "",
