@@ -24,7 +24,7 @@ function AuthContextProvider({ children }) {
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
             const decoded = jwtDecode(token);
-            console.log(decoded)
+            console.log("decoded", decoded)
             fetchUserData(decoded.sub, token);
         } else {
             // als er GEEN token is doen we niks, en zetten we de status op 'done'

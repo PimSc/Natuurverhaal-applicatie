@@ -29,6 +29,8 @@ function BlogOverview() {
         calculateFilteredPosts();
     }, [searchQuery, blogPostsAll]); // Include searchQuery and blogPostsAll as dependencies
 
+
+
     return (
         <>
             <section className="outer-content-container">
