@@ -113,7 +113,7 @@ function WriteBlog() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                <button className="SimpleButtons" id="WriteBlogBackButton" type="button">
+                <button className="simpleButtons" id="WriteBlogBackButton" type="button">
                     <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                 </button>
 
@@ -220,7 +220,7 @@ function WriteBlog() {
                     <div className="elementCenterContainer">
                         <br/>
                         {uploadStatus && <p>{uploadStatus}</p>}
-                        <button className="SimpleButtons" id="buttonPostBlog" type="submit" onClick={uploadGegevens}>
+                        <button className="simpleButtons" id="buttonPostBlog" type="submit" onClick={uploadGegevens}>
                             Blog bericht plaatsen
                         </button>
                     </div>
@@ -320,7 +320,7 @@ export default WriteBlog;
 //     return (
 //         <>
 //             <div className="inner-content-container-textFields">
-//                 <button className="SimpleButtons" id="WriteBlogBackButton" type="button">
+//                 <button className="simpleButtons" id="WriteBlogBackButton" type="button">
 //                     <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
 //                 </button>
 //
@@ -405,7 +405,7 @@ export default WriteBlog;
 //                     <div className="elementCenterContainer">
 //                         <br/>
 //                         {uploadStatus && <p>{uploadStatus}</p>}
-//                         <button className="SimpleButtons" id="buttonPostBlog" type="submit" onClick={uploadImage}>
+//                         <button className="simpleButtons" id="buttonPostBlog" type="submit" onClick={uploadImage}>
 //                             Blog bericht plaatsen
 //                         </button>
 //

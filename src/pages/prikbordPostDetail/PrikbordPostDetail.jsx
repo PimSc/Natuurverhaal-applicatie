@@ -27,7 +27,7 @@ function PrikbordPostDetail() {
                         <p className="textStart">{content}</p>
                         <Link to="/prikbord" className="back-link">
                             <br/>
-                            <button className="SimpleButtons"> Terug naar het prikbord overzicht</button>
+                            <button className="simpleButtons"> Terug naar het prikbord overzicht</button>
                             <br/>
                             <br/>
                         </Link>

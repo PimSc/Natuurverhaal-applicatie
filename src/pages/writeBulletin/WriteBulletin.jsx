@@ -12,7 +12,7 @@ function WriteBulletin() {
 
                 <form action="" method="post">
                     <div className="elementCenterContainer">
-                        <button className="SimpleButtons" type="button">
+                        <button className="simpleButtons" type="button">
                             <Link to="/prikbord"><strong>Terug naar het prikbord</strong></Link>
                         </button>
                     </div>
@@ -71,7 +71,7 @@ function WriteBulletin() {
 
                     <div className="elementCenterContainer">
                         <button
-                            className="SimpleButtons"
+                            className="simpleButtons"
                             type="submit">
                             {/*onClick={uploadImage}>*/}
                             <Link to="/prikbord"><strong>Prikbord bericht plaatsen</strong></Link>

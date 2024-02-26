@@ -111,7 +111,7 @@ function ProfileEdit() {
                 <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
                 <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
 
-                <button className="SimpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
+                <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
                     openbaar profiel</Link></button>
             </div>
 
@@ -303,7 +303,7 @@ function ProfileEdit() {
 
                         {uploadStatus && <p>{uploadStatus}</p>}
 
-                        <button className="SimpleButtons" type="submit"
+                        <button className="simpleButtons" type="submit"
                                 onClick={uploadGegevens}>
                                 Blog bericht plaatsen
                         </button>

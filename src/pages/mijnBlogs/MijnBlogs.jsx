@@ -30,18 +30,20 @@ function MijnBlogs() {
     }, [searchQuery, blogPostsUser]);
 
 
-    // const {user} = useContext(AuthContext);
-    // const handleDelete = () => {
-    //     axios.delete(`http://blog-posts/${user.username}/${post.id}`)
-    //         .then(response => {
-    //             // Handle success, maybe show a message or update state
-    //             console.log('Post deleted successfully');
-    //         })
-    //         .catch(error => {
-    //             // Handle error, maybe show an error message
-    //             console.error('Error deleting post:', error);
-    //         });
-    // };
+    const {user} = useContext(AuthContext);
+
+    const handleDelete = (postId) => {
+        axios.delete(`http://blog-posts/${user.username}/${postId}`)
+            .then(response => {
+                // Handle success, maybe show a message or update state
+                console.log('Post deleted successfully');
+                // Here you might want to update your state to reflect the deletion
+            })
+            .catch(error => {
+                // Handle error, maybe show an error message
+                console.error('Error deleting post:', error);
+            });
+    };
 
     return (
         <>
@@ -50,6 +52,8 @@ function MijnBlogs() {
                     <button id="WriteBlogButton" type="button">
                         <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
+
+
                     <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
                     <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
                     <h4 className="totalBlogsCounter">Je hebt al {totalPosts} natuurblogs</h4>
@@ -73,9 +77,13 @@ function MijnBlogs() {
                                     <div className="myBlogsOnTopButtonContainer">
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsRemove buttonRedRemove">
-                                                    <Link to={`/blogposts/${post.id}`} className="post-link">Blog
-                                                        verwijderen</Link>
+                                                {/*<button className="simpleButtonsRemove buttonRedRemove">*/}
+                                                {/*    <Link to={`/blogposts/${post.id}`} className="post-link">Blog*/}
+                                                {/*        verwijderen</Link>*/}
+                                                {/*</button>*/}
+                                                <button className="simpleButtonsRemove buttonRedRemove"
+                                                        onClick={() => handleDelete(post.id)}>
+                                                    Blog verwijderen
                                                 </button>
                                             </div>
                                         </div>
@@ -83,7 +91,7 @@ function MijnBlogs() {
                                         {/*--READ BLOG--*/}
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsTotalGreen myBlogButton"><Link
+                                                <button className="simpleButtonsTotalGreen myBlogButton"><Link
                                                     to={`/blogposts/${post.id}`} className="post-link">Blog
                                                     bekijken</Link></button>
                                             </div>
@@ -92,8 +100,9 @@ function MijnBlogs() {
                                         {/*--EDIT BLOG--*/}
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsEdit buttonYellowEdit"><Link
-                                                    to="/contact"> Blog aanpassen</Link></button>
+                                                <button className="simpleButtonsEdit buttonYellowEdit"><Link
+                                                    to={`/editblog/${post.id}`} className="post-link">Blog
+                                                    aanpassen</Link></button>
                                             </div>
                                         </div>
                                     </div>

@@ -15,11 +15,11 @@ function Prikbord() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                <button className="SimpleButtons" id="bulletinBoardButton1" type="button">
+                <button className="simpleButtons" id="bulletinBoardButton1" type="button">
                     <Link to="/WriteBulletin">Prikbord bericht aanmaken</Link>
                 </button>
 
-                {/*{isAllowed && (<button className="SimpleButtons" id="bulletinBoardButton1" type="button">*/}
+                {/*{isAllowed && (<button className="simpleButtons" id="bulletinBoardButton1" type="button">*/}
                 {/*    <Link to="/WriteBulletin"><strong>Prikbord bericht aanmaken</strong></Link>*/}
                 {/*</button>)}*/}
 

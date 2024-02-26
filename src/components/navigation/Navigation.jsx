@@ -125,6 +125,12 @@ function Navigation() {
                                     </li>
 
                                     <li>
+                                        <NavLink to="    /editblog"
+                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Edit blog</NavLink>
+                                    </li>
+
+
+                                    <li>
                                         <NavLink to="/adminpanel"
                                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Admin</NavLink>
                                     </li>

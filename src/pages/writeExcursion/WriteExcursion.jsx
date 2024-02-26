@@ -19,7 +19,7 @@ function WriteExcursion() {
                     </div>
 
                     <div className="elementCenterContainer">
-                        <button className="SimpleButtons" type="button">
+                        <button className="simpleButtons" type="button">
                             <Link to="/excursies">Excursie overzicht</Link>
                         </button>
                     </div>
@@ -177,7 +177,7 @@ function WriteExcursion() {
 
                             </div>
 
-                            <button className="SimpleButtons" type="submit">
+                            <button className="simpleButtons" type="submit">
                                 <Link to="/excursies">Excursie <strong>plaatsen</strong> in het excursie overzicht</Link>
 
                             </button>

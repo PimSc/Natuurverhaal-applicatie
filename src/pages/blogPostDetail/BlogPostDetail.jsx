@@ -53,7 +53,7 @@ function BlogPostDetail() {
 
                         <Link to="/" className="back-link">
                             <br/>
-                            <button className="SimpleButtons" onClick={handleTerugClick}> Terug naar de vorige pagina
+                            <button className="simpleButtons" onClick={handleTerugClick}> Terug naar de vorige pagina
                             </button>
                             <br/>
                             <br/>

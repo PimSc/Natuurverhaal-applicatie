@@ -16,33 +16,58 @@ function AdminPanel() {
                     <h3>Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
 
 
-
-
                     <div className="elementCenterContainer">
                         <button
-                            className="SimpleButtons"
+                            className="simpleButtons"
                             type="button"
                         ><Link to="/writeExcursion">Excursie Aanmaken</Link>
                         </button>
                     </div>
 
+                    {/*--SEND MASSAGE--*/}
+                    <form className="adminGreenField" action="">
 
-                    {/*--DELETE USER--*/}
-                    <form className="adminRedfield" action="">
-
-                        <label htmlFor="caption">
-                            <b>User verwijderen</b>
+                        <label htmlFor="sendMassage">
+                            <b>Bericht versturen</b>
                         </label>
                         <input
                             className="textAreaOneLine"
-                            name="caption"
-                            id="caption"
-                            placeholder="Typ een username en druk op delete"
+                            name="sendMassage"
+                            id="sendMassage"
+                            placeholder="Schrijf een email"
                             autoComplete="on"
                         />
+                        <div className="adminWriteMassageContainer">
+                            <button
+                                className="simpleButtons"
+                                type="submit">
+                                Send <strong>email</strong>
+                            </button>
+                            <input
+                                className="adminUsernameInput"
+                                name="sendMassage"
+                                id="sendMassage"
+                                placeholder="username"
+                                autoComplete="on"
+                            />
+                        </div>
+                    </form>
 
-                        <button  className="SimpleButtonsRemove buttonRedRemove" type="submit">
-                            Delete <strong>user</strong>
+                    {/*--EDIT BLOG--*/}
+                    <form className="adminYellowField" action="">
+
+                        <label htmlFor="editBlog">
+                            <b>Blog bewerken</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            name="editBlog"
+                            id="editBlog"
+                            placeholder="Typ een blog ID nummer en druk op edit"
+                            autoComplete="on"
+                        />
+                        <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
+                            Edit <strong>blog</strong>
                         </button>
                     </form>
 
@@ -50,39 +75,40 @@ function AdminPanel() {
                     {/*--DELETE BLOG--*/}
                     <form className="adminRedfield" action="">
 
-                        <label htmlFor="caption">
+                        <label htmlFor="deleteBlog">
                             <b>Blog verwijderen</b>
                         </label>
                         <input
                             className="textAreaOneLine"
-                            name="caption"
-                            id="caption"
+                            name="deleteBlog"
+                            id="deleteBlog"
                             placeholder="Typ een blog ID nummer en druk op delete"
                             autoComplete="on"
                         />
-                        <button  className="SimpleButtonsRemove buttonRedRemove" type="submit">
+                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                             Delete <strong>blog</strong>
                         </button>
                     </form>
 
-                    {/*--EDIT BLOG--*/}
-                    <form className="adminYellowField" action="">
 
-                        <label htmlFor="caption">
-                            <b>Blog verwijderen</b>
+                    {/*--DELETE USER--*/}
+                    <form className="adminRedfield" action="">
+
+                        <label htmlFor="deleteUser">
+                            <b>User verwijderen</b>
                         </label>
                         <input
                             className="textAreaOneLine"
-                            name="caption"
-                            id="caption"
-                            placeholder="Typ een blog ID nummer en druk op edit"
+                            name="deleteUser"
+                            id="deleteUser"
+                            placeholder="Typ een username en druk op delete"
                             autoComplete="on"
                         />
-                        <button  className="SimpleButtonsEdit buttonYellowEdit" type="submit">
-                            Edit <strong>blog</strong>
+
+                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                            Delete <strong>user</strong>
                         </button>
                     </form>
-
 
 
 
@@ -91,7 +117,7 @@ function AdminPanel() {
                 </div>
             </section>
         </>
-);
+    );
 }
 
 export default AdminPanel;

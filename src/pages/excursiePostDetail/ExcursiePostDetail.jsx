@@ -103,13 +103,13 @@ function ExcursiePostDetail() {
                         />
                         </div>
                         <div className="buttonCenter">
-                           <button className="SimpleButtons"> Inschrijven voor excursie <strong>{title}</strong></button>
+                           <button className="simpleButtons"> Inschrijven voor excursie <strong>{title}</strong></button>
                         </div>
                     </form>
 
 
                     <Link to="/Excursies" className="back-link">
-                        <button className="SimpleButtons"> Terug naar de excursie pagina</button>
+                        <button className="simpleButtons"> Terug naar de excursie pagina</button>
                     </Link>
 
 

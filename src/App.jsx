@@ -24,6 +24,7 @@ import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 import {AuthContext} from "././context/AuthContextProvider.jsx";
 import {useContext} from "react";
 import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
+import EditBlog from "./pages/editBlog/EditBlog.jsx";
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
             <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
+            <Route path="/editblog/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <EditBlog /> : <Navigate to="/login" />}</div>} />
 
 
             {/*ADMIN PAGINA`S*/}
