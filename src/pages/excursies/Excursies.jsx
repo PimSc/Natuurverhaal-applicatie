@@ -25,17 +25,6 @@ function Excursies() {
                     {/*extra inner container(column) for A and B*/}
                     <div className="Extra-inner-content-container">
 
-                        {user &&
-                        <div className="elementCenterContainer">
-                            <button
-                                className="SimpleButtons"
-                                // className="excursionAdminButton"
-                                type="button"
-                            >
-                                <Link to="/writeExcursion">Activiteit plaatsen</Link>
-                            </button>
-                        </div>
-                        }
                         {/*box A (Row)*/}
                         <div className="excursionContentBox1">
 

@@ -248,6 +248,93 @@ button, select, textarea {
 }
 
 
+.buttonRedRemove:hover{
+  background-color: hsla(0, 100%, 50%, 0.4);
+}
+
+.buttonYellowEdit:hover{
+  background-color: hsla(42, 100%, 50%, 0.4);
+}
+
+.SimpleButtonsTotalGreen:hover{
+  background-color: hsla(120, 100%, 50%, 0.4);
+}
+
+.SimpleButtonsRemove {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.SimpleButtonsRemove:hover {
+  color: black;
+  border-color: red;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
+.SimpleButtonsEdit {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.SimpleButtonsEdit:hover {
+  color: black;
+  border-color: goldenrod;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
+.SimpleButtonsTotalGreen {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.SimpleButtonsTotalGreen:hover {
+  color: black;
+  border-color: green;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
 
 
 
@@ -275,7 +362,7 @@ button, select, textarea {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
@@ -283,7 +370,7 @@ button, select, textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 5px dashed purple;
+  /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -302,7 +389,7 @@ button, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px dashed green;
+  /*border: 5px dashed green;*/
 }
 
 /*Inner content container voor text fields*/
@@ -423,7 +510,9 @@ button, select, textarea {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-items: center;
   width: 100%;
+  /*border: 2px solid teal;*/
 }
 
 

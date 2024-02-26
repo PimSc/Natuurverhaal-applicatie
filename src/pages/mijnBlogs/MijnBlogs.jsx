@@ -73,7 +73,7 @@ function MijnBlogs() {
                                     <div className="myBlogsOnTopButtonContainer">
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsRemove myBlogButtonRemove">
+                                                <button className="SimpleButtonsRemove buttonRedRemove">
                                                     <Link to={`/blogposts/${post.id}`} className="post-link">Blog
                                                         verwijderen</Link>
                                                 </button>
@@ -83,7 +83,7 @@ function MijnBlogs() {
                                         {/*--READ BLOG--*/}
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsNormal myBlogButton"><Link
+                                                <button className="SimpleButtonsTotalGreen myBlogButton"><Link
                                                     to={`/blogposts/${post.id}`} className="post-link">Blog
                                                     bekijken</Link></button>
                                             </div>
@@ -92,7 +92,7 @@ function MijnBlogs() {
                                         {/*--EDIT BLOG--*/}
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="SimpleButtonsEdit myBlogButtonEdit"><Link
+                                                <button className="SimpleButtonsEdit buttonYellowEdit"><Link
                                                     to="/contact"> Blog aanpassen</Link></button>
                                             </div>
                                         </div>

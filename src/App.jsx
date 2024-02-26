@@ -46,8 +46,6 @@ function App() {
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
-
-            {/*Pages inside account dropdown menu*/}
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
 
             {/*Pages outside the nav*/}
@@ -55,6 +53,7 @@ function App() {
             <Route path="/prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal | Prikbordpost</title></Helmet><PrikbordPostDetail /></div>}/>
             <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal | Excursie</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/ProfileDetail/:username" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail/></div>}/>
+
 
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 

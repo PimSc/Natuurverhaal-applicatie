@@ -124,97 +124,15 @@ width: auto;
     background-color: hsla(0, 0%, 100%, 0.4);
 }
 
-.myBlogButtonRemove{
+.SimpleButtonsRemove{
     background-color: hsla(0, 0%, 100%, 0.4);
 }
 
-.myBlogButtonEdit{
+.SimpleButtonsEdit{
     background-color: hsla(0, 0%, 100%, 0.4);
 }
 
-.myBlogButtonRemove:hover{
-    background-color: hsla(0, 100%, 50%, 0.4);
-}
 
-.myBlogButtonEdit:hover{
-    background-color: hsla(42, 100%, 50%, 0.4);
-}
-
-
-.SimpleButtonsRemove {
-    font-family: var(--mainFont);
-    color:  var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid  var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.SimpleButtonsRemove:hover {
-    color: black;
-    border-color: red;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
-    cursor: pointer;
-}
-
-.SimpleButtonsEdit {
-    font-family: var(--mainFont);
-    color:  var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid  var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.SimpleButtonsEdit:hover {
-    color: black;
-    border-color: goldenrod;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
-    cursor: pointer;
-}
-
-.SimpleButtonsNormal {
-    font-family: var(--mainFont);
-    color:  var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid  var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.SimpleButtonsNormal:hover {
-    color: black;
-    border-color: green;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
-    cursor: pointer;
-}
 
 
 #myBlogsTitleStyling{
