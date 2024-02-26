@@ -1,36 +1,42 @@
 import './EditBlog.css';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import React from "react";
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 
 function EditBlog() {
 
-    const {blogPostsUser} = useBlog();
-
+    const { blogPostsUser } = useBlog();
+    const { id } = useParams(); // Haal het ID uit de URL-parameters
+    const post = blogPostsUser.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 return (
 <>
 
 
     <div className="inner-content-container">
 
-        <div className="inner-content-container-textFields">
-            {blogPostsUser.map((post) => (
+        <div className="inner-content-container-textFields ">
+            {post && (
                 <>
                     <h1>{post.title}</h1>
                     <h4>{post.subtitle}</h4>
                     <p>Categorie: {post.categories}</p>
-                    <p><Link to={`/ProfileDetail/${post.username}`}>Geschreven
-                        door {post.username.charAt(0).toUpperCase() + post.username.slice(1)} </Link></p>
+                    <p>
+                        Geschreven door{" "}
+                        <Link to={`/ProfileDetail/${post.username}`}>
+                            {post.username.charAt(0).toUpperCase() + post.username.slice(1)}
+                        </Link>
+                    </p>
                     <i>{post.date}</i>
-                    <div className="textStart">
-                    </div>
-                    {/*<p>Geschreven door <em>{post.author}</em> op {formatDateString(post.created)}</p>*/}
-                    <br/>
+                    <div className="textStart"></div>
+                    <br />
                     <p className="textStart">{post.content}</p>
-                    <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
-                         alt={post.caption}/>
+                    <img
+                        className="blogDetailImage"
+                        src={"data:image/png;base64," + post.fileContent}
+                        alt={post.caption}
+                    />
                 </>
-            ))}
+            )}
         </div>
 
         <div className="inner-content-container-textFields">
