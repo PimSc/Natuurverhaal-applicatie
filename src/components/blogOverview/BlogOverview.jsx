@@ -37,7 +37,7 @@ function BlogOverview() {
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {filteredPosts.map((post) => (
-                            <li key={post.id} className="blog-post-item ">
+                            <li key={post.id} className="post-item">
                                 <Link to={`/blogposts/${post.id}`} className="post-link">
                                     <div className="post-image"
                                          style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>

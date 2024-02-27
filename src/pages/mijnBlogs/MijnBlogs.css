@@ -71,21 +71,6 @@ width: auto;
     justify-content: space-evenly;
 }
 
-.myPostImg {
-    width: 100%;
-    height: 400px; /* Pas dit aan aan de gewenste hoogte */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-top-left-radius: 4px; /* Ronde hoeken linksboven */
-    border-top-right-radius: 4px; /* Ronde hoeken rechtsboven */
-    /*opacity: 0.2; !* Hier kun je de transparantie aanpassen *!*/
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 
 
 

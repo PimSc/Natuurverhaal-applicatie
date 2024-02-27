@@ -2,6 +2,7 @@ import './ProfileDetail.css';
 import {Link, useParams} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
 import useProfile from "../../Hooks/useAllUserProfiles.jsx";
+import React from "react";
 
 function ProfileDetail() {
 
@@ -42,33 +43,41 @@ function ProfileDetail() {
                                     />
                                 </div>
                                 <div className="profileTextContainer textStart">
-                                    <h1>Profiel van {prof.username.charAt(0).toUpperCase() + prof.username.slice(1)}</h1>
+                                    <h1>Profiel
+                                        van {prof.username.charAt(0).toUpperCase() + prof.username.slice(1)}</h1>
                                     <br/>
-                                    <p><strong>Naam:</strong> {prof.name.charAt(0).toUpperCase() + prof.name.slice(1)}</p>
+                                    <p><strong>Naam:</strong> {prof.name.charAt(0).toUpperCase() + prof.name.slice(1)}
+                                    </p>
                                     <p><strong>Email:</strong> {prof.email}</p>
-                                    <p><strong>Regio:</strong> {prof.regio.charAt(0).toUpperCase() + prof.regio.slice(1)}</p>
+                                    <p>
+                                        <strong>Regio:</strong> {prof.regio.charAt(0).toUpperCase() + prof.regio.slice(1)}
+                                    </p>
                                     <br/>
                                     <p><strong>Bio:</strong> {prof.bio}</p>
                                 </div>
 
                                 <div className="profileCounter">
-                                <h2 className="totalBlogsCounter"> {username.charAt(0).toUpperCase() + username.slice(1)} heeft {totalPosts} natuurblogs</h2>
+                                    <h2 className="totalBlogsCounter"> {username.charAt(0).toUpperCase() + username.slice(1)} heeft {totalPosts} natuurblogs</h2>
                                 </div>
-                                {/* Render filtered blog posts */}
-                                {filteredPosts.map((post) => (
-                                    <li key={post.id} className="blog-post-item">
-                                        <Link to={`/blogposts/${post.id}`} className="post-link">
-                                            <div className="post-image"
-                                                 style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
-                                                <div className="onTopOfImageBox">
-                                                    <h2 className="post-title">{post.title}</h2>
-                                                    <p>Geschreven door <strong>{post.username}</strong></p>
-                                                    <i>{post.date}</i>
+
+                                <ul className="post-list">
+                                    {filteredPosts.map((post) => (
+                                        <li key={post.id} className="post-item">
+                                            <Link to={`/blogposts/${post.id}`} className="post-link">
+                                                <div className="post-image"
+                                                     style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+
+                                                    <div className="onTopOfImageBox">
+                                                        <h2 className="post-title">{post.title}</h2>
+                                                        <p>Geschreven
+                                                            door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                                        <i>{post.date}</i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                ))}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
                             </>
                         ))
                     ) : (

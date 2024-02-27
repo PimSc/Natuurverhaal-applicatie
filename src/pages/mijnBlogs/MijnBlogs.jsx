@@ -53,7 +53,7 @@ function MijnBlogs() {
                     <ul className="myPostList">
                         {filteredPosts.map((post) => (
                             <li key={post.id} className="myBlogPostItem">
-                                <div className="myPostImg" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
+                                <div className="post-image" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
                                     <div className="myBlogsOnTopButtonContainer">
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">

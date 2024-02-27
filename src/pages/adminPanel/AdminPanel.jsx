@@ -1,15 +1,39 @@
+import React, { useState } from 'react';
 import './AdminPanel.css';
-import {useContext} from "react";
-import {AuthContext} from "../../context/AuthContextProvider.jsx";
-import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContextProvider.jsx";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function AdminPanel() {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    const [postId, setPostId] = useState(""); // State toegevoegd voor postId
+    const [username, setUsername] = useState(""); // State toegevoegd voor username
 
 
+    const handleDelete = () => {
+        console.log(postId);
+        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`)
+            .then(response => {
+                console.log('Post deleted successfully');
+                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+            })
+            .catch(error => {
+                console.error('Error deleting post:', error);
+            });
+    };
 
 
-
+    const handleDeleteUser = () => {
+        axios.delete(`http://localhost:8080/users/${username}`)
+            .then(response => {
+                console.log('User deleted successfully');
+                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+            })
+            .catch(error => {
+                console.error('Error deleting user:', error);
+            });
+    };
 
 
 
@@ -20,6 +44,8 @@ function AdminPanel() {
 
                     <h1>Admin panel</h1>
                     <h3>Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
+
+{/*admin maken toevoegen*/}
 
 
                     <div className="elementCenterContainer">
@@ -36,7 +62,15 @@ function AdminPanel() {
                         <label htmlFor="sendMassage">
                             <b>Bericht versturen</b>
                         </label>
+
                         <input
+                            className="textAreaOneLine"
+                            name="sendMassage"
+                            id="sendMassage"
+                            placeholder="gebruikersnaam ontvanger"
+                            autoComplete="on"
+                        />
+                        <textarea
                             className="textAreaOneLine"
                             name="sendMassage"
                             id="sendMassage"
@@ -49,13 +83,6 @@ function AdminPanel() {
                                 type="submit">
                                 Send <strong>email</strong>
                             </button>
-                            <input
-                                className="adminUsernameInput"
-                                name="sendMassage"
-                                id="sendMassage"
-                                placeholder="username"
-                                autoComplete="on"
-                            />
                         </div>
                     </form>
 
@@ -79,7 +106,7 @@ function AdminPanel() {
 
 
                     {/*--DELETE BLOG--*/}
-                    <form className="adminRedfield" action="">
+                    <form className="adminRedfield" action="" onSubmit={(e) => { e.preventDefault(); handleDelete() }}>
 
                         <label htmlFor="deleteBlog">
                             <b>Blog verwijderen</b>
@@ -90,6 +117,8 @@ function AdminPanel() {
                             id="deleteBlog"
                             placeholder="Typ een blog ID nummer en druk op delete"
                             autoComplete="on"
+                            value={postId} // Waarde van de input gekoppeld aan postId
+                            onChange={(e) => setPostId(e.target.value)} // onChange event handler om postId bij te werken
                         />
                         <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                             Delete <strong>blog</strong>
@@ -97,9 +126,8 @@ function AdminPanel() {
                     </form>
 
 
-                    {/*--DELETE USER--*/}
-                    <form className="adminRedfield" action="">
-
+                    {/*--HARD DELETE USER--*/}
+                    <form className="adminRedfield" onSubmit={(e) => { e.preventDefault(); handleDeleteUser() }}>
                         <label htmlFor="deleteUser">
                             <b>User verwijderen</b>
                         </label>
@@ -109,17 +137,13 @@ function AdminPanel() {
                             id="deleteUser"
                             placeholder="Typ een username en druk op delete"
                             autoComplete="on"
+                            value={username} // Waarde van de input gekoppeld aan username
+                            onChange={(e) => setUsername(e.target.value)} // onChange event handler om username bij te werken
                         />
-
                         <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                            Delete <strong>user</strong>
+                            Hard delete <strong>user</strong>
                         </button>
                     </form>
-
-
-
-
-
                 </div>
             </section>
         </>

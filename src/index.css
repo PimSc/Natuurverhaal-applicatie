@@ -470,6 +470,7 @@ button, select, textarea {
   flex-grow: 1;
   flex-shrink: 1;
   Border: 1px solid hsla(0, 0%, 50%, 0.01);
+  list-style: none;
 }
 
 
@@ -478,6 +479,8 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
+
+
 
 
 

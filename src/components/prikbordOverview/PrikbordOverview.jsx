@@ -1,21 +1,12 @@
 import './PrikbordOverview.css';
-import PrikbordPosts from "../../constants/PrikbordPosts.json";
-import { useContext } from 'react';
 import { Link } from "react-router-dom";
-// import { AuthContextData } from "../../context/AuthContextProvider";
+import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
+import React from "react";
+
 
 function PrikbordOverview() {
+    const { bulletinBoardsAll } = useBlog();
 
-    // const { userRoles, isAuthenticated } = useContext(AuthContextData);
-    //
-    // if (!isAuthenticated) {
-    //     return (<p>Je moet ingelogd zijn om deze pagina te bezoeken.</p>)
-    // }
-    //
-    // const allowedRoles = ['ROLE_ADMIN']
-    // if (!userRoles.some(x => allowedRoles.includes(x))) {
-    //     return (<p>Je hebt geen rechten om deze pagina te bekijken.</p>)        
-    // }
 
     return (
         <>
@@ -28,20 +19,25 @@ function PrikbordOverview() {
                 </div>
 
                     <ul className="post-list">
-                        {PrikbordPosts.map((post) => (
+                        {bulletinBoardsAll.map((post) => (
                             <li key={post.id} className="post-item">
                                 <Link to={`/prikbordPosts/${post.id}`} className="post-link">
-                                    <h2 className="post-title">{post.title}</h2>
-                                    <p>Auteur:  {post.author}</p>
-                                    <i className="iGrey">Datum - {post.created}</i>
+                                    <div className="post-image"
+                                         style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+                                        <div className="onTopOfImageBox">
+                                            <h2 className="post-title">{post.title}</h2>
+                                            <p>Auteur: {post.author}</p>
+                                            <i>{post.date}</i>
+                                        </div>
+                                        </div>
                                 </Link>
                             </li>
-                        ))}
+                            ))}
                     </ul>
                 </div>
             </section>
         </>
-    );
+);
 }
 
 export default PrikbordOverview;
