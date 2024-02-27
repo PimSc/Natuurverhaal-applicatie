@@ -51,13 +51,14 @@ function Navigation() {
                                         {!isAuth && (<li><Link to="/login">Login</Link></li>)}
                                         {isAuth && (<>
                                                 <li><Link to="/mijnBlogs">Mijn blogs</Link></li>
+                                                <li><Link to="/mijnprikbord">Mijn prikbord</Link></li>
                                                 <li><Link to="/ProfileEdit">Profiel</Link></li>
 
                                                 {user && user.role === 'ROLE_ADMIN' && (
                                                     <li>
                                                         <NavLink
                                                             to="/adminpanel"
-                                                            className={({ isActive }) =>
+                                                            className={({isActive}) =>
                                                                 isActive === true ? 'active-link' : 'default-link'
                                                             }
                                                         >
@@ -146,15 +147,21 @@ function Navigation() {
                                     </li>
 
                                     <li>
+                                        <NavLink to="/mijnprikbord"
+                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
+                                            prikbord</NavLink>
+                                    </li>
+
+                                    <li>
                                         <NavLink to="/ProfileEdit"
                                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink>
                                     </li>
 
                                     <li>
                                         <NavLink to="    /editblog"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Edit blog</NavLink>
+                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Edit
+                                            blog</NavLink>
                                     </li>
-
 
 
                                     {/*{user.role === 'ROLE_ADMIN' && (*/}
@@ -172,7 +179,7 @@ function Navigation() {
                                         <li>
                                             <NavLink
                                                 to="/adminpanel"
-                                                className={({ isActive }) =>
+                                                className={({isActive}) =>
                                                     isActive === true ? 'active-link' : 'default-link'
                                                 }
                                             >
@@ -180,7 +187,6 @@ function Navigation() {
                                             </NavLink>
                                         </li>
                                     )}
-
 
 
                                     <li><Link onClick={(e) => {

@@ -8,12 +8,25 @@ import axios from "axios";
 function AdminPanel() {
     const { user } = useContext(AuthContext);
     const [postId, setPostId] = useState(""); // State toegevoegd voor postId
+    const [prikbordpostId, setPrikbordId] = useState(""); // State toegevoegd voor postId
     const [username, setUsername] = useState(""); // State toegevoegd voor username
 
 
-    const handleDelete = () => {
+    const handleDeleteBlogpost = () => {
         console.log(postId);
         axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`)
+            .then(response => {
+                console.log('Post deleted successfully');
+                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+            })
+            .catch(error => {
+                console.error('Error deleting post:', error);
+            });
+    };
+
+    const handleDeletePrikbordpost = () => {
+        console.log(prikbordpostId);
+        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${prikbordpostId}`)
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -45,7 +58,7 @@ function AdminPanel() {
                     <h1>Admin panel</h1>
                     <h3>Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
 
-{/*admin maken toevoegen*/}
+                    {/*admin maken toevoegen*/}
 
 
                     <div className="elementCenterContainer">
@@ -79,12 +92,14 @@ function AdminPanel() {
                         />
                         <div className="adminWriteMassageContainer">
                             <button
-                                className="simpleButtons"
+                                className="simpleButtonsTotalGreen"
                                 type="submit">
                                 Send <strong>email</strong>
                             </button>
                         </div>
                     </form>
+
+                    <h1>Blog section</h1>
 
                     {/*--EDIT BLOG--*/}
                     <form className="adminYellowField" action="">
@@ -106,7 +121,10 @@ function AdminPanel() {
 
 
                     {/*--DELETE BLOG--*/}
-                    <form className="adminRedfield" action="" onSubmit={(e) => { e.preventDefault(); handleDelete() }}>
+                    <form className="adminRedfield" action="" onSubmit={(e) => {
+                        e.preventDefault();
+                        handleDeleteBlogpost()
+                    }}>
 
                         <label htmlFor="deleteBlog">
                             <b>Blog verwijderen</b>
@@ -125,9 +143,59 @@ function AdminPanel() {
                         </button>
                     </form>
 
+                    <h1>Prikbord section</h1>
+
+                    {/*--EDIT PRIKBORD--*/}
+                    <form className="adminYellowField" action="">
+
+                        <label htmlFor="editBlog">
+                            <b>Prikbord post bewerken</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            name="editBlog"
+                            id="editBlog"
+                            placeholder="Typ een blog ID nummer en druk op edit"
+                            autoComplete="on"
+                        />
+                        <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
+                            Edit <strong>blog</strong>
+                        </button>
+                    </form>
+
+
+                    {/*--DELETE PRIKBORD--*/}
+                    <form className="adminRedfield" action="" onSubmit={(e) => {
+                        e.preventDefault();
+                        handleDeletePrikbordpost()
+                    }}>
+
+                        <label htmlFor="deleteBulletin">
+                            <b>Prikbord post verwijderen</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            name="deleteBulletin"
+                            id="deleteBulletin"
+                            placeholder="Typ een prikbord ID nummer en druk op delete"
+                            autoComplete="on"
+                            value={prikbordpostId}
+                            onChange={(e) => setPrikbordId(e.target.value)} // onChange event handler om postId bij te werken
+                        />
+                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                            Delete <strong>blog</strong>
+                        </button>
+                    </form>
+
+
+
+                    <h1>User section</h1>
 
                     {/*--HARD DELETE USER--*/}
-                    <form className="adminRedfield" onSubmit={(e) => { e.preventDefault(); handleDeleteUser() }}>
+                    <form className="adminRedfield" onSubmit={(e) => {
+                        e.preventDefault();
+                        handleDeleteUser()
+                    }}>
                         <label htmlFor="deleteUser">
                             <b>User verwijderen</b>
                         </label>
@@ -144,6 +212,8 @@ function AdminPanel() {
                             Hard delete <strong>user</strong>
                         </button>
                     </form>
+
+
                 </div>
             </section>
         </>

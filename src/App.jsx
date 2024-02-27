@@ -25,6 +25,8 @@ import {AuthContext} from "././context/AuthContextProvider.jsx";
 import {useContext} from "react";
 import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
 import EditBlog from "./pages/editBlog/EditBlog.jsx";
+import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
+import EditBulletinBoard from "./pages/editBulletinBoard/EditBulletinBoard.jsx";
 
 function App() {
 
@@ -63,9 +65,11 @@ function App() {
             {/*<Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />*/}
             <Route path="/ProfileEdit" element={<div><Helmet><title>Natuurverhaal | Profiel bewerken</title></Helmet>{isAuth ? <ProfileEdit /> : <Navigate to="/login" />}</div>} />
             <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs /> : <Navigate to="/login" />}</div>} />
+            <Route path="/mijnprikbord" element={<div><Helmet><title>Natuurverhaal | Mijn Prikbord</title></Helmet>{isAuth ? <MyBulletinPosts /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
             <Route path="/editblog/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <EditBlog /> : <Navigate to="/login" />}</div>} />
+            <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <EditBulletinBoard /> : <Navigate to="/login" />}</div>} />
 
 
             {/*ADMIN PAGINA`S*/}
