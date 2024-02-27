@@ -386,7 +386,7 @@ button, select, textarea {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px dashed red;
+  /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
@@ -467,13 +467,6 @@ button, select, textarea {
   /*border: 2px solid pink;*/
 }
 
-  .inner-content-container-Edit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 20px;
-  }
-
 
   /*Container with styling for (blog) posts*/
   .post-item {
@@ -490,11 +483,26 @@ button, select, textarea {
     list-style: none;
   }
 
+.outer-content-container-Edit {
+  margin: 40px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*border: 2px dashed red;*/
+}
+
+.inner-content-container-Edit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+
   .inner-content-container-editBorder{
     border-right: 6px solid black;
     display: flex;
     flex-direction: column;
-justify-content: center;
+/*justify-content: center;*/
     align-items: center;
     height: 100vw;
     padding-right: 20px;

@@ -13,7 +13,7 @@ function BlogEdit() {
         <>
 
 
-            <div className="inner-content-container">
+            <div className="outer-content-container-Edit">
 
                 <div className="inner-content-container-editBorder">
                 {/*<div className="inner-content-container-editPreview">*/}
