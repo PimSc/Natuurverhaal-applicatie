@@ -5,10 +5,10 @@ import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import React, {useContext, useEffect, useState} from "react";
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
 import {Link} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
 
 function ProfileEdit() {
-
+    const navigate = useNavigate();
 
     const {user} = useContext(AuthContext);
     console.log("role", user.role)
@@ -88,6 +88,7 @@ function ProfileEdit() {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
                 console.log('form', formDataToSend)
+                navigate(`/ProfileDetail/${user.username}`);
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
