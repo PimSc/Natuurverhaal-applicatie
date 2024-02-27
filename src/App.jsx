@@ -23,10 +23,14 @@ import ProfileDetail from "./pages/profileDetail/ProfileDetail.jsx";
 import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 import {AuthContext} from "././context/AuthContextProvider.jsx";
 import {useContext} from "react";
+import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
+import EditBlog from "./pages/editBlog/EditBlog.jsx";
+import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
+import EditBulletinBoard from "./pages/editBulletinBoard/EditBulletinBoard.jsx";
 
 function App() {
 
-    const { isAuth } = useContext(AuthContext);
+    const { isAuth, user} = useContext(AuthContext);
 
   return (
     <>
@@ -45,8 +49,6 @@ function App() {
             <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
             <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
             <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
-
-            {/*Pages inside account dropdown menu*/}
             <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
 
             {/*Pages outside the nav*/}
@@ -55,6 +57,7 @@ function App() {
             <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal | Excursie</title></Helmet><ExcursiePostDetail /></div>}/>
             <Route path="/ProfileDetail/:username" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail/></div>}/>
 
+
             <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
 
 
@@ -62,12 +65,20 @@ function App() {
             {/*<Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />*/}
             <Route path="/ProfileEdit" element={<div><Helmet><title>Natuurverhaal | Profiel bewerken</title></Helmet>{isAuth ? <ProfileEdit /> : <Navigate to="/login" />}</div>} />
             <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs /> : <Navigate to="/login" />}</div>} />
+            <Route path="/mijnprikbord" element={<div><Helmet><title>Natuurverhaal | Mijn Prikbord</title></Helmet>{isAuth ? <MyBulletinPosts /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
+            <Route path="/editblog/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <EditBlog /> : <Navigate to="/login" />}</div>} />
+            <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <EditBulletinBoard /> : <Navigate to="/login" />}</div>} />
 
 
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
+            {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
+            <Route
+                path="/AdminPanel"
+                element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
+
 
             {/*/PublicProfile/${post.username}*/}
 

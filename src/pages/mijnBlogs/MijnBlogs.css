@@ -29,14 +29,14 @@
     list-style: none;
 }
 
-.myBlogPostItem:not(:hover) {
-    filter: grayscale(100%) brightness(100%);;
-}
+/*.myBlogPostItem:not(:hover) {*/
+/*    filter: grayscale(100%) brightness(100%);;*/
+/*}*/
 
-.myBlogPostItem:hover {
-    filter: none;
-    transition: filter 200ms;
-}
+/*.myBlogPostItem:hover {*/
+/*    filter: none;*/
+/*    transition: filter 200ms;*/
+/*}*/
 
 .myPostButtons {
 width: auto;
@@ -71,21 +71,6 @@ width: auto;
     justify-content: space-evenly;
 }
 
-.myPostImg {
-    width: 100%;
-    height: 400px; /* Pas dit aan aan de gewenste hoogte */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-top-left-radius: 4px; /* Ronde hoeken linksboven */
-    border-top-right-radius: 4px; /* Ronde hoeken rechtsboven */
-    /*opacity: 0.2; !* Hier kun je de transparantie aanpassen *!*/
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 
 
 
@@ -107,11 +92,9 @@ width: auto;
     display: inline-block;
     letter-spacing: 2px;
     font-size: 25px;
-
     height: 55px;
-    margin: 25px 0;
+    margin: 25px 0 0 0;
     padding: 10px 10px 10px 10px;
-
     border: 4px solid  goldenrod;
     border-radius: 6px 22px;
 
@@ -122,64 +105,14 @@ width: auto;
 
 .myBlogButton{
     background-color: hsla(0, 0%, 100%, 0.4);
-
 }
 
-
-.SimpleButtonsRemove {
-    font-family: var(--mainFont);
-    color:  var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-
-    border: 4px solid  var(--mainFontColor);
-    border-radius: 6px 22px;
-
-    box-sizing: border-box;
-    text-align: center;
-
-}
-.SimpleButtonsRemove:hover {
-    color: black;
-    border-color: red;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
-    cursor: pointer;
+.simpleButtonsRemove{
+    background-color: hsla(0, 0%, 100%, 0.4);
 }
 
-.SimpleButtonsEdit {
-    font-family: var(--mainFont);
-    color:  var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-
-    border: 4px solid  var(--mainFontColor);
-    border-radius: 6px 22px;
-
-    box-sizing: border-box;
-    text-align: center;
-
-}
-.SimpleButtonsEdit:hover {
-    color: black;
-    border-color: green;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
-    cursor: pointer;
+.simpleButtonsEdit{
+    background-color: hsla(0, 0%, 100%, 0.4);
 }
 
 

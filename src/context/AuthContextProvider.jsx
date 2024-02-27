@@ -24,7 +24,7 @@ function AuthContextProvider({ children }) {
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
             const decoded = jwtDecode(token);
-            console.log(decoded)
+            console.log("decoded", decoded)
             fetchUserData(decoded.sub, token);
         } else {
             // als er GEEN token is doen we niks, en zetten we de status op 'done'
@@ -81,8 +81,7 @@ function AuthContextProvider({ children }) {
                     username: result.data.username,
                     email: result.data.email,
                     id: result.data.id,
-                    role: result.data.authorities[0].authority
-                    // role: result.data.role[0].authority
+                    role: result.data.authorities[0].authority,
                 },
                 status: 'done',
             });

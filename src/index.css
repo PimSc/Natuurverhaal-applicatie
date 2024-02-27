@@ -220,28 +220,31 @@ button, select, textarea {
 
 /*Button test*/
 
+.simpleButtonTopMargin{
+  margin: 25px 0;
+}
 
+.simpleButtonButtonMargin{
+  margin: 25px 0;
+}
 
-.SimpleButtons {
+.simpleButtons {
   font-family: var(--mainFont);
   color:  var(--mainFontColor);
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   display: inline-block;
   letter-spacing: 2px;
-
   height: 55px;
-  margin: 25px 0;
+  width: fit-content;
   padding: 10px 10px 10px 10px;
-
   border: 4px solid  var(--mainFontColor);
   border-radius: 6px 22px;
-
   box-sizing: border-box;
   text-align: center;
-
 }
-.SimpleButtons:hover {
+
+.simpleButtons:hover {
   color: var(--onHoverColor);
   border-color: var(--onHoverColor);
   transition: all 0.3s ease 0s;
@@ -250,6 +253,93 @@ button, select, textarea {
   cursor: pointer;
 }
 
+
+.buttonRedRemove:hover{
+  background-color: hsla(0, 100%, 50%, 0.4);
+}
+
+.buttonYellowEdit:hover{
+  background-color: hsla(42, 100%, 50%, 0.4);
+}
+
+.simpleButtonsTotalGreen:hover{
+  background-color: hsla(120, 100%, 50%, 0.4);
+}
+
+.simpleButtonsRemove {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.simpleButtonsRemove:hover {
+  color: black;
+  border-color: red;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
+.simpleButtonsEdit {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.simpleButtonsEdit:hover {
+  color: black;
+  border-color: goldenrod;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
+
+.simpleButtonsTotalGreen {
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  margin: 25px 0;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.simpleButtonsTotalGreen:hover {
+  color: black;
+  border-color: green;
+  transition: all 0.3s ease 0s;
+  border-radius: 22px 6px;
+  /*background: rgb(46, 204, 113);*/
+  cursor: pointer;
+}
 
 
 
@@ -307,12 +397,13 @@ button, select, textarea {
   align-items: center;
   /*border: 5px dashed green;*/
 }
+
 /*Inner content container voor text fields*/
 .inner-content-container-textFields{
  display: flex;
   flex-direction: column;
   align-items: center;
-  /*border: 2px dashed blue;*/
+  border: 2px dashed blue;
 }
 
 /*Extra Inner content container (column)*/
@@ -379,6 +470,7 @@ button, select, textarea {
   flex-grow: 1;
   flex-shrink: 1;
   Border: 1px solid hsla(0, 0%, 50%, 0.01);
+  list-style: none;
 }
 
 
@@ -387,6 +479,8 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
+
+
 
 
 
@@ -425,7 +519,9 @@ button, select, textarea {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-items: center;
   width: 100%;
+  /*border: 2px solid teal;*/
 }
 
 

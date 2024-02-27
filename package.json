@@ -12,7 +12,9 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
     "axios": "^1.6.7",
+    "jspdf": "^2.5.1",
     "jwt-decode": "^4.0.0",
+    "pdfkit": "^0.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
