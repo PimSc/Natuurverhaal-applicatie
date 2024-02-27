@@ -12,6 +12,10 @@ function MijnBlogs() {
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
+    const handleLinkClick = () => {
+        window.scrollTo(0, 220);
+    };
+
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
             post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -75,7 +79,13 @@ function MijnBlogs() {
                                         </div>
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/blogEdit/${post.id}`} className="post-link">Blog aanpassen</Link></button>
+                                                <button className="simpleButtonsEdit buttonYellowEdit">  <Link
+                                                    to={`/blogEdit/${post.id}`}
+                                                    className="post-link"
+                                                    onClick={handleLinkClick}
+                                                >
+                                                    Blog aanpassen
+                                                </Link></button>
                                             </div>
                                         </div>
                                     </div>

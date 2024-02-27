@@ -10,6 +10,10 @@ function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
 
+    const handleLinkClick = () => {
+        window.scrollTo(0, 220);
+    };
+
     // const bulletinBoardPostUser = bulletinBoardPostUser.slice().reverse();
 
     const handleDelete = (postId) => {
@@ -69,7 +73,13 @@ function MyBulletinPosts() {
                                     </div>
                                     <div className="myPostButtons">
                                         <div className="myBlogButtonContainer">
-                                            <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/editprikbord/${post.id}`} className="post-link">Bericht aanpassen</Link></button>
+                                            <button className="simpleButtonsEdit buttonYellowEdit"><Link
+                                                to={`/editprikbord/${post.id}`}
+                                                className="post-link"
+                                                onClick={handleLinkClick}
+                                            >
+                                                Bericht aanpassen
+                                            </Link></button>
                                         </div>
                                     </div>
                                 </div>
