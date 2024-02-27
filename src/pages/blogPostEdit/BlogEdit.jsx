@@ -15,7 +15,8 @@ function BlogEdit() {
 
             <div className="inner-content-container">
 
-                <div className="inner-content-container-textFields ">
+                <div className="inner-content-container-editBorder">
+                {/*<div className="inner-content-container-editPreview">*/}
                     {post && (
                         <>
                             <h1>{post.title}</h1>
@@ -29,7 +30,7 @@ function BlogEdit() {
                             </p>
                             <i>{post.date}</i>
                             <div className="textStart"></div>
-                            <br />
+                            <br/>
                             <p className="textStart">{post.content}</p>
                             <img
                                 className="blogDetailImage"
@@ -38,10 +39,10 @@ function BlogEdit() {
                             />
                         </>
                     )}
+                {/*</div>*/}
                 </div>
 
-                <div className="inner-content-container-textFields">
-
+                <div className="inner-content-container-Edit">
 
                     <button className="simpleButtons" id="WriteBlogBackButton" type="button">
                         <Link to="/mijnBlogs">Terug naar mijn blogs</Link>

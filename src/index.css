@@ -381,12 +381,12 @@ button, select, textarea {
 
 /*Inner content container (Row)*/
 .inner-content-container {
-
   margin: 40px 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /*border: 2px dashed red;*/
+  align-items: center;
+  border: 2px dashed red;
 }
 
 /*Inner content container (column)*/
@@ -458,20 +458,6 @@ button, select, textarea {
   /*border: 3px dashed green;*/
 }
 
-/*Container with styling for (blog) posts*/
-.post-item {
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  background-color: var(--mainBackgroundColor);
-  /*padding: 8px;*/
-  flex-basis: 50px;
-  width: 80vw;
-  flex-grow: 1;
-  flex-shrink: 1;
-  Border: 1px solid hsla(0, 0%, 50%, 0.01);
-  list-style: none;
-}
 
 
 /*Container to make icons small*/
@@ -479,14 +465,51 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
-
-
-
-
-
-
-
 }
+
+  .inner-content-container-Edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+
+  /*Container with styling for (blog) posts*/
+  .post-item {
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: var(--mainBackgroundColor);
+    /*padding: 8px;*/
+    flex-basis: 50px;
+    width: 80vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    Border: 1px solid hsla(0, 0%, 50%, 0.01);
+    list-style: none;
+  }
+
+  .inner-content-container-editBorder{
+    border-right: 6px solid black;
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+    align-items: center;
+    height: 100vw;
+    padding-right: 20px;
+
+  }
+
+.inner-content-container-editPreview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*border: 2px dashed blue;*/
+}
+
+
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
 .textAreaOneLine{
