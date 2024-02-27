@@ -36,15 +36,21 @@ function MijnBlogs() {
     return (
         <>
             <section className="outer-content-container">
-                <div className="inner-content-container-column">
+                <div className="innerMyBlogContainer">
+
+                    <div className="prikbordTextMargin textCenter">
+                        <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
+                        <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
+                    </div>
+
                     <button id="WriteBlogButton" type="button">
-                        <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
+                    <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
 
-                    <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
-                    <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
+
+
                     <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
-                    <br />
+                    <br/>
                 </div>
             </section>
 

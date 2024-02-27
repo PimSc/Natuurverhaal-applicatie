@@ -20,6 +20,8 @@ function Navigation() {
                         <li><NavLink to="/"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                         </li>
+
+
                         <li><NavLink to="/OnsVerhaal"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
                             verhaal</NavLink>
@@ -34,6 +36,11 @@ function Navigation() {
                         <li><NavLink to="/Prikbord"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
                         </li>
+
+
+
+
+
 
 
                         <li>
@@ -56,14 +63,14 @@ function Navigation() {
 
                                                 {user && user.role === 'ROLE_ADMIN' && (
                                                     <li>
-                                                        <NavLink
+                                                        <Link
                                                             to="/adminpanel"
                                                             className={({isActive}) =>
                                                                 isActive === true ? 'active-link' : 'default-link'
                                                             }
                                                         >
                                                             Admin
-                                                        </NavLink>
+                                                        </Link>
                                                     </li>
                                                 )}
 

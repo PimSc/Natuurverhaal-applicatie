@@ -3,7 +3,7 @@ import {AuthContext} from "../context/AuthContextProvider.jsx";
 import axios from "axios";
 
 
-function useUserBulletinBoard() {
+function useUserBulletinBoards() {
     const [bulletinBoardPostUser, setBulletinBoardPost] = useState([]);
 
     const {user} = useContext(AuthContext);
@@ -24,4 +24,4 @@ function useUserBulletinBoard() {
     return { bulletinBoardPostUser };
 }
 
-export default useUserBulletinBoard;
+export default useUserBulletinBoards;

@@ -105,7 +105,7 @@ function ProfileEdit() {
     return (
         <>
 
-
+            <div className="outer-content-container">
             {/*Box geeft alleen margin button*/}
             <div className="profileFirstTextBox ">
                 <h1>Openbaar profiel</h1>
@@ -114,7 +114,8 @@ function ProfileEdit() {
 
                 <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
                     openbaar profiel</Link></button>
-            </div>
+            </div></div>
+
 
 
 

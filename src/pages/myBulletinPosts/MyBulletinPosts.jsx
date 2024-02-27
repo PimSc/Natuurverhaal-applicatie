@@ -1,5 +1,5 @@
 import './MyBulletinPosts.css';
-import useBulletinBoard from "../../Hooks/useUserBulletinBoard.jsx";
+import useBulletinBoard from "../../Hooks/useUserBulletinBoards.jsx";
 import React, {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import SearchContext from "../../context/SearchContext.jsx";
@@ -29,14 +29,22 @@ function MyBulletinPosts() {
     <>
         <section className="outer-content-container">
             <div className="inner-content-container-column">
+                <div className="prikbordTextMargin textCenter">
+                    <h1>Prikbord</h1>
+                    <p>Hier kan je een oproep doen aan alle gebruikers. <br/> Je kan bijvoorbeeld een opzoek doen voor
+                        het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het
+                        beste insecten kan fotogrageren. </p>
+                </div>
+
                 <button id="WriteBlogButton" type="button">
                     <Link to="/WriteBulletin"><strong>Prikbord bericht schrijven</strong></Link>
                 </button>
 
+
                 <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
                 <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
                 <h4 className="totalBlogsCounter">Je hebt {bulletinBoardPostUser.length} prikbord posts</h4>
-                <br />
+                <br/>
             </div>
         </section>
 

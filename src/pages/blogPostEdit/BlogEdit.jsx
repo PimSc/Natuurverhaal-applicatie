@@ -1,37 +1,74 @@
-import './BlogEdit.css'
+import React, { useState, useEffect } from 'react';
+import './BlogEdit.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
-import {Link, useParams} from "react-router-dom";
-import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 function BlogEdit() {
-
     const { blogPostsUser } = useBlog();
-    const { id } = useParams(); // Haal het ID uit de URL-parameters
-    const post = blogPostsUser.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
+    const { id } = useParams();
+    const post = blogPostsUser.find(post => post.id.toString() === id);
+
+    const [title, setTitle] = useState('');
+    const [subtitle, setSubtitle] = useState('');
+    const [file, setFile] = useState(null);
+    const [caption, setCaption] = useState('');
+    const [category, setCategory] = useState('');
+    const [content, setContent] = useState('');
+
+    useEffect(() => {
+        if (post) {
+            setTitle(post.title || '');
+            setSubtitle(post.subtitle || '');
+            setCaption(post.caption || '');
+            setCategory(post.categories || '');
+            setContent(post.content || '');
+        }
+    }, [post]);
+
+    const handleTitleChange = (event) => {
+        setTitle(event.target.value);
+    };
+
+    const handleSubtitleChange = (event) => {
+        setSubtitle(event.target.value);
+    };
+
+    const handleFileChange = (event) => {
+        setFile(event.target.files[0]);
+    };
+
+    const handleCaptionChange = (event) => {
+        setCaption(event.target.value);
+    };
+
+    const handleCategoryChange = (event) => {
+        setCategory(event.target.value);
+    };
+
+    const handleContentChange = (event) => {
+        setContent(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        // Handle form submission here
+        event.preventDefault();
+    };
 
     return (
         <>
-
-
             <div className="outer-content-container-Edit">
-
                 <div className="inner-content-container-editBorder">
-                {/*<div className="inner-content-container-editPreview">*/}
                     {post && (
                         <>
                             <h1>{post.title}</h1>
                             <h4>{post.subtitle}</h4>
                             <p>Categorie: {post.categories}</p>
-                            <p>
-                                Geschreven door{" "}
-                                <Link to={`/ProfileDetail/${post.username}`}>
-                                    {post.username.charAt(0).toUpperCase() + post.username.slice(1)}
-                                </Link>
-                            </p>
+                            <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
                             <i>{post.date}</i>
                             <div className="textStart"></div>
-                            <br/>
+                            <br />
                             <p className="textStart">{post.content}</p>
+                            <br />
                             <img
                                 className="blogDetailImage"
                                 src={"data:image/png;base64," + post.fileContent}
@@ -39,81 +76,76 @@ function BlogEdit() {
                             />
                         </>
                     )}
-                {/*</div>*/}
                 </div>
 
                 <div className="inner-content-container-Edit">
-
-                    <button className="simpleButtons" id="WriteBlogBackButton" type="button">
-                        <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
-                    </button>
-
-
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
                             <h1>Blog bewerken</h1>
                             <p>Alle velden dienen te worden ingevuld</p>
                             <p>Je kan het venster groter maken in de rechter onderhoek</p>
-                            <br/>
+                            <br />
                             <p>Afbeelding</p>
 
-                            {/* Title */}
                             <label className="textStart" htmlFor="title">
                                 <b>Titel:</b>
                             </label>
-                            <textarea className="textAreaOneLine"
-                                      placeholder="Korte titel"
-                                      name="title"
-                                      id="title"
-                                      autoComplete="on"
-                                      required
-                                // value={formData.title}
-                                // onChange={handleChangeTitle}
+                            <textarea
+                                className="textAreaOneLine"
+                                placeholder="Korte titel"
+                                name="title"
+                                id="title"
+                                autoComplete="on"
+                                required
+                                value={title}
+                                onChange={handleTitleChange}
                             />
 
-                            {/* Subtitle */}
                             <label className="textStart" htmlFor="subtitle">
                                 <b>Ondertitel:</b>
                             </label>
-                            <textarea className="textAreaOneLine"
-                                      placeholder="Ondertitel"
-                                      name="subtitle"
-                                      id="subtitle"
-                                      autoComplete="on"
-                                // value={formData.subtitle}
-                                // onChange={handleChangeSubtitle}
-                                      required
+                            <textarea
+                                className="textAreaOneLine"
+                                placeholder="Ondertitel"
+                                name="subtitle"
+                                id="subtitle"
+                                autoComplete="on"
+                                required
+                                value={subtitle}
+                                onChange={handleSubtitleChange}
                             />
 
                             <label className="textStart" htmlFor="fileUpload">
                                 <b>Afbeelding:</b>
                             </label>
-                            <input className="textAreaOneLine"
-                                   type="file"
-                                   accept=".jpg, .jpeg, .png"
-                                   name="file"
-                                   id="fileUpload"
-                                // onChange={handleFileChange}
+                            <input
+                                className="textAreaOneLine"
+                                type="file"
+                                accept=".jpg, .jpeg, .png"
+                                name="file"
+                                id="fileUpload"
+                                onChange={handleFileChange}
                             />
 
-                            {/* Caption */}
                             <label className="textStart" htmlFor="caption">
                                 <b>Caption:</b>
                             </label>
-                            <textarea className="textAreaOneLine"
-                                      placeholder="Afbeelding omschrijving"
-                                      name="caption"
-                                      id="caption"
-                                      autoComplete="on"
-                                // value={formData.caption}
-                                // onChange={handleChangeCaption}
-                                      required
+                            <textarea
+                                className="textAreaOneLine"
+                                placeholder="Afbeelding omschrijving"
+                                name="caption"
+                                id="caption"
+                                autoComplete="on"
+                                required
+                                value={caption}
+                                onChange={handleCaptionChange}
                             />
 
                             <div className="elementCenterContainer categoryContainer">
                                 <p>Categorieën: </p>
                                 <select
-                                    // onChange={handleChangeCategories}
+                                    value={category}
+                                    onChange={handleCategoryChange}
                                 >
                                     <option value="please select a category">please select a category</option>
                                     <option value="natuurgebied">natuurgebied</option>
@@ -134,39 +166,33 @@ function BlogEdit() {
                                 </select>
                             </div>
 
-
-                            {/* Content */}
                             <label className="textStart" htmlFor="content">
                                 <b>Content:</b>
                             </label>
-                            <textarea className="textAreaStory"
-                                      placeholder="Jouw blog"
-                                      name="content"
-                                      id="content"
-                                      autoComplete="on"
-                                // value={formData.content}
-                                // onChange={handleChangeContent}
-                                      required
+                            <textarea
+                                className="textAreaStory"
+                                placeholder="Jouw blog"
+                                name="content"
+                                id="content"
+                                autoComplete="on"
+                                value={content}
+                                onChange={handleContentChange}
                             />
-
-
                         </div>
                         <div className="elementCenterContainer">
-                            <br/>
-                            {/*{uploadStatus && <p>{uploadStatus}</p>}*/}
-                            <button className="simpleButtons" id="buttonPostBlog" type="submit"
-                                // onClick={uploadGegevens}
-                            >
+                            <br />
+                            <button className="simpleButtons"type="submit">
                                 Blog aanpassingen verzenden
+                            </button>
+                            <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                                <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
-
-
         </>
     )
 }
 
-export default BlogEdit
+export default BlogEdit;
