@@ -99,7 +99,7 @@ ul {
     position: absolute;
     /*doorzichtig maken pim*/
     background-color: white;
-    min-width: 160px;
+    min-width: 180px;
     /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
     z-index: 1;
     transition: opacity 0.7s ease;
@@ -108,7 +108,7 @@ ul {
 /* Links inside the dropdown */
 .dropdown-content a {
     color: var(--mainFontColor);
-    padding: 12px 16px;
+    padding: 12px 0 12px 16px;
     text-decoration: none;
     display: block;
     font-size: calc(var(--navLinkSize) - 20%);

@@ -6,13 +6,13 @@ function BlogCounter() {
     const { blogPostsAll } = useBlog();
 
 
-    {/*blogEdit counter*/}
+    {/*blogPostEdit counter*/}
     const totalPosts = blogPostsAll.length;
 
 
 return (
 <>
-    {/*blogEdit counter*/}
+    {/*blogPostEdit counter*/}
     <h4 className="totalBlogsCounter">Totaal aantal natuurblogs: {totalPosts}</h4>
 </>
 );

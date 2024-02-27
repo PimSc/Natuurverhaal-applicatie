@@ -69,7 +69,7 @@ function MijnBlogs() {
                                         </div>
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/editblog/${post.id}`} className="post-link">Blog aanpassen</Link></button>
+                                                <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/blogEdit/${post.id}`} className="post-link">Blog aanpassen</Link></button>
                                             </div>
                                         </div>
                                     </div>

@@ -66,23 +66,12 @@ function Navigation() {
                                                         </NavLink>
                                                     </li>
                                                 )}
-                                                {/*{user.role === 'ROLE_ADMIN' && (*/}
-                                                {/*    <li>*/}
-                                                {/*        <NavLink*/}
-                                                {/*            to="/adminpanel"*/}
-                                                {/*            className={({ isActive }) =>*/}
-                                                {/*                isActive === true ? 'active-link' : 'default-link'}*/}
-                                                {/*        >*/}
-                                                {/*            Admin*/}
-                                                {/*        </NavLink>*/}
-                                                {/*    </li>*/}
-                                                {/*)}*/}
-
 
                                                 <li><Link onClick={(e) => {
                                                     e.preventDefault();
                                                     logout();
-                                                }} to="/">Uitloggen</Link></li>
+                                                }} to="/">Uitloggen</Link>
+                                                </li>
                                             </>
                                         )}
                                     </div>

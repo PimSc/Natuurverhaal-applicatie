@@ -403,7 +403,7 @@ button, select, textarea {
  display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/

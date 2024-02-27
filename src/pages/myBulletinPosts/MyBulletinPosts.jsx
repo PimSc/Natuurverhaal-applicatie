@@ -30,7 +30,7 @@ function MyBulletinPosts() {
         <section className="outer-content-container">
             <div className="inner-content-container-column">
                 <button id="WriteBlogButton" type="button">
-                    <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
+                    <Link to="/WriteBulletin"><strong>Prikbord bericht schrijven</strong></Link>
                 </button>
 
                 <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
