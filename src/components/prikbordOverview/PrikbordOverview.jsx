@@ -6,6 +6,7 @@ import React from "react";
 
 function PrikbordOverview() {
     const { bulletinBoardsAll } = useBlog();
+    const reversedPosts = bulletinBoardsAll.slice().reverse();
 
 
     return (
@@ -13,13 +14,8 @@ function PrikbordOverview() {
             <section className="blogOverviewSection outer-content-container">
                 <div className="inner-content-container-column">
 
-                    <div className="prikbordTextMargin textCenter">
-                    <h1>Prikbord</h1>
-                    <p>Hier kan je een oproep doen aan alle gebruikers. <br/> Je kan bijvoorbeeld een opzoek doen voor het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het beste insecten kan fotogrageren. </p>
-                </div>
-
                     <ul className="post-list">
-                        {bulletinBoardsAll.map((post) => (
+                        {reversedPosts.map((post) => (
                             <li key={post.id} className="post-item">
                                 <Link to={`/prikbordPosts/${post.id}`} className="post-link">
                                     <div className="post-image"

@@ -12,6 +12,10 @@ function MijnBlogs() {
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
+    const handleLinkClick = () => {
+        window.scrollTo(0, 220);
+    };
+
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
             post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -36,15 +40,21 @@ function MijnBlogs() {
     return (
         <>
             <section className="outer-content-container">
-                <div className="inner-content-container-column">
+                <div className="innerMyBlogContainer">
+
+                    <div className="prikbordTextMargin textCenter">
+                        <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
+                        <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
+                    </div>
+
                     <button id="WriteBlogButton" type="button">
-                        <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
+                    <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
 
-                    <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
-                    <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
+
+
                     <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
-                    <br />
+                    <br/>
                 </div>
             </section>
 
@@ -69,7 +79,13 @@ function MijnBlogs() {
                                         </div>
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/editblog/${post.id}`} className="post-link">Blog aanpassen</Link></button>
+                                                <button className="simpleButtonsEdit buttonYellowEdit">  <Link
+                                                    to={`/blogEdit/${post.id}`}
+                                                    className="post-link"
+                                                    onClick={handleLinkClick}
+                                                >
+                                                    Blog aanpassen
+                                                </Link></button>
                                             </div>
                                         </div>
                                     </div>

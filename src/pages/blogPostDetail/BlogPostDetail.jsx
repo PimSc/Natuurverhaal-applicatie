@@ -13,25 +13,12 @@ function BlogPostDetail() {
     const { id } = useParams(); // Haal het ID uit de URL-parameters
     const { blogPostsAll } = useBlog();
     const post = blogPostsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
-    const contentRef = useRef(null); // Referentie naar de content container
+
 
     const handleTerugClick = () => {
         navigate(-1); // Navigeer terug naar de vorige pagina
     };
 
-    const capturePageAndDownloadPDF = () => {
-        const content = contentRef.current; // Get the content container reference
-        html2canvas(content, {
-            scrollY: -window.scrollY // Capture the entire page by setting scrollY to negative of window scrollY
-        }).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            const imgWidth = 210; // A4 size: 210mm x 297mm
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-            pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-            pdf.save('blog_post_detail.pdf');
-        });
-    };
 
     if (!post) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
@@ -44,7 +31,7 @@ function BlogPostDetail() {
                 <div className="inner-content-container" >
                     <div className="textCenter">
 
-                        <div ref={contentRef}>
+
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
                         <p>Categorie: {post.categories}</p>
@@ -57,7 +44,7 @@ function BlogPostDetail() {
                         <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                              alt={post.caption}/>
                         <br/>
-                        </div>
+
                         <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
                             van {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong> </Link>
 
@@ -68,7 +55,6 @@ function BlogPostDetail() {
                             <br/>
                             <br/>
                         </Link>
-                        <button onClick={capturePageAndDownloadPDF}>Download deze pagina als PDF</button>
                     </div>
                 </div>
             </section>

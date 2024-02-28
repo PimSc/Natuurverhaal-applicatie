@@ -244,6 +244,23 @@ button, select, textarea {
   text-align: center;
 }
 
+.simpleButtonsMargin{
+  font-family: var(--mainFont);
+  color:  var(--mainFontColor);
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  letter-spacing: 2px;
+  height: 55px;
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border: 4px solid  var(--mainFontColor);
+  border-radius: 6px 22px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 30px 0;
+}
+
 .simpleButtons:hover {
   color: var(--onHoverColor);
   border-color: var(--onHoverColor);
@@ -364,15 +381,14 @@ button, select, textarea {
 
 /*Outer content container (Row)*/
 .outer-content-container {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 50px;
   /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -381,11 +397,11 @@ button, select, textarea {
 
 /*Inner content container (Row)*/
 .inner-content-container {
-
   margin: 40px 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   /*border: 2px dashed red;*/
 }
 
@@ -403,7 +419,7 @@ button, select, textarea {
  display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px dashed blue;
+  /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -458,20 +474,6 @@ button, select, textarea {
   /*border: 3px dashed green;*/
 }
 
-/*Container with styling for (blog) posts*/
-.post-item {
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  background-color: var(--mainBackgroundColor);
-  /*padding: 8px;*/
-  flex-basis: 50px;
-  width: 80vw;
-  flex-grow: 1;
-  flex-shrink: 1;
-  Border: 1px solid hsla(0, 0%, 50%, 0.01);
-  list-style: none;
-}
 
 
 /*Container to make icons small*/
@@ -479,14 +481,59 @@ button, select, textarea {
   width: 15px;
   height: 15px;
   /*border: 2px solid pink;*/
-
-
-
-
-
-
-
 }
+
+
+  /*Container with styling for (blog) posts*/
+  .post-item {
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background-color: var(--mainBackgroundColor);
+    /*padding: 8px;*/
+    flex-basis: 50px;
+    width: 80vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    Border: 1px solid hsla(0, 0%, 50%, 0.01);
+    list-style: none;
+  }
+
+.outer-content-container-Edit {
+  margin: 40px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*border: 2px dashed red;*/
+}
+
+.inner-content-container-Edit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+
+  .inner-content-container-editBorder{
+    border-right: 6px solid black;
+    display: flex;
+    flex-direction: column;
+/*justify-content: center;*/
+    align-items: center;
+    height: 100vw;
+    padding-right: 20px;
+
+  }
+
+.inner-content-container-editPreview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*border: 2px dashed blue;*/
+}
+
+
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
 .textAreaOneLine{
@@ -544,6 +591,7 @@ button, select, textarea {
 
 /*Begin media query telefoon*/
 @media only screen and (max-width: 767px) {
+
 
 
     p {

@@ -5,10 +5,10 @@ import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import React, {useContext, useEffect, useState} from "react";
 import useProfileImage from "../../Hooks/useProfileImage.jsx";
 import {Link} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
 
 function ProfileEdit() {
-
+    const navigate = useNavigate();
 
     const {user} = useContext(AuthContext);
     console.log("role", user.role)
@@ -88,6 +88,7 @@ function ProfileEdit() {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
                 console.log('form', formDataToSend)
+                navigate(`/ProfileDetail/${user.username}`);
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
@@ -105,7 +106,7 @@ function ProfileEdit() {
     return (
         <>
 
-
+            <div className="outer-content-container">
             {/*Box geeft alleen margin button*/}
             <div className="profileFirstTextBox ">
                 <h1>Openbaar profiel</h1>
@@ -114,7 +115,8 @@ function ProfileEdit() {
 
                 <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
                     openbaar profiel</Link></button>
-            </div>
+            </div></div>
+
 
 
 

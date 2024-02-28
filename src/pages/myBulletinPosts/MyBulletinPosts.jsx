@@ -1,5 +1,5 @@
 import './MyBulletinPosts.css';
-import useBulletinBoard from "../../Hooks/useUserBulletinBoard.jsx";
+import useBulletinBoard from "../../Hooks/useUserBulletinBoards.jsx";
 import React, {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import SearchContext from "../../context/SearchContext.jsx";
@@ -9,8 +9,13 @@ import axios from "axios";
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
+    const reversedPosts = bulletinBoardPostUser.slice().reverse();
 
-    // const bulletinBoardPostUser = bulletinBoardPostUser.slice().reverse();
+    const handleLinkClick = () => {
+        window.scrollTo(0, 220);
+    };
+
+
 
     const handleDelete = (postId) => {
         console.log(postId)
@@ -29,21 +34,29 @@ function MyBulletinPosts() {
     <>
         <section className="outer-content-container">
             <div className="inner-content-container-column">
+                <div className="prikbordTextMargin textCenter">
+                    <h1>Prikbord</h1>
+                    <p>Hier kan je een oproep doen aan alle gebruikers. <br/> Je kan bijvoorbeeld een opzoek doen voor
+                        het vinden van een reismaatje, <br/> je camera te koop aanbieden of advies vragen hoe je het
+                        beste insecten kan fotogrageren. </p>
+                </div>
+
                 <button id="WriteBlogButton" type="button">
-                    <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
+                    <Link to="/WriteBulletin"><strong>Prikbord bericht schrijven</strong></Link>
                 </button>
+
 
                 <h1 id="myBlogsTitleStyling">Mijn blogs overzicht</h1>
                 <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
                 <h4 className="totalBlogsCounter">Je hebt {bulletinBoardPostUser.length} prikbord posts</h4>
-                <br />
+                <br/>
             </div>
         </section>
 
         <section className="outer-content-container">
             <div className="inner-content-container">
                 <ul className="myPostList">
-                    {bulletinBoardPostUser.map((post) => (
+                    {reversedPosts.map((post) => (
                         <li key={post.id} className="myBlogPostItem">
                             <div className="post-image" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
                                 <div className="myBlogsOnTopButtonContainer">
@@ -61,7 +74,13 @@ function MyBulletinPosts() {
                                     </div>
                                     <div className="myPostButtons">
                                         <div className="myBlogButtonContainer">
-                                            <button className="simpleButtonsEdit buttonYellowEdit"><Link to={`/editprikbord/${post.id}`} className="post-link">Bericht aanpassen</Link></button>
+                                            <button className="simpleButtonsEdit buttonYellowEdit"><Link
+                                                to={`/editprikbord/${post.id}`}
+                                                className="post-link"
+                                                onClick={handleLinkClick}
+                                            >
+                                                Bericht aanpassen
+                                            </Link></button>
                                         </div>
                                     </div>
                                 </div>

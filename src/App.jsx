@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import {Routes, Route, Navigate} from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
-import BlogEdit from './pages/blogEdit/BlogEdit.jsx';
+import BlogEdit from './pages/blogPostEdit/BlogEdit.jsx';
 import Excursies from './pages/excursies/Excursies.jsx';
 import Login from './pages/login/Login.jsx';
 import Contact from './pages/contact/Contact.jsx';
@@ -24,9 +24,8 @@ import WriteBulletin from "./pages/writeBulletin/WriteBulletin.jsx";
 import {AuthContext} from "././context/AuthContextProvider.jsx";
 import {useContext} from "react";
 import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
-import EditBlog from "./pages/editBlog/EditBlog.jsx";
 import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
-import EditBulletinBoard from "./pages/editBulletinBoard/EditBulletinBoard.jsx";
+import BulletinBoardEdit from "./pages/bulletinBoardEdit/BulletinBoardEdit.jsx";
 
 function App() {
 
@@ -68,8 +67,8 @@ function App() {
             <Route path="/mijnprikbord" element={<div><Helmet><title>Natuurverhaal | Mijn Prikbord</title></Helmet>{isAuth ? <MyBulletinPosts /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
             <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
-            <Route path="/editblog/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <EditBlog /> : <Navigate to="/login" />}</div>} />
-            <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <EditBulletinBoard /> : <Navigate to="/login" />}</div>} />
+            <Route path="/blogedit/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <BlogEdit /> : <Navigate to="/login" />}</div>} />
+            <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <BulletinBoardEdit /> : <Navigate to="/login" />}</div>} />
 
 
             {/*ADMIN PAGINA`S*/}
@@ -91,7 +90,7 @@ function App() {
         </Routes>
 
 {/*Route voorbeeld zonder helmet*/}
-{/*        <Route path="/blogEdit" element={<BlogEdit/>}/>*/}
+{/*        <Route path="/blogPostEdit" element={<BlogEdit/>}/>*/}
 
 
 

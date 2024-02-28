@@ -11,9 +11,9 @@ function Prikbord() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                <button className="simpleButtons" id="bulletinBoardButton1" type="button">
-                    <Link to="/WriteBulletin">Prikbord bericht aanmaken</Link>
-                </button>
+                {/*<button className="simpleButtons" id="bulletinBoardButton1" type="button">*/}
+                {/*    <Link to="/WriteBulletin">Prikbord bericht aanmaken</Link>*/}
+                {/*</button>*/}
 
 
                 <PrikbordOverview/>
