@@ -6,6 +6,7 @@ import React from "react";
 
 function PrikbordOverview() {
     const { bulletinBoardsAll } = useBlog();
+    const reversedPosts = bulletinBoardsAll.slice().reverse();
 
 
     return (
@@ -14,7 +15,7 @@ function PrikbordOverview() {
                 <div className="inner-content-container-column">
 
                     <ul className="post-list">
-                        {bulletinBoardsAll.map((post) => (
+                        {reversedPosts.map((post) => (
                             <li key={post.id} className="post-item">
                                 <Link to={`/prikbordPosts/${post.id}`} className="post-link">
                                     <div className="post-image"

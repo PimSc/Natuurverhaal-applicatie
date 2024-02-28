@@ -82,7 +82,7 @@ function BulletinBoardEdit() {
             <div className="inner-content-container-Edit">
 
                 <button className="simpleButtons" id="WriteBlogBackButton" type="button">
-                    <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
+                    <Link to="/mijnprikbord">Terug naar mijn prikbord</Link>
                 </button>
 
 

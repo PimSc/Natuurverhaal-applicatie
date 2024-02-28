@@ -9,12 +9,13 @@ import axios from "axios";
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
+    const reversedPosts = bulletinBoardPostUser.slice().reverse();
 
     const handleLinkClick = () => {
         window.scrollTo(0, 220);
     };
 
-    // const bulletinBoardPostUser = bulletinBoardPostUser.slice().reverse();
+
 
     const handleDelete = (postId) => {
         console.log(postId)
@@ -55,7 +56,7 @@ function MyBulletinPosts() {
         <section className="outer-content-container">
             <div className="inner-content-container">
                 <ul className="myPostList">
-                    {bulletinBoardPostUser.map((post) => (
+                    {reversedPosts.map((post) => (
                         <li key={post.id} className="myBlogPostItem">
                             <div className="post-image" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
                                 <div className="myBlogsOnTopButtonContainer">
