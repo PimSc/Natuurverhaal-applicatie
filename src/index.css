@@ -567,7 +567,6 @@ button, select, textarea {
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 100%;
   /*border: 2px solid teal;*/
 }
 
@@ -587,6 +586,10 @@ button, select, textarea {
   border-radius: 10px;
 }
 
+
+.ButtonMargin40px{
+margin-bottom: 20px;
+}
 
 
 /*Begin media query telefoon*/

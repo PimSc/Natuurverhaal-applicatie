@@ -26,6 +26,7 @@ import {useContext} from "react";
 import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
 import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
 import BulletinBoardEdit from "./pages/bulletinBoardEdit/BulletinBoardEdit.jsx";
+import MyExcursions from "./pages/MyExcursions/MyExcursions.jsx";
 
 function App() {
 
@@ -71,12 +72,13 @@ function App() {
             <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <BulletinBoardEdit /> : <Navigate to="/login" />}</div>} />
 
 
+
+
             {/*ADMIN PAGINA`S*/}
             <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
             {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
-            <Route
-                path="/AdminPanel"
-                element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
+            <Route path="/AdminPanel" element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
+            <Route path="/mijnExcursies" element={<div><Helmet><title>Natuurverhaal | Mijn excursies</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <MyExcursions/> : <Navigate to="/login" />}</div>} />
 
 
             {/*/PublicProfile/${post.username}*/}

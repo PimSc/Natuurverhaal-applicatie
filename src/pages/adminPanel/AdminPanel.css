@@ -1,31 +1,35 @@
 .adminRedfield {
+    margin: 30px 0 20px 0;
     border: 5px solid red;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px;
+    width: 550px;
+
 
 }
 
 .adminYellowField {
-    margin: 10px 0 20px 0;
+    margin: 30px 0 20px 0;
     border: 5px solid goldenrod;
     border-radius: 10px;
     padding: 20px;
+    width: 550px;
 
 }
 
 .adminGreenField {
-    margin: 10px 0 20px 0;
+    margin: 30px 0 20px 0;
     border: 5px solid green;;
     border-radius: 10px;
     padding: 20px;
+    width: 550px;
 
 }
 
 .adminUsernameInput {
     width: 200px;
     height: 2lh;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .adminWriteMassageContainer {

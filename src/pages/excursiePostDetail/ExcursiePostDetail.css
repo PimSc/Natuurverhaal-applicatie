@@ -23,6 +23,20 @@
 }
 /*---------------------*/
 
+
+
+.excursionDetailInnerContainer{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 2px solid blue;*/
+}
+
+.excursionDetailInnerContainer hr{
+    width: 100%;
+}
+
 /*LAYOUT END*/
 
 

@@ -8,68 +8,73 @@ import locationIcon from "./../../../public/assets/icons/location-icon.png";
 import animalIcon from "./../../../public/assets/icons/animal-icon.png";
 import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import plusIcon from "./../../../public/assets/icons/plus-icon.png";
+import useBlog from "../../Hooks/useAllExcursions.jsx";
+import React, {useContext} from "react";
+import {AuthContext} from "../../context/AuthContextProvider.jsx";
+
 
 function ExcursionOverview() {
+    const {user} = useContext(AuthContext);
+    const {ExcursionsAll} = useBlog();
+
+
     return (
         <>
 
 
+            <div className="inner-excursionContent-container">
+                {ExcursionsAll.map((post) => (
+                    <Link to={`/excursiePosts/${post.id}`} key={post.id}>
+
+                        <div className="excursieContentBox excursie-post-item">
+
+                            <div className="excursieBox1">
+                                <div className="excursieImageBox">
+                                    <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
+                                         alt={post.caption}/>
+                                </div>
+                            </div>
 
 
-    <div className="inner-excursionContent-container">
-    {excursies.map((excursie) => (
-        <Link to={`/excursiePosts/${excursie.id}`} key={excursie.id}>
-
-            <div className="excursieContentBox excursie-post-item">
-
-                <div className="excursieBox1">
-                    <div className="excursieImageBox" >
-                                <img src={excursie.image} alt={excursie.caption}/>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <li className="excursionContentTextCenter">
-                    <div className="textStart">
+                            <li className="excursionContentTextCenter">
+                                <div className="textStart">
 
                         <span className="textCenter">
-                    <h2>{excursie.title}</h2>
+                    <h2>{post.title}</h2>
                         </span>
 
-                    <br />
-                    <p>
-                        <img className="iconSmall" src={calendarIcon} alt="kalender icoon"/> {' '} {excursie.activityDate}{' '}
-                        <img className="iconSmall" src={clockIcon} alt="klok icoon"/> {' '} {excursie.activityTime} {' '} {excursie.price}{' '}
-                    </p>
+                                    <br/>
+                                    <p>
+                                        <img className="iconSmall" src={calendarIcon}
+                                             alt="kalender icoon"/> {' '} {post.activityDate}{' '}
+                                        <img className="iconSmall" src={clockIcon}
+                                             alt="klok icoon"/> {' '} {post.activityTime} {' '} {post.price}{' '}
+                                    </p>
 
-                    <p>
-                        <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {excursie.location}
-                    </p>
+                                    <p>
+                                        <img className="iconSmall" src={locationIcon}
+                                             alt="locatie icoon"/> {post.location}
+                                    </p>
 
-                    <p>
-                        <img className="iconSmall" src={animalIcon} alt="dier-icoon"/> {' '} {excursie.subject} {' '}
-                        <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {excursie.guide} {' '}
-                        <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {excursie.niveau}
-                    </p>
-                        <br />
-                        <div className="textCenter">
-                    <h4>{excursie.subtitle}</h4>
+                                    <p>
+                                        <img className="iconSmall" src={animalIcon}
+                                             alt="dier-icoon"/> {' '} {post.subject} {' '}
+                                        <img className="iconSmall" src={guideIcon}
+                                             alt="gids-icoon"/> {' '} {post.guide} {' '}
+                                        <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {post.niveau}
+                                    </p>
+                                    <br/>
+                                    <div className="textCenter">
+                                        <h4>{post.subtitle}</h4>
+                                    </div>
+                                    <br/>
+                                </div>
+                            </li>
                         </div>
-                    <br />
-                    </div>
-                </li>
+                    </Link>
+                ))}
+
             </div>
-        </Link>
-    ))}
-
-</div>
-
-
 
 
         </>
