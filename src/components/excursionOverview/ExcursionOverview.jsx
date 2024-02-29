@@ -8,14 +8,14 @@ import locationIcon from "./../../../public/assets/icons/location-icon.png";
 import animalIcon from "./../../../public/assets/icons/animal-icon.png";
 import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import plusIcon from "./../../../public/assets/icons/plus-icon.png";
-import useBlog from "../../Hooks/useAllExcursions.jsx";
+import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import React, {useContext} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 
 
 function ExcursionOverview() {
     const {user} = useContext(AuthContext);
-    const {ExcursionsAll} = useBlog();
+    const {ExcursionsAll} = useAllExcursions();
 
 
     return (

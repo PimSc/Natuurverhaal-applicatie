@@ -79,7 +79,7 @@ function App() {
             {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
             <Route path="/AdminPanel" element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
             <Route path="/mijnExcursies" element={<div><Helmet><title>Natuurverhaal | Mijn excursies</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <MyExcursions/> : <Navigate to="/login" />}</div>} />
-
+            <Route path="/excursieEdit/:id" element={<div><Helmet><title>Natuurverhaal | Excursie aanpassen</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ?  <BlogEdit /> : <Navigate to="/login" />}</div>} />
 
             {/*/PublicProfile/${post.username}*/}
 
