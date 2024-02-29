@@ -1,42 +1,42 @@
 import './WriteExcursion.css';
 import {Link, useNavigate} from "react-router-dom";
-import {useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
 
 function WriteExcursion() {
 
-    const { user } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
+        file: null,
+        title: "",
+        caption: "",
+        subtitle: "",
+        username: `${user.username}`,
         activity_date: "",
         activity_time: "",
-        caption: "",
+        price: "",
+        location: "",
+        subject: "",
+        niveau: "",
+        guide: "",
         content: "",
         date: "",
-        file: null,
-        guide: "",
-        location: "",
         max_participants: "",
-        niveau: "",
-        price: "",
-        subject: "",
-        subtitle: "",
-        title: "",
-        username: `${user.username}`
     });
 
     const [uploadStatus, setUploadStatus] = useState(null);
 
     const handleChangeActivity_date = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeActivity_time = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleFileChange = (event) => {
@@ -45,53 +45,53 @@ function WriteExcursion() {
     };
 
     const handleChangeCaption = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeContent = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeGuide = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeLocation = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeMax_participants = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeNiveau = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangePrice = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeSubject = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeSubtitle = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeTitle = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     async function uploadGegevens(event) {
@@ -99,36 +99,39 @@ function WriteExcursion() {
 
         console.log(user.username)
         const formDataToSend = new FormData();
+        formDataToSend.append("file", formData.file);
+        formDataToSend.append("title", formData.title);
+        formDataToSend.append("caption", formData.caption);
+        formDataToSend.append("subtitle", formData.subtitle);
+        formDataToSend.append("username", formData.username);
         formDataToSend.append("activity_date", formData.activity_date);
         formDataToSend.append("activity_time", formData.activity_time);
-        formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
-        formDataToSend.append("file", formData.file);
         formDataToSend.append("guide", formData.guide);
         formDataToSend.append("location", formData.location);
         formDataToSend.append("max_participants", formData.max_participants);
         formDataToSend.append("niveau", formData.niveau);
         formDataToSend.append("price", formData.price);
         formDataToSend.append("subject", formData.subject);
-        formDataToSend.append("subtitle", formData.subtitle);
-        formDataToSend.append("title", formData.title);
-        formDataToSend.append("subtitle", formData.username);
+
 
         console.log('form', formDataToSend)
 
-        const url = `http://localhost:8080//excursies/${user.username}`;
+        const url = `http://localhost:8080/excursies/${user.username}`;
 
         try {
+            const token = localStorage.getItem("token")
             const response = await axios.post(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`
                 }
             });
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
                 console.log('form', formDataToSend)
-                navigate("/");
+                navigate("/Excursies");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
@@ -136,18 +139,11 @@ function WriteExcursion() {
             }
         } catch (error) {
             console.error("Error posting blog:", error);
-            setUploadStatus("Er is een netwerkfout opgetreden.");
+            setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
         console.log("urlToSend:", url);
 
     }
-
-
-
-
-
-
-
 
 
     return (
@@ -168,162 +164,212 @@ function WriteExcursion() {
                         </button>
                     </div>
 
-                    <div className="textCenter">
+                    <div className="inner-content-container-column">
 
                         <form action="">
                             <div className="textStart">
 
-                                <label htmlFor="file">
-                                    <b>Afbeelding:</b>
+                                {/*Activity date*/}
+                                <label htmlFor="activity_date">
+                                    <b>Activiteit datum:</b>
                                 </label>
                                 <input
                                     className="textAreaOneLine"
-                                    type="file"
-                                    accept=".jpg, .jpeg, .png"
-                                    name="image"
-                                    id="image"
+                                    placeholder="Datum waarop de activiteit plaatsvind"
+                                    name="activity_date"
+                                    id="activity_date"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.activity_date}
+                                    onChange={handleChangeActivity_date}
+                                />
 
+                                {/*Activity time*/}
+                                <label htmlFor="activity_time">
+                                    <b>Activiteit Tijd:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Tijd waarop de activiteit plaatsvind"
+                                    name="activity_time"
+                                    id="activity_time"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.activity_time}
+                                    onChange={handleChangeActivity_time}
                                 />
 
 
+                                {/*Activity caption*/}
                                 <label htmlFor="caption">
-                                    <b>Caption:</b>
+                                    <b>Afbeelding caption:</b>
                                 </label>
-                                <textarea
+                                <input
                                     className="textAreaOneLine"
+                                    placeholder="Omschijf de afbeelding"
                                     name="caption"
                                     id="caption"
                                     autoComplete="on"
+                                    required
+                                    value={formData.caption}
+                                    onChange={handleChangeCaption}
                                 />
 
-
-                                <label htmlFor="title">
-                                    <b>Title:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="title"
-                                    id="title"
-                                    autoComplete="on"
-                                />
-
-
-                                <label htmlFor="subtitle">
-                                    <b>Subtitle:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="subtitle"
-                                    id="subtitle"
-                                    autoComplete="on"
-                                />
-
-
+                                {/*Activity content*/}
                                 <label htmlFor="content">
                                     <b>Content:</b>
                                 </label>
                                 <textarea
-                                    className="textAreaStory"
+                                    className="textAreaOneLine"
+                                    placeholder="De excursie"
                                     name="content"
                                     id="content"
                                     autoComplete="on"
+                                    required
+                                    value={formData.content}
+                                    onChange={handleChangeContent}
                                 />
 
-
-                                <label htmlFor="activity_date">
-                                    <b>Activity date:</b>
+                                {/*Afbeelding*/}
+                                <label className="textStart" htmlFor="fileUpload">
+                                    <b>Afbeelding:</b>
                                 </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="activity_date"
-                                    id="activity_date"
-                                    autoComplete="on"
+                                <input className="textAreaOneLine"
+                                       type="file"
+                                       accept=".jpg, .jpeg, .png"
+                                       name="file"
+                                       id="fileUpload"
+                                       onChange={handleFileChange}
                                 />
 
 
-                                <label htmlFor="activity_time">
-                                    <b>Activity time:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="activity_time"
-                                    id="activity_time"
-                                    autoComplete="on"
-                                />
-
-
-                                <label htmlFor="price">
-                                    <b>Price:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="price"
-                                    id="price"
-                                    autoComplete="on"
-                                />
-
-
-                                <label htmlFor="location">
-                                    <b>Location:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="location"
-                                    id="location"
-                                    autoComplete="on"
-                                />
-
-
-                                <label htmlFor="subject">
-                                    <b>Subject:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="subject"
-                                    id="subject"
-                                    autoComplete="on"
-                                />
-
-
-                                <label htmlFor="niveau">
-                                    <b>Niveau:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    name="niveau"
-                                    id="niveau"
-                                    autoComplete="on"
-                                />
-
-
+                                {/*Guide*/}
                                 <label htmlFor="guide">
-                                    <b>Guide:</b>
+                                    <b>Gids:</b>
                                 </label>
-                                <textarea
+                                <input
                                     className="textAreaOneLine"
+                                    placeholder="Gebruikersnaam van de gids"
                                     name="guide"
                                     id="guide"
                                     autoComplete="on"
+                                    required
+                                    value={formData.guide}
+                                    onChange={handleChangeGuide}
                                 />
 
-                                <label htmlFor="max_participants">
-                                    <b>MaxParticipants:</b>
+                                {/*Location*/}
+                                <label htmlFor="location">
+                                    <b>Locatie:</b>
                                 </label>
-                                <textarea
+                                <input
                                     className="textAreaOneLine"
+                                    placeholder="🚩 Start locatie van de activiteit"
+                                    name="location"
+                                    id="location"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.location}
+                                    onChange={handleChangeLocation}
+                                />
+
+                                {/*Max_participants*/}
+                                <label htmlFor="max_participants">
+                                    <b>Maximaal aantal deelnemers:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="bijv. 12"
                                     name="max_participants"
                                     id="max_participants"
                                     autoComplete="on"
+                                    required
+                                    value={formData.max_participants}
+                                    onChange={handleChangeMax_participants}
                                 />
 
-                                <p>profile picture automatisch</p>
-                                <p>currentParticipants automatisch</p>
+                                {/*Niveau*/}
+                                <label htmlFor="niveau">
+                                    <b>Niveau van de deelnemers:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Titel van de activiteit"
+                                    name="niveau"
+                                    id="niveau"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.niveau}
+                                    onChange={handleChangeNiveau}
+                                />
+
+                                {/*Price*/}
+                                <label htmlFor="price">
+                                    <b>Prijs:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Ondertitel van de activiteit"
+                                    name="price"
+                                    id="price"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.price}
+                                    onChange={handleChangePrice}
+                                />
+
+                                {/*Subject*/}
+                                <label htmlFor="subject">
+                                    <b>Onderwerp:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Onderwerp van de activiteit"
+                                    name="subject"
+                                    id="subject"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.subject}
+                                    onChange={handleChangeSubject}
+                                />
+
+                                {/*Subtitle*/}
+                                <label htmlFor="subtitle">
+                                    <b>Subtitel:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Ondertitel van de activiteit"
+                                    name="subtitle"
+                                    id="subtitle"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.subtitle}
+                                    onChange={handleChangeSubtitle}
+                                />
+
+                                {/*Title*/}
+                                <label htmlFor="title">
+                                    <b>Titel:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Titel van de activiteit"
+                                    name="title"
+                                    id="title"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.title}
+                                    onChange={handleChangeTitle}
+                                />
 
                             </div>
 
-                            <button className="simpleButtons" type="submit">
-                                <Link to="/excursies">Excursie <strong>plaatsen</strong> in het excursie overzicht</Link>
+                            {uploadStatus && <p>{uploadStatus}</p>}
 
+
+                            <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
+                                <strong>plaatsen</strong>
                             </button>
 
                         </form>

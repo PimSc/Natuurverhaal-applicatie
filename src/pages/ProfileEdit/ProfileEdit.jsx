@@ -80,12 +80,11 @@ function ProfileEdit() {
 
         // pim aangepast
 
-        const token = localStorage.getItem("token")
-
         try {
+            const token = localStorage.getItem("token")
             const response = await axios.post(url, formDataToSend, {
                 headers: {
-                    "Content-Type": "multipart/form-data", // Stel de juiste Content-Type header in
+                    "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`
                 }
             }); // Verstuur POST-verzoek met Axios

@@ -66,6 +66,7 @@ function AuthContextProvider({ children }) {
     async function fetchUserData(id, token, redirectUrl) {
         try {
             // haal gebruikersdata op met de token en id van de gebruiker
+            const token = localStorage.getItem("token")
             const result = await axios.get(`http://localhost:8080/users/${id}`, {
                 headers: {
                     "Content-Type": "application/json",

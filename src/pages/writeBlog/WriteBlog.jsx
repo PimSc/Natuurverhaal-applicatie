@@ -18,7 +18,6 @@ function WriteBlog() {
         username: `${user.username}`,
         categories: [''],
         date: ""
-
     });
 
     const [uploadStatus, setUploadStatus] = useState(null);
@@ -79,9 +78,11 @@ function WriteBlog() {
         console.log('form', formDataToSend)
 
         try {
+            const token = localStorage.getItem("token")
             const response = await axios.post(url, formDataToSend, {
                 headers: {
-                    "Content-Type": "multipart/form-data", // Stel de juiste Content-Type header in
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`
                 }
             }); // Verstuur POST-verzoek met Axios
 
@@ -97,7 +98,7 @@ function WriteBlog() {
             }
         } catch (error) {
             console.error("Error posting blog:", error);
-            setUploadStatus("Er is een netwerkfout opgetreden.");
+            setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
         console.log("urlToSend:", url); // Log de URL om te verzenden
 
@@ -162,7 +163,7 @@ function WriteBlog() {
                             <b>Caption:</b>
                         </label>
                         <textarea className="textAreaOneLine"
-                                  placeholder="Afbeelding omschrijving"
+                                  placeholder="Omschijf de afbeelding"
                                   name="caption"
                                   id="caption"
                                   autoComplete="on"

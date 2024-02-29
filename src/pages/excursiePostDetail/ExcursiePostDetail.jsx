@@ -8,16 +8,19 @@ import plusIcon from "../../../public/assets/icons/plus-icon.png";
 import locationIcon from "../../../public/assets/icons/location-icon.png";
 import calendarIcon from "../../../public/assets/icons/calendar-icon.png";
 import clockIcon from "../../../public/assets/icons/clock-icon.png";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function ExcursiePostDetail() {
     const {id} = useParams();
     const { ExcursionsAll } = useAllExcursions();
+    const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 
-    // const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
 
     console.log("ExcursionsAll", ExcursionsAll)
 
-
+    if (!post) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
     return (
@@ -25,7 +28,6 @@ function ExcursiePostDetail() {
             <section className="outer-content-container">
                 <div className="inner-content-container-column">
                     <div className="excursionDetailInnerContainer">
-                    {ExcursionsAll.map((post) => (
                         <>
 
                             <div className="excursionDetailImageContainer">
@@ -52,10 +54,15 @@ function ExcursiePostDetail() {
                             <p>
                                 <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {post.location}
                             </p>
+
+
+
+
                             <p>
                                 <img className="iconSmall" src={animalIcon}
                                      alt="dier-icoon"/> {' '} {post.subject} {' '}
-                                <img className="iconSmall" src={guideIcon} alt="gids-icoon"/> {' '} {post.guide} {' '}
+                                <img className="iconSmall" src={guideIcon} alt="gids-icoon" />{' '}
+                                <Link to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link>{' '}
                                 <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {post.niveau}
                             </p>
                             <br/>
@@ -107,7 +114,6 @@ function ExcursiePostDetail() {
                                 <button className="simpleButtons"> Terug naar de excursie pagina</button>
                             </Link>
                         </>
-                    ))}
                     </div>
                 </div>
             </section>
