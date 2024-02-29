@@ -22,7 +22,9 @@ function MyExcursions() {
     };
 
 
-
+    const handleLinkViewExcursionClick = () => {
+        window.scrollTo(0, 400);
+    };
 
 
 return (
@@ -65,7 +67,7 @@ return (
                                     </div>
                                     <div className="myPostButtons">
                                         <div className="myBlogButtonContainer">
-                                            <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/excursiePosts/${post.id}`} className="post-link">Excursie bekijken</Link></button>
+                                            <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/excursiePosts/${post.id}`} className="post-link" onClick={handleLinkViewExcursionClick}>Excursie bekijken</Link></button>
                                         </div>
                                     </div>
                                     <div className="myPostButtons">
