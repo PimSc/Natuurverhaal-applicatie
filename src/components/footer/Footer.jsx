@@ -9,13 +9,13 @@ return (
 <>
 
     <div className="footerOuterBox">
+
+
         <div className="footerBoxTop">
             <hr/>
         </div>
 
         <div className="footerInnerBox">
-
-
 
             <div className="footerBox1">
                 <Link to="/Contact">
@@ -32,6 +32,9 @@ return (
             </div>
         </div>
     </div>
+
+
+
 
 </>
 );

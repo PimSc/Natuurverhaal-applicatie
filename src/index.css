@@ -175,21 +175,23 @@ button {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/*input field layout*/
+label {
+    color: var(--mainFontColor);
+    font-family: var(--mainFont);
+}
+
+
 input {
     background-color: var(--mainBackgroundColor);
-    padding: 5px;
     border: 2px solid var(--mainFontColor);
+    padding: 5px;
+    border-radius: 10px;
     border-radius: 10px;
     font-size: var(--pFontSize);
     font-family: var(--mainFont);
     color: var(--mainFontColor);
 }
 
-label {
-    color: var(--mainFontColor);
-    font-family: var(--mainFont);
-}
 
 input::file-selector-button {
     border: var(--white);
@@ -214,6 +216,7 @@ img {
 
 button, select, textarea {
     font-family: inherit;
+    font-size: var(--pFontSize);
 }
 
 /*basic information end*/
@@ -236,7 +239,7 @@ button, select, textarea {
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;
-    height: 55px;
+    height: auto;
     width: fit-content;
     padding: 10px 10px 10px 10px;
     border: 4px solid var(--mainFontColor);
@@ -252,7 +255,7 @@ button, select, textarea {
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;
-    height: 55px;
+    height: auto;
     width: fit-content;
     padding: 10px 10px 10px 10px;
     border: 4px solid var(--mainFontColor);
@@ -460,6 +463,19 @@ button, select, textarea {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Container to make icons small*/
 .iconSmall {
     width: 15px;
@@ -543,15 +559,6 @@ button, select, textarea {
 /*Maakt elke ProfileEdit foto rond :D*/
 .profilePictureCircle {
     border-radius: 50px;
-}
-
-.elementCenterContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    /*border: 2px solid teal;*/
 }
 
 
@@ -641,19 +648,92 @@ button, select, textarea {
         width: 170px;
     }
 
+    button {
+        font-size: calc(var(--pFontSize) - 40%);
+    }
+
     .outer-content-container {
-        min-width: 400px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         /*border: 2px dashed blue;*/
     }
 
     .outer-content-container-column {
-        min-width: 400px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         /*border: 5px dashed purple;*/
     }
 
-    button {
-        font-size: calc(var(--pFontSize) - 40%);
+    .inner-content-container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 5px dashed red;*/
     }
+
+    .inner-content-container-column {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 5px dashed green;*/
+    }
+
+    .inner-content-container-textFields {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 2px dashed blue;*/
+    }
+
+    .Extra-inner-content-container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 2px dashed turquoise;*/
+    }
+
+    /*Smalle inner container for text etc.*/
+    .textStart {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 1px dashed lightgreen;*/
+    }
+
+    /*Smalle inner container for text etc.*/
+    .textCenter {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 1px dashed darkslateblue;*/
+    }
+
+    /*Container for header background images*/
+    .headerContainer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 1px dashed cornflowerblue;*/
+    }
+
+    /*Smalle inner container for button.*/
+    .buttonCenter {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /*border: 1px dashed seagreen;*/
+    }
+
+
+
+
+
+
+
+
+
 
 }
 

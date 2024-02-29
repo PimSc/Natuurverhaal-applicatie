@@ -126,7 +126,7 @@ function BulletinBoardEdit() {
                         <label className="textStart" htmlFor="caption">
                             <b>Caption:</b>
                         </label>
-                        <textarea
+                        <input
                             className="textAreaOneLine"
                             placeholder="Afbeelding omschrijving"
                             name="caption"

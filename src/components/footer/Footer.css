@@ -1,62 +1,134 @@
 
 .footerOuterBox {
-    padding: 10px;
     margin-top: 50px;
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     bottom: 0;
     background-color: var(--mainBackgroundColor);
+    /*border: 2px solid purple;*/
 }
 
 .footerBoxTop {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 550px;
-    padding: 10px;
-    transition: width 0.3s ease;
+    width: 0;
+    visibility: hidden;
+    transition: width 0.7s ease, visibility 0.5s ease 0.2s;
+    padding-bottom: 10px;
     /*border: 2px solid red;*/
 }
 
+.footerOuterBox:hover .footerBoxTop {
+    width: 100%;
+    visibility: visible;
+    transition: width 0.7s ease;
+}
+
+.footerOuterBox:hover .footerBox1,
+.footerOuterBox:hover .footerBox3 {
+    filter: none;
+}
 
 .footerInnerBox {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 500px;
-    padding: 10px;
-    /*border: 2px solid red;*/
+    padding: 5px;
+    /*border: 2px solid blue;*/
 }
 
-
 .footerBox1 {
-    filter: grayscale(100%);
+    filter: grayscale(100%) opacity(0.5);
     transition: filter 0.3s ease, opacity 0.3s ease;
     opacity: 0.5;
 }
-
 
 .footerBox2 h5 {
     color: grey;
 }
 
-
-
 .footerBox3 {
-    filter: grayscale(100%);
+    filter: grayscale(100%) opacity(0.5);
     transition: filter 0.3s ease, opacity 0.3s ease;
     opacity: 0.4;
 }
 
 
-.footerOuterBox:hover .footerBoxTop {
-    width: 700px;
-}
 
-.footerOuterBox:hover .footerBox1,
-.footerOuterBox:hover .footerBox3 {
-    filter: none;
+
+
+@media only screen and (max-width: 767px) {
+
+
+    .footerOuterBox {
+        padding: 10px;
+        margin-top: 50px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: 0;
+        background-color: var(--mainBackgroundColor);
+        /*border: 1px solid green;*/
+    }
+
+    .footerBoxTop {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        transition: width 0.3s ease;
+        /*border: 2px solid red;*/
+    }
+
+
+    .footerInnerBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 90%;
+        max-width: 500px;
+        padding: 10px;
+        /*border: 2px solid red;*/
+    }
+
+
+    .footerBox1 {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease, opacity 0.3s ease;
+        opacity: 0.5;
+    }
+
+
+    .footerBox2 h5 {
+        color: grey;
+    }
+
+
+
+    .footerBox3 {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease, opacity 0.3s ease;
+        opacity: 0.4;
+    }
+
+
+    .footerOuterBox:hover .footerBoxTop {
+        width: 100%;
+    }
+
+    .footerOuterBox:hover .footerBox1,
+    .footerOuterBox:hover .footerBox3 {
+        filter: none;
+
+
+    }
+
 }
