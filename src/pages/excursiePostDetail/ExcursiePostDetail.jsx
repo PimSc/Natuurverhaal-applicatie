@@ -1,20 +1,18 @@
 import './ExcursiePostDetail.css';
 import {Link, useParams} from "react-router-dom";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
-import React, {useEffect} from "react";
 import animalIcon from "../../../public/assets/icons/animal-icon.png";
 import guideIcon from "../../../public/assets/icons/guide-icon.png";
-import plusIcon from "../../../public/assets/icons/plus-icon.png";
 import locationIcon from "../../../public/assets/icons/location-icon.png";
 import calendarIcon from "../../../public/assets/icons/calendar-icon.png";
 import clockIcon from "../../../public/assets/icons/clock-icon.png";
+import moneyIcon from "../../../public/assets/icons/money-icon.png";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function ExcursiePostDetail() {
     const {id} = useParams();
-    const { ExcursionsAll } = useAllExcursions();
+    const {ExcursionsAll} = useAllExcursions();
     const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
-
 
     console.log("ExcursionsAll", ExcursionsAll)
 
@@ -33,8 +31,8 @@ function ExcursiePostDetail() {
                             <div className="excursionDetailImageContainer">
                                 <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                                      alt={post.caption}/>
-
                             </div>
+
 
                             <br/>
                             <hr/>
@@ -45,26 +43,31 @@ function ExcursiePostDetail() {
 
                             <br/>
 
-                            <p>
-                                <img className="iconSmall" src={calendarIcon}
-                                     alt="kalender icoon"/> {' '} {post.activity_date}{' '}
-                                <img className="iconSmall" src={clockIcon}
-                                     alt="klok icoon"/> {' '} {post.activity_ime} {' '} {post.price}{' '}
-                            </p>
-                            <p>
-                                <img className="iconSmall" src={locationIcon} alt="locatie icoon"/> {post.location}
-                            </p>
+                            <ol className="excursionsActivityDetailText">
 
+                                {/*Date*/}
+                                <li><p><img className="iconSmall" src={calendarIcon}
+                                            alt="kalender icoon"/> {post.activity_date}</p></li>
 
+                                {/*Time*/}
+                                <li><p><img className="iconSmall" src={clockIcon} alt="klok icoon"/> {post.activity_time}</p></li>
 
+                                {/*Price*/}
+                                <li><p><img className="iconSmall" src={moneyIcon} alt="geld icoon"/> {post.price}</p></li>
 
-                            <p>
-                                <img className="iconSmall" src={animalIcon}
-                                     alt="dier-icoon"/> {' '} {post.subject} {' '}
-                                <img className="iconSmall" src={guideIcon} alt="gids-icoon" />{' '}
-                                <Link to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link>{' '}
-                                <img className="iconSmall" src={plusIcon} alt="plus-icoon"/> {' '} {post.niveau}
-                            </p>
+                                {/*Location*/}
+                                <li><p><img className="iconSmall" src={locationIcon}
+                                            alt="locatie icoon"/> {post.location}</p></li>
+
+                                {/*Subject*/}
+                                <li><p><img className="iconSmall" src={animalIcon} alt="dier-icoon"/> {post.subject}</p>
+                                </li>
+
+                                {/*Guide*/}
+                                <li><p><img className="iconSmall" src={guideIcon} alt="dier-icoon"/><Link
+                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link></p></li>
+                            </ol>
+
                             <br/>
                             <hr/>
 

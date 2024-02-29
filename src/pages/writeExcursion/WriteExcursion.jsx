@@ -20,7 +20,6 @@ function WriteExcursion() {
         price: "",
         location: "",
         subject: "",
-        niveau: "",
         guide: "",
         content: "",
         date: "",
@@ -69,10 +68,6 @@ function WriteExcursion() {
         setFormData({...formData, [name]: value});
     };
 
-    const handleChangeNiveau = (event) => {
-        const {name, value} = event.target;
-        setFormData({...formData, [name]: value});
-    };
 
     const handleChangePrice = (event) => {
         const {name, value} = event.target;
@@ -110,7 +105,6 @@ function WriteExcursion() {
         formDataToSend.append("guide", formData.guide);
         formDataToSend.append("location", formData.location);
         formDataToSend.append("max_participants", formData.max_participants);
-        formDataToSend.append("niveau", formData.niveau);
         formDataToSend.append("price", formData.price);
         formDataToSend.append("subject", formData.subject);
 
@@ -286,21 +280,6 @@ function WriteExcursion() {
                                     required
                                     value={formData.max_participants}
                                     onChange={handleChangeMax_participants}
-                                />
-
-                                {/*Niveau*/}
-                                <label htmlFor="niveau">
-                                    <b>Niveau van de deelnemers:</b>
-                                </label>
-                                <input
-                                    className="textAreaOneLine"
-                                    placeholder="Titel van de activiteit"
-                                    name="niveau"
-                                    id="niveau"
-                                    autoComplete="on"
-                                    required
-                                    value={formData.niveau}
-                                    onChange={handleChangeNiveau}
                                 />
 
                                 {/*Price*/}

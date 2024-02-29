@@ -2,156 +2,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Young+Serif&display=swap');
 
 
-
-
 /*----------Basic information start----------*/
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  margin-bottom: -50px;
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    margin-bottom: -50px;
 }
 
 :root {
-  /*colors start*/
+    /*colors start*/
 
 
-  /*---------- Text & border colors------------*/
+    /*---------- Text & border colors------------*/
 
-  /*BLACK EDITION*/
-  --mainFontColor: black;
+    /*BLACK EDITION*/
+    --mainFontColor: black;
 
-  /*PINK EDITION*/
-  /*--mainFontColor: hotpink;*/
-  /*----------------------*/
-
-
-
-  /*---------- Background color------------*/
-
-  /*--mainBackgroundColor: red;*/
-  --mainBackgroundColor: hsl(0, 0%, 100%);
-  /*--mainBackgroundColor: hsl(0, 0%, 100%);*/
-  /*----------------------*/
-
-  --SideNavbarColor: white;
-
-  /*other colors*/
-
-  --onHoverColor: #078d43;
-
-  --black: hsl(0, 0%, 0%);
-  --black50Transparant: hsl(0, 0%, 0%, 0.5);
-  --darkerGrey: hsl(0, 0%, 20%);
-  --grey: hsl(0, 0%, 28.2%);
-  --lightGrey: hsl(0, 0%, 95%);
-  --lighGreyTransparant: hsl(0, 0%, 83%, 0.2);
-  --white: hsl(0, 0%, 100%);
-  --menuBarBackground: hsla(0, 0%, 20%, 0.8);
-  /*colors end*/
-
-  .textRed p{
-    color: red;
-  }
-
-  --secondBackgroundColor: hsl(0, 0%, 14%);
-
-  /*font-family`s start*/
-  --titleFont: "Young Serif";
-  --mainFont: "Roboto";
-  /*font-family`s end*/
+    /*PINK EDITION*/
+    /*--mainFontColor: hotpink;*/
+    /*----------------------*/
 
 
-  /*font-sizes start*/
-  --mainTitleFontSize: 6.5rem;
-  --h1FontSize: 2.2rem;
-  --h2FontSize: 1.8rem;
-  --h3FontSize: 1.6rem;
-  --h4FontSize: 1.5rem;
-  --h5FontSize: 1.2rem;
-  --h6FontSize: 1rem;
-  --pFontSize: 1.2rem;
-  --navLinkSize: 1.5rem;
+    /*---------- Background color------------*/
+
+    /*--mainBackgroundColor: red;*/
+    --mainBackgroundColor: hsl(0, 0%, 100%);
+    /*--mainBackgroundColor: hsl(0, 0%, 100%);*/
+    /*----------------------*/
+
+    --SideNavbarColor: white;
+
+    /*other colors*/
+
+    --onHoverColor: #078d43;
+
+    --black: hsl(0, 0%, 0%);
+    --black50Transparant: hsl(0, 0%, 0%, 0.5);
+    --darkerGrey: hsl(0, 0%, 20%);
+    --grey: hsl(0, 0%, 28.2%);
+    --lightGrey: hsl(0, 0%, 95%);
+    --lighGreyTransparant: hsl(0, 0%, 83%, 0.2);
+    --white: hsl(0, 0%, 100%);
+    --menuBarBackground: hsla(0, 0%, 20%, 0.8);
+    /*colors end*/
+
+    .textRed p {
+        color: red;
+    }
+
+    --secondBackgroundColor: hsl(0, 0%, 14%);
+
+    /*font-family`s start*/
+    --titleFont: "Young Serif";
+    --mainFont: "Roboto";
+    /*font-family`s end*/
 
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    /*font-sizes start*/
+    --mainTitleFontSize: 6.5rem;
+    --h1FontSize: 2.2rem;
+    --h2FontSize: 1.8rem;
+    --h3FontSize: 1.6rem;
+    --h4FontSize: 1.5rem;
+    --h5FontSize: 1.2rem;
+    --h6FontSize: 1rem;
+    --pFontSize: 1.2rem;
+    --navLinkSize: 1.5rem;
 
-  color-scheme: light dark;
-  color: var(--mainFontColor);
-  background-color: var(--mainBackgroundColor);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: var(--mainFontColor);
+    background-color: var(--mainBackgroundColor);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*Edit texts*/
 p {
-  font-size: var(--pFontSize);
+    font-size: var(--pFontSize);
 }
 
 h1 {
-  font-size: var(--h1FontSize);
+    font-size: var(--h1FontSize);
 }
 
 h2 {
-  font-size: var(--h2FontSize);
+    font-size: var(--h2FontSize);
 }
 
 h3 {
-  font-size: var(--h3FontSize);
+    font-size: var(--h3FontSize);
 }
 
 h4 {
-  font-size: var(--h4FontSize);
+    font-size: var(--h4FontSize);
 }
 
 h5 {
-  font-size: var(--h5FontSize);
+    font-size: var(--h5FontSize);
 }
 
 h6 {
-  font-size: var(--h6FontSize);
+    font-size: var(--h6FontSize);
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--mainFontColor);
-  font-family: var(--titleFont);
+    color: var(--mainFontColor);
+    font-family: var(--titleFont);
 }
 
 p {
-  color: var(--mainFontColor);
-  font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    font-family: var(--mainFont);
 }
 
 i {
-  color: var(--mainFontColor);
-  font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    font-family: var(--mainFont);
 }
 
-.iGrey{
-  color: grey;
-  font-size: 0.8em;
+.iGrey {
+    color: grey;
+    font-size: 0.8em;
 }
 
 /*Background colors*/
 .mainBackground {
-  background-color: var(--mainBackgroundColor);
-  height: 100vh;
+    background-color: var(--mainBackgroundColor);
+    height: 100vh;
 }
 
 .secondBackground {
-  background-color: var(--secondBackgroundColor);
-  height: 100vh;
+    background-color: var(--secondBackgroundColor);
+    height: 100vh;
 }
 
 /*Link styling*/
@@ -159,340 +156,322 @@ a,
 a:visited,
 a:hover,
 a:active {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  /*font-family: var(--titleFont);*/
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    /*font-family: var(--titleFont);*/
 }
 
 /*Button styling*/
 button:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-button{
-  background-color: var(--mainBackgroundColor);
-  color: var(--mainFontColor);
-font-family: var(--mainFont);
-  font-size: var(--pFontSize);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+button {
+    background-color: var(--mainBackgroundColor);
+    color: var(--mainFontColor);
+    font-family: var(--mainFont);
+    font-size: var(--pFontSize);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /*input field layout*/
 input {
-  background-color: var(--mainBackgroundColor);
-  padding: 5px;
-  border: 2px solid var(--mainFontColor);
-  border-radius: 10px;
-  font-size: var(--pFontSize);
-  font-family: var(--mainFont);
-  color: var(--mainFontColor);
+    background-color: var(--mainBackgroundColor);
+    padding: 5px;
+    border: 2px solid var(--mainFontColor);
+    border-radius: 10px;
+    font-size: var(--pFontSize);
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
 }
 
 label {
-  color: var(--mainFontColor);
-  font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    font-family: var(--mainFont);
 }
 
 input::file-selector-button {
-  border: var(--white);
-  border-radius: 10px;
-  padding: 5px 10px;
-  font-family: var(--mainFont);
+    border: var(--white);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-family: var(--mainFont);
 }
 
-textarea{
-  background-color: var(--mainBackgroundColor);
-  border: 2px solid var(--mainFontColor);
-  border-radius: 9px;
-  font-size: var(--pFontSize);
-  color: var(--mainFontColor);
-  padding: 5px;
+textarea {
+    background-color: var(--mainBackgroundColor);
+    border: 2px solid var(--mainFontColor);
+    border-radius: 9px;
+    font-size: var(--pFontSize);
+    color: var(--mainFontColor);
+    padding: 5px;
 }
 
 /*Other stylings*/
 img {
-  max-width:100%
+    max-width: 100%
 }
 
 button, select, textarea {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 /*basic information end*/
 
 
-
-
 /*Button test*/
 
-.simpleButtonTopMargin{
-  margin: 25px 0;
+.simpleButtonTopMargin {
+    margin: 25px 0;
 }
 
-.simpleButtonButtonMargin{
-  margin: 25px 0;
+.simpleButtonButtonMargin {
+    margin: 25px 0;
 }
 
 .simpleButtons {
-  font-family: var(--mainFont);
-  color:  var(--mainFontColor);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  letter-spacing: 2px;
-  height: 55px;
-  width: fit-content;
-  padding: 10px 10px 10px 10px;
-  border: 4px solid  var(--mainFontColor);
-  border-radius: 6px 22px;
-  box-sizing: border-box;
-  text-align: center;
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: 55px;
+    width: fit-content;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.simpleButtonsMargin{
-  font-family: var(--mainFont);
-  color:  var(--mainFontColor);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  letter-spacing: 2px;
-  height: 55px;
-  width: fit-content;
-  padding: 10px 10px 10px 10px;
-  border: 4px solid  var(--mainFontColor);
-  border-radius: 6px 22px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: 30px 0;
+.simpleButtonsMargin {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: 55px;
+    width: fit-content;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 30px 0;
 }
 
 .simpleButtons:hover {
-  color: var(--onHoverColor);
-  border-color: var(--onHoverColor);
-  transition: all 0.3s ease 0s;
-  border-radius: 22px 6px;
-  /*background: rgb(46, 204, 113);*/
-  cursor: pointer;
+    color: var(--onHoverColor);
+    border-color: var(--onHoverColor);
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    /*background: rgb(46, 204, 113);*/
+    cursor: pointer;
 }
 
 
-.buttonRedRemove:hover{
-  background-color: hsla(0, 100%, 50%, 0.4);
+.buttonRedRemove:hover {
+    background-color: hsla(0, 100%, 50%, 0.4);
 }
 
-.buttonYellowEdit:hover{
-  background-color: hsla(42, 100%, 50%, 0.4);
-}
-
-.simpleButtonsTotalGreen:hover{
-  background-color: hsla(120, 100%, 50%, 0.4);
-}
-
-.simpleButtonsRemove {
-  font-family: var(--mainFont);
-  color:  var(--mainFontColor);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  letter-spacing: 2px;
-  height: 55px;
-  margin: 25px 0;
-  padding: 10px 10px 10px 10px;
-  border: 4px solid  var(--mainFontColor);
-  border-radius: 6px 22px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.simpleButtonsRemove:hover {
-  color: black;
-  border-color: red;
-  transition: all 0.3s ease 0s;
-  border-radius: 22px 6px;
-  /*background: rgb(46, 204, 113);*/
-  cursor: pointer;
-}
-
-.simpleButtonsEdit {
-  font-family: var(--mainFont);
-  color:  var(--mainFontColor);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  letter-spacing: 2px;
-  height: 55px;
-  margin: 25px 0;
-  padding: 10px 10px 10px 10px;
-  border: 4px solid  var(--mainFontColor);
-  border-radius: 6px 22px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.simpleButtonsEdit:hover {
-  color: black;
-  border-color: goldenrod;
-  transition: all 0.3s ease 0s;
-  border-radius: 22px 6px;
-  /*background: rgb(46, 204, 113);*/
-  cursor: pointer;
-}
-
-.simpleButtonsTotalGreen {
-  font-family: var(--mainFont);
-  color:  var(--mainFontColor);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
-  display: inline-block;
-  letter-spacing: 2px;
-  height: 55px;
-  margin: 25px 0;
-  padding: 10px 10px 10px 10px;
-  border: 4px solid  var(--mainFontColor);
-  border-radius: 6px 22px;
-  box-sizing: border-box;
-  text-align: center;
+.buttonYellowEdit:hover {
+    background-color: hsla(42, 100%, 50%, 0.4);
 }
 
 .simpleButtonsTotalGreen:hover {
-  color: black;
-  border-color: green;
-  transition: all 0.3s ease 0s;
-  border-radius: 22px 6px;
-  /*background: rgb(46, 204, 113);*/
-  cursor: pointer;
+    background-color: hsla(120, 100%, 50%, 0.4);
+}
+
+.simpleButtonsRemove {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: 55px;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.simpleButtonsRemove:hover {
+    color: black;
+    border-color: red;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    /*background: rgb(46, 204, 113);*/
+    cursor: pointer;
+}
+
+.simpleButtonsEdit {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: 55px;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.simpleButtonsEdit:hover {
+    color: black;
+    border-color: goldenrod;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    /*background: rgb(46, 204, 113);*/
+    cursor: pointer;
+}
+
+.simpleButtonsTotalGreen {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: 55px;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.simpleButtonsTotalGreen:hover {
+    color: black;
+    border-color: green;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    /*background: rgb(46, 204, 113);*/
+    cursor: pointer;
 }
 
 
-
-
 /*Button test*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
 /*Outer content container (Row)*/
 .outer-content-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /*border: 2px dashed blue;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /*border: 5px dashed purple;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
 .inner-content-container {
-  margin: 40px 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /*border: 2px dashed red;*/
+    margin: 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
 .inner-content-container-column {
-  margin: 40px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*border: 5px dashed green;*/
+    margin: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 5px dashed green;*/
 }
 
 /*Inner content container voor text fields*/
-.inner-content-container-textFields{
- display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*border: 2px dashed blue;*/
+.inner-content-container-textFields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
-.Extra-inner-content-container{
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  height: fit-content;
-  align-items: center;
-  /*border: 2px dashed turquoise;*/
+.Extra-inner-content-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
 .textStart {
-  display: flex;
-  flex-direction: column;
-  max-width: 1100px;
-  flex-shrink: 1;
-  flex-grow: 0;
-  text-align: start;
-  align-items: flex-start;
-  /*border: 1px dashed lightgreen;*/
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    text-align: start;
+    align-items: flex-start;
+    /*border: 1px dashed lightgreen;*/
 }
 
 /*Smalle inner container for text etc.*/
 .textCenter {
-  display: flex;
-  flex-direction: column;
-  max-width: 1100px;
-  text-align: center;
-  align-items: center;
-  width: 100%;
-  /*border: 3px dashed green;*/
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
 .headerContainer {
-  display: flex;
-  flex-direction: row;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  /*border: 2px dashed turquoise;*/
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for button.*/
 .buttonCenter {
-  display: flex;
-  flex-direction: row;
-  width: auto;
-  justify-content: center;
-  /*border: 3px dashed green;*/
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: center;
+    /*border: 3px dashed green;*/
 }
-
 
 
 /*Container to make icons small*/
-.iconSmall{
-  width: 15px;
-  height: 15px;
-  /*border: 2px solid pink;*/
+.iconSmall {
+    width: 15px;
+    height: 15px;
+    /*border: 2px solid pink;*/
 }
 
 
-  /*Container with styling for (blog) posts*/
-  .post-item {
+/*Container with styling for (blog) posts*/
+.post-item {
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     background-color: var(--mainBackgroundColor);
     /*padding: 8px;*/
@@ -502,98 +481,97 @@ button, select, textarea {
     flex-shrink: 1;
     Border: 1px solid hsla(0, 0%, 50%, 0.01);
     list-style: none;
-  }
+}
 
 .outer-content-container-Edit {
-  margin: 40px 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /*border: 2px dashed red;*/
+    margin: 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*border: 2px dashed red;*/
 }
 
-.inner-content-container-Edit{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 20px;
+.inner-content-container-Edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
 }
 
-  .inner-content-container-editBorder{
+.inner-content-container-editBorder {
     border-right: 6px solid black;
     display: flex;
     flex-direction: column;
-/*justify-content: center;*/
+    /*justify-content: center;*/
     align-items: center;
     height: 100vw;
     padding-right: 20px;
 
-  }
+}
 
-.inner-content-container-editPreview{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.inner-content-container-editPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  /*border: 2px dashed blue;*/
+    /*border: 2px dashed blue;*/
 }
 
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
 
-.textAreaOneLine{
-  padding: 10px;
-  width: 500px;
-  margin: 0 0 15px 0;
+.textAreaOneLine {
+    padding: 10px;
+    width: 500px;
+    margin: 0 0 15px 0;
 }
 
-.textAreaStory{
-  padding: 10px;
-  width: 500px;
-  height: 400px;
+.textAreaStory {
+    padding: 10px;
+    width: 500px;
+    height: 400px;
 }
 
 /*input field labels*/
 .labelTextLeft {
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  /*border: 2px solid #8b4208;*/
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    /*border: 2px solid #8b4208;*/
 }
 
 /*Maakt elke ProfileEdit foto rond :D*/
-.profilePictureCircle{
-  border-radius: 50px;
+.profilePictureCircle {
+    border-radius: 50px;
 }
 
-.elementCenterContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  /*border: 2px solid teal;*/
-}
-
-
-
-.loadingGif{
-  display: flex;
-  flex-direction: row;
-  width: 300px;
-  overflow: hidden;
-  justify-content: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  border-radius: 10px;
+.elementCenterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /*border: 2px solid teal;*/
 }
 
 
-.ButtonMargin40px{
-margin-bottom: 20px;
+.loadingGif {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    overflow: hidden;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+
+.ButtonMargin40px {
+    margin-bottom: 20px;
 }
 
 
@@ -601,84 +579,84 @@ margin-bottom: 20px;
 @media only screen and (max-width: 767px) {
 
 
-
     p {
-      font-size: calc(var(--pFontSize) - 20%);
-      /*font-size: var(--pFontSize);*/
+        font-size: calc(var(--pFontSize) - 20%);
+        /*font-size: var(--pFontSize);*/
     }
 
     h1 {
-      font-size: calc(var(--h1FontSize) - 20%);
-      /*font-size: var(--h1FontSize);*/
+        font-size: calc(var(--h1FontSize) - 20%);
+        /*font-size: var(--h1FontSize);*/
     }
 
     h2 {
-      font-size: calc(var(--h2FontSize) - 20%);
-      /*font-size: var(--h2FontSize);*/
+        font-size: calc(var(--h2FontSize) - 20%);
+        /*font-size: var(--h2FontSize);*/
     }
 
     h3 {
-      font-size: calc(var(--h3FontSize) - 20%);
-      /*font-size: var(--h3FontSize);*/
+        font-size: calc(var(--h3FontSize) - 20%);
+        /*font-size: var(--h3FontSize);*/
     }
 
     h4 {
-      font-size: calc(var(--h4FontSize) - 20%);
-      /*font-size: var(--h4FontSize);*/
+        font-size: calc(var(--h4FontSize) - 20%);
+        /*font-size: var(--h4FontSize);*/
     }
 
-  h5 {
-    font-size: calc(var(--h5FontSize) - 20%);
-    /*font-size: var(--h3FontSize);*/
-  }
+    h5 {
+        font-size: calc(var(--h5FontSize) - 20%);
+        /*font-size: var(--h3FontSize);*/
+    }
 
-  h6 {
-    font-size: calc(var(--h6FontSize) - 20%);
-    /*font-size: var(--h4FontSize);*/
-  }
+    h6 {
+        font-size: calc(var(--h6FontSize) - 20%);
+        /*font-size: var(--h4FontSize);*/
+    }
 
-  /*imput field layout*/
-  input {
-    padding: 1px;
-    font-size: calc(var(--pFontSize) - 10%);
-  }
+    /*imput field layout*/
+    input {
+        padding: 1px;
+        font-size: calc(var(--pFontSize) - 10%);
+    }
 
-  .textAreaOneLine{
-    width: 290px;
-  }
+    .textAreaOneLine {
+        width: 290px;
+    }
 
-  .textAreaStory{
-    padding: 10px;
-    width: 290px;
-    height: 400px;
-  }
+    .textAreaStory {
+        padding: 10px;
+        width: 290px;
+        height: 400px;
+    }
 
-  .textCenter {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    text-align: center;
-  }
+    .textCenter {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        text-align: center;
+    }
 
-  .inputSize {
-    width: 170px;
-  }
+    .inputSize {
+        width: 170px;
+    }
 
-  .outer-content-container {
-min-width: 400px;
-    /*border: 2px dashed blue;*/
-  }
+    .outer-content-container {
+        min-width: 400px;
+        /*border: 2px dashed blue;*/
+    }
 
-  .outer-content-container-column {
-    min-width: 400px;
-    /*border: 5px dashed purple;*/
-  }
+    .outer-content-container-column {
+        min-width: 400px;
+        /*border: 5px dashed purple;*/
+    }
 
-  button{
-    font-size: calc(var(--pFontSize) - 40%);
-  }
+    button {
+        font-size: calc(var(--pFontSize) - 40%);
+    }
 
 }
+
 /*Einde media query telefoon*/
 
 
