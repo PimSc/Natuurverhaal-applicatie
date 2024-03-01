@@ -18,10 +18,12 @@
     text-align: center;
     width: 0;
     visibility: hidden;
-    transition: width 0.7s ease, visibility 0.5s ease 0.2s;
+    transition: width 0.7s ease, visibility 0.8s ease 0.2s;
     padding-bottom: 10px;
-    /*border: 2px solid red;*/
+    border-top: 1px solid black;
 }
+
+/*---Footer Effect Start---*/
 
 .footerOuterBox:hover .footerBoxTop {
     width: 100%;
@@ -30,8 +32,18 @@
 }
 
 .footerOuterBox:hover .footerBox1,
+.footerOuterBox:hover .footerBox2,
 .footerOuterBox:hover .footerBox3 {
     filter: none;
+}
+
+.footerOuterBox .footerBox2 h5 {
+    color: #484848;
+    transition: color 2s ease 0.7s;
+}
+
+.footerOuterBox:hover .footerBox2 h5 {
+    color: var(--mainFontColor);
 }
 
 .footerInnerBox {
@@ -49,8 +61,10 @@
     opacity: 0.5;
 }
 
-.footerBox2 h5 {
-    color: grey;
+.footerBox2 {
+    filter: grayscale(100%) opacity(0.5);
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
 }
 
 .footerBox3 {
@@ -59,7 +73,7 @@
     opacity: 0.4;
 }
 
-
+/*---Footer Effect End---*/
 
 
 
