@@ -22,20 +22,30 @@ function RegisterScreen() {
         toggleLoading(true);
 
         try {
+            const source = axios.CancelToken.source();
+
             const response = await axios.post('http://localhost:8080/users', {
                 username: username,
                 password: password,
                 email: email,
-                enabled : enabled
+                enabled: enabled
+            }, {
+                cancelToken: source.token
             });
 
             console.log(response.data);
+
             window.location.reload(false);
-        } catch(e) {
-            console.error(e);
-            toggleError(true);
+        } catch (e) {
+            if (axios.isCancel(e)) {
+                console.log('Request canceled:', e.message);
+            } else {
+                console.error(e);
+                toggleError(true);
+            }
+        } finally {
+            toggleLoading(false);
         }
-        toggleLoading(false);
     }
 
     return (

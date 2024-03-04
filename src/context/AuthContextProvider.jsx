@@ -112,7 +112,6 @@ function AuthContextProvider({ children }) {
     return (
         <AuthContext.Provider value={contextData}>
             {isAuth.status === 'done' ? children : <div className="loadingGif"> <img src={LoadingGif} alt="loading Gif"/></div>}
-            {isAuth.status === 'done' ? children : <p>Loading...</p>}
         </AuthContext.Provider>
     );
 }
