@@ -47,11 +47,6 @@ function WriteBlog() {
         setFormData({ ...formData, [name]: value });
     };
 
-    // const handleChangeCategories = (event) => {
-    //     const {name, value} = event.target;
-    //     setFormData({...formData, [name]: value});
-    // };
-
     const handleChangeCategories = (event) => {
         const {value} = event.target;
 

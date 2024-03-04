@@ -35,16 +35,6 @@ function LoginScreen() {
         }
     }
 
-    // async function fetchData() {
-    //     try {
-    //         const response = await axios.get('http://localhost:8080/authenticated');
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
-
-
     return (
         <>
             <form onSubmit={handleSubmit}>

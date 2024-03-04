@@ -29,9 +29,6 @@ function BlogOverview() {
         calculateFilteredPosts();
     }, [searchQuery, blogPostsAll]); // Include searchQuery and blogPostsAll as dependencies
 
-    const handleLinkViewBlogClick = () => {
-        window.scrollTo(0, 400);
-    };
 
     return (
         <>
@@ -40,7 +37,7 @@ function BlogOverview() {
                     <ul className="post-list">
                         {filteredPosts.map((post) => (
                             <li key={post.id} className="post-item">
-                                <Link to={`/blogposts/${post.id}`} className="post-link" onClick={handleLinkViewBlogClick}>
+                                <Link to={`/blogposts/${post.id}`} className="post-link">
                                     <div className="post-image"
                                          style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
 

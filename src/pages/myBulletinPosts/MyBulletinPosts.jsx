@@ -10,9 +10,7 @@ function MyBulletinPosts() {
     const { user } = useContext(AuthContext);
     const reversedPosts = bulletinBoardPostUser.slice().reverse();
 
-    const handleLinkClick = () => {
-        window.scrollTo(0, 220);
-    };
+
 
 
 
@@ -76,7 +74,6 @@ function MyBulletinPosts() {
                                             <button className="simpleButtonsEdit buttonYellowEdit"><Link
                                                 to={`/editprikbord/${post.id}`}
                                                 className="post-link"
-                                                onClick={handleLinkClick}
                                             >
                                                 Bericht aanpassen
                                             </Link></button>

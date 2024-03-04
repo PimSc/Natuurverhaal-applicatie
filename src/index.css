@@ -192,6 +192,9 @@ input {
     color: var(--mainFontColor);
 }
 
+.liDiskDot{
+    list-style: disc;
+}
 
 input::file-selector-button {
     border: var(--white);

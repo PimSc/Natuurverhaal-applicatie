@@ -61,8 +61,8 @@ function ProfileEdit() {
     };
 
 
-    async function uploadGegevens(event) {
-        event.preventDefault();
+    async function uploadGegevens() {
+
 
         const url = `http://localhost:8080/user-profile/${user.username}`;
         console.log(user.username)
@@ -112,7 +112,6 @@ function ProfileEdit() {
         <>
 
             <div className="outer-content-container">
-            {/*Box geeft alleen margin button*/}
             <div className="profileFirstTextBox ">
                 <h1>Openbaar profiel</h1>
                 <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>

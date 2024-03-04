@@ -1,6 +1,6 @@
 import './App.css'
 import {Helmet} from "react-helmet";
-import {Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route, Navigate, ScrollRestoration} from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
 import BlogEdit from './pages/blogPostEdit/BlogEdit.jsx';
@@ -28,10 +28,13 @@ import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
 import BulletinBoardEdit from "./pages/bulletinBoardEdit/BulletinBoardEdit.jsx";
 import MyExcursions from "./pages/MyExcursions/MyExcursions.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import ScrollToTop from "./helpers/ScrollToTop.jsx";
+
 
 function App() {
 
     const {isAuth, user} = useContext(AuthContext);
+
 
     return (
         <>
@@ -39,9 +42,10 @@ function App() {
 
             {/*components visible on every page*/}
             <Header/>
-                <body>
+
             <Navigation/>
 
+            <ScrollToTop/>
             <Routes> {/*Switch between these pages*/}
                 {/*Pages in the nav*/}
                 <Route path="/" element={<div><Helmet><title>Natuurverhaal | Home</title></Helmet><Home/></div>}/>
@@ -118,7 +122,7 @@ function App() {
                     path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound/></div>}
                 />
             </Routes>
-                </body>
+
             <footer>
                 <Footer/>
             </footer>

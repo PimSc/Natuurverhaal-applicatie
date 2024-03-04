@@ -12,9 +12,6 @@ function MijnBlogs() {
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
-    const handleLinkEditBlogClick = () => {
-        window.scrollTo(0, 400);
-    };
 
 
     useEffect(() => {
@@ -38,9 +35,7 @@ function MijnBlogs() {
             });
     };
 
-    const handleLinkViewBlogClick = () => {
-        window.scrollTo(0, 400);
-    };
+
 
     return (
         <>
@@ -79,7 +74,7 @@ function MijnBlogs() {
                                         </div>
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/blogposts/${post.id}`} className="post-link" onClick={handleLinkViewBlogClick} >Blog bekijken</Link></button>
+                                                <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/blogposts/${post.id}`} className="post-link" >Blog bekijken</Link></button>
                                             </div>
                                         </div>
                                         <div className="myPostButtons">
@@ -87,7 +82,6 @@ function MijnBlogs() {
                                                 <button className="simpleButtonsEdit buttonYellowEdit">  <Link
                                                     to={`/blogEdit/${post.id}`}
                                                     className="post-link"
-                                                    onClick={handleLinkEditBlogClick}
                                                 >
                                                     Blog aanpassen
                                                 </Link></button>

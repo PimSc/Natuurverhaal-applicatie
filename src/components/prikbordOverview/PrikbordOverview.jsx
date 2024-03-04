@@ -8,9 +8,7 @@ function PrikbordOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
-    const handleLinkViewBulletinClick = () => {
-        window.scrollTo(0, 400);
-    };
+
 
     return (
         <>
@@ -20,7 +18,7 @@ function PrikbordOverview() {
                     <ul className="post-list">
                         {reversedPosts.map((post) => (
                             <li key={post.id} className="post-item">
-                                <Link to={`/prikbordPosts/${post.id}`} className="post-link" onClick={handleLinkViewBulletinClick}>
+                                <Link to={`/prikbordPosts/${post.id}`} className="post-link">
                                     <div className="post-image"
                                          style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
                                         <div className="onTopOfImageBox">

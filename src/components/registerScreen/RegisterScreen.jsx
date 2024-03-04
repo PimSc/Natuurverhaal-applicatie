@@ -60,78 +60,90 @@ function RegisterScreen() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                    <h1>Registreren</h1>
-                    <p>Vul de velden in om een account aan te maken</p>
-                    <hr/>
-                    <div className="loginOuterContainer">
-                        <div className="loginInnerContainer">
-                            <div className="inputFieldMargin">
-                                <div className="labelTextLeft">
-                                    <label
-                                        htmlFor="email">
-                                        <b>Email</b>
-                                    </label>
-                                </div>
-                                <input
-                                    id="email"
-                                    placeholder="E-mail"
-                                    type="email"
-                                    name="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    autoComplete="on"
-                                    required
-                                />
+                <h1>Registreren</h1>
+                <p>Vul de velden in om een account aan te maken</p>
+                <hr/>
+                <div className="loginOuterContainer">
+                    <div className="loginInnerContainer">
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="email">
+                                    <b>Email</b>
+                                </label>
                             </div>
-
-                            <div className="inputFieldMargin">
-                                <div className="labelTextLeft">
-                                    <label
-                                        htmlFor="username">
-                                        <b>Gebruikersnaam</b>
-                                    </label>
-                                </div>
-                                <input
-                                    id="username"
-                                    placeholder="Gebruikersnaam"
-                                    type="text"
-                                    name="username"
-                                    value={username}
-                                    onChange={(e) => setUserName(e.target.value)}
-                                    autoComplete="on"
-                                    required
-                                />
-                            </div>
-
-                            <div className="inputFieldMargin">
-                                <div className="labelTextLeft">
-                                    <label
-                                        htmlFor="password">
-                                        <b>Wachtwoord</b>
-                                    </label>
-                                </div>
-                                <input
-                                    id="password"
-                                    placeholder="Wachtwoord"
-                                    type="password"
-                                    name="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
-
-                            {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
-
-                            <button
-                                className="simpleButtons"
-                                disabled={loading}
-                                type="submit">Registreren</button>
-
+                            <input
+                                id="email"
+                                placeholder="E-mail"
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                autoComplete="on"
+                                required
+                            />
                         </div>
+
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="username">
+                                    <b>Gebruikersnaam</b>
+                                </label>
+                            </div>
+                            <input
+                                id="username"
+                                placeholder="Gebruikersnaam"
+                                type="text"
+                                name="username"
+                                value={username}
+                                onChange={(e) => setUserName(e.target.value)}
+                                autoComplete="on"
+                                required
+                            />
+                        </div>
+
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="password">
+                                    <b>Wachtwoord</b>
+                                </label>
+                            </div>
+                            <input
+                                id="password"
+                                placeholder="Wachtwoord"
+                                type="password"
+                                name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
+
+                        <button
+                            className="simpleButtons"
+                            disabled={loading}
+                            type="submit">Registreren
+                        </button>
                     </div>
-                    <hr/>
-                </form>
+                </div>
+            </form>
+                <hr/>
+            <button>Voordelen van registeren</button>
+            <div className="registerAdvantagesOuterBox">
+            <div className="registerAdvantagesInnerBox textStart">
+                <ol>
+                    <li className="liDiskDot">Blogs posten</li>
+                    <li className="liDiskDot">Prikbord bericht psoten</li>
+                    <li className="liDiskDot">Blogs posten</li>
+                    <li className="liDiskDot">Blogs posten</li>
+                    <li className="liDiskDot">Blogs posten</li>
+                </ol>
+            </div>
+            </div>
         </>
     );
 }

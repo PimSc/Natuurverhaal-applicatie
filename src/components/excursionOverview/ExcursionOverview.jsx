@@ -12,10 +12,6 @@ import moneyIcon from "../../../public/assets/icons/money-icon.png";
 function ExcursionOverview() {
     const {ExcursionsAll} = useAllExcursions();
 
-    const handleLinkViewExcursionClick = () => {
-        window.scrollTo(0, 220);
-    };
-
     return (
         <>
             <article className="outer-content-container">
@@ -23,7 +19,7 @@ function ExcursionOverview() {
 
 
                     {ExcursionsAll.map((post) => (
-                        <Link to={`/excursiePosts/${post.id}`} key={post.id} onClick={handleLinkViewExcursionClick}>
+                        <Link to={`/excursiePosts/${post.id}`} key={post.id}>
 
                             <div className="excursionPostContainer">
 
