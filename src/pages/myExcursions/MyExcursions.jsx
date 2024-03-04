@@ -4,6 +4,7 @@ import React, {useContext} from "react";
 import useBlog from "../../Hooks/useAllExcursions.jsx";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyExcursions() {
     const { ExcursionsAll } = useBlog();
@@ -21,7 +22,9 @@ function MyExcursions() {
             });
     };
 
-
+    if (ExcursionsAll.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
 return (

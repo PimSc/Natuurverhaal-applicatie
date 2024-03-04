@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
-import LoadingGif from "./../../public/assets/icons/LoadingGif.gif"
+import LoadingGif from "../../public/assets/icons/LoadingGif.gif"
 
 
 export const AuthContext = createContext({});

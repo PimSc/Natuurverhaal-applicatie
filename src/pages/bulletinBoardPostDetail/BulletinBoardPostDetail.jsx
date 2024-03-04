@@ -3,6 +3,14 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React from "react";
+import {
+    EmailIcon,
+    EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    WhatsappIcon,
+    WhatsappShareButton
+} from "react-share";
 
 function BulletinBoardPostDetail() {
     const navigate = useNavigate();
@@ -44,6 +52,50 @@ function BulletinBoardPostDetail() {
                             <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
                                 van {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong> </Link>
 
+                            <div className="shareIconsBox">
+                                <p><strong>Deel deze pagina</strong></p>
+                                <WhatsappShareButton
+                                    className="ShareIcon"
+                                    url={`/prikbordposts/${id}`}
+                                    quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                    hashtag="#muo"
+                                >
+                                    <WhatsappIcon size={32} round/>
+                                </WhatsappShareButton>
+                                <EmailShareButton
+                                    className="ShareIcon"
+                                    url={`/prikbordposts/${id}`}
+                                    quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                    hashtag="#muo"
+                                >
+                                    <EmailIcon size={32} round/>
+                                </EmailShareButton>
+                                <TelegramShareButton
+                                    className="ShareIcon"
+                                    url={`/prikbordposts/${id}`}
+                                    quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                    hashtag="#muo"
+                                >
+                                    <TelegramIcon size={32} round/>
+                                </TelegramShareButton>
+                                <RedditShareButton
+                                    className="ShareIcon"
+                                    url={`/prikbordposts/${id}`}
+                                    quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                    hashtag="#muo"
+                                >
+                                    <RedditIcon size={32} round/>
+                                </RedditShareButton>
+                                <LinkedinShareButton
+                                    className="ShareIcon"
+                                    url={`/prikbordposts/${id}`}
+                                    quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                    hashtag="#muo"
+                                >
+                                    <LinkedinIcon size={32} round/>
+                                </LinkedinShareButton>
+                            </div>
+
                             <Link to="/" className="back-link">
                                 <br/>
                                 <button className="simpleButtons" onClick={handleTerugClick}> Terug naar de vorige
@@ -56,7 +108,6 @@ function BulletinBoardPostDetail() {
                         </div>
                     </div>
                 </section>
-
 
 
         </>

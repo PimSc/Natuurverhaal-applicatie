@@ -1,11 +1,16 @@
 import './BulletinBoardOverview.css';
 import { Link } from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+import React from "react";
 
 function BulletinBoardOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
+    if (reversedPosts.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
         <>

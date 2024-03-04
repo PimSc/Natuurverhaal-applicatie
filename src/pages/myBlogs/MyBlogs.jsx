@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyBlogs() {
     const { blogPostsUser } = useBlog();
@@ -33,6 +34,9 @@ function MyBlogs() {
             });
     };
 
+    if (filteredPosts.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
     return (
