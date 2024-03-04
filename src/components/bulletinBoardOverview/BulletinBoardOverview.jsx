@@ -1,20 +1,21 @@
-import './PrikbordOverview.css';
+import './BulletinBoardOverview.css';
 import { Link } from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React from "react";
 
-
-function PrikbordOverview() {
+function BulletinBoardOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
-
+    if (reversedPosts.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
         <>
             <section className="blogOverviewSection outer-content-container">
                 <div className="inner-content-container-column">
-
                     <ul className="post-list">
                         {reversedPosts.map((post) => (
                             <li key={post.id} className="post-item">
@@ -37,4 +38,4 @@ function PrikbordOverview() {
 );
 }
 
-export default PrikbordOverview;
+export default BulletinBoardOverview;

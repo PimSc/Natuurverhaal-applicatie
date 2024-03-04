@@ -1,6 +1,6 @@
 import './WriteBulletin.css';
 import {Link} from "react-router-dom";
-import React, {useContext, useState} from "react";
+import {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -43,10 +43,6 @@ function WriteBulletin() {
         setFormData({ ...formData, [name]: value });
     };
 
-
-
-
-
     async function uploadGegevens(event) {
         event.preventDefault();
 
@@ -54,9 +50,7 @@ function WriteBulletin() {
         console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
-        formDataToSend.append("file", formData.file); // Voeg het bestand toe aan de FormData
-
-        // Voeg de overige velden toe aan de FormData
+        formDataToSend.append("file", formData.file);
         formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
         formDataToSend.append("username", formData.username);
@@ -70,7 +64,7 @@ function WriteBulletin() {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`
                 }
-            }); // Verstuur POST-verzoek met Axios
+            });
 
             if (response.status === 201) {
                 console.log("Blog post successful!");
@@ -85,7 +79,7 @@ function WriteBulletin() {
             console.error("Error posting blog:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
-        console.log("urlToSend:", url); // Log de URL om te verzenden
+        console.log("urlToSend:", url);
 
     }
 
@@ -93,9 +87,7 @@ function WriteBulletin() {
 
     return (
         <>
-
             <div className="inner-content-container-textFields">
-
 
                 <form action="" method="post">
                     <div className="elementCenterContainer">
@@ -108,9 +100,6 @@ function WriteBulletin() {
                         <h1>Prikbord bericht aanmaken</h1>
                         <p>Om een prikbord bericht te kunnen maken <strong>moet je ingelogd zijn.</strong></p>
                         <p>je kan het venster groter maken in de rechter onderhoek</p>
-
-
-                        <p>ID automatisch genereren</p>
 
                         <br/>
                         {/* Title */}
@@ -166,9 +155,6 @@ function WriteBulletin() {
                                   onChange={handleChangeContent}
                                   required
                         />
-
-
-
                     </div>
 
                     <div className="elementCenterContainer">
@@ -182,8 +168,6 @@ function WriteBulletin() {
                 </form>
 
             </div>
-
-
         </>
     );
 }

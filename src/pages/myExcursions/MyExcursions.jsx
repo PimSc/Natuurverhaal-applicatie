@@ -4,6 +4,7 @@ import React, {useContext} from "react";
 import useBlog from "../../Hooks/useAllExcursions.jsx";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyExcursions() {
     const { ExcursionsAll } = useBlog();
@@ -14,21 +15,20 @@ function MyExcursions() {
         axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`)
             .then(response => {
                 console.log('Post deleted successfully');
-                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+                window.location.reload();
             })
             .catch(error => {
                 console.error('Error deleting post:', error);
             });
     };
 
-
+    if (ExcursionsAll.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
 return (
 <>
-
-
-
         <section className="outer-content-container">
             <div className="innerMyBlogContainer">
 
@@ -40,8 +40,6 @@ return (
                 <button id="WriteBlogButton" type="button">
                     <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                 </button>
-
-
 
                 <h4 className="totalBlogsCounter">Je hebt al {ExcursionsAll.length} natuurblogs</h4>
                 <br/>
@@ -92,8 +90,6 @@ return (
                 </ul>
             </div>
         </section>
-
-
 </>
 );
 }

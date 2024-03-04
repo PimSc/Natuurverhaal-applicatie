@@ -9,10 +9,17 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    margin-bottom: -50px;
+    position: relative;
+    margin: 0;
+min-height: 110%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
 }
 
 :root {
@@ -186,13 +193,12 @@ input {
     border: 2px solid var(--mainFontColor);
     padding: 5px;
     border-radius: 10px;
-    border-radius: 10px;
     font-size: var(--pFontSize);
     font-family: var(--mainFont);
     color: var(--mainFontColor);
 }
 
-.liDiskDot{
+.liDiskDot {
     list-style: disc;
 }
 
@@ -225,7 +231,13 @@ button, select, textarea {
 /*basic information end*/
 
 
-/*Button test*/
+.margin20PxTopBottom{
+    margin: 20px 0;
+}
+
+.margin20PxBottom{
+    margin: 0 0 20px 0;
+}
 
 .simpleButtonTopMargin {
     margin: 25px 0;
@@ -273,7 +285,6 @@ button, select, textarea {
     border-color: var(--onHoverColor);
     transition: all 0.3s ease 0s;
     border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
     cursor: pointer;
 }
 
@@ -311,7 +322,6 @@ button, select, textarea {
     border-color: red;
     transition: all 0.3s ease 0s;
     border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
     cursor: pointer;
 }
 
@@ -336,7 +346,6 @@ button, select, textarea {
     border-color: goldenrod;
     transition: all 0.3s ease 0s;
     border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
     cursor: pointer;
 }
 
@@ -361,12 +370,10 @@ button, select, textarea {
     border-color: green;
     transition: all 0.3s ease 0s;
     border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
     cursor: pointer;
 }
 
 
-/*Button test*/
 
 
 /*----------- STANDARD INNER- EN OUTER CONTAINERS ------------------- */
@@ -465,20 +472,6 @@ button, select, textarea {
     /*border: 3px dashed green;*/
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Container to make icons small*/
 .iconSmall {
     width: 15px;
@@ -486,14 +479,12 @@ button, select, textarea {
     /*border: 2px solid pink;*/
 }
 
-
 /*Container with styling for (blog) posts*/
 .post-item {
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     background-color: var(--mainBackgroundColor);
-    /*padding: 8px;*/
     flex-basis: 50px;
     width: 80vw;
     flex-grow: 1;
@@ -521,7 +512,6 @@ button, select, textarea {
     border-right: 6px solid black;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
     height: 100vw;
     padding-right: 20px;
@@ -532,7 +522,6 @@ button, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     /*border: 2px dashed blue;*/
 }
 
@@ -556,19 +545,12 @@ button, select, textarea {
     display: flex;
     flex-direction: row;
     text-align: left;
-    /*border: 2px solid #8b4208;*/
 }
-
-/*Maakt elke ProfileEdit foto rond :D*/
-.profilePictureCircle {
-    border-radius: 50px;
-}
-
 
 .loadingGif {
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 50px;
     overflow: hidden;
     justify-content: center;
     position: fixed;
@@ -579,49 +561,52 @@ button, select, textarea {
     border-radius: 10px;
 }
 
-
 .ButtonMargin40px {
     margin-bottom: 20px;
 }
 
 
-/*Begin media query telefoon*/
+/*---ShareIcons Start---*/
+.ShareIcon{
+    box-shadow: none;
+    margin: 5px 0 0 5px;
+}
+
+.shareIconsBox{
+    margin: 30px 0 0 0;
+}
+/*---ShareIcons End---*/
+
+
 @media only screen and (max-width: 767px) {
 
 
     p {
         font-size: calc(var(--pFontSize) - 20%);
-        /*font-size: var(--pFontSize);*/
     }
 
     h1 {
         font-size: calc(var(--h1FontSize) - 20%);
-        /*font-size: var(--h1FontSize);*/
     }
 
     h2 {
         font-size: calc(var(--h2FontSize) - 20%);
-        /*font-size: var(--h2FontSize);*/
     }
 
     h3 {
         font-size: calc(var(--h3FontSize) - 20%);
-        /*font-size: var(--h3FontSize);*/
     }
 
     h4 {
         font-size: calc(var(--h4FontSize) - 20%);
-        /*font-size: var(--h4FontSize);*/
     }
 
     h5 {
         font-size: calc(var(--h5FontSize) - 20%);
-        /*font-size: var(--h3FontSize);*/
     }
 
     h6 {
         font-size: calc(var(--h6FontSize) - 20%);
-        /*font-size: var(--h4FontSize);*/
     }
 
     /*imput field layout*/
@@ -659,89 +644,62 @@ button, select, textarea {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 2px dashed blue;*/
     }
 
     .outer-content-container-column {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 5px dashed purple;*/
     }
 
     .inner-content-container {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 5px dashed red;*/
     }
 
     .inner-content-container-column {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 5px dashed green;*/
     }
 
     .inner-content-container-textFields {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 2px dashed blue;*/
     }
 
     .Extra-inner-content-container {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 2px dashed turquoise;*/
     }
 
-    /*Smalle inner container for text etc.*/
     .textStart {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 1px dashed lightgreen;*/
     }
 
-    /*Smalle inner container for text etc.*/
     .textCenter {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 1px dashed darkslateblue;*/
     }
 
-    /*Container for header background images*/
     .headerContainer {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 1px dashed cornflowerblue;*/
     }
 
-    /*Smalle inner container for button.*/
     .buttonCenter {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        /*border: 1px dashed seagreen;*/
     }
-
-
-
-
-
-
-
-
-
-
 }
-
-/*Einde media query telefoon*/
-
 
 
 

@@ -7,44 +7,39 @@ import animalIcon from "./../../../public/assets/icons/animal-icon.png";
 import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+import React from "react";
 
 
 function ExcursionOverview() {
     const {ExcursionsAll} = useAllExcursions();
+
+    if (ExcursionsAll.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
         <>
             <article className="outer-content-container">
                 <div className="inner-content-container-column">
 
-
                     {ExcursionsAll.map((post) => (
                         <Link to={`/excursiePosts/${post.id}`} key={post.id}>
 
                             <div className="excursionPostContainer">
 
-
-                                {/*Excursie image*/}
                                 <div className="excursionImageBox">
                                     <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                                          alt={post.caption}/>
                                 </div>
 
-
                                 <div className="excursionOverviewTextContainer1">
-
-
                                     <div className="excursionOverviewPostTitleContainer">
-                                        {/*Excursie tekst*/}
                                         <div className="textStart">
                                             <h1>{post.title}</h1>
                                             <h4>{post.subtitle}</h4>
                                         </div>
                                     </div>
-
-                                    {/*<div className="excursionOverviewHrContainer">*/}
-                                    {/*    <hr/>*/}
-                                    {/*</div>*/}
 
                                     <div className="excursionOverviewListOuterContainer">
                                         <div className="excursionOverviewListInnerContainer">
@@ -77,22 +72,12 @@ function ExcursionOverview() {
                                                     to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link>
                                                 </p>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
-
-                                    {/*<div className="excursionOverviewHrContainer">*/}
-                                    {/*    <hr/>*/}
-                                    {/*</div>*/}
-
                                 </div>
-
-
                             </div>
                         </Link>
-
-
                     ))}
 
                 </div>

@@ -4,7 +4,7 @@ import useBlog from "../../Hooks/useAllBlogs.jsx";
 import { useNavigate } from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.jsx';
 import React, { useRef } from "react";
-import LoadingGif from "./../../../public/assets/icons/LoadingGif.gif";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import {
     EmailShareButton, EmailIcon,
     FacebookShareButton, FacebookIcon,

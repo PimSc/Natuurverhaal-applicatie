@@ -1,18 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './MijnBlogs.css';
+import './MyBlogs.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 import { Link } from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
-function MijnBlogs() {
+function MyBlogs() {
     const { blogPostsUser } = useBlog();
     const { user } = useContext(AuthContext);
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
-
-
 
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
@@ -35,6 +34,9 @@ function MijnBlogs() {
             });
     };
 
+    if (filteredPosts.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
     return (
@@ -50,8 +52,6 @@ function MijnBlogs() {
                     <button id="WriteBlogButton" type="button">
                     <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
-
-
 
                     <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
                     <br/>
@@ -105,4 +105,4 @@ function MijnBlogs() {
     );
 }
 
-export default MijnBlogs;
+export default MyBlogs;

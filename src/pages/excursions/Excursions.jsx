@@ -1,4 +1,4 @@
-import './Excursies.css'
+import './Excursions.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
 import AdderPhoto from "./../../../public/assets/websiteImages/AdderPhoto.jpg"
 import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx";
@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 
 
-function Excursies() {
+function Excursions() {
 
 
 
@@ -18,19 +18,13 @@ function Excursies() {
             {/*ExcursionBanner = top image banner (group of people)*/}
             <ExcursionBanner/>
 
-            {/*standard outer container (Row)*/}
+
             <div className="outer-content-container">
-
-                {/*standard inner container (Row)*/}
                 <div className="inner-content-container">
-
-                    {/*extra inner container(column) for A and B*/}
                     <div className="Extra-inner-content-container">
-
-                        {/*box A (Row)*/}
                         <div className="excursionContentBox1">
 
-                            {/*Box with introduction text (column)*/}
+
                             <div className="excursionIntroduction1">
 
 
@@ -77,4 +71,4 @@ function Excursies() {
     )
 }
 
-export default Excursies
+export default Excursions

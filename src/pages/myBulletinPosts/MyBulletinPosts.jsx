@@ -1,18 +1,15 @@
 import './MyBulletinPosts.css';
 import useBulletinBoard from "../../Hooks/useUserBulletinBoards.jsx";
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
     const reversedPosts = bulletinBoardPostUser.slice().reverse();
-
-
-
-
 
     const handleDelete = (postId) => {
         console.log(postId)
@@ -26,6 +23,9 @@ function MyBulletinPosts() {
             });
     };
 
+    if (reversedPosts.length === 0) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
     <>

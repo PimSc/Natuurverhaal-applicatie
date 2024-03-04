@@ -46,7 +46,7 @@ function AdminPanel() {
             }})
             .then(response => {
                 console.log('User deleted successfully');
-                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+                window.location.reload();
             })
             .catch(error => {
                 console.error('Error deleting user:', error);
@@ -87,36 +87,6 @@ function AdminPanel() {
                         </button>
                     </div>
                     </section>
-
-                    {/*/!*--SEND MASSAGE--*!/*/}
-                    {/*<form className="adminGreenField" action="">*/}
-
-                    {/*    <label htmlFor="sendMassage">*/}
-                    {/*        <b>Bericht versturen</b>*/}
-                    {/*    </label>*/}
-
-                    {/*    <input*/}
-                    {/*        className="textAreaOneLine"*/}
-                    {/*        name="sendMassage"*/}
-                    {/*        id="sendMassage"*/}
-                    {/*        placeholder="gebruikersnaam ontvanger"*/}
-                    {/*        autoComplete="on"*/}
-                    {/*    />*/}
-                    {/*    <textarea*/}
-                    {/*        className="textAreaOneLine"*/}
-                    {/*        name="sendMassage"*/}
-                    {/*        id="sendMassage"*/}
-                    {/*        placeholder="Schrijf een email"*/}
-                    {/*        autoComplete="on"*/}
-                    {/*    />*/}
-                    {/*    <div className="adminWriteMassageContainer">*/}
-                    {/*        <button*/}
-                    {/*            className="simpleButtonsTotalGreen"*/}
-                    {/*            type="submit">*/}
-                    {/*            Send <strong>email</strong>*/}
-                    {/*        </button>*/}
-                    {/*    </div>*/}
-                    {/*</form>*/}
 
                     <section>
                         <h2 className="textCenter">Blog section</h2>

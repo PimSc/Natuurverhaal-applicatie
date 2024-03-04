@@ -47,7 +47,7 @@ function LoginScreen() {
                     <div>Ingelogd als {user.username}</div>
                 ) : (
                     // Als user niet bestaat, geef dit weer
-                    <div>U bent niet ingelogd</div>
+                    <div><p>U bent niet ingelogd</p></div>
                 )}
 
                 <hr/>
@@ -86,7 +86,7 @@ function LoginScreen() {
 
                         {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}
 
-                        <button className="simpleButtons" type="submit">Inloggen</button>
+                        <button className="simpleButtons simpleButtonButtonMargin" type="submit">Inloggen</button>
                     </div>
                 </div>
                 <hr/>

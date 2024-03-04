@@ -11,7 +11,7 @@ function useAllBulletinBoards() {
                 const response = await axios.get('http://localhost:8080/bulletin-boards');
                 setBulletinBoards(response.data);
             } catch (error) {
-                console.error('Error fetching prikbord:', error);
+                console.error('Error fetching bulletinBoard:', error);
             }
         };
 

@@ -1,11 +1,11 @@
-import './ExcursieEdit.css';
+import './ExcursionEdit.css';
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 
 
-function ExcursieEdit() {
+function ExcursionEdit() {
 
     const {ExcursionsAll} = useAllExcursions();
     const { id } = useParams();
@@ -55,7 +55,6 @@ function ExcursieEdit() {
     };
 
     const handleSubmit = (event) => {
-        // Handle form submission here
         event.preventDefault();
     };
 
@@ -201,4 +200,4 @@ return (
 )
 }
 
-export default ExcursieEdit;
+export default ExcursionEdit;

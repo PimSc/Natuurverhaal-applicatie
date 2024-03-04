@@ -1,12 +1,4 @@
-/*Styling start*/
 
-
-
-/*Styling end*/
-
-
-
-/*Layout start*/
 /*Natuurverhaal.nl Main Title*/
 .homeTitle, .homeTitle:hover, .homeTitle:visited {
     font-size: calc(4vw + 1rem);
@@ -15,16 +7,10 @@
     text-decoration: none;
     position: absolute;
     z-index: 2;
-    /*margin-left: 0.5em;*/
     align-self: end;
     letter-spacing: 0.2rem;
-    /*border: 2px solid yellow;*/
-
     margin: 0 0 30px 30px;
-
 }
-
-
 
 .headerBg {
     position: relative; /* Voeg position: relative toe aan het achtergrondelement */
@@ -37,28 +23,17 @@
     background-position: center center;
     background-size: cover;
 }
-/*Layout end*/
-
 
 @media only screen and (max-width: 1200px) {
-    /*STYLING START*/
+
     /*Natuurverhaal.nl Main Title*/
     .homeTitle, .homeTitle:hover, .homeTitle:visited {
         font-size: calc(4vw + 1rem);
     }
-    /*STYLING END*/
-
-    /*LAYOUT START*/
-    /*LAYOUT END*/
 }
 
 
 @media only screen and (max-width: 767px) {
-    /*STYLING START*/
-    /*STYLING END*/
-
-
-    /*LAYOUT START*/
     /*Natuurverhaal.nl Main Title*/
     .homeTitle, .homeTitle:hover, .homeTitle:visited {
         font-size: calc(3vw + 1rem);
@@ -70,7 +45,6 @@
         width: 100%;
 
     }
-    /*LAYOUT END*/
 }
 
 

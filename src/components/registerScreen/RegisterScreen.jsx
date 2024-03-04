@@ -1,6 +1,6 @@
 import './RegisterScreen.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import axios from "axios";
 
 
@@ -22,40 +22,31 @@ function RegisterScreen() {
         toggleLoading(true);
 
         try {
+            const source = axios.CancelToken.source();
+
             const response = await axios.post('http://localhost:8080/users', {
                 username: username,
                 password: password,
                 email: email,
-                enabled : enabled
+                enabled: enabled
+            }, {
+                cancelToken: source.token
             });
 
-            // Let op: omdat we geen axios Canceltoken gebruiken zul je hier een memory-leak melding krijgen.
-            // Om te zien hoe je een canceltoken implementeerd kun je de bonus-branch bekijken!
-
-            // als alles goed gegaan is, linken we door naar de login-pagina
-
             console.log(response.data);
-            // navigate('/login');
-            // navigate('/')
+
             window.location.reload(false);
-        } catch(e) {
-            console.error(e);
-            toggleError(true);
+        } catch (e) {
+            if (axios.isCancel(e)) {
+                console.log('Request canceled:', e.message);
+            } else {
+                console.error(e);
+                toggleError(true);
+            }
+        } finally {
+            toggleLoading(false);
         }
-        toggleLoading(false);
     }
-
-    // async function fetchData() {
-    //     try {
-    //         const response = await axios.get('http://localhost:8080/users');
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
-
-
-
 
     return (
         <>
@@ -85,7 +76,7 @@ function RegisterScreen() {
                         </div>
 
                         <div className="inputFieldMargin">
-                            <div className="labelTextLeft">
+                            <div className="labelTextLeft" id="extraMarginUsername">
                                 <label
                                     htmlFor="username">
                                     <b>Gebruikersnaam</b>
@@ -99,8 +90,12 @@ function RegisterScreen() {
                                 value={username}
                                 onChange={(e) => setUserName(e.target.value)}
                                 autoComplete="on"
+                                minLength={3}
+                                maxLength={15}
                                 required
+
                             />
+                            <i className="iGrey">minimaal 3 en maximaal 15 tekens</i>
                         </div>
 
                         <div className="inputFieldMargin">
@@ -118,13 +113,17 @@ function RegisterScreen() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
+                                pattern=".*[!@#$%^&*].*"
+                                minLength={8}
                             />
+                            <i className="iGrey">Wachtwoord moet minimaal 8 tekens <br/>lang zijn en een speciaal teken
+                                <br/> bevatten ?=.*[!@#$%^&*]</i>
                         </div>
 
                         {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
 
                         <button
-                            className="simpleButtons"
+                            className="simpleButtons simpleButtonButtonMargin"
                             disabled={loading}
                             type="submit">Registreren
                         </button>
@@ -132,15 +131,13 @@ function RegisterScreen() {
                 </div>
             </form>
                 <hr/>
-            <button>Voordelen van registeren</button>
+            <p> <strong>Voordelen van registeren</strong></p>
             <div className="registerAdvantagesOuterBox">
             <div className="registerAdvantagesInnerBox textStart">
                 <ol>
                     <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Prikbord bericht psoten</li>
-                    <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Blogs posten</li>
+                    <li className="liDiskDot">Prikbord posten</li>
+                    <li className="liDiskDot">Openbaar profiel</li>
                 </ol>
             </div>
             </div>
