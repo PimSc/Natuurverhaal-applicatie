@@ -1,23 +1,8 @@
-/*STYLING START*/
 
-
-
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
 .totalBlogsCounter {
-    padding: 10px 0 ;
+    padding: 10px 0;
     text-align: center;
-    color: rgba(255, 255, 255, 0.5); /* 50% transparant white */
-    /*color: var(--white);*/
+    color: rgba(255, 255, 255, 0.5);
     font-family: var(--mainFont);
     background-color: var(--secondBackgroundColor)
 }
-
-
-
-
-/*LAYOUT END*/

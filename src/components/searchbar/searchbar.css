@@ -1,23 +1,17 @@
-/*STYLING START*/
 
-
-
-#searchbarBlogOvervieuw input{
+#searchbarBlogOverview input{
     border: 4px solid var(--mainFontColor);
     height: 55px;
     border-radius: 6px 22px;
 }
 
-
-#searchbarBlogOvervieuw input:hover {
+#searchbarBlogOverview input:hover {
     color: var(--onHoverColor);
     border-color: var(--onHoverColor);
     transition: all 0.3s ease 0s;
     border-radius: 22px 6px;
-    /*background: rgb(46, 204, 113);*/
     cursor: pointer;
 }
-
 
 .searchBar{
     width: 300px;
@@ -33,11 +27,7 @@
     transition: transform 0.3s ease;
 }
 
-/*STYLING END*/
-/*LAYOUT START*/
-
-#searchbarBlogOvervieuw {
-    /*margin-top: 30px;*/
+#searchbarBlogOverview {
     margin-top: 30px;
 }
 

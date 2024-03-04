@@ -1,23 +1,13 @@
-/*STYLING START*/
-
-/*STYLING END*/
-
-
 .excursionsActivityDetailText{
     list-style-type: disc;
 }
 
-
-
-/*LAYOUT START*/
 #topMarginDeelnemen{
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-
 /*----------Image part-----------*/
-
 .excursionDetailImageContainer{
     width: 500px;
     object-fit: cover;
@@ -28,46 +18,33 @@
 }
 /*---------------------*/
 
-
-
 .excursionDetailInnerContainer{
     width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 2px solid blue;*/
 }
 
 .excursionDetailInnerContainer hr{
     width: 100%;
 }
 
-/*LAYOUT END*/
+
+
+
+
 
 
 
 @media only screen and (max-width: 767px) {
-/*STYLING START*/
+
     .excursionDetailImageContainer{
         width: 300px;
     }
 
-.excursionDetailInnerContainer{
-    max-width: 300px;
-}
+    .excursionDetailInnerContainer{
+        max-width: 300px;
+    }
 
 
-
-
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
-
-
-
-
-/*LAYOUT END*/
 }

@@ -1,15 +1,7 @@
-/*STYLING START*/
-
 
 #extraMarginUsername{
     margin-top: 8px;
 }
-
-/*STYLING END*/
-
-
-
-/*LAYOUT START*/
 
 .registerAdvantagesOuterBox{
     display: flex;
@@ -29,19 +21,16 @@
     left: 0;
     width: 200px;
     height: auto;
-    background-color: white; /* Doorzichtige achtergrondkleur */
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Verberg het tekstvlak standaard */
-    transition: opacity 0.3s ease; /* Voeg een vloeiende overgang toe */
+    opacity: 0;
+    transition: opacity 0.3s ease;
     margin: 15px 0 0 5px;
     border: 1px solid var(--darkerGrey);
     border-radius: 10px;
     padding: 5px;
-    pointer-events: none; /* Voorkom dat het tekstvlak interactie ontvangt */
+    pointer-events: none;
 }
-
-/*LAYOUT END*/
-
 

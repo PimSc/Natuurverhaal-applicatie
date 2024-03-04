@@ -12,12 +12,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /*position: absolute;*/
-    /*border: 2px solid purple;*/
 }
 
 .footerBoxTop {
     flex-direction: column;
+    width: 0;
     align-items: center;
     text-align: center;
     visibility: hidden;
@@ -27,7 +26,6 @@
 }
 
 /*---Footer Effect Start---*/
-
 .footerOuterBox:hover .footerBoxTop {
     width: 100%;
     visibility: visible;
@@ -55,7 +53,6 @@
     justify-content: space-evenly;
     width: 500px;
     padding: 5px;
-    /*border: 2px solid blue;*/
 }
 
 .footerBox1 {
@@ -80,33 +77,24 @@
 
 
 @media only screen and (max-width: 767px) {
-
-
-
-
-
     .footerInnerBox {
         width: 90%;
         max-width: 500px;
-        /*border: 2px solid red;*/
-    }
 
+    }
 
     .footerBox1 {
         filter: none;
 
     }
 
-
     .footerBox2 h5 {
         color: grey;
     }
 
-
     .footerBox3 {
         filter: none;
     }
-
 
     .footerBoxTop {
         width: 100%;
@@ -130,5 +118,4 @@
 
 
     }
-
 }

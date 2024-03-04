@@ -31,6 +31,7 @@ import ScrollToTop from "./helpers/ScrollToTop.jsx";
 
 
 
+
 function App() {
 
     const {isAuth, user} = useContext(AuthContext);
