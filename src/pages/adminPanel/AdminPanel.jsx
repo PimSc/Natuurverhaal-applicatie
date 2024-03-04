@@ -37,8 +37,13 @@ function AdminPanel() {
     };
 
 
+// pim aangepast
+
     const handleDeleteUser = () => {
-        axios.delete(`http://localhost:8080/users/${username}`)
+        const token = localStorage.getItem("token")
+        axios.delete(`http://localhost:8080/users/${username}`,{headers: {
+                Authorization: `Bearer ${token}`
+            }})
             .then(response => {
                 console.log('User deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -57,70 +62,82 @@ function AdminPanel() {
             <section className="outer-content-container">
                 <div className="inner-content-container-column">
 
+
                     <h1>Admin panel</h1>
-                    <h3>Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
+                    <h3 className="ButtonMargin40px">Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
 
                     {/*admin maken toevoegen*/}
 
 
-                    <div className="elementCenterContainer">
+                    <section>
+                    <h2 className="textCenter">Excursie section</h2>
+
+                    <div className="elementCenterContainer adminGreenField">
                         <button
-                            className="simpleButtons"
+                            className="simpleButtons simpleButtonTopMargin"
+                            type="button"
+                        ><Link to="/mijnExcursies">Excursie panel</Link>
+                        </button>
+
+
+                        <button
+                            className="simpleButtons simpleButtonTopMargin simpleButtonButtonMargin"
                             type="button"
                         ><Link to="/writeExcursion">Excursie Aanmaken</Link>
                         </button>
                     </div>
+                    </section>
 
-                    {/*--SEND MASSAGE--*/}
-                    <form className="adminGreenField" action="">
+                    {/*/!*--SEND MASSAGE--*!/*/}
+                    {/*<form className="adminGreenField" action="">*/}
 
-                        <label htmlFor="sendMassage">
-                            <b>Bericht versturen</b>
-                        </label>
+                    {/*    <label htmlFor="sendMassage">*/}
+                    {/*        <b>Bericht versturen</b>*/}
+                    {/*    </label>*/}
 
-                        <input
-                            className="textAreaOneLine"
-                            name="sendMassage"
-                            id="sendMassage"
-                            placeholder="gebruikersnaam ontvanger"
-                            autoComplete="on"
-                        />
-                        <textarea
-                            className="textAreaOneLine"
-                            name="sendMassage"
-                            id="sendMassage"
-                            placeholder="Schrijf een email"
-                            autoComplete="on"
-                        />
-                        <div className="adminWriteMassageContainer">
-                            <button
-                                className="simpleButtonsTotalGreen"
-                                type="submit">
-                                Send <strong>email</strong>
+                    {/*    <input*/}
+                    {/*        className="textAreaOneLine"*/}
+                    {/*        name="sendMassage"*/}
+                    {/*        id="sendMassage"*/}
+                    {/*        placeholder="gebruikersnaam ontvanger"*/}
+                    {/*        autoComplete="on"*/}
+                    {/*    />*/}
+                    {/*    <textarea*/}
+                    {/*        className="textAreaOneLine"*/}
+                    {/*        name="sendMassage"*/}
+                    {/*        id="sendMassage"*/}
+                    {/*        placeholder="Schrijf een email"*/}
+                    {/*        autoComplete="on"*/}
+                    {/*    />*/}
+                    {/*    <div className="adminWriteMassageContainer">*/}
+                    {/*        <button*/}
+                    {/*            className="simpleButtonsTotalGreen"*/}
+                    {/*            type="submit">*/}
+                    {/*            Send <strong>email</strong>*/}
+                    {/*        </button>*/}
+                    {/*    </div>*/}
+                    {/*</form>*/}
+
+                    <section>
+                        <h2 className="textCenter">Blog section</h2>
+
+                        {/*--EDIT BLOG--*/}
+                        <form className="adminYellowField" action="">
+
+                            <label htmlFor="editBlog">
+                                <b>Blog bewerken</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="editBlog"
+                                id="editBlog"
+                                placeholder="Typ een blog ID nummer en druk op edit"
+                                autoComplete="on"
+                            />
+                            <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
+                                Edit <strong>blog</strong>
                             </button>
-                        </div>
-                    </form>
-
-                    <h1>Blog section</h1>
-
-                    {/*--EDIT BLOG--*/}
-                    <form className="adminYellowField" action="">
-
-                        <label htmlFor="editBlog">
-                            <b>Blog bewerken</b>
-                        </label>
-                        <input
-                            className="textAreaOneLine"
-                            name="editBlog"
-                            id="editBlog"
-                            placeholder="Typ een blog ID nummer en druk op edit"
-                            autoComplete="on"
-                        />
-                        <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
-                            Edit <strong>blog</strong>
-                        </button>
-                    </form>
-
+                        </form>
 
                     {/*--DELETE BLOG--*/}
                     <form className="adminRedfield" action="" onSubmit={(e) => {
@@ -144,76 +161,81 @@ function AdminPanel() {
                             Delete <strong>blog</strong>
                         </button>
                     </form>
-
-                    <h1>Prikbord section</h1>
-
-                    {/*--EDIT PRIKBORD--*/}
-                    <form className="adminYellowField" action="">
-
-                        <label htmlFor="editBlog">
-                            <b>Prikbord post bewerken</b>
-                        </label>
-                        <input
-                            className="textAreaOneLine"
-                            name="editBlog"
-                            id="editBlog"
-                            placeholder="Typ een blog ID nummer en druk op edit"
-                            autoComplete="on"
-                        />
-                        <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
-                            Edit <strong>blog</strong>
-                        </button>
-                    </form>
+                    </section>
 
 
-                    {/*--DELETE PRIKBORD--*/}
-                    <form className="adminRedfield" action="" onSubmit={(e) => {
-                        e.preventDefault();
-                        handleDeletePrikbordpost()
-                    }}>
+                    <section>
+                        <h2 className="textCenter">Prikbord section</h2>
 
-                        <label htmlFor="deleteBulletin">
-                            <b>Prikbord post verwijderen</b>
-                        </label>
-                        <input
-                            className="textAreaOneLine"
-                            name="deleteBulletin"
-                            id="deleteBulletin"
-                            placeholder="Typ een prikbord ID nummer en druk op delete"
-                            autoComplete="on"
-                            value={prikbordpostId}
-                            onChange={(e) => setPrikbordId(e.target.value)} // onChange event handler om postId bij te werken
-                        />
-                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                            Delete <strong>blog</strong>
-                        </button>
-                    </form>
+                        {/*--EDIT PRIKBORD--*/}
+                        <form className="adminYellowField" action="">
+
+                            <label htmlFor="editBlog">
+                                <b>Prikbord post bewerken</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="editBlog"
+                                id="editBlog"
+                                placeholder="Typ een blog ID nummer en druk op edit"
+                                autoComplete="on"
+                            />
+                            <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
+                                Edit <strong>blog</strong>
+                            </button>
+                        </form>
 
 
+                        {/*--DELETE PRIKBORD--*/}
+                        <form className="adminRedfield" action="" onSubmit={(e) => {
+                            e.preventDefault();
+                            handleDeletePrikbordpost()
+                        }}>
 
-                    <h1>User section</h1>
+                            <label htmlFor="deleteBulletin">
+                                <b>Prikbord post verwijderen</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="deleteBulletin"
+                                id="deleteBulletin"
+                                placeholder="Typ een prikbord ID nummer en druk op delete"
+                                autoComplete="on"
+                                value={prikbordpostId}
+                                onChange={(e) => setPrikbordId(e.target.value)} // onChange event handler om postId bij te werken
+                            />
+                            <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                Delete <strong>blog</strong>
+                            </button>
+                        </form>
+                    </section>
 
-                    {/*--HARD DELETE USER--*/}
-                    <form className="adminRedfield" onSubmit={(e) => {
-                        e.preventDefault();
-                        handleDeleteUser()
-                    }}>
-                        <label htmlFor="deleteUser">
-                            <b>User verwijderen</b>
-                        </label>
-                        <input
-                            className="textAreaOneLine"
-                            name="deleteUser"
-                            id="deleteUser"
-                            placeholder="Typ een username en druk op delete"
-                            autoComplete="on"
-                            value={username} // Waarde van de input gekoppeld aan username
-                            onChange={(e) => setUsername(e.target.value)} // onChange event handler om username bij te werken
-                        />
-                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                            Hard delete <strong>user</strong>
-                        </button>
-                    </form>
+
+                    <section>
+                        <h2 className="textCenter">User section</h2>
+
+                        {/*--HARD DELETE USER--*/}
+                        <form className="adminRedfield" onSubmit={(e) => {
+                            e.preventDefault();
+                            handleDeleteUser()
+                        }}>
+                            <label htmlFor="deleteUser">
+                                <b>User verwijderen</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="deleteUser"
+                                id="deleteUser"
+                                placeholder="Typ een username en druk op delete"
+                                autoComplete="on"
+                                value={username} // Waarde van de input gekoppeld aan username
+                                onChange={(e) => setUsername(e.target.value)} // onChange event handler om username bij te werken
+                            />
+                            <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                Hard delete <strong>user</strong>
+                            </button>
+                        </form>
+                    </section>
 
 
                 </div>

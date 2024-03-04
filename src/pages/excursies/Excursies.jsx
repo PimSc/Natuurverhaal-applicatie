@@ -3,13 +3,15 @@ import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.js
 import AdderPhoto from "./../../../public/assets/websiteImages/AdderPhoto.jpg"
 import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx";
 import {Link} from "react-router-dom";
-import {useContext} from "react";
-import {AuthContext} from "../../context/AuthContextProvider.jsx";
 
 
 
 function Excursies() {
-    const {user} = useContext(AuthContext);
+
+
+
+
+
 
     return (
         <>

@@ -1,6 +1,6 @@
 import './App.css'
 import {Helmet} from "react-helmet";
-import {Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route, Navigate, ScrollRestoration} from 'react-router-dom';
 import Home from './pages/home/Home.jsx';
 import OnsVerhaal from './pages/onsVerhaal/OnsVerhaal.jsx';
 import BlogEdit from './pages/blogPostEdit/BlogEdit.jsx';
@@ -26,81 +26,114 @@ import {useContext} from "react";
 import AdminPanel from "./pages/adminPanel/AdminPanel.jsx";
 import MyBulletinPosts from "./pages/myBulletinPosts/MyBulletinPosts.jsx";
 import BulletinBoardEdit from "./pages/bulletinBoardEdit/BulletinBoardEdit.jsx";
+import MyExcursions from "./pages/MyExcursions/MyExcursions.jsx";
+import Footer from "./components/footer/Footer.jsx";
+import ScrollToTop from "./helpers/ScrollToTop.jsx";
+
 
 function App() {
 
-    const { isAuth, user} = useContext(AuthContext);
-
-  return (
-    <>
+    const {isAuth, user} = useContext(AuthContext);
 
 
-
-        {/*components visible on every page*/}
-        <Header/>
-        <Navigation/>
-
-        <Routes> {/*Switch between these pages*/}
-            {/*Pages in the nav*/}
-            <Route path="/" element={<div><Helmet><title>Natuurverhaal | Home</title></Helmet><Home /></div>}/>
-            <Route path="/onsVerhaal" element={<div><Helmet><title>Natuurverhaal | Ons verhaal</title></Helmet><OnsVerhaal /></div>}/>
-            <Route path="/blogs" element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><BlogEdit /></div>}/>
-            <Route path="/excursies" element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies /></div>}/>
-            <Route path="/prikbord" element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord /></div>}/>
-            <Route path="/contact" element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact /></div>}/>
-            <Route path="/login" element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login /></div>}/>
-
-            {/*Pages outside the nav*/}
-            <Route path="/blogposts/:id" element={<div><Helmet><title>Natuurverhaal | Blogpost</title></Helmet><BlogPostDetail /></div>}/>
-            <Route path="/prikbordposts/:id" element={<div><Helmet><title>Natuurverhaal | Prikbordpost</title></Helmet><PrikbordPostDetail /></div>}/>
-            <Route path="/excursiePosts/:id" element={<div><Helmet><title>Natuurverhaal | Excursie</title></Helmet><ExcursiePostDetail /></div>}/>
-            <Route path="/ProfileDetail/:username" element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail/></div>}/>
+    return (
+        <>
 
 
-            <Route path="/termsAndPrivacy" element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy /></div>}/>
+            {/*components visible on every page*/}
+            <Header/>
+
+            <Navigation/>
+
+            <ScrollToTop/>
+            <Routes> {/*Switch between these pages*/}
+                {/*Pages in the nav*/}
+                <Route path="/" element={<div><Helmet><title>Natuurverhaal | Home</title></Helmet><Home/></div>}/>
+                <Route path="/onsVerhaal"
+                       element={<div><Helmet><title>Natuurverhaal | Ons verhaal</title></Helmet><OnsVerhaal/></div>}/>
+                <Route path="/blogs"
+                       element={<div><Helmet><title>Natuurverhaal | Blogs</title></Helmet><BlogEdit/></div>}/>
+                <Route path="/excursies"
+                       element={<div><Helmet><title>Natuurverhaal | Excursies</title></Helmet><Excursies/></div>}/>
+                <Route path="/prikbord"
+                       element={<div><Helmet><title>Natuurverhaal | Prikbord</title></Helmet><Prikbord/></div>}/>
+                <Route path="/contact"
+                       element={<div><Helmet><title>Natuurverhaal | Contact</title></Helmet><Contact/></div>}/>
+                <Route path="/login"
+                       element={<div><Helmet><title>Natuurverhaal | Login</title></Helmet><Login/></div>}/>
+
+                {/*Pages outside the nav*/}
+                <Route path="/blogposts/:id"
+                       element={<div><Helmet><title>Natuurverhaal | Blogpost</title></Helmet><BlogPostDetail/></div>}/>
+                <Route path="/prikbordposts/:id"
+                       element={<div><Helmet><title>Natuurverhaal | Prikbordpost</title></Helmet><PrikbordPostDetail/>
+                       </div>}/>
+                <Route path="/excursiePosts/:id"
+                       element={<div><Helmet><title>Natuurverhaal | Excursie</title></Helmet><ExcursiePostDetail/>
+                       </div>}/>
+                <Route path="/ProfileDetail/:username"
+                       element={<div><Helmet><title>Natuurverhaal | Profiel</title></Helmet><ProfileDetail/></div>}/>
 
 
-            {/*USER PAGINA`S*/}
-            {/*<Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />*/}
-            <Route path="/ProfileEdit" element={<div><Helmet><title>Natuurverhaal | Profiel bewerken</title></Helmet>{isAuth ? <ProfileEdit /> : <Navigate to="/login" />}</div>} />
-            <Route path="/mijnBlogs" element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs /> : <Navigate to="/login" />}</div>} />
-            <Route path="/mijnprikbord" element={<div><Helmet><title>Natuurverhaal | Mijn Prikbord</title></Helmet>{isAuth ? <MyBulletinPosts /> : <Navigate to="/login" />}</div>} />
-            <Route path="/writeBulletin" element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ? <WriteBulletin /> : <Navigate to="/login" />}</div>} />
-            <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog /> : <Navigate to="/login" />}</div>} />
-            <Route path="/blogedit/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <BlogEdit /> : <Navigate to="/login" />}</div>} />
-            <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <BulletinBoardEdit /> : <Navigate to="/login" />}</div>} />
+                <Route path="/termsAndPrivacy"
+                       element={<div><Helmet><title>Natuurverhaal | TermsAndPrivacy</title></Helmet><TermsAndPrivacy/>
+                       </div>}/>
 
 
-            {/*ADMIN PAGINA`S*/}
-            <Route path="/writeExcursion" element={isAuth ? <WriteExcursion /> : <Navigate to="/login" />} />
-            {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
-            <Route
-                path="/AdminPanel"
-                element={<div><Helmet><title>Natuurverhaal | Admin panel</title></Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel /> : <Navigate to="/login" />}</div>} />
+                {/*USER PAGINA`S*/}
+                {/*<Route path="/ProfileEdit" element={isAuth ? <ProfileEdit /> : <Navigate to="/login" />} />*/}
+                <Route path="/ProfileEdit"
+                       element={<div><Helmet><title>Natuurverhaal | Profiel bewerken</title></Helmet>{isAuth ?
+                           <ProfileEdit/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/mijnBlogs"
+                       element={<div><Helmet><title>Natuurverhaal | Mijn blogs</title></Helmet>{isAuth ? <MijnBlogs/> :
+                           <Navigate to="/login"/>}</div>}/>
+                <Route path="/mijnprikbord"
+                       element={<div><Helmet><title>Natuurverhaal | Mijn Prikbord</title></Helmet>{isAuth ?
+                           <MyBulletinPosts/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/writeBulletin"
+                       element={<div><Helmet><title>Natuurverhaal | Prikbord bericht schrijven</title></Helmet>{isAuth ?
+                           <WriteBulletin/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/writeBlog"
+                       element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ?
+                           <WriteBlog/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/blogedit/:id"
+                       element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ?
+                           <BlogEdit/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/editprikbord/:id"
+                       element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ?
+                           <BulletinBoardEdit/> : <Navigate to="/login"/>}</div>}/>
 
 
-            {/*/PublicProfile/${post.username}*/}
+                {/*ADMIN PAGINA`S*/}
+                <Route path="/writeExcursion" element={isAuth ? <WriteExcursion/> : <Navigate to="/login"/>}/>
+                {/*<Route path="/AdminPanel" element={isAuth ? <AdminPanel /> : <Navigate to="/login" />} />*/}
+                <Route path="/AdminPanel" element={<div><Helmet><title>Natuurverhaal | Admin panel</title>
+                </Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <AdminPanel/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/mijnExcursies" element={<div><Helmet><title>Natuurverhaal | Mijn excursies</title>
+                </Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <MyExcursions/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/excursieEdit/:id" element={<div><Helmet><title>Natuurverhaal | Excursie aanpassen</title>
+                </Helmet>{isAuth && user.role === 'ROLE_ADMIN' ? <BlogEdit/> : <Navigate to="/login"/>}</div>}/>
 
-            {/*Not found page*/}
-            <Route
-                path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound /></div>}
-            />
+                {/*/PublicProfile/${post.username}*/}
+
+                {/*Not found page*/}
+                <Route
+                    path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound/></div>}
+                />
+            </Routes>
+
+            <footer>
+                <Footer/>
+            </footer>
 
 
-        </Routes>
-
-{/*Route voorbeeld zonder helmet*/}
-{/*        <Route path="/blogPostEdit" element={<BlogEdit/>}/>*/}
+            {/*Route voorbeeld zonder helmet*/}
+            {/*        <Route path="/blogPostEdit" element={<BlogEdit/>}/>*/}
 
 
-
-
-        {/*Footer element*/}
-
-
-
-    </>
-  )
+        </>
+    )
 }
 
 export default App

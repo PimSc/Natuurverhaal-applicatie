@@ -21,26 +21,19 @@ function Navigation() {
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                         </li>
 
-
                         <li><NavLink to="/OnsVerhaal"
-                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
-                            verhaal</NavLink>
+                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink>
                         </li>
+
                         <li><NavLink to="/Excursies"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink>
                         </li>
 
-                        {/*{(window.location.pathname === "/" || window.location.pathname === "/mijnBlogs") && <Searchbar />}*/}
                         <Searchbar/>
 
                         <li><NavLink to="/Prikbord"
                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
                         </li>
-
-
-
-
-
 
 
                         <li>
@@ -65,14 +58,12 @@ function Navigation() {
                                                     <li>
                                                         <Link
                                                             to="/adminpanel"
-                                                            className={({isActive}) =>
-                                                                isActive === true ? 'active-link' : 'default-link'
-                                                            }
                                                         >
                                                             Admin
                                                         </Link>
                                                     </li>
                                                 )}
+
 
                                                 <li><Link onClick={(e) => {
                                                     e.preventDefault();
@@ -109,7 +100,8 @@ function Navigation() {
 
                             <li>
                                 <NavLink to="/OnsVerhaal"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink>
+                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
+                                    verhaal</NavLink>
                             </li>
 
                             <li>

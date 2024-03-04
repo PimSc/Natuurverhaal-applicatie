@@ -12,9 +12,7 @@ function MijnBlogs() {
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
-    const handleLinkClick = () => {
-        window.scrollTo(0, 220);
-    };
+
 
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
@@ -36,6 +34,8 @@ function MijnBlogs() {
                 console.error('Error deleting post:', error);
             });
     };
+
+
 
     return (
         <>
@@ -74,7 +74,7 @@ function MijnBlogs() {
                                         </div>
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
-                                                <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/blogposts/${post.id}`} className="post-link">Blog bekijken</Link></button>
+                                                <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/blogposts/${post.id}`} className="post-link" >Blog bekijken</Link></button>
                                             </div>
                                         </div>
                                         <div className="myPostButtons">
@@ -82,7 +82,6 @@ function MijnBlogs() {
                                                 <button className="simpleButtonsEdit buttonYellowEdit">  <Link
                                                     to={`/blogEdit/${post.id}`}
                                                     className="post-link"
-                                                    onClick={handleLinkClick}
                                                 >
                                                     Blog aanpassen
                                                 </Link></button>

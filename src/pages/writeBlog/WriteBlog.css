@@ -8,15 +8,14 @@
 /*STYLING END*/
 
 .categoryContainer {
-
     /*background-color: #f2f2f2;*/
-    padding: 10px;
-    width: 500px;
-    margin: 0 0 15px 0;
+    width: 100%;
+    margin: 0 0 50px 0;
+    height: 50px;
 }
 
 .categoryContainer select {
-    width: 500px;
+    width: 100%;
     border-radius: 10px;
     border: 2px solid var(--mainFontColor);
     height: 4lh;

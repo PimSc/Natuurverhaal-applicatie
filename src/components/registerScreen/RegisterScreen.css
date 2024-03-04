@@ -1,10 +1,25 @@
 /*STYLING START*/
 
+
+
+
 /*STYLING END*/
 
 
 
 /*LAYOUT START*/
+
+.registerAdvantagesOuterBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.registerAdvantagesInnerBox{
+    width: 100px;
+    border: 2px solid green;
+}
+
 
 /*LAYOUT END*/
 

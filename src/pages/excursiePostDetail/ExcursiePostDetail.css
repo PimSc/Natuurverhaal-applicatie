@@ -3,6 +3,11 @@
 /*STYLING END*/
 
 
+.excursionsActivityDetailText{
+    list-style-type: disc;
+}
+
+
 
 /*LAYOUT START*/
 #topMarginDeelnemen{
@@ -23,6 +28,20 @@
 }
 /*---------------------*/
 
+
+
+.excursionDetailInnerContainer{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 2px solid blue;*/
+}
+
+.excursionDetailInnerContainer hr{
+    width: 100%;
+}
+
 /*LAYOUT END*/
 
 
@@ -32,6 +51,13 @@
     .excursionDetailImageContainer{
         width: 300px;
     }
+
+.excursionDetailInnerContainer{
+    max-width: 300px;
+}
+
+
+
 
 
 /*STYLING END*/

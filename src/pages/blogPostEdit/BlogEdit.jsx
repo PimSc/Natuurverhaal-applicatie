@@ -88,7 +88,7 @@ function BlogEdit() {
                             <p>Afbeelding</p>
 
                             <label className="textStart" htmlFor="title">
-                                <b>Titel:</b>
+                                <p><b>Titel:</b></p>
                             </label>
                             <textarea
                                 className="textAreaOneLine"
@@ -102,7 +102,7 @@ function BlogEdit() {
                             />
 
                             <label className="textStart" htmlFor="subtitle">
-                                <b>Ondertitel:</b>
+                                <p><b>Ondertitel:</b></p>
                             </label>
                             <textarea
                                 className="textAreaOneLine"
@@ -116,7 +116,7 @@ function BlogEdit() {
                             />
 
                             <label className="textStart" htmlFor="fileUpload">
-                                <b>Afbeelding:</b>
+                                <p><b>Afbeelding:</b></p>
                             </label>
                             <input
                                 className="textAreaOneLine"
@@ -128,9 +128,9 @@ function BlogEdit() {
                             />
 
                             <label className="textStart" htmlFor="caption">
-                                <b>Caption:</b>
+                                <p><b>Caption:</b></p>
                             </label>
-                            <textarea
+                            <input
                                 className="textAreaOneLine"
                                 placeholder="Afbeelding omschrijving"
                                 name="caption"
@@ -141,8 +141,8 @@ function BlogEdit() {
                                 onChange={handleCaptionChange}
                             />
 
-                            <div className="elementCenterContainer categoryContainer">
-                                <p>Categorieën: </p>
+                            <div className="categoryContainer textStart">
+                                <p><b>Categorieën:</b></p>
                                 <select
                                     value={category}
                                     onChange={handleCategoryChange}
@@ -167,7 +167,7 @@ function BlogEdit() {
                             </div>
 
                             <label className="textStart" htmlFor="content">
-                                <b>Content:</b>
+                                <p><b>Content:</b></p>
                             </label>
                             <textarea
                                 className="textAreaStory"

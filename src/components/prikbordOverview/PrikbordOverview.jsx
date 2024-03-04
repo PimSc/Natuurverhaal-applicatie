@@ -9,6 +9,7 @@ function PrikbordOverview() {
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
 
+
     return (
         <>
             <section className="blogOverviewSection outer-content-container">
