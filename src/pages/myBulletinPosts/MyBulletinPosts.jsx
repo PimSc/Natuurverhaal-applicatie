@@ -1,6 +1,6 @@
 import './MyBulletinPosts.css';
 import useBulletinBoard from "../../Hooks/useUserBulletinBoards.jsx";
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";

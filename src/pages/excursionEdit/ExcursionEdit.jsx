@@ -55,7 +55,6 @@ function ExcursionEdit() {
     };
 
     const handleSubmit = (event) => {
-        // Handle form submission here
         event.preventDefault();
     };
 

@@ -1,12 +1,12 @@
 import './WriteBlog.css';
 import {Link} from "react-router-dom";
-import React, {useContext, useState} from "react";
-import axios from "axios"; // Importeer Axios
+import {useContext, useState} from "react";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 function WriteBlog() {
-    const { user } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -23,28 +23,28 @@ function WriteBlog() {
     const [uploadStatus, setUploadStatus] = useState(null);
 
     const handleChangeTitle = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeSubtitle = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        setFormData({ ...formData, file: file });
+        setFormData({...formData, file: file});
     };
 
     const handleChangeCaption = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeContent = (event) => {
-        const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value });
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     };
 
     const handleChangeCategories = (event) => {
@@ -56,15 +56,12 @@ function WriteBlog() {
 
     async function uploadGegevens(event) {
         event.preventDefault();
-
         const url = `http://localhost:8080/blog-posts/${user.username}`;
         console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("subtitle", formData.subtitle);
-        formDataToSend.append("file", formData.file); // Voeg het bestand toe aan de FormData
-
-        // Voeg de overige velden toe aan de FormData
+        formDataToSend.append("file", formData.file);
         formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
         formDataToSend.append("categories", formData.categories);
@@ -79,24 +76,20 @@ function WriteBlog() {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`
                 }
-            }); // Verstuur POST-verzoek met Axios
+            });
 
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                console.log('form', formDataToSend)
                 navigate("/");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
-                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
-        console.log("urlToSend:", url); // Log de URL om te verzenden
-
     }
 
     return (
@@ -140,7 +133,7 @@ function WriteBlog() {
 
                         {/* Title */}
                         <label htmlFor="title">
-                        <b>Titel:</b>
+                            <b>Titel:</b>
                         </label>
 
                         <textarea className="textAreaOneLine "
@@ -205,7 +198,6 @@ function WriteBlog() {
                                   onChange={handleChangeContent}
                                   required
                         />
-
 
                     </div>
                     <div className="elementCenterContainer">

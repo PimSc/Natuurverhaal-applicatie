@@ -50,7 +50,6 @@ function BlogEdit() {
     };
 
     const handleSubmit = (event) => {
-        // Handle form submission here
         event.preventDefault();
     };
 

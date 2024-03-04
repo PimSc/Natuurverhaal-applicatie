@@ -43,10 +43,6 @@ function BulletinBoardEdit() {
         setContent(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        // Handle form submission here
-        event.preventDefault();
-    };
 
 
     return (
@@ -56,7 +52,6 @@ function BulletinBoardEdit() {
         <div className="outer-content-container-Edit">
 
             <div className="inner-content-container-editBorder">
-                {/*<div className="inner-content-container-editPreview">*/}
                 {post && (
                     <>
                         <h1>{post.title}</h1>
@@ -76,7 +71,6 @@ function BulletinBoardEdit() {
                         />
                     </>
                 )}
-                {/*</div>*/}
             </div>
 
             <div className="inner-content-container-Edit">
@@ -156,9 +150,8 @@ function BulletinBoardEdit() {
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
-                        {/*{uploadStatus && <p>{uploadStatus}</p>}*/}
                         <button className="simpleButtons" type="submit"
-                            // onClick={uploadGegevens}
+
                         >
                             Prikbord aanpassingen verzenden
                         </button>

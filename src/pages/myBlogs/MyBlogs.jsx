@@ -12,8 +12,6 @@ function MyBlogs() {
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
-
-
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
             post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -50,8 +48,6 @@ function MyBlogs() {
                     <button id="WriteBlogButton" type="button">
                     <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
-
-
 
                     <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
                     <br/>

@@ -26,7 +26,7 @@ function ExcursionPostDetail() {
             <section className="outer-content-container">
                 <div className="inner-content-container-column">
                     <div className="excursionDetailInnerContainer">
-                        <>
+
 
                             <div className="excursionDetailImageContainer">
                                 <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
@@ -34,9 +34,9 @@ function ExcursionPostDetail() {
                             </div>
 
 
-                            <br/>
-                            <hr/>
-                            <br/>
+
+                            <hr className="margin20PxTopBottom"/>
+
 
                             <h1>{post.title}</h1>
                             <h4 className="textCenter">{post.subtitle}</h4>
@@ -68,23 +68,23 @@ function ExcursionPostDetail() {
                                     to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link></p></li>
                             </ol>
 
-                            <br/>
-                            <hr/>
+
+                            <hr className="margin20PxTopBottom"/>
 
 
-                            <br/>
+
                             <p className="textStart">{post.content}</p>
-                            <br/>
 
 
-                            <p>Maximaal aantal deelnemers: {post.max_participants}</p>
+
+                            <p className="margin20PxButton">Maximaal aantal deelnemers: {post.max_participants}</p>
 
                             <form action="">
                                 <div className="textCenter" id="topMarginDeelnemen">
                                     <h2>Deelnemen</h2>
                                 </div>
 
-                                <div className="textCenter">
+                                <div className="textCenter margin20PxBottom">
                                     <label className="textStart" htmlFor="title">
                                         <b>Naam:</b>
                                     </label>
@@ -107,16 +107,12 @@ function ExcursionPostDetail() {
                                            required
                                     />
                                 </div>
-                                {/*<div className="buttonCenter">*/}
-                                {/*   <button className="simpleButtons"> Inschrijven voor excursie <strong>{post.title}</strong></button>*/}
-                                {/*</div>*/}
                             </form>
-
 
                             <Link to="/Excursies" className="back-link">
                                 <button className="simpleButtons"> Terug naar de excursie pagina</button>
                             </Link>
-                        </>
+
                     </div>
                 </div>
             </section>

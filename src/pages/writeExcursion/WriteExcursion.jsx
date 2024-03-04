@@ -1,6 +1,6 @@
 import './WriteExcursion.css';
 import {Link, useNavigate} from "react-router-dom";
-import React, {useContext, useState} from "react";
+import {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
 
@@ -25,7 +25,6 @@ function WriteExcursion() {
         date: "",
         max_participants: "",
     });
-
     const [uploadStatus, setUploadStatus] = useState(null);
 
     const handleChangeActivity_date = (event) => {
@@ -40,7 +39,7 @@ function WriteExcursion() {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        setFormData({ ...formData, file: file });
+        setFormData({...formData, file: file});
     };
 
     const handleChangeCaption = (event) => {
@@ -67,7 +66,6 @@ function WriteExcursion() {
         const {name, value} = event.target;
         setFormData({...formData, [name]: value});
     };
-
 
     const handleChangePrice = (event) => {
         const {name, value} = event.target;
@@ -109,8 +107,6 @@ function WriteExcursion() {
         formDataToSend.append("subject", formData.subject);
 
 
-        console.log('form', formDataToSend)
-
         const url = `http://localhost:8080/excursies/${user.username}`;
 
         try {
@@ -124,25 +120,20 @@ function WriteExcursion() {
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                console.log('form', formDataToSend)
                 navigate("/Excursies");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
-                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
-        console.log("urlToSend:", url);
-
     }
 
 
     return (
         <>
-
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
 
@@ -235,7 +226,6 @@ function WriteExcursion() {
                                        id="fileUpload"
                                        onChange={handleFileChange}
                                 />
-
 
                                 {/*Guide*/}
                                 <label htmlFor="guide">
@@ -343,7 +333,7 @@ function WriteExcursion() {
                                 />
 
                             </div>
-
+                            {/*pim*/}
                             {uploadStatus && <p>{uploadStatus}</p>}
 
 

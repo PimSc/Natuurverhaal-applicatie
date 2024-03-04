@@ -34,14 +34,8 @@ function ProfileEdit() {
         setFormData({...formData, [name]: value});
     };
 
-    // const handleFileChange = (event) => {
-    //     const file = event.target.files[0];
-    //     setFormData({...formData, file: file});
-    // };
-
     const [previewUrl, setPreviewUrl] = useState(null);
 
-// Modify your handleFileChange function
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setFormData({...formData, file: file});
@@ -87,48 +81,38 @@ function ProfileEdit() {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`
                 }
-            }); // Verstuur POST-verzoek met Axios
+            });
 
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                console.log('form', formDataToSend)
                 navigate(`/ProfileDetail/${user.username}`);
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
-                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
             setUploadStatus("Er is een netwerkfout opgetreden.");
         }
-        console.log("urlToSend:", url); // Log de URL om te verzenden
-
     }
 
 
     return (
         <>
-
             <div className="outer-content-container">
-            <div className="profileFirstTextBox ">
-                <h1>Openbaar profiel</h1>
-                <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
-                <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
+                <div className="profileFirstTextBox ">
+                    <h1>Openbaar profiel</h1>
+                    <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
+                    <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
 
-                <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
-                    openbaar profiel</Link></button>
-            </div></div>
-
-
-
+                    <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
+                        openbaar profiel</Link></button>
+                </div>
+            </div>
 
             <div className="outer-content-container">
                 <form className="inner-content-container-column" action="">
-
-
-
 
 
                     {/*Middelste rij verticaal*/}
@@ -147,17 +131,10 @@ function ProfileEdit() {
                                    onChange={handleFileChange}
                             />
 
-                            {/*<span className="textRed">*/}
-                            {/*{warning && <p>{warning}</p>}*/}
-                            {/*</span>*/}
-
-
                             {previewUrl &&
                                 <img src={previewUrl} alt="Preview"
                                      style={{maxWidth: "500px", maxHeight: "500px"}}/>}
-
                         </div>
-
 
                         {/*laatste rij verticaal (uitleg bestandupload)*/}
                         <div className="ProfileEditBox3">
@@ -241,6 +218,7 @@ function ProfileEdit() {
 
                     <div className="ProfileRowContainer">
                         <div className="ProfileEditBox2">
+
                             {/*REGIO*/}
                             <label className="textStart" htmlFor="regio">
                                 <b>Regio:</b>
@@ -272,9 +250,9 @@ function ProfileEdit() {
 
 
                     <div className="ProfileRowContainer">
-                        {/*Middelste rij verticaal*/}
-                        <div className="ProfileEditBox2">
 
+
+                        <div className="ProfileEditBox2">
                             {/*BIOGRAFIE*/}
                             <label className="inputSize" htmlFor="bio">
                                 <b>Content:</b>
@@ -288,7 +266,6 @@ function ProfileEdit() {
                                       onChange={handleChangeBio}
                                       required
                             />
-
                         </div>
 
                         <div className="ProfileEditBox3">
@@ -305,16 +282,14 @@ function ProfileEdit() {
                         </div>
                     </div>
 
-
                     <div className="profileButtonCenter">
 
                         {uploadStatus && <p>{uploadStatus}</p>}
 
                         <button className="simpleButtons" type="submit"
                                 onClick={uploadGegevens}>
-                                Blog bericht plaatsen
+                            Blog bericht plaatsen
                         </button>
-
                     </div>
 
                 </form>

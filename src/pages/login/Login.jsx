@@ -4,19 +4,10 @@ import LoginScreen from '../../components/loginScreen/LoginScreen.jsx';
 import RegisterScreen from '../../components/registerScreen/RegisterScreen.jsx';
 
 function Login() {
-
-    // Code for switch between inloggen and registeren start
     const [activeButton, setActiveButton] = useState('login');
-
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
     };
-    // Code for switch between inloggen and registeren end
-
-
-
-
-
 
     return (
         <>
@@ -26,7 +17,7 @@ function Login() {
 
                 <div className="accountPageButtonBox2">
                     <button
-                        // handleButtonClick is for changing the login and register button
+                        // handleButtonClick for changing the login and register button
                         className={`loginButton ${activeButton === 'login' ? 'active' : ''}`}
                         type="button"
                         onClick={() => handleButtonClick('login')}

@@ -1,3 +1,4 @@
+
 /*-------------Register & login button styling-----------------*/
 .accountPageButtonBox2 {
     display: flex;
@@ -12,7 +13,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 
 .loginButton {
     color: var(--mainFontColor);
@@ -54,7 +54,6 @@
 }
 /*-------------Register & login button styling-----------------*/
 
-
 /*Whole login / register box*/
 .loginScreen {
     width: 400px;
@@ -83,7 +82,6 @@
     margin: 15px 0 15px 0;
 }
 
-
 /*input field labels*/
 .loginScreen label, input {
     text-align: center;
@@ -106,7 +104,6 @@
         width: 130px;
         font-size: 16px;
     }
-
 
     .registerButton {
         width: 130px;

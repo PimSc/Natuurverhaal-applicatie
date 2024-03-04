@@ -19,12 +19,12 @@
     border: 2px solid;
     border-color: var(--mainFontColor);
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease 0s;
 }
 
 .searchBar:focus {
     outline: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease 0s;
 }
 
 #searchbarBlogOverview {

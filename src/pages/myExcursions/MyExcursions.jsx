@@ -14,7 +14,7 @@ function MyExcursions() {
         axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`)
             .then(response => {
                 console.log('Post deleted successfully');
-                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+                window.location.reload();
             })
             .catch(error => {
                 console.error('Error deleting post:', error);
@@ -26,9 +26,6 @@ function MyExcursions() {
 
 return (
 <>
-
-
-
         <section className="outer-content-container">
             <div className="innerMyBlogContainer">
 
@@ -40,8 +37,6 @@ return (
                 <button id="WriteBlogButton" type="button">
                     <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                 </button>
-
-
 
                 <h4 className="totalBlogsCounter">Je hebt al {ExcursionsAll.length} natuurblogs</h4>
                 <br/>
@@ -92,8 +87,6 @@ return (
                 </ul>
             </div>
         </section>
-
-
 </>
 );
 }
