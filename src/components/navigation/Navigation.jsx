@@ -6,9 +6,7 @@ import {AuthContext} from "../../context/AuthContextProvider";
 import Searchbar from "../searchbar/Searchbar.jsx";
 
 function Navigation() {
-
     const {isAuth, user, logout} = useContext(AuthContext);
-
 
     return (
         <>
@@ -22,7 +20,8 @@ function Navigation() {
                         </li>
 
                         <li><NavLink to="/OnsVerhaal"
-                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons verhaal</NavLink>
+                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
+                            verhaal</NavLink>
                         </li>
 
                         <li><NavLink to="/Excursies"
@@ -176,8 +175,9 @@ function Navigation() {
                             )}
                         </nav>
                     </aside>
-
                 </div>
+                {/*End telephone navigation bar (phone screen)*/}
+
             </div>
         </>
     );

@@ -23,7 +23,6 @@ function Login() {
         <div className="outer-content-container">
             <div className="inner-content-container-column">
 
-                <p >voordelen van inloggen</p>
 
                 <div className="accountPageButtonBox2">
                     <button

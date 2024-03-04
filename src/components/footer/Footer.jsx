@@ -9,8 +9,6 @@ return (
 <>
 
     <div className="footerOuterBox">
-
-
         <div className="footerBoxTop">
             <hr/>
         </div>

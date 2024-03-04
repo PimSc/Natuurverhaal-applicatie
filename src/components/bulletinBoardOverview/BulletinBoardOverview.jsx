@@ -1,20 +1,16 @@
 import './BulletinBoardOverview.css';
 import { Link } from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
-import React from "react";
-
 
 function BulletinBoardOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
 
-
     return (
         <>
             <section className="blogOverviewSection outer-content-container">
                 <div className="inner-content-container-column">
-
                     <ul className="post-list">
                         {reversedPosts.map((post) => (
                             <li key={post.id} className="post-item">

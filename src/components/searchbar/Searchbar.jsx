@@ -21,7 +21,7 @@ function Searchbar() {
         <>
 
             {showSearchBar && (
-                <div id="searchbarBlogOvervieuw">
+                <div id="searchbarBlogOverview">
                     <form>
                         <input className="searchBar"
                                type="text"

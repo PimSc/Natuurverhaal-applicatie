@@ -1,6 +1,6 @@
 import './RegisterScreen.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import axios from "axios";
 
 
@@ -29,14 +29,7 @@ function RegisterScreen() {
                 enabled : enabled
             });
 
-            // Let op: omdat we geen axios Canceltoken gebruiken zul je hier een memory-leak melding krijgen.
-            // Om te zien hoe je een canceltoken implementeerd kun je de bonus-branch bekijken!
-
-            // als alles goed gegaan is, linken we door naar de login-pagina
-
             console.log(response.data);
-            // navigate('/login');
-            // navigate('/')
             window.location.reload(false);
         } catch(e) {
             console.error(e);
@@ -44,18 +37,6 @@ function RegisterScreen() {
         }
         toggleLoading(false);
     }
-
-    // async function fetchData() {
-    //     try {
-    //         const response = await axios.get('http://localhost:8080/users');
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
-
-
-
 
     return (
         <>

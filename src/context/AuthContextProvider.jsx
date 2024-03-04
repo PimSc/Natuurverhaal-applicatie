@@ -46,8 +46,6 @@ function AuthContextProvider({ children }) {
         console.log('Gebruiker is ingelogd!');
         fetchUserData(decoded.sub, JWT);
         fetchUserData(decoded.sub, JWT, '/');
-        // link de gebruiker door naar de profielpagina
-        // history.push('/profile');
     }
 
     function logout() {
@@ -65,7 +63,7 @@ function AuthContextProvider({ children }) {
     // Omdat we deze functie in login- en het mounting-effect gebruiken, staat hij hier gedeclareerd!
     async function fetchUserData(id, token, redirectUrl) {
         try {
-            // haal gebruikersdata op met de token en id van de gebruiker
+            // haalt gebruikersdata op met de token en id van de gebruiker
             const token = localStorage.getItem("token")
             const result = await axios.get(`http://localhost:8080/users/${id}`, {
                 headers: {
@@ -95,7 +93,7 @@ function AuthContextProvider({ children }) {
 
         } catch (e) {
             console.error(e);
-            // ging er iets mis? Plaatsen we geen data in de state
+            // ging er iets mis? dan Plaatsen we geen data in de state
             toggleIsAuth({
                 isAuth: false,
                 user: null,
@@ -114,7 +112,7 @@ function AuthContextProvider({ children }) {
     return (
         <AuthContext.Provider value={contextData}>
             {isAuth.status === 'done' ? children : <div className="loadingGif"> <img src={LoadingGif} alt="loading Gif"/></div>}
-            {/*{isAuth.status === 'done' ? children : <p>Loading...</p>}*/}
+            {isAuth.status === 'done' ? children : <p>Loading...</p>}
         </AuthContext.Provider>
     );
 }

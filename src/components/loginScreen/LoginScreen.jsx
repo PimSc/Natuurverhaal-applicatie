@@ -47,7 +47,7 @@ function LoginScreen() {
                     <div>Ingelogd als {user.username}</div>
                 ) : (
                     // Als user niet bestaat, geef dit weer
-                    <div>U bent niet ingelogd</div>
+                    <div><p>U bent niet ingelogd</p></div>
                 )}
 
                 <hr/>

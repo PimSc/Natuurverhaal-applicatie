@@ -1,8 +1,6 @@
 import './Header.css'
 import {Link} from "react-router-dom";
 
-// Header component is imported directly into App.jsx
-
 function Header() {
 
     return (
