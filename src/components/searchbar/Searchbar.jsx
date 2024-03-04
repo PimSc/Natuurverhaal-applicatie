@@ -13,7 +13,7 @@ function Searchbar() {
     const location = useLocation();
 
     // bepaalt op welke pagina`s het zoekbalk component zichtbaar is
-    const allowedPages = ['/', "/mijnBlogs"];
+    const allowedPages = ['/', "/myBlogs"];
     const showSearchBar = allowedPages.includes(location.pathname);
 
 
@@ -58,7 +58,7 @@ export default Searchbar;
 //     const location = useLocation();
 //
 //     // bepaalt op welke pagina`s het zoekbalk component zichtbaar is
-//     const allowedPages = ['/', "/mijnBlogs"];
+//     const allowedPages = ['/', "/myBlogs"];
 //     const showSearchBar = allowedPages.includes(location.pathname);
 //
 //

@@ -1,11 +1,11 @@
-import './ExcursieEdit.css';
+import './ExcursionEdit.css';
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 
 
-function ExcursieEdit() {
+function ExcursionEdit() {
 
     const {ExcursionsAll} = useAllExcursions();
     const { id } = useParams();
@@ -201,4 +201,4 @@ return (
 )
 }
 
-export default ExcursieEdit;
+export default ExcursionEdit;

@@ -1,4 +1,4 @@
-import './Excursies.css'
+import './Excursions.css'
 import ExcursionBanner from "../../components/excursionBanner/ExcursionBanner.jsx";
 import AdderPhoto from "./../../../public/assets/websiteImages/AdderPhoto.jpg"
 import ExcursionOverview from "../../components/excursionOverview/ExcursionOverview.jsx";
@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 
 
-function Excursies() {
+function Excursions() {
 
 
 
@@ -77,4 +77,4 @@ function Excursies() {
     )
 }
 
-export default Excursies
+export default Excursions

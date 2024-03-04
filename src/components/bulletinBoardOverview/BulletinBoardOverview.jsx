@@ -1,10 +1,10 @@
-import './PrikbordOverview.css';
+import './BulletinBoardOverview.css';
 import { Link } from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
 import React from "react";
 
 
-function PrikbordOverview() {
+function BulletinBoardOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
@@ -37,4 +37,4 @@ function PrikbordOverview() {
 );
 }
 
-export default PrikbordOverview;
+export default BulletinBoardOverview;

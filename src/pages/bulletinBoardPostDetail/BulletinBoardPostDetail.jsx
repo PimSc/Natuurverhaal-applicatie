@@ -1,10 +1,10 @@
-import './PrikbordPostDetail.css';
+import './BulletinBoardPostDetail.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React from "react";
 
-function PrikbordPostDetail() {
+function BulletinBoardPostDetail() {
     const navigate = useNavigate();
     const { id } = useParams(); // Haal het ID uit de URL-parameters
     const { bulletinBoardsAll } = useBlog();
@@ -63,4 +63,4 @@ function PrikbordPostDetail() {
     );
 }
 
-export default PrikbordPostDetail;
+export default BulletinBoardPostDetail;

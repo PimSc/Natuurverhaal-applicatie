@@ -1,4 +1,4 @@
-import './ExcursiePostDetail.css';
+import './ExcursionPostDetail.css';
 import {Link, useParams} from "react-router-dom";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import animalIcon from "../../../public/assets/icons/animal-icon.png";
@@ -9,7 +9,7 @@ import clockIcon from "../../../public/assets/icons/clock-icon.png";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
-function ExcursiePostDetail() {
+function ExcursionPostDetail() {
     const {id} = useParams();
     const {ExcursionsAll} = useAllExcursions();
     const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
@@ -113,7 +113,7 @@ function ExcursiePostDetail() {
                             </form>
 
 
-                            <Link to="/Excursies" className="back-link">
+                            <Link to="/Excursions" className="back-link">
                                 <button className="simpleButtons"> Terug naar de excursie pagina</button>
                             </Link>
                         </>
@@ -125,4 +125,4 @@ function ExcursiePostDetail() {
     );
 }
 
-export default ExcursiePostDetail;
+export default ExcursionPostDetail;

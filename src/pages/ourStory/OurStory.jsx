@@ -1,6 +1,6 @@
-import './OnsVerhaal.css'
+import './OurStory.css'
 
-function OnsVerhaal() {
+function OurStory() {
 
 
     return (
@@ -54,4 +54,4 @@ function OnsVerhaal() {
     )
 }
 
-export default OnsVerhaal
+export default OurStory

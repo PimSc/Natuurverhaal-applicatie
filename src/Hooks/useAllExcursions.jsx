@@ -11,7 +11,7 @@ function useAllExcursions() {
                 const response = await axios.get('http://localhost:8080/excursies');
                 setExcursions(response.data);
             } catch (error) {
-                console.error('Error fetching prikbord:', error);
+                console.error('Error fetching bulletinBoard:', error);
             }
         };
 

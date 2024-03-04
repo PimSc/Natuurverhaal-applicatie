@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './MijnBlogs.css';
+import './MyBlogs.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 import { Link } from "react-router-dom";
 import SearchContext from "../../context/SearchContext.jsx";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
 
-function MijnBlogs() {
+function MyBlogs() {
     const { blogPostsUser } = useBlog();
     const { user } = useContext(AuthContext);
     const { searchQuery, setSearchQuery } = useContext(SearchContext);
@@ -105,4 +105,4 @@ function MijnBlogs() {
     );
 }
 
-export default MijnBlogs;
+export default MyBlogs;
