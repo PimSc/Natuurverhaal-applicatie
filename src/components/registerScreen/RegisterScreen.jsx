@@ -85,7 +85,7 @@ function RegisterScreen() {
                         </div>
 
                         <div className="inputFieldMargin">
-                            <div className="labelTextLeft">
+                            <div className="labelTextLeft" id="extraMarginUsername">
                                 <label
                                     htmlFor="username">
                                     <b>Gebruikersnaam</b>
@@ -99,8 +99,12 @@ function RegisterScreen() {
                                 value={username}
                                 onChange={(e) => setUserName(e.target.value)}
                                 autoComplete="on"
+                                minLength={3}
+                                maxLength={15}
                                 required
+
                             />
+                            <i className="iGrey">minimaal 3 en maximaal 15 tekens</i>
                         </div>
 
                         <div className="inputFieldMargin">
@@ -118,13 +122,17 @@ function RegisterScreen() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
+                                pattern=".*[!@#$%^&*].*"
+                                minLength={8}
                             />
+                            <i className="iGrey">Wachtwoord moet minimaal 8 tekens <br/>lang zijn en een speciaal teken
+                                <br/> bevatten ?=.*[!@#$%^&*]</i>
                         </div>
 
                         {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
 
                         <button
-                            className="simpleButtons"
+                            className="simpleButtons simpleButtonButtonMargin"
                             disabled={loading}
                             type="submit">Registreren
                         </button>
@@ -132,15 +140,13 @@ function RegisterScreen() {
                 </div>
             </form>
                 <hr/>
-            <button>Voordelen van registeren</button>
+            <p> <strong>Voordelen van registeren</strong></p>
             <div className="registerAdvantagesOuterBox">
             <div className="registerAdvantagesInnerBox textStart">
                 <ol>
                     <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Prikbord bericht psoten</li>
-                    <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Blogs posten</li>
+                    <li className="liDiskDot">Prikbord posten</li>
+                    <li className="liDiskDot">Openbaar profiel</li>
                 </ol>
             </div>
             </div>

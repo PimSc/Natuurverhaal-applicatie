@@ -186,7 +186,6 @@ input {
     border: 2px solid var(--mainFontColor);
     padding: 5px;
     border-radius: 10px;
-    border-radius: 10px;
     font-size: var(--pFontSize);
     font-family: var(--mainFont);
     color: var(--mainFontColor);
@@ -485,6 +484,7 @@ button, select, textarea {
     height: 15px;
     /*border: 2px solid pink;*/
 }
+
 
 
 /*Container with styling for (blog) posts*/
