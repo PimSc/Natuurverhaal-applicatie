@@ -9,10 +9,17 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    margin-bottom: -50px;
+    position: relative;
+    margin: 0;
+min-height: 110%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
 }
 
 :root {
@@ -191,7 +198,7 @@ input {
     color: var(--mainFontColor);
 }
 
-.liDiskDot{
+.liDiskDot {
     list-style: disc;
 }
 
@@ -465,26 +472,12 @@ button, select, textarea {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Container to make icons small*/
 .iconSmall {
     width: 15px;
     height: 15px;
     /*border: 2px solid pink;*/
 }
-
 
 
 /*Container with styling for (blog) posts*/
@@ -728,14 +721,6 @@ button, select, textarea {
         margin-right: 0;
         /*border: 1px dashed seagreen;*/
     }
-
-
-
-
-
-
-
-
 
 
 }

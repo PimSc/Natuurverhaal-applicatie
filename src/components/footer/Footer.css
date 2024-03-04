@@ -7,8 +7,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    bottom: 0;
     background-color: var(--mainBackgroundColor);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*position: absolute;*/
     /*border: 2px solid purple;*/
 }
 
@@ -16,7 +20,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 0;
     visibility: hidden;
     transition: width 0.7s ease, visibility 0.8s ease 0.2s;
     padding-bottom: 10px;
@@ -76,48 +79,22 @@
 /*---Footer Effect End---*/
 
 
-
 @media only screen and (max-width: 767px) {
 
 
-    .footerOuterBox {
-        padding: 10px;
-        margin-top: 50px;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        bottom: 0;
-        background-color: var(--mainBackgroundColor);
-        /*border: 1px solid green;*/
-    }
 
-    .footerBoxTop {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        padding: 10px;
-        transition: width 0.3s ease;
-        /*border: 2px solid red;*/
-    }
 
 
     .footerInnerBox {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
         width: 90%;
         max-width: 500px;
-        padding: 10px;
         /*border: 2px solid red;*/
     }
 
 
     .footerBox1 {
-        filter: grayscale(100%);
-        transition: filter 0.3s ease, opacity 0.3s ease;
-        opacity: 0.5;
+        filter: none;
+
     }
 
 
@@ -126,16 +103,25 @@
     }
 
 
-
     .footerBox3 {
-        filter: grayscale(100%);
-        transition: filter 0.3s ease, opacity 0.3s ease;
-        opacity: 0.4;
+        filter: none;
     }
 
 
+    .footerBoxTop {
+        width: 100%;
+        visibility: visible;
+        transition: width 0.7s ease;
+    }
+
+    .footerBoxTop hr {
+        width: 100%;
+        visibility: visible;
+    }
+
     .footerOuterBox:hover .footerBoxTop {
         width: 100%;
+        visibility: visible;
     }
 
     .footerOuterBox:hover .footerBox1,

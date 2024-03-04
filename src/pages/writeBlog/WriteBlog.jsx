@@ -111,66 +111,15 @@ function WriteBlog() {
                         <h1>Blog aanmaken</h1>
                         <p>Alle velden dienen te worden ingevuld</p>
                         <p>Je kan het venster groter maken in de rechter onderhoek</p>
+
+
                         <br/>
-                        <p>Afbeelding</p>
-
-                        {/* Title */}
-                        <label className="textStart" htmlFor="title">
-                            <b>Titel:</b>
-                        </label>
-                        <textarea className="textAreaOneLine"
-                                  placeholder="Korte titel"
-                                  name="title"
-                                  id="title"
-                                  autoComplete="on"
-                                  required
-                                  value={formData.title}
-                                  onChange={handleChangeTitle}
-                        />
-
-                        {/* Subtitle */}
-                        <label className="textStart" htmlFor="subtitle">
-                            <b>Ondertitel:</b>
-                        </label>
-                        <textarea className="textAreaOneLine"
-                                  placeholder="Ondertitel"
-                                  name="subtitle"
-                                  id="subtitle"
-                                  autoComplete="on"
-                                  value={formData.subtitle}
-                                  onChange={handleChangeSubtitle}
-                                  required
-                        />
-
-                        <label className="textStart" htmlFor="fileUpload">
-                            <b>Afbeelding:</b>
-                        </label>
-                        <input className="textAreaOneLine"
-                               type="file"
-                               accept=".jpg, .jpeg, .png"
-                               name="file"
-                               id="fileUpload"
-                               onChange={handleFileChange}
-                        />
-
-                        {/* Caption */}
-                        <label className="textStart" htmlFor="caption">
-                            <b>Caption:</b>
-                        </label>
-                        <textarea className="textAreaOneLine"
-                                  placeholder="Omschijf de afbeelding"
-                                  name="caption"
-                                  id="caption"
-                                  autoComplete="on"
-                                  value={formData.caption}
-                                  onChange={handleChangeCaption}
-                                  required
-                        />
-
-                        <div className="elementCenterContainer categoryContainer">
-                            <p>Categorieën: </p>
+                        <div className="categoryContainer">
+                            <label htmlFor="title">
+                                <b>Categorieën:</b>
+                            </label>
                             <select onChange={handleChangeCategories}>
-                                <option value="please select a category">please select a category</option>
+                                <option value="please select a category">Selecteer een categorie</option>
                                 <option value="natuurgebied">natuurgebied</option>
                                 <option value="wandelroute">wandelroute</option>
                                 <option value="fietsroute">fietsroute</option>
@@ -189,9 +138,62 @@ function WriteBlog() {
                             </select>
                         </div>
 
+                        {/* Title */}
+                        <label htmlFor="title">
+                        <b>Titel:</b>
+                        </label>
+
+                        <textarea className="textAreaOneLine "
+                                  placeholder="Hoofd titel van je blog"
+                                  name="title"
+                                  id="title"
+                                  autoComplete="on"
+                                  required
+                                  value={formData.title}
+                                  onChange={handleChangeTitle}
+                        />
+
+                        {/* Subtitle */}
+                        <label htmlFor="subtitle">
+                            <b>Ondertitel:</b>
+                        </label>
+                        <textarea className="textAreaOneLine"
+                                  placeholder="Ondertitel"
+                                  name="subtitle"
+                                  id="subtitle"
+                                  autoComplete="on"
+                                  value={formData.subtitle}
+                                  onChange={handleChangeSubtitle}
+                                  required
+                        />
+
+                        <label htmlFor="fileUpload">
+                            <b>Afbeelding:</b>
+                        </label>
+                        <input className="textAreaOneLine"
+                               type="file"
+                               accept=".jpg, .jpeg, .png"
+                               name="file"
+                               id="fileUpload"
+                               onChange={handleFileChange}
+                        />
+
+                        {/* Caption */}
+                        <label htmlFor="caption">
+                            <b>Caption:</b>
+                        </label>
+                        <textarea className="textAreaOneLine"
+                                  placeholder="Omschijf de afbeelding"
+                                  name="caption"
+                                  id="caption"
+                                  autoComplete="on"
+                                  value={formData.caption}
+                                  onChange={handleChangeCaption}
+                                  required
+                        />
 
                         {/* Content */}
-                        <label className="textStart" htmlFor="content">
+                        <label htmlFor="content">
                             <b>Content:</b>
                         </label>
                         <textarea className="textAreaStory"
@@ -209,9 +211,16 @@ function WriteBlog() {
                     <div className="elementCenterContainer">
                         <br/>
                         {uploadStatus && <p>{uploadStatus}</p>}
-                        <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
-                            Blog bericht plaatsen
-                        </button>
+                        <div className="textCenter">
+                            <p>Na "Blogbericht plaatsen" verschijnt de blog op de homepage </p>
+                            <p>Blogs aanpassen kan bij Account > Mijn blogs</p>
+
+                            <br/>
+                            <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
+                                Blog bericht plaatsen
+                            </button>
+                        </div>
+
                     </div>
                 </form>
             </div>

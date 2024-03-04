@@ -30,6 +30,7 @@ import Footer from "./components/footer/Footer.jsx";
 import ScrollToTop from "./helpers/ScrollToTop.jsx";
 
 
+
 function App() {
 
     const {isAuth, user} = useContext(AuthContext);
@@ -117,6 +118,7 @@ function App() {
                     path="*" element={<div><Helmet><title>Natuurverhaal | Oops..</title></Helmet><NotFound/></div>}
                 />
             </Routes>
+
 
             <footer>
                 <Footer/>

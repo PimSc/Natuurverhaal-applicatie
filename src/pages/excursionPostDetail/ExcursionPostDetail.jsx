@@ -113,7 +113,7 @@ function ExcursionPostDetail() {
                             </form>
 
 
-                            <Link to="/Excursions" className="back-link">
+                            <Link to="/Excursies" className="back-link">
                                 <button className="simpleButtons"> Terug naar de excursie pagina</button>
                             </Link>
                         </>

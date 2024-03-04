@@ -23,7 +23,7 @@ return (
                 </Link>
             </div>
             <div className="footerBox2">
-                <h5>© Natuurverhaal</h5>
+                <h5>© Natuurverhaal </h5>
             </div>
             <div className="footerBox3">
                 <Link to="https://www.instagram.com/pim.schuitema/">
