@@ -14,6 +14,7 @@ import React from "react";
 function ExcursionOverview() {
     const {ExcursionsAll} = useAllExcursions();
 
+    // Loading gif
     if (ExcursionsAll.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }

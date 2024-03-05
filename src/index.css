@@ -480,18 +480,7 @@ button, select, textarea {
 }
 
 /*Container with styling for (blog) posts*/
-.post-item {
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    background-color: var(--mainBackgroundColor);
-    flex-basis: 50px;
-    width: 80vw;
-    flex-grow: 1;
-    flex-shrink: 1;
-    Border: 1px solid hsla(0, 0%, 50%, 0.01);
-    list-style: none;
-}
+
 
 .outer-content-container-Edit {
     margin: 40px 40px;

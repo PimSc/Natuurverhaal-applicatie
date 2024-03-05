@@ -34,6 +34,7 @@ function MyBlogs() {
             });
     };
 
+    // Loading gif
     if (filteredPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }

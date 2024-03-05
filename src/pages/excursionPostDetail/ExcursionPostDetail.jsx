@@ -25,6 +25,7 @@ function ExcursionPostDetail() {
 
     console.log("ExcursionsAll", ExcursionsAll)
 
+    // Loading gif
     if (!post) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }

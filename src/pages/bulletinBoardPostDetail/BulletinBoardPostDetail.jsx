@@ -22,7 +22,7 @@ function BulletinBoardPostDetail() {
         navigate(-1); // Navigeer terug naar de vorige pagina
     };
 
-
+    // Loading gif
     if (!post) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }

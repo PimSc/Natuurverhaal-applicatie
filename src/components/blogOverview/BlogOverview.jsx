@@ -8,8 +8,8 @@ import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 
 function BlogOverview() {
-    const { searchQuery } = useContext(SearchContext);
-    const { blogPostsAll } = useBlog();
+    const {searchQuery} = useContext(SearchContext);
+    const {blogPostsAll} = useBlog();
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -28,6 +28,8 @@ function BlogOverview() {
         calculateFilteredPosts();
     }, [searchQuery, blogPostsAll]);
 
+
+    // Loading gif
     if (filteredPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }
@@ -39,12 +41,14 @@ function BlogOverview() {
                     <ul className="post-list">
                         {filteredPosts.map((post) => (
                             <li key={post.id} className="post-item">
-                                <Link to={`/blogposts/${post.id}`} className="post-link">
-                                    <div className="post-image"
-                                         style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+                                <Link to={`/blogposts/${post.id}`}>
+                                    <div className="post-image">
+                                        <img src={"data:image/png;base64," + post.fileContent} alt={post.title}
+                                             loading="lazy" className="post-image"/>
                                         <div className="onTopOfImageBox">
-                                            <h2 className="post-title">{post.title}</h2>
-                                            <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                            <h2>{post.title}</h2>
+                                            <p>Geschreven
+                                                door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
                                             <i>{post.date}</i>
                                         </div>
                                     </div>

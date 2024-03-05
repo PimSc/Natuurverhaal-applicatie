@@ -8,6 +8,7 @@ function BulletinBoardOverview() {
     const { bulletinBoardsAll } = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
+    // Loading gif
     if (reversedPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }

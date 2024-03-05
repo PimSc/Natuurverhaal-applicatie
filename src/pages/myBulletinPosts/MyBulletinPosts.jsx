@@ -23,6 +23,7 @@ function MyBulletinPosts() {
             });
     };
 
+    // Loading gif
     if (reversedPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }
