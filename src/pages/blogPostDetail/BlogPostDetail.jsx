@@ -7,11 +7,9 @@ import React, { useRef } from "react";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import {
     EmailShareButton, EmailIcon,
-    FacebookShareButton, FacebookIcon,
     RedditShareButton, RedditIcon,
     TelegramIcon, TelegramShareButton,
-    WhatsappIcon, WhatsappShareButton, InstapaperShareButton, LinkedinShareButton, LinkedinIcon,
-
+    WhatsappIcon, WhatsappShareButton, LinkedinShareButton, LinkedinIcon,
 } from "react-share";
 import {InstagramLogo} from "@phosphor-icons/react";
 
@@ -62,7 +60,7 @@ function BlogPostDetail() {
                             <WhatsappShareButton
                                 className="ShareIcon"
                                 url={`/blogposts/${id}`}
-                                quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                quote={'Hey! have you seen this? i found this nature blog on Natuurverhaal.nl'}
                                 hashtag="#muo"
                             >
                                 <WhatsappIcon size={32} round/>
@@ -70,7 +68,7 @@ function BlogPostDetail() {
                             <EmailShareButton
                                 className="ShareIcon"
                                 url={`/blogposts/${id}`}
-                                quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                quote={'Hey! have you seen this? i found this nature blog on Natuurverhaal.nl'}
                                 hashtag="#muo"
                             >
                                 <EmailIcon size={32} round/>
@@ -78,7 +76,7 @@ function BlogPostDetail() {
                             <TelegramShareButton
                                 className="ShareIcon"
                                 url={`/blogposts/${id}`}
-                                quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                quote={'Hey! have you seen this? i found this nature blog on Natuurverhaal.nl'}
                                 hashtag="#muo"
                             >
                                 <TelegramIcon size={32} round/>
@@ -86,19 +84,11 @@ function BlogPostDetail() {
                             <RedditShareButton
                                 className="ShareIcon"
                                 url={`/blogposts/${id}`}
-                                quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
+                                quote={'Hey! have you seen this? i found this nature blog on Natuurverhaal.nl'}
                                 hashtag="#muo"
                             >
                                 <RedditIcon size={32} round/>
                             </RedditShareButton>
-                            <LinkedinShareButton
-                                className="ShareIcon"
-                                url={`/blogposts/${id}`}
-                                quote={'Hey! have you seen this? i fount this nature blog on Natuurverhaal.nl'}
-                                hashtag="#muo"
-                            >
-                                <LinkedinIcon size={32} round/>
-                            </LinkedinShareButton>
                         </div>
 
 

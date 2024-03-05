@@ -67,7 +67,6 @@ function ProfileDetail() {
                                     <p>
                                         <strong>Regio:</strong> {prof.regio.charAt(0).toUpperCase() + prof.regio.slice(1)}
                                     </p>
-                                    <br/>
                                     <p><strong>Bio:</strong> {prof.bio}</p>
                                 </div>
 
