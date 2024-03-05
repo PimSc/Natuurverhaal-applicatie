@@ -373,6 +373,61 @@ button, select, textarea {
     cursor: pointer;
 }
 
+/*---- POST CONTIANERS START----*/
+.post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    column-gap: 16px;
+}
+
+.post-item {
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: var(--mainBackgroundColor);
+    flex-basis: 50px;
+    width: 80vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border: 1px solid hsla(0, 0%, 50%, 0.01);
+    list-style: none;
+}
+
+.post-image {
+    position: relative; /* Voeg position: relative toe */
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    display: block;
+}
+
+.onTopOfImageBox {
+    position: absolute; /* Maak de positie absoluut */
+    bottom: 0; /* Plaats de balk aan de onderkant */
+    left: 0; /* Plaats de balk helemaal links */
+    width: 100%; /* Maak de balk de volledige breedte van de container */
+    padding-top: 5px;
+    background-color: hsl(0, 0%, 100%, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+/*---- POST CONTIANERS END----*/
+
+
+
+
+
+
+
 
 
 
@@ -569,7 +624,6 @@ button, select, textarea {
 
 @media only screen and (max-width: 767px) {
 
-
     p {
         font-size: calc(var(--pFontSize) - 20%);
     }
@@ -688,6 +742,15 @@ button, select, textarea {
         margin-left: 0;
         margin-right: 0;
     }
+
+    .onTopOfImageBox {
+        z-index: 2;
+        background-color: hsl(0, 0%, 100%, 0.4);
+        max-height: 200px;
+        min-height: 130px;
+        overflow: hidden;
+    }
+
 }
 
 

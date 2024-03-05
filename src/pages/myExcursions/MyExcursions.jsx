@@ -1,6 +1,6 @@
 import './MyExcursions.css';
 import {Link} from "react-router-dom";
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import useBlog from "../../Hooks/useAllExcursions.jsx";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
@@ -22,6 +22,26 @@ function MyExcursions() {
             });
     };
 
+    // ----- Lazy loading start -----
+    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                containerRef.current &&
+                window.innerHeight + window.scrollY >= containerRef.current.offsetTop + containerRef.current.clientHeight
+            ) {
+                // Wanneer de gebruiker de onderkant van de pagina bereikt, voeg 3 extra posts toe
+                setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    // ----- Lazy loading end -----
+
+
     // Loading gif
     if (ExcursionsAll.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
@@ -29,7 +49,7 @@ function MyExcursions() {
 
 
 return (
-<>
+    <>
         <section className="outer-content-container">
             <div className="innerMyBlogContainer">
 
@@ -47,42 +67,49 @@ return (
             </div>
         </section>
 
-        <section className="outer-content-container">
+        <section className="outer-content-container" ref={containerRef}>
             <div className="inner-content-container">
-                <ul className="myPostList">
-                    {ExcursionsAll.map((post) => (
-                        <li key={post.id} className="myBlogPostItem">
-                            <div className="post-image" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
-                                <div className="myBlogsOnTopButtonContainer">
-                                    <div className="myPostButtons">
-                                        <div className="myBlogButtonContainer">
-                                            <form onSubmit={(e) => { e.preventDefault(); handleDelete(post.id) }}>
-                                                <button type="submit" className="simpleButtonsRemove buttonRedRemove">Excursie verwijderen</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div className="myPostButtons">
-                                        <div className="myBlogButtonContainer">
-                                            <button className="simpleButtonsTotalGreen myBlogButton"><Link to={`/excursiePosts/${post.id}`} className="post-link">Excursie bekijken</Link></button>
-                                        </div>
-                                    </div>
-                                    <div className="myPostButtons">
-                                        <div className="myBlogButtonContainer">
-                                            <button className="simpleButtonsEdit buttonYellowEdit">  <Link
-                                                to={`/blogEdit/${post.id}`}
-                                                className="post-link"
-                                                // onClick={handleLinkClick}
-                                            >
-                                                Blog aanpassen
-                                            </Link></button>
-                                        </div>
-                                    </div>
-                                </div>
+                <ul className="post-list">
+                    {ExcursionsAll.slice(0, visiblePosts).map((post) => (
+                        <li key={post.id} className="post-item">
+                            <div className="post-image">
+                                <img src={"data:image/png;base64," + post.fileContent} alt={post.title} loading="lazy"
+                                     className="post-image"/>
                                 <div className="onTopOfImageBox">
-                                    <div>
-                                        <h2 className="post-title">{post.title}</h2>
-                                        <p>Geschreven door <strong>{post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong></p>
-                                        <i>{post.date}</i>
+                                    <h2>{post.title}</h2>
+                                    <p>Geschreven
+                                        door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                    <i>{post.date}</i>
+                                    <div className="myBlogsOnTopButtonContainer">
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <form onSubmit={(e) => {
+                                                    e.preventDefault();
+                                                    handleDelete(post.id)
+                                                }}>
+                                                    <button type="submit"
+                                                            className="simpleButtonsRemove buttonRedRemove">Excursie
+                                                        verwijderen
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <button className="simpleButtonsTotalGreen myBlogButton">
+                                                    <Link to={`/excursiePosts/${post.id}`} className="post-link">Excursie
+                                                        bekijken</Link>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="myPostButtons">
+                                            <div className="myBlogButtonContainer">
+                                                <button className="simpleButtonsEdit buttonYellowEdit">
+                                                    <Link to={`/blogEdit/${post.id}`} className="post-link">Blog
+                                                        aanpassen</Link>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +118,8 @@ return (
                 </ul>
             </div>
         </section>
-</>
+
+    </>
 );
 }
 
