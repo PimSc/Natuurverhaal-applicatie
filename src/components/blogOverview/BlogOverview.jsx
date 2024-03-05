@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContext from "../../context/SearchContext.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
-
-
 
 function BlogOverview() {
     const {searchQuery} = useContext(SearchContext);
@@ -28,6 +26,25 @@ function BlogOverview() {
         calculateFilteredPosts();
     }, [searchQuery, blogPostsAll]);
 
+    // ----- Lazy loading start -----
+    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                containerRef.current &&
+                window.innerHeight + window.scrollY >= containerRef.current.offsetTop + containerRef.current.clientHeight
+            ) {
+                // Wanneer de gebruiker de onderkant van de pagina bereikt, voeg 3 extra posts toe
+                setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    // ----- Lazy loading end -----
+
 
     // Loading gif
     if (filteredPosts.length === 0) {
@@ -36,10 +53,10 @@ function BlogOverview() {
 
     return (
         <>
-            <section className="outer-content-container">
+            <section className="outer-content-container" ref={containerRef}>
                 <div className="inner-content-container">
                     <ul className="post-list">
-                        {filteredPosts.map((post) => (
+                        {filteredPosts.slice(0, visiblePosts).map((post) => (
                             <li key={post.id} className="post-item">
                                 <Link to={`/blogposts/${post.id}`}>
                                     <div className="post-image">

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import './MyBlogs.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 import { Link } from "react-router-dom";
@@ -34,6 +34,29 @@ function MyBlogs() {
             });
     };
 
+
+    // ----- Lazy loading start -----
+    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                containerRef.current &&
+                window.innerHeight + window.scrollY >= containerRef.current.offsetTop + containerRef.current.clientHeight
+            ) {
+                // Wanneer de gebruiker de onderkant van de pagina bereikt, voeg 3 extra posts toe
+                setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    // ----- Lazy loading end -----
+
+
+
+
     // Loading gif
     if (filteredPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
@@ -59,10 +82,10 @@ function MyBlogs() {
                 </div>
             </section>
 
-            <section className="outer-content-container">
+            <section className="outer-content-container" ref={containerRef}>
                 <div className="inner-content-container">
                     <ul className="myPostList">
-                        {filteredPosts.map((post) => (
+                        {filteredPosts.slice(0, visiblePosts).map((post) => (
                             <li key={post.id} className="myBlogPostItem">
                                 <div className="post-image" style={{backgroundImage: `url(data:image/png;base64,${post.fileContent})`}}>
                                     <div className="myBlogsOnTopButtonContainer">
