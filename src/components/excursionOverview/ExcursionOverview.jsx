@@ -8,22 +8,43 @@ import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 
 function ExcursionOverview() {
     const {ExcursionsAll} = useAllExcursions();
 
+    // ----- Lazy loading start -----
+    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                containerRef.current &&
+                window.innerHeight + window.scrollY >= containerRef.current.offsetTop + containerRef.current.clientHeight
+            ) {
+                // Wanneer de gebruiker de onderkant van de pagina bereikt, voeg 3 extra posts toe
+                setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    // ----- Lazy loading end -----
+
+
+    // Loading gif
     if (ExcursionsAll.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }
 
     return (
         <>
-            <article className="outer-content-container">
+            <article className="outer-content-container"  ref={containerRef}>
                 <div className="inner-content-container-column">
 
-                    {ExcursionsAll.map((post) => (
+                    {ExcursionsAll.slice(0, visiblePosts).map((post) => (
                         <Link to={`/excursiePosts/${post.id}`} key={post.id}>
 
                             <div className="excursionPostContainer">

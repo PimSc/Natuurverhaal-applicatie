@@ -184,49 +184,6 @@ function WriteExcursion() {
                                     onChange={handleChangeActivity_time}
                                 />
 
-
-                                {/*Activity caption*/}
-                                <label htmlFor="caption">
-                                    <b>Afbeelding caption:</b>
-                                </label>
-                                <input
-                                    className="textAreaOneLine"
-                                    placeholder="Omschijf de afbeelding"
-                                    name="caption"
-                                    id="caption"
-                                    autoComplete="on"
-                                    required
-                                    value={formData.caption}
-                                    onChange={handleChangeCaption}
-                                />
-
-                                {/*Activity content*/}
-                                <label htmlFor="content">
-                                    <b>Content:</b>
-                                </label>
-                                <textarea
-                                    className="textAreaOneLine"
-                                    placeholder="De excursie"
-                                    name="content"
-                                    id="content"
-                                    autoComplete="on"
-                                    required
-                                    value={formData.content}
-                                    onChange={handleChangeContent}
-                                />
-
-                                {/*Afbeelding*/}
-                                <label className="textStart" htmlFor="fileUpload">
-                                    <b>Afbeelding:</b>
-                                </label>
-                                <input className="textAreaOneLine"
-                                       type="file"
-                                       accept=".jpg, .jpeg, .png"
-                                       name="file"
-                                       id="fileUpload"
-                                       onChange={handleFileChange}
-                                />
-
                                 {/*Guide*/}
                                 <label htmlFor="guide">
                                     <b>Gids:</b>
@@ -302,21 +259,6 @@ function WriteExcursion() {
                                     onChange={handleChangeSubject}
                                 />
 
-                                {/*Subtitle*/}
-                                <label htmlFor="subtitle">
-                                    <b>Subtitel:</b>
-                                </label>
-                                <input
-                                    className="textAreaOneLine"
-                                    placeholder="Ondertitel van de activiteit"
-                                    name="subtitle"
-                                    id="subtitle"
-                                    autoComplete="on"
-                                    required
-                                    value={formData.subtitle}
-                                    onChange={handleChangeSubtitle}
-                                />
-
                                 {/*Title*/}
                                 <label htmlFor="title">
                                     <b>Titel:</b>
@@ -331,6 +273,66 @@ function WriteExcursion() {
                                     value={formData.title}
                                     onChange={handleChangeTitle}
                                 />
+
+                                {/*Subtitle*/}
+                                <label htmlFor="subtitle">
+                                    <b>Ondertitel:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Ondertitel van de activiteit"
+                                    name="subtitle"
+                                    id="subtitle"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.subtitle}
+                                    onChange={handleChangeSubtitle}
+                                />
+
+
+                                {/*Activity content*/}
+                                <label htmlFor="content">
+                                    <b>Content:</b>
+                                </label>
+                                <textarea
+                                    className="textAreaOneLine"
+                                    placeholder="De excursie"
+                                    name="content"
+                                    id="content"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.content}
+                                    onChange={handleChangeContent}
+                                />
+
+                                {/*Afbeelding*/}
+                                <label className="textStart" htmlFor="fileUpload">
+                                    <b>Afbeelding:</b>
+                                </label>
+                                <input className="textAreaOneLine"
+                                       type="file"
+                                       accept=".jpg, .jpeg, .png"
+                                       name="file"
+                                       id="fileUpload"
+                                       onChange={handleFileChange}
+                                />
+
+
+                                {/*Activity caption*/}
+                                <label htmlFor="caption">
+                                    <b>Afbeelding caption:</b>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    placeholder="Omschijving van de afbeelding"
+                                    name="caption"
+                                    id="caption"
+                                    autoComplete="on"
+                                    required
+                                    value={formData.caption}
+                                    onChange={handleChangeCaption}
+                                />
+
 
                             </div>
                             {/*pim*/}

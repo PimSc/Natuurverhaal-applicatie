@@ -1,41 +1,66 @@
 import './BulletinBoardOverview.css';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
-import React from "react";
+import {useEffect, useRef, useState} from "react";
 
 function BulletinBoardOverview() {
-    const { bulletinBoardsAll } = useBlog();
+    const {bulletinBoardsAll} = useBlog();
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
+    // ----- Lazy loading start -----
+    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const containerRef = useRef(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (
+                containerRef.current &&
+                window.innerHeight + window.scrollY >= containerRef.current.offsetTop + containerRef.current.clientHeight
+            ) {
+                // Wanneer de gebruiker de onderkant van de pagina bereikt, voeg 3 extra posts toe
+                setVisiblePosts(prevVisiblePosts => prevVisiblePosts + 3);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    // ----- Lazy loading end -----
+
+
+    // Loading gif
     if (reversedPosts.length === 0) {
         return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }
 
     return (
         <>
-            <section className="blogOverviewSection outer-content-container">
-                <div className="inner-content-container-column">
+            <section className="outer-content-container" ref={containerRef}>
+                <div className="inner-content-container">
                     <ul className="post-list">
-                        {reversedPosts.map((post) => (
+                        {reversedPosts.slice(0, visiblePosts).map((post) => (
                             <li key={post.id} className="post-item">
-                                <Link to={`/prikbordPosts/${post.id}`} className="post-link">
-                                    <div className="post-image"
-                                         style={{backgroundImage: `url(${"data:image/png;base64," + post.fileContent})`}}>
+                                <Link to={`/prikbordPosts/${post.id}`}>
+                                    <div className="post-image">
+                                        <img
+                                            src={"data:image/png;base64," + post.fileContent} alt={post.title}
+                                            loading="lazy"
+                                            className="post-image"/>
                                         <div className="onTopOfImageBox">
-                                            <h2 className="post-title">{post.title}</h2>
-                                            <p>Auteur: {post.author}</p>
+                                            <h2>{post.title}</h2>
+                                            <p>Geschreven
+                                                door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
                                             <i>{post.date}</i>
                                         </div>
-                                        </div>
+                                    </div>
                                 </Link>
                             </li>
-                            ))}
+                        ))}
                     </ul>
                 </div>
             </section>
         </>
-);
+    );
 }
 
 export default BulletinBoardOverview;

@@ -1,8 +1,9 @@
 import './ExcursionEdit.css';
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
+import axios from "axios";
 
 
 function ExcursionEdit() {
@@ -10,13 +11,21 @@ function ExcursionEdit() {
     const {ExcursionsAll} = useAllExcursions();
     const { id } = useParams();
     const post = ExcursionsAll.find(post => post.id.toString() === id);
+    const Navigate = useNavigate();
 
     const [title, setTitle] = useState('');
     const [subtitle, setSubtitle] = useState('');
     const [file, setFile] = useState(null);
     const [caption, setCaption] = useState('');
-    const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
+    const [subject, setSubject] = useState('');
+    const [activity_date, setActivity_date] = useState('');
+    const [activity_time, setActivity_time] = useState('');
+    const [price, setPrice] = useState('');
+    const [location, setLocation] = useState('');
+    const [date, setDate] = useState('');
+    const [max_participants, setMax_participants] = useState('');
+    const [guide, setGuide] = useState('');
 
 
 
@@ -25,8 +34,15 @@ function ExcursionEdit() {
             setTitle(post.title || '');
             setSubtitle(post.subtitle || '');
             setCaption(post.caption || '');
-            setCategory(post.categories || '');
             setContent(post.content || '');
+            setSubject(post.subject || '');
+            setActivity_date(post.activity_date || '');
+            setActivity_time(post.activity_time || '');
+            setPrice(post.price || '');
+            setLocation(post.location || '');
+            setDate(post.date || '');
+            setMax_participants(post.max_participants || '');
+            setGuide(post.guide || '');
         }
     }, [post]);
 
@@ -46,18 +62,67 @@ function ExcursionEdit() {
         setCaption(event.target.value);
     };
 
-    const handleCategoryChange = (event) => {
-        setCategory(event.target.value);
-    };
-
     const handleContentChange = (event) => {
         setContent(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubjectChange = (event) => {
+        setSubject(event.target.value);
     };
 
+    const handleActivity_dateChange = (event) => {
+        setActivity_date(event.target.value);
+    };
+
+    const handleActivity_timeChange = (event) => {
+        setActivity_time(event.target.value);
+    };
+
+    const handlePriceChange = (event) => {
+        setPrice(event.target.value);
+    };
+
+    const handleLocationChange = (event) => {
+        setLocation(event.target.value);
+    };
+
+
+    const handleMax_participantsChange = (event) => {
+        setMax_participants(event.target.value);
+    };
+
+    const handleGuideChange = (event) => {
+        setGuide(event.target.value);
+    };
+
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('username', post.username);
+        formData.append('caption', caption);
+        formData.append('title', title);
+        formData.append('subtitle', subtitle);
+        formData.append('content', content);
+        formData.append('subject', subject);
+        formData.append('activity_date', activity_date);
+        formData.append('activity_time', activity_time);
+        formData.append('price', price);
+        formData.append('location', location);
+        formData.append('date', date);
+        formData.append('max_participants', max_participants);
+        formData.append('guide', guide);
+
+        try {
+            await axios.put(`http://localhost:8080/excursies/${id}`, formData);
+            // Redirect the user to the updated blog post page
+            Navigate("/Excursies");
+        } catch (error) {
+            console.error('Error updating blog post:', error);
+            // Handle error, show an alert or error message to the user
+        }
+    };
 
 return (
     <>
@@ -65,9 +130,10 @@ return (
             <div className="inner-content-container-editBorder">
                 {post && (
                     <>
+
+                        {/*pim*/}
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
-                        <p>Categorie: {post.categories}</p>
                         <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
                         <i>{post.date}</i>
                         <div className="textStart"></div>
@@ -86,13 +152,118 @@ return (
             <div className="inner-content-container-Edit">
                 <form onSubmit={handleSubmit}>
                     <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
-                        <h1>Blog bewerken</h1>
+                        <h1>Excursie bewerken</h1>
                         <p>Alle velden dienen te worden ingevuld</p>
                         <p>Je kan het venster groter maken in de rechter onderhoek</p>
-                        <br />
-                        <p>Afbeelding</p>
+                        <br/>
 
-                        <label className="textStart" htmlFor="title">
+
+                        {/*Activity date*/}
+                        <label htmlFor="activity_date">
+                            <b>Activiteit datum:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="Datum waarop de activiteit plaatsvind"
+                            name="activity_date"
+                            id="activity_date"
+                            autoComplete="on"
+                            required
+                            value={activity_date}
+                            onChange={handleActivity_dateChange}
+                        />
+
+                        {/*Activity time*/}
+                        <label htmlFor="activity_time">
+                            <b>Activiteit Tijd:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="Tijd waarop de activiteit plaatsvind"
+                            name="activity_time"
+                            id="activity_time"
+                            autoComplete="on"
+                            required
+                            value={activity_time}
+                            onChange={handleActivity_timeChange}
+                        />
+
+                        {/*Guide*/}
+                        <label htmlFor="guide">
+                            <b>Gids:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="Gebruikersnaam van de gids"
+                            name="guide"
+                            id="guide"
+                            autoComplete="on"
+                            required
+                            value={guide}
+                            onChange={handleGuideChange}
+                        />
+
+                        {/*Location*/}
+                        <label htmlFor="location">
+                            <b>Locatie:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="🚩 Start locatie van de activiteit"
+                            name="location"
+                            id="location"
+                            autoComplete="on"
+                            required
+                            value={location}
+                            onChange={handleLocationChange}
+                        />
+
+                        {/*Max_participants*/}
+                        <label htmlFor="max_participants">
+                            <b>Maximaal aantal deelnemers:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="bijv. 12"
+                            name="max_participants"
+                            id="max_participants"
+                            autoComplete="on"
+                            required
+                            value={max_participants}
+                            onChange={handleMax_participantsChange}
+                        />
+
+                        {/*Price*/}
+                        <label htmlFor="price">
+                            <b>Prijs:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="Ondertitel van de activiteit"
+                            name="price"
+                            id="price"
+                            autoComplete="on"
+                            required
+                            value={price}
+                            onChange={handlePriceChange}
+                        />
+
+                        {/*Subject*/}
+                        <label htmlFor="subject">
+                            <b>Onderwerp:</b>
+                        </label>
+                        <input
+                            className="textAreaOneLine"
+                            placeholder="Onderwerp van de activiteit"
+                            name="subject"
+                            id="subject"
+                            autoComplete="on"
+                            required
+                            value={subject}
+                            onChange={handleSubjectChange}
+                        />
+
+                        <label htmlFor="title">
                             <b>Titel:</b>
                         </label>
                         <textarea
@@ -106,7 +277,7 @@ return (
                             onChange={handleTitleChange}
                         />
 
-                        <label className="textStart" htmlFor="subtitle">
+                        <label htmlFor="subtitle">
                             <b>Ondertitel:</b>
                         </label>
                         <textarea
@@ -120,7 +291,20 @@ return (
                             onChange={handleSubtitleChange}
                         />
 
-                        <label className="textStart" htmlFor="fileUpload">
+                        <label htmlFor="content">
+                            <b>Content:</b>
+                        </label>
+                        <textarea
+                            className="textAreaStory"
+                            placeholder="Content"
+                            name="content"
+                            id="content"
+                            autoComplete="on"
+                            value={content}
+                            onChange={handleContentChange}
+                        />
+
+                        <label htmlFor="fileUpload">
                             <b>Afbeelding:</b>
                         </label>
                         <input
@@ -132,12 +316,12 @@ return (
                             onChange={handleFileChange}
                         />
 
-                        <label className="textStart" htmlFor="caption">
+                        <label htmlFor="caption">
                             <b>Caption:</b>
                         </label>
                         <input
                             className="textAreaOneLine"
-                            placeholder="Afbeelding omschrijving"
+                            placeholder="Omschijving van de afbeelding"
                             name="caption"
                             id="caption"
                             autoComplete="on"
@@ -146,51 +330,18 @@ return (
                             onChange={handleCaptionChange}
                         />
 
-                        <div className="elementCenterContainer categoryContainer">
-                            <p>Categorieën: </p>
-                            <select
-                                value={category}
-                                onChange={handleCategoryChange}
-                            >
-                                <option value="please select a category">please select a category</option>
-                                <option value="natuurgebied">natuurgebied</option>
-                                <option value="wandelroute">wandelroute</option>
-                                <option value="fietsroute">fietsroute</option>
-                                <option value="fotografie">fotografie</option>
-                                <option value="diersoort">diersoort</option>
-                                <option value="sport">sport</option>
-                                <option value="educatie">educatie</option>
-                                <option value="reizen">reizen</option>
-                                <option value="tuinieren">tuinieren</option>
-                                <option value="stadsnatuur">stadsnatuur</option>
-                                <option value="creativiteit">creativiteit</option>
-                                <option value="natuurbehoud">natuurbehoud</option>
-                                <option value="voedsel">voedsel</option>
-                                <option value="verhalen">verhalen</option>
-                                <option value="overig">overig</option>
-                            </select>
-                        </div>
 
-                        <label className="textStart" htmlFor="content">
-                            <b>Content:</b>
-                        </label>
-                        <textarea
-                            className="textAreaStory"
-                            placeholder="Jouw blog"
-                            name="content"
-                            id="content"
-                            autoComplete="on"
-                            value={content}
-                            onChange={handleContentChange}
-                        />
+
+
+
                     </div>
                     <div className="elementCenterContainer">
-                        <br />
-                        <button className="simpleButtons"type="submit">
-                            Blog aanpassingen verzenden
+                        <br/>
+                        <button className="simpleButtons" type="submit">
+                            Excursie aanpassingen verzenden
                         </button>
                         <button className="simpleButtons" id="WriteBlogBackButton" type="button">
-                            <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
+                            <Link to="/mijnExcursies">Terug naar mijn excursies</Link>
                         </button>
                     </div>
                 </form>

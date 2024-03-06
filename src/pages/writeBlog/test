@@ -1,14 +1,11 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
 import './BlogEdit.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
-import {Link, useParams, useNavigate} from "react-router-dom";
-import axios from 'axios';
-import {AuthContext} from "../../context/AuthContextProvider.jsx";
+import { Link, useParams } from "react-router-dom";
 
 function BlogEdit() {
     const { blogPostsUser } = useBlog();
     const { id } = useParams();
-    const Navigate = useNavigate();
     const post = blogPostsUser.find(post => post.id.toString() === id);
 
     const [title, setTitle] = useState('');
@@ -17,19 +14,6 @@ function BlogEdit() {
     const [caption, setCaption] = useState('');
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
-
-
-    // // pim
-    // const [formData, setFormData] = useState({
-    //     title: "",
-    //     subtitle: "",
-    //     file: null,
-    //     caption: "",
-    //     content: "",
-    //     username: `${user.username}`,
-    //     categories: [''],
-    //     date: ""
-    // });
 
     useEffect(() => {
         if (post) {
@@ -65,25 +49,8 @@ function BlogEdit() {
         setContent(event.target.value);
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('username', post.username);
-        formData.append('caption', caption);
-        formData.append('title', title);
-        formData.append('subtitle', subtitle);
-        formData.append('content', content);
-        formData.append('categories', category);
-
-        try {
-            await axios.put(`http://localhost:8080/blog-posts/${id}`, formData);
-            // Redirect the user to the updated blog post page
-            Navigate("/");
-        } catch (error) {
-            console.error('Error updating blog post:', error);
-            // Handle error, show an alert or error message to the user
-        }
     };
 
     return (
@@ -213,7 +180,7 @@ function BlogEdit() {
                         </div>
                         <div className="elementCenterContainer">
                             <br />
-                            <button className="simpleButtons" type="submit">
+                            <button className="simpleButtons"type="submit">
                                 Blog aanpassingen verzenden
                             </button>
                             <button className="simpleButtons" id="WriteBlogBackButton" type="button">
@@ -226,5 +193,3 @@ function BlogEdit() {
         </>
     )
 }
-
-export default BlogEdit;
