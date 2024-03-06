@@ -1,20 +1,19 @@
 import './BulletinBoardEdit.css';
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import useBlog from "../../Hooks/useUserBulletinBoards.jsx";
+import axios from "axios";
 
 function BulletinBoardEdit() {
 
     const { bulletinBoardPostUser } = useBlog();
     const { id } = useParams(); // Haal het ID uit de URL-parameters
     const post = bulletinBoardPostUser.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
-
+    const Navigate = useNavigate();
 
     const [title, setTitle] = useState('');
-    const [subtitle, setSubtitle] = useState('');
     const [file, setFile] = useState(null);
     const [caption, setCaption] = useState('');
-    const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
 
     useEffect(() => {
@@ -29,7 +28,6 @@ function BulletinBoardEdit() {
         setTitle(event.target.value);
     };
 
-
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
     };
@@ -42,6 +40,28 @@ function BulletinBoardEdit() {
     const handleContentChange = (event) => {
         setContent(event.target.value);
     };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('username', post.username);
+        formData.append('caption', caption);
+        formData.append('title', title);
+        formData.append('content', content);
+
+        try {
+            await axios.put(`http://localhost:8080/bulletin-boards/${id}`, formData);
+            // Redirect the user to the updated blog post page
+            Navigate("/Prikbord");
+        } catch (error) {
+            console.error('Error updating blog post:', error);
+            // Handle error, show an alert or error message to the user
+        }
+    };
+
+
+
 
 
 
@@ -80,7 +100,7 @@ function BulletinBoardEdit() {
                 </button>
 
 
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div id="PrikbordButtonPrikbord-bericht-aanmaken" className="textCenter">
                         <h1>Blog bewerken</h1>
                         <p>Alle velden dienen te worden ingevuld</p>
@@ -150,9 +170,7 @@ function BulletinBoardEdit() {
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
-                        <button className="simpleButtons" type="submit"
-
-                        >
+                        <button className="simpleButtons" type="submit">
                             Prikbord aanpassingen verzenden
                         </button>
                     </div>

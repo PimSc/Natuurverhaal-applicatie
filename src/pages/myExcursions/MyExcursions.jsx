@@ -105,7 +105,7 @@ return (
                                         <div className="myPostButtons">
                                             <div className="myBlogButtonContainer">
                                                 <button className="simpleButtonsEdit buttonYellowEdit">
-                                                    <Link to={`/blogEdit/${post.id}`} className="post-link">Blog
+                                                    <Link to={`/excursionEdit/${post.id}`} className="post-link">Excursie
                                                         aanpassen</Link>
                                                 </button>
                                             </div>
