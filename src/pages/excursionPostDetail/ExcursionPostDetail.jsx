@@ -7,7 +7,7 @@ import locationIcon from "../../../public/assets/icons/location-icon.png";
 import calendarIcon from "../../../public/assets/icons/calendar-icon.png";
 import clockIcon from "../../../public/assets/icons/clock-icon.png";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+
 import {
     EmailIcon,
     EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton,
@@ -25,9 +25,9 @@ function ExcursionPostDetail() {
 
     console.log("ExcursionsAll", ExcursionsAll)
 
-    // Loading gif
     if (!post) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
+        return <div>Post niet gevonden.</div>;
     }
 
 

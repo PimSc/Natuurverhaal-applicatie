@@ -1,7 +1,7 @@
 import './BulletinBoardOverview.css';
 import {Link} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import {useEffect, useRef, useState} from "react";
 
 function BulletinBoardOverview() {
@@ -28,10 +28,10 @@ function BulletinBoardOverview() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (reversedPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (reversedPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>

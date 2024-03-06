@@ -4,7 +4,7 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
@@ -43,10 +43,10 @@ function MyBulletinPosts() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (reversedPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (reversedPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>

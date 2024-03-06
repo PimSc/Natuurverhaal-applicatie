@@ -1,7 +1,6 @@
 import './BulletinBoardPostDetail.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React from "react";
 import {
     EmailIcon,
@@ -22,9 +21,9 @@ function BulletinBoardPostDetail() {
         navigate(-1); // Navigeer terug naar de vorige pagina
     };
 
-    // Loading gif
     if (!post) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
+        return <div>Post niet gevonden.</div>;
     }
 
     return (

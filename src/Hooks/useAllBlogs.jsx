@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import LoadingGif from "../../public/assets/icons/LoadingGif.gif";
 
 // Deze hook haalt de blog posts op en geeft deze door aan de andere pagina`s waar nodig
 

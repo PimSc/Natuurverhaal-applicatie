@@ -3,7 +3,7 @@ import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContext from "../../context/SearchContext.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+
 
 function BlogOverview() {
     const {searchQuery} = useContext(SearchContext);
@@ -46,10 +46,10 @@ function BlogOverview() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (filteredPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (filteredPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>
