@@ -145,12 +145,6 @@ function Navigation() {
                                                  className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink>
                                     </li>
 
-                                    <li>
-                                        <NavLink to="/editblog"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Edit
-                                            blog</NavLink>
-                                    </li>
-
 
                                     {user && user.role === 'ROLE_ADMIN' && (
                                         <li>

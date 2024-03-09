@@ -1,10 +1,10 @@
 import './Searchbar.css';
 import { useContext } from 'react';
-import SearchContext from './../../context/SearchContext.jsx';
+import SearchContextProvider from '../../context/SearchContextProvider.jsx';
 import { useLocation } from "react-router-dom";
 
 function Searchbar() {
-    const { searchQuery, setSearchQuery } = useContext(SearchContext);
+    const { searchQuery, setSearchQuery } = useContext(SearchContextProvider);
     const handleChange = (event) => {
         setSearchQuery(event.target.value);
     };

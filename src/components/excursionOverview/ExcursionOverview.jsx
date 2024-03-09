@@ -48,7 +48,6 @@ function ExcursionOverview() {
                         <Link to={`/excursiePosts/${post.id}`} key={post.id}>
 
                             <div className="excursionPostContainer">
-
                                 <div className="excursionImageBox">
                                     <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                                          alt={post.caption}/>
@@ -63,7 +62,7 @@ function ExcursionOverview() {
                                     </div>
 
                                     <div className="excursionOverviewListOuterContainer">
-                                        <div className="excursionOverviewListInnerContainer">
+                                        <div className="excursionOverviewListInnerContainer textStart">
                                             <ul>
                                                 {/*Date*/}
                                                 <li><p><img className="iconSmall" src={calendarIcon}
@@ -90,7 +89,7 @@ function ExcursionOverview() {
                                                 {/*Guide*/}
                                                 <li><p><img className="iconSmall" src={guideIcon}
                                                             alt="dier-icoon"/><Link
-                                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link>
+                                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}> {post.guide}</Link>
                                                 </p>
                                                 </li>
                                             </ul>

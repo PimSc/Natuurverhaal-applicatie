@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import useBlog from "../Hooks/useAllBlogs.jsx";
 
-const SearchContext = createContext();
+const SearchContextProvider = createContext();
 
 export const SearchProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -11,13 +11,13 @@ export const SearchProvider = ({ children }) => {
     };
 
     return (
-        <SearchContext.Provider value={{searchQuery, setSearchQuery, handleChange}}>
+        <SearchContextProvider.Provider value={{searchQuery, setSearchQuery, handleChange}}>
             {children}
-        </SearchContext.Provider>
+        </SearchContextProvider.Provider>
     );
 };
 
-export default SearchContext;
+export default SearchContextProvider;
 
 
 
@@ -45,7 +45,7 @@ export default SearchContext;
 // import React, { createContext, useState, useEffect } from 'react';
 // import useBlog from "../hooks/useAllBlogs.jsx";
 //
-// const SearchContext = createContext();
+// const SearchContextProvider = createContext();
 //
 // export const SearchProvider = ({ children }) => {
 //     const [searchQuery, setSearchQuery] = useState('');
@@ -69,10 +69,10 @@ export default SearchContext;
 //     };
 //
 //     return (
-//         <SearchContext.Provider value={{searchQuery, setSearchQuery, handleChange}}>
+//         <SearchContextProvider.Provider value={{searchQuery, setSearchQuery, handleChange}}>
 //             {children}
-//         </SearchContext.Provider>
+//         </SearchContextProvider.Provider>
 //     );
 // };
 //
-// export default SearchContext;
+// export default SearchContextProvider;

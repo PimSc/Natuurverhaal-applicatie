@@ -56,24 +56,6 @@ function RegisterScreen() {
                 <hr/>
                 <div className="loginOuterContainer">
                     <div className="loginInnerContainer">
-                        <div className="inputFieldMargin">
-                            <div className="labelTextLeft">
-                                <label
-                                    htmlFor="email">
-                                    <b>Email</b>
-                                </label>
-                            </div>
-                            <input
-                                id="email"
-                                placeholder="E-mail"
-                                type="email"
-                                name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                autoComplete="on"
-                                required
-                            />
-                        </div>
 
                         <div className="inputFieldMargin">
                             <div className="labelTextLeft" id="extraMarginUsername">
@@ -96,6 +78,25 @@ function RegisterScreen() {
 
                             />
                             <i className="iGrey">minimaal 3 en maximaal 15 tekens</i>
+                        </div>
+
+                        <div className="inputFieldMargin">
+                            <div className="labelTextLeft">
+                                <label
+                                    htmlFor="email">
+                                    <b>Email</b>
+                                </label>
+                            </div>
+                            <input
+                                id="email"
+                                placeholder="E-mail"
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                autoComplete="on"
+                                required
+                            />
                         </div>
 
                         <div className="inputFieldMargin">
@@ -130,16 +131,16 @@ function RegisterScreen() {
                     </div>
                 </div>
             </form>
-                <hr/>
-            <p> <strong>Voordelen van registeren</strong></p>
+            <hr/>
+            <p><strong>Voordelen van registeren</strong></p>
             <div className="registerAdvantagesOuterBox">
-            <div className="registerAdvantagesInnerBox textStart">
-                <ol>
-                    <li className="liDiskDot">Blogs posten</li>
-                    <li className="liDiskDot">Prikbord posten</li>
-                    <li className="liDiskDot">Openbaar profiel</li>
-                </ol>
-            </div>
+                <div className="registerAdvantagesInnerBox textStart">
+                    <ol>
+                        <li className="liDiskDot">Blogs posten</li>
+                        <li className="liDiskDot">Prikbord posten</li>
+                        <li className="liDiskDot">Openbaar profiel</li>
+                    </ol>
+                </div>
             </div>
         </>
     );

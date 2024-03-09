@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useRef, useState} from 'react';
 import './MyBlogs.css';
 import useBlog from "../../Hooks/useUserBlogs.jsx";
 import { Link } from "react-router-dom";
-import SearchContext from "../../context/SearchContext.jsx";
+import SearchContextProvider from "../../context/SearchContextProvider.jsx";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
 import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
@@ -10,7 +10,7 @@ import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 function MyBlogs() {
     const { blogPostsUser } = useBlog();
     const { user } = useContext(AuthContext);
-    const { searchQuery, setSearchQuery } = useContext(SearchContext);
+    const { searchQuery, setSearchQuery } = useContext(SearchContextProvider);
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
