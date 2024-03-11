@@ -128,11 +128,29 @@ ul {
     background-color: HSL(124, 40%, 32%, 0.2);
 }
 
-
+.phoneSearbar{
+    display: none;
+}
 
 
 @media only screen and (max-width: 1200px) {
 
+    .phoneSearbar{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+
+    }
+
+    .phoneNav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .phoneNav input{
+width:80%;
+    }
 
     .default-link {
         font-size: calc(var(--navLinkSize) - 30%);
@@ -284,7 +302,12 @@ ul {
 }
 
 
+@media only screen and (max-width: 330px) {
 
+    .phoneSearbar {
+        display: none
+    }
+}
 
 
 

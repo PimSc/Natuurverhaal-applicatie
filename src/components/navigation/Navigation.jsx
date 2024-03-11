@@ -86,92 +86,97 @@ function Navigation() {
 
                 {/*Start telephone navigation bar (phone screen)*/}
 
-                <div className="hamburgerEffect">
-                    <label className="hamburger-menu">
-                        <input type="checkbox"/>
-                    </label>
+                <nav className="phoneNav">
+                    <div className="hamburgerEffect">
+                        <label className="hamburger-menu">
+                            <input type="checkbox"/>
+                        </label>
 
-                    <aside className="sidebar">
-                        <nav>
-                            <li>
-                                <NavLink to="/"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/OnsVerhaal"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
-                                    verhaal</NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/Excursies"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to="/Prikbord"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
-                            </li>
-
-                            {!isAuth &&
+                        <aside className="sidebar">
+                            <nav>
                                 <li>
-                                    <NavLink to="/login"
-                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink>
+                                    <NavLink to="/"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                                 </li>
-                            }
 
-                            <li>
-                                <NavLink to="/Contact"
-                                         className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink>
-                            </li>
+                                <li>
+                                    <NavLink to="/OnsVerhaal"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Ons
+                                        verhaal</NavLink>
+                                </li>
 
+                                <li>
+                                    <NavLink to="/Excursies"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Excursies</NavLink>
+                                </li>
 
-                            {isAuth && (<>
+                                <li>
+                                    <NavLink to="/Prikbord"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Prikbord</NavLink>
+                                </li>
+
+                                {!isAuth &&
                                     <li>
-                                        <NavLink to="/mijnBlogs"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
-                                            blogs</NavLink>
+                                        <NavLink to="/login"
+                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Login</NavLink>
                                     </li>
+                                }
 
-                                    <li>
-                                        <NavLink to="/mijnprikbord"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
-                                            prikbord</NavLink>
-                                    </li>
-
-                                    <li>
-                                        <NavLink to="/ProfileEdit"
-                                                 className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink>
-                                    </li>
+                                <li>
+                                    <NavLink to="/Contact"
+                                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Contact</NavLink>
+                                </li>
 
 
-                                    {user && user.role === 'ROLE_ADMIN' && (
+                                {isAuth && (<>
                                         <li>
-                                            <NavLink
-                                                to="/adminpanel"
-                                                className={({isActive}) =>
-                                                    isActive === true ? 'active-link' : 'default-link'
-                                                }
-                                            >
-                                                Admin
-                                            </NavLink>
+                                            <NavLink to="/mijnBlogs"
+                                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
+                                                blogs</NavLink>
                                         </li>
-                                    )}
+
+                                        <li>
+                                            <NavLink to="/mijnprikbord"
+                                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
+                                                prikbord</NavLink>
+                                        </li>
+
+                                        <li>
+                                            <NavLink to="/ProfileEdit"
+                                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Profiel</NavLink>
+                                        </li>
 
 
-                                    <li><Link onClick={(e) => {
-                                        e.preventDefault();
-                                        logout();
-                                    }} to="/">Uitloggen</Link>
-                                    </li>
-                                </>
-                            )}
-                        </nav>
-                    </aside>
-                </div>
-                {/*End telephone navigation bar (phone screen)*/}
+                                        {user && user.role === 'ROLE_ADMIN' && (
+                                            <li>
+                                                <NavLink
+                                                    to="/adminpanel"
+                                                    className={({isActive}) =>
+                                                        isActive === true ? 'active-link' : 'default-link'
+                                                    }
+                                                >
+                                                    Admin
+                                                </NavLink>
+                                            </li>
+                                        )}
 
+
+                                        <li><Link onClick={(e) => {
+                                            e.preventDefault();
+                                            logout();
+                                        }} to="/">Uitloggen</Link>
+                                        </li>
+                                    </>
+                                )}
+                            </nav>
+                        </aside>
+                    </div>
+                    <div className="phoneSearbar">
+                        <Searchbar/>
+                    </div>
+
+                    {/*End telephone navigation bar (phone screen)*/}
+                </nav>
             </div>
         </>
     );
