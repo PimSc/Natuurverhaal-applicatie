@@ -15,6 +15,7 @@ function BulletinBoardEdit() {
     const [file, setFile] = useState(null);
     const [caption, setCaption] = useState('');
     const [content, setContent] = useState('');
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
         if (post) {
@@ -51,7 +52,13 @@ function BulletinBoardEdit() {
         formData.append('content', content);
 
         try {
-            await axios.put(`http://localhost:8080/bulletin-boards/${id}`, formData);
+            await axios.put(`http://localhost:8080/bulletin-boards/${id}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`,
+                }
+            });
+
             // Redirect the user to the updated blog post page
             Navigate("/Prikbord");
         } catch (error) {

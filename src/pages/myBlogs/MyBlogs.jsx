@@ -12,6 +12,7 @@ function MyBlogs() {
     const { user } = useContext(AuthContext);
     const { searchQuery, setSearchQuery } = useContext(SearchContextProvider);
     const [filteredPosts, setFilteredPosts] = useState([]);
+    const token = localStorage.getItem("token")
 
     useEffect(() => {
         const filtered = blogPostsUser.filter(post =>
@@ -24,7 +25,11 @@ function MyBlogs() {
 
     const handleDelete = (postId) => {
         console.log(postId)
-        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`)
+        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -57,10 +62,10 @@ function MyBlogs() {
 
 
 
-    // Loading gif
-    if (filteredPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (filteredPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
 
     return (

@@ -25,17 +25,16 @@ function ChangeUserData() {
                 enabled: enabled
             }, {
                 headers: {
-
                     Authorization: `Bearer ${token}`,
                 }
             });
-
             console.log(response.data);
 
         } catch (error) {
             console.error(error);
         }
     }
+
 
 
     async function handleForm2Submit(e) {

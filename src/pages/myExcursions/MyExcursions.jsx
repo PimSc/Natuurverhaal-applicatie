@@ -9,10 +9,16 @@ import { AuthContext } from "../../context/AuthContextProvider.jsx";
 function MyExcursions() {
     const { ExcursionsAll } = useBlog();
     const { user } = useContext(AuthContext);
+    const token = localStorage.getItem("token")
 
     const handleDelete = (postId) => {
         console.log(postId)
-        axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`)
+        axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload();

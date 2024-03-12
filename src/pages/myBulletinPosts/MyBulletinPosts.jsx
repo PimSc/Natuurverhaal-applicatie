@@ -10,10 +10,15 @@ function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
     const reversedPosts = bulletinBoardPostUser.slice().reverse();
+    const token = localStorage.getItem("token")
 
     const handleDelete = (postId) => {
         console.log(postId)
-        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${postId}`)
+        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${postId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen

@@ -76,8 +76,16 @@ function BlogEdit() {
         formData.append('content', content);
         formData.append('categories', category);
 
+        const token = localStorage.getItem("token")
+
         try {
-            await axios.put(`http://localhost:8080/blog-posts/${id}`, formData);
+            await axios.put(`http://localhost:8080/blog-posts/${id}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                        Authorization: `Bearer ${token}`,
+                }
+            });
+
             // Redirect the user to the updated blog post page
             Navigate("/");
         } catch (error) {
