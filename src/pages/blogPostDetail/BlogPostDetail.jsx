@@ -9,6 +9,7 @@ import {
     TelegramIcon, TelegramShareButton,
     WhatsappIcon, WhatsappShareButton,
 } from "react-share";
+import UpVote from "../../components/upVote/UpVote.jsx";
 
 
 function BlogPostDetail() {
@@ -49,10 +50,9 @@ function BlogPostDetail() {
                         <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                              alt={post.caption}/>
                         <br/>
-
                         <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
                             van {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong> </Link>
-
+                        <UpVote blogId={post.id} />
                         <div className="shareIconsBox">
                             <p><strong>Deel deze pagina</strong></p>
                             <WhatsappShareButton

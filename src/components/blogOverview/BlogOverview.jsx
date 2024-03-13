@@ -3,6 +3,7 @@ import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContextProvider from "../../context/SearchContextProvider.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
+import UpVote from "../upVote/UpVote.jsx";
 
 
 function BlogOverview() {
@@ -27,7 +28,7 @@ function BlogOverview() {
     }, [searchQuery, blogPostsAll]);
 
     // ----- Lazy loading start -----
-    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const [visiblePosts, setVisiblePosts] = useState(6); // Het aantal zichtbare blogposts
     const containerRef = useRef(null);
     useEffect(() => {
         const handleScroll = () => {
