@@ -10,11 +10,13 @@ function AdminPanel() {
     const [postId, setPostId] = useState(""); // State toegevoegd voor postId
     const [prikbordpostId, setPrikbordId] = useState(""); // State toegevoegd voor postId
     const [username, setUsername] = useState(""); // State toegevoegd voor username
-
+    const token = localStorage.getItem("token")
 
     const handleDeleteBlogpost = () => {
         console.log(postId);
-        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`)
+        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`,{headers: {
+                Authorization: `Bearer ${token}`
+            }})
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -26,7 +28,10 @@ function AdminPanel() {
 
     const handleDeletePrikbordpost = () => {
         console.log(prikbordpostId);
-        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${prikbordpostId}`)
+        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${prikbordpostId}`,{headers: {
+                Authorization: `Bearer ${token}`
+            }})
+
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -40,7 +45,7 @@ function AdminPanel() {
 // pim aangepast
 
     const handleDeleteUser = () => {
-        const token = localStorage.getItem("token")
+
         axios.delete(`http://localhost:8080/users/${username}`,{headers: {
                 Authorization: `Bearer ${token}`
             }})

@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 import './BlogOverview.css';
 import { Link } from 'react-router-dom';
-import SearchContext from "../../context/SearchContext.jsx";
+import SearchContextProvider from "../../context/SearchContextProvider.jsx";
 import useBlog from "../../Hooks/useAllBlogs.jsx";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+import UpVote from "../upVote/UpVote.jsx";
+
 
 function BlogOverview() {
-    const {searchQuery} = useContext(SearchContext);
+    const {searchQuery} = useContext(SearchContextProvider);
     const {blogPostsAll} = useBlog();
     const [filteredPosts, setFilteredPosts] = useState([]);
 
@@ -27,7 +28,7 @@ function BlogOverview() {
     }, [searchQuery, blogPostsAll]);
 
     // ----- Lazy loading start -----
-    const [visiblePosts, setVisiblePosts] = useState(3); // Het aantal zichtbare blogposts
+    const [visiblePosts, setVisiblePosts] = useState(6); // Het aantal zichtbare blogposts
     const containerRef = useRef(null);
     useEffect(() => {
         const handleScroll = () => {
@@ -46,10 +47,10 @@ function BlogOverview() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (filteredPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (filteredPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>

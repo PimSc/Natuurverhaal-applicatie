@@ -115,7 +115,5 @@
     .footerOuterBox:hover .footerBox1,
     .footerOuterBox:hover .footerBox3 {
         filter: none;
-
-
     }
 }

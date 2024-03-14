@@ -8,6 +8,7 @@ function WriteExcursion() {
 
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
+    const token = localStorage.getItem("token")
 
     const [formData, setFormData] = useState({
         file: null,
@@ -110,7 +111,7 @@ function WriteExcursion() {
         const url = `http://localhost:8080/excursies/${user.username}`;
 
         try {
-            const token = localStorage.getItem("token")
+
             const response = await axios.post(url, formDataToSend, {
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -118,15 +119,15 @@ function WriteExcursion() {
                 }
             });
             if (response.status === 201) {
-                console.log("Blog post successful!");
+                console.log("excursie post successful!");
                 setUploadStatus("Upload is gelukt!");
                 navigate("/Excursies");
             } else {
-                console.error("Error posting blog:", response.statusText);
+                console.error("Error posting excursie:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
             }
         } catch (error) {
-            console.error("Error posting blog:", error);
+            console.error("Error posting excursie:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
     }

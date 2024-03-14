@@ -4,16 +4,21 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
     const { user } = useContext(AuthContext);
     const reversedPosts = bulletinBoardPostUser.slice().reverse();
+    const token = localStorage.getItem("token")
 
     const handleDelete = (postId) => {
         console.log(postId)
-        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${postId}`)
+        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${postId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then(response => {
                 console.log('Post deleted successfully');
                 window.location.reload(); // Herlaad de pagina na succesvol verwijderen
@@ -43,10 +48,10 @@ function MyBulletinPosts() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (reversedPosts.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (reversedPosts.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>

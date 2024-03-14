@@ -2,16 +2,15 @@ import './BlogPostDetail.css';
 import { Link, useParams } from 'react-router-dom';
 import useBlog from "../../Hooks/useAllBlogs.jsx";
 import { useNavigate } from 'react-router-dom';
-import formatDateString from '../../helpers/formatDateString.jsx';
 import React, { useRef } from "react";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import {
     EmailShareButton, EmailIcon,
     RedditShareButton, RedditIcon,
     TelegramIcon, TelegramShareButton,
-    WhatsappIcon, WhatsappShareButton, LinkedinShareButton, LinkedinIcon,
+    WhatsappIcon, WhatsappShareButton,
 } from "react-share";
-import {InstagramLogo} from "@phosphor-icons/react";
+import UpVote from "../../components/upVote/UpVote.jsx";
+
 
 function BlogPostDetail() {
     const navigate = useNavigate();
@@ -25,9 +24,9 @@ function BlogPostDetail() {
         navigate(-1); // Navigeer terug naar de vorige pagina
     };
 
-    // Loading gif
     if (!post) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
+        return <div>Post niet gevonden.</div>;
     }
 
     return (
@@ -51,10 +50,9 @@ function BlogPostDetail() {
                         <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                              alt={post.caption}/>
                         <br/>
-
                         <Link to={`/ProfileDetail/${post.username}`}><strong>Bezoek de profiel pagina
                             van {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</strong> </Link>
-
+                        <UpVote blogId={post.id} />
                         <div className="shareIconsBox">
                             <p><strong>Deel deze pagina</strong></p>
                             <WhatsappShareButton

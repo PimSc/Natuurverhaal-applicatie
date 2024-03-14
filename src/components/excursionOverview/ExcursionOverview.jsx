@@ -7,7 +7,7 @@ import animalIcon from "./../../../public/assets/icons/animal-icon.png";
 import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React, {useEffect, useRef, useState} from "react";
 
 
@@ -34,10 +34,10 @@ function ExcursionOverview() {
     // ----- Lazy loading end -----
 
 
-    // Loading gif
-    if (ExcursionsAll.length === 0) {
-        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    }
+    // // Loading gif
+    // if (ExcursionsAll.length === 0) {
+    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    // }
 
     return (
         <>
@@ -48,7 +48,6 @@ function ExcursionOverview() {
                         <Link to={`/excursiePosts/${post.id}`} key={post.id}>
 
                             <div className="excursionPostContainer">
-
                                 <div className="excursionImageBox">
                                     <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
                                          alt={post.caption}/>
@@ -63,7 +62,7 @@ function ExcursionOverview() {
                                     </div>
 
                                     <div className="excursionOverviewListOuterContainer">
-                                        <div className="excursionOverviewListInnerContainer">
+                                        <div className="excursionOverviewListInnerContainer textStart">
                                             <ul>
                                                 {/*Date*/}
                                                 <li><p><img className="iconSmall" src={calendarIcon}
@@ -90,7 +89,7 @@ function ExcursionOverview() {
                                                 {/*Guide*/}
                                                 <li><p><img className="iconSmall" src={guideIcon}
                                                             alt="dier-icoon"/><Link
-                                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}>{post.guide}</Link>
+                                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}> {post.guide}</Link>
                                                 </p>
                                                 </li>
                                             </ul>

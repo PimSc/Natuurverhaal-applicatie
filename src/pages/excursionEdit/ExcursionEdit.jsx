@@ -26,7 +26,7 @@ function ExcursionEdit() {
     const [date, setDate] = useState('');
     const [max_participants, setMax_participants] = useState('');
     const [guide, setGuide] = useState('');
-
+    const token = localStorage.getItem("token")
 
 
     useEffect(() => {
@@ -115,7 +115,12 @@ function ExcursionEdit() {
         formData.append('guide', guide);
 
         try {
-            await axios.put(`http://localhost:8080/excursies/${id}`, formData);
+            await axios.put(`http://localhost:8080/excursies/${id}`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`
+                }
+            });
             // Redirect the user to the updated blog post page
             Navigate("/Excursies");
         } catch (error) {

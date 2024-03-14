@@ -3,7 +3,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import App from './App.jsx'
 import './index.css'
 import AuthContextProvider from "./context/AuthContextProvider";
-import {SearchProvider} from "./context/SearchContext.jsx";
+import {SearchProvider} from "./context/SearchContextProvider.jsx";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
