@@ -39,7 +39,7 @@ function BulletinBoardOverview() {
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {reversedPosts.slice(0, visiblePosts).map((post) => (
-                            <article key={post.id}>
+                            <section key={post.id}>
                             <li className="post-item">
                                 <Link to={`/prikbordPosts/${post.id}`}>
                                     <div className="post-image">
@@ -56,7 +56,7 @@ function BulletinBoardOverview() {
                                     </div>
                                 </Link>
                             </li>
-                            </article>
+                            </section>
                         ))}
                     </ul>
                 </div>

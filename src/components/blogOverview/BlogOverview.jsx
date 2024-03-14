@@ -58,7 +58,7 @@ function BlogOverview() {
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {filteredPosts.slice(0, visiblePosts).map((post) => (
-                            <article key={post.id}>
+                            <section key={post.id}>
                                 <li className="post-item">
                                     <Link to={`/blogposts/${post.id}`}>
                                         <div className="post-image">
@@ -72,7 +72,7 @@ function BlogOverview() {
                                         </div>
                                     </Link>
                                 </li>
-                            </article>
+                            </section>
                         ))}
                     </ul>
                 </div>

@@ -31,7 +31,7 @@ function BlogPostDetail() {
 
     return (
         <>
-            <section className="outer-content-container-column">
+            <article className="outer-content-container-column">
                 <img className="blogDetailImageHeader" src={"data:image/png;base64," + post.fileContent} alt={post.caption}/>
                 <div className="inner-content-container" >
                     <div className="textCenter">
@@ -99,7 +99,7 @@ function BlogPostDetail() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </article>
         </>
     );
 }

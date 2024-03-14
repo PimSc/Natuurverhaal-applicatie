@@ -41,66 +41,68 @@ function ExcursionOverview() {
 
     return (
         <>
-            <article className="outer-content-container"  ref={containerRef}>
+            <div className="outer-content-container" ref={containerRef}>
                 <div className="inner-content-container-column">
 
                     {ExcursionsAll.slice(0, visiblePosts).map((post) => (
                         <Link to={`/excursiePosts/${post.id}`} key={post.id}>
-
-                            <div className="excursionPostContainer">
-                                <div className="excursionImageBox">
-                                    <img className="blogDetailImage" src={"data:image/png;base64," + post.fileContent}
-                                         alt={post.caption}/>
-                                </div>
-
-                                <div className="excursionOverviewTextContainer1">
-                                    <div className="excursionOverviewPostTitleContainer">
-                                        <div className="textStart">
-                                            <h1>{post.title}</h1>
-                                            <h4>{post.subtitle}</h4>
-                                        </div>
+                            <section>
+                                <div className="excursionPostContainer">
+                                    <div className="excursionImageBox">
+                                        <img className="blogDetailImage"
+                                             src={"data:image/png;base64," + post.fileContent}
+                                             alt={post.caption}/>
                                     </div>
 
-                                    <div className="excursionOverviewListOuterContainer">
-                                        <div className="excursionOverviewListInnerContainer textStart">
-                                            <ul>
-                                                {/*Date*/}
-                                                <li><p><img className="iconSmall" src={calendarIcon}
-                                                            alt="kalender icoon"/> {post.activity_date}</p></li>
-                                                {/*Time*/}
-                                                <li><p><img className="iconSmall" src={clockIcon}
-                                                            alt="klok icoon"/> {post.activity_time}</p></li>
-
-                                                {/*Location*/}
-                                                <li><p><img className="iconSmall" src={locationIcon}
-                                                            alt="locatie icoon"/> {post.location}</p></li>
-                                            </ul>
+                                    <div className="excursionOverviewTextContainer1">
+                                        <div className="excursionOverviewPostTitleContainer">
+                                            <div className="textStart">
+                                                <h1>{post.title}</h1>
+                                                <h4>{post.subtitle}</h4>
+                                            </div>
                                         </div>
-                                        <div className="excursionOverviewListInnerContainer">
-                                            <ul>
-                                                {/*Subject*/}
-                                                <li><p><img className="iconSmall" src={animalIcon}
-                                                            alt="dier-icoon"/> {post.subject}</p></li>
 
-                                                {/*Price*/}
-                                                <li><p><img className="iconSmall" src={moneyIcon}
-                                                            alt="geld icoon"/> {post.price}</p></li>
+                                        <div className="excursionOverviewListOuterContainer">
+                                            <div className="excursionOverviewListInnerContainer textStart">
+                                                <ul>
+                                                    {/*Date*/}
+                                                    <li><p><img className="iconSmall" src={calendarIcon}
+                                                                alt="kalender icoon"/> {post.activity_date}</p></li>
+                                                    {/*Time*/}
+                                                    <li><p><img className="iconSmall" src={clockIcon}
+                                                                alt="klok icoon"/> {post.activity_time}</p></li>
 
-                                                {/*Guide*/}
-                                                <li><p><img className="iconSmall" src={guideIcon}
-                                                            alt="dier-icoon"/> {post.guide}
-                                                </p>
-                                                </li>
-                                            </ul>
+                                                    {/*Location*/}
+                                                    <li><p><img className="iconSmall" src={locationIcon}
+                                                                alt="locatie icoon"/> {post.location}</p></li>
+                                                </ul>
+                                            </div>
+                                            <div className="excursionOverviewListInnerContainer">
+                                                <ul>
+                                                    {/*Subject*/}
+                                                    <li><p><img className="iconSmall" src={animalIcon}
+                                                                alt="dier-icoon"/> {post.subject}</p></li>
+
+                                                    {/*Price*/}
+                                                    <li><p><img className="iconSmall" src={moneyIcon}
+                                                                alt="geld icoon"/> {post.price}</p></li>
+
+                                                    {/*Guide*/}
+                                                    <li><p><img className="iconSmall" src={guideIcon}
+                                                                alt="dier-icoon"/> {post.guide}
+                                                    </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </section>
                         </Link>
                     ))}
 
                 </div>
-            </article>
+            </div>
 
 
         </>

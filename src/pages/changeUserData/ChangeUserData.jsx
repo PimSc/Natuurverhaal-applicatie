@@ -65,50 +65,56 @@ function ChangeUserData() {
         <>
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
-            <div className="admindiv">
-                <form className="adminRedfield" action="" onSubmit={handleForm1Submit}>
+                    <div className="admindiv">
 
-                    <label htmlFor="email">
-                        <p>Change email</p>
-                    </label>
-                    <input
-                        className="textAreaOneLine"
-                        name="email"
-                        id="email"
-                        type="email"
-                        placeholder="Type email and press change"
-                        autoComplete="on"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <br/>
-                    <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                        Change <strong>email</strong>
-                    </button>
-                </form>
+                        <article>
+                        <section>
+                            <form className="adminRedfield" action="" onSubmit={handleForm1Submit}>
+                                <label htmlFor="email">
+                                    <p>Change email</p>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    name="email"
+                                    id="email"
+                                    type="email"
+                                    placeholder="Type email and press change"
+                                    autoComplete="on"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <br/>
+                                <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                    Change <strong>email</strong>
+                                </button>
+                            </form>
+                        </section>
 
+                        <section>
+                            <form className="adminRedfield" action="" onSubmit={handleForm2Submit}>
+                                <label htmlFor="password">
+                                    <p>Change password</p>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Type the password and press change"
+                                    autoComplete="on"
+                                    value={password}
+                                    pattern=".*[!@#$%^&*].*"
+                                    minLength={8}
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                                <br/>
+                                <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                    Change <strong>password</strong>
+                                </button>
+                            </form>
+                        </section>
+                        </article>
 
-                <form className="adminRedfield" action="" onSubmit={handleForm2Submit}>
-                    <label htmlFor="password">
-                        <p>Change password</p>
-                    </label>
-                    <input
-                        className="textAreaOneLine"
-                        name="password"
-                        id="password"
-                        placeholder="Type the password and press change"
-                        autoComplete="on"
-                        value={password}
-                        pattern=".*[!@#$%^&*].*"
-                        minLength={8}
-                        onChange={(e) => setPassword(e.target.value)}/>
-                    <br/>
-                    <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                        Change <strong>password</strong>
-                    </button>
-                </form>
-            </div>
-        </div>
+                    </div>
+                </div>
             </div>
 
         </>
