@@ -145,7 +145,7 @@ function Navigation() {
                                         <li>
                                             <NavLink to="/mijnGegevens"
                                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
-                                                prikbord</NavLink>
+                                                gegevens</NavLink>
                                         </li>
 
 

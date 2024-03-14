@@ -41,7 +41,6 @@
 
 .ProfileTextField {
     width: 400px;
-    height: 2lh;
 }
 
 .profileFirstTextBox {
@@ -160,6 +159,11 @@ margin-bottom: 20px;
         max-width: 200px;
         width: 100%;
     }
+
+    .ProfileTextField {
+        width: 290px;
+    }
+
 
     /*------Icon overlay tekst End------*/
 }

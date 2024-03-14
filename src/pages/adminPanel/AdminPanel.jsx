@@ -42,7 +42,7 @@ function AdminPanel() {
     };
 
 
-// pim aangepast
+
 
     const handleDeleteUser = () => {
 
