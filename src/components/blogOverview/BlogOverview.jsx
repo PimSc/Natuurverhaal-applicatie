@@ -58,20 +58,21 @@ function BlogOverview() {
                 <div className="inner-content-container">
                     <ul className="post-list">
                         {filteredPosts.slice(0, visiblePosts).map((post) => (
-                            <li key={post.id} className="post-item">
-                                <Link to={`/blogposts/${post.id}`}>
-                                    <div className="post-image">
-                                        <img src={"data:image/png;base64," + post.fileContent} alt={post.title}
-                                             loading="lazy" className="post-image"/>
-                                        <div className="onTopOfImageBox">
-                                            <h2>{post.title}</h2>
-                                            <p>Geschreven
-                                                door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
-                                            <i>{post.date}</i>
+                            <article key={post.id}>
+                                <li className="post-item">
+                                    <Link to={`/blogposts/${post.id}`}>
+                                        <div className="post-image">
+                                            <img src={"data:image/png;base64," + post.fileContent} alt={post.title}
+                                                 loading="lazy" className="post-image"/>
+                                            <div className="onTopOfImageBox">
+                                                <h2>{post.title}</h2>
+                                                <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                                <i>{post.date}</i>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            </li>
+                                    </Link>
+                                </li>
+                            </article>
                         ))}
                     </ul>
                 </div>

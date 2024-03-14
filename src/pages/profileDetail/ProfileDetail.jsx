@@ -50,7 +50,7 @@ function ProfileDetail() {
                     {/* Als er een gebruikersprofiel is gevonden, toon dan de gegevens */}
                     {filteredProfile.length > 0 ? (
                         filteredProfile.map((prof) => (
-                            <>
+                            <div key={prof.username} className="inner-content-container-column">
                                 <div className="profileImage">
                                     <img
                                         src={"data:image/png;base64," + prof.fileContent}
@@ -99,7 +99,7 @@ function ProfileDetail() {
                                         </li>
                                     ))}
                                 </ul>
-                            </>
+                            </div>
                         ))
                     ) : (
                         // Als er geen gebruikersprofiel is gevonden, toon dan dit bericht

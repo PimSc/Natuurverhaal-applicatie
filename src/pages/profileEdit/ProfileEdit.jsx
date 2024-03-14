@@ -128,6 +128,7 @@ function ProfileEdit() {
                                    accept=".jpg, .jpeg, .png"
                                    name="file"
                                    id="fileUpload"
+                                   required
                                    onChange={handleFileChange}
                             />
 
@@ -163,6 +164,7 @@ function ProfileEdit() {
                                        placeholder="email"
                                        name="email"
                                        id="email"
+                                       type="email"
                                        autoComplete="on"
                                        value={formData.email}
                                        onChange={handleChangeEmail}
@@ -197,6 +199,7 @@ function ProfileEdit() {
                                        value={formData.name}
                                        onChange={handleChangeName}
                                        required
+                                       maxLength={20}
                                 />
 
                             </div>
@@ -288,7 +291,7 @@ function ProfileEdit() {
 
                         <button className="simpleButtons" type="submit"
                                 onClick={uploadGegevens}>
-                            Blog bericht plaatsen
+                            Profiel plaatsen
                         </button>
                     </div>
 

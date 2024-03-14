@@ -1,13 +1,23 @@
 import './NotFound.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import React from "react";
 
 function NotFound() {
+    const navigate = useNavigate();
 
+    const handleTerugClick = () => {
+        navigate(-1); // Navigeer terug naar de vorige pagina
+    };
 
     return (
         <>
-            <h2>Oops... De Natuurverhaal vogel kan je pagina niet vinden</h2>
-            <p>Take me back to the <Link to="/">home page.</Link></p>
+            <div className="outer-content-container-column">
+                <div className="inner-content-container-column">
+                    <h2>Oeps... De de pagina die je zoekt bestaat niet</h2>
+                    <button className="simpleButtons margin20PxTopBottom" onClick={handleTerugClick}> Terug naar de vorige pagina
+                    </button>
+                </div>
+            </div>
         </>
     )
 }

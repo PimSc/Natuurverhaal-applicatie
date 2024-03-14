@@ -63,6 +63,8 @@ function ChangeUserData() {
 
     return (
         <>
+            <div className="outer-content-container-column">
+                <div className="inner-content-container-column">
             <div className="admindiv">
                 <form className="adminRedfield" action="" onSubmit={handleForm1Submit}>
 
@@ -97,7 +99,8 @@ function ChangeUserData() {
                         placeholder="Type the password and press change"
                         autoComplete="on"
                         value={password}
-                        maxLength={50}
+                        pattern=".*[!@#$%^&*].*"
+                        minLength={8}
                         onChange={(e) => setPassword(e.target.value)}/>
                     <br/>
                     <button className="simpleButtonsRemove buttonRedRemove" type="submit">
@@ -105,7 +108,8 @@ function ChangeUserData() {
                     </button>
                 </form>
             </div>
-
+        </div>
+            </div>
 
         </>
     );

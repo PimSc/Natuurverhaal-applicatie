@@ -9,8 +9,10 @@
 
 /*----------Image part-----------*/
 .excursionDetailImageContainer{
-    width: 500px;
-    object-fit: cover;
+    width: auto;
+    max-height: 500px;
+    overflow: hidden;
+    object-fit: contain;
 }
 .excursionDetailImageContainer img{
     object-fit: cover;

@@ -66,7 +66,10 @@ function LoginScreen() {
                                 value={username}
                                 id="username"
                                 required
-                                autoComplete="on"/>
+                                autoComplete="on"
+                            minLength={3}
+                            maxLength={15}
+                            />
                         </div>
 
                         <div className="inputFieldMargin">
@@ -81,7 +84,10 @@ function LoginScreen() {
                                 value={password}
                                 id="wachtwoord"
                                 required
-                                autoComplete="on"/>
+                                autoComplete="on"
+                                pattern=".*[!@#$%^&*].*"
+                                minLength={8}
+                            />
                         </div>
 
                         {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}

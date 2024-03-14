@@ -51,6 +51,7 @@ function Navigation() {
                                         {isAuth && (<>
                                                 <li><Link to="/mijnBlogs">Mijn blogs</Link></li>
                                                 <li><Link to="/mijnprikbord">Mijn prikbord</Link></li>
+                                                <li><Link to="/mijnGegevens">Mijn gegevens</Link></li>
                                                 <li><Link to="/ProfileEdit">Profiel</Link></li>
 
 
@@ -140,6 +141,13 @@ function Navigation() {
                                                      className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
                                                 prikbord</NavLink>
                                         </li>
+
+                                        <li>
+                                            <NavLink to="/mijnGegevens"
+                                                     className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Mijn
+                                                prikbord</NavLink>
+                                        </li>
+
 
                                         <li>
                                             <NavLink to="/ProfileEdit"

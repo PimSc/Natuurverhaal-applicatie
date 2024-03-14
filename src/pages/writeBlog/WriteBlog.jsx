@@ -111,7 +111,7 @@ function WriteBlog() {
                             <label htmlFor="title">
                                 <b>Categorieën:</b>
                             </label>
-                            <select onChange={handleChangeCategories}>
+                            <select onChange={handleChangeCategories} required>
                                 <option value="please select a category">Selecteer een categorie</option>
                                 <option value="natuurgebied">natuurgebied</option>
                                 <option value="wandelroute">wandelroute</option>
@@ -168,6 +168,7 @@ function WriteBlog() {
                                accept=".jpg, .jpeg, .png"
                                name="file"
                                id="fileUpload"
+                               required
                                onChange={handleFileChange}
                         />
 

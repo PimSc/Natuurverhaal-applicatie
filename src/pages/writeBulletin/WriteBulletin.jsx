@@ -126,6 +126,7 @@ function WriteBulletin() {
                                name="file"
                                id="fileUpload"
                                onChange={handleFileChange}
+                               required
                         />
 
                         {/* Caption */}

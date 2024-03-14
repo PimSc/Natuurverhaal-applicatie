@@ -58,7 +58,15 @@ function AdminPanel() {
             });
     };
 
+    const [blogId, setBlogId] = useState('');
 
+    const handleEdit = () => {
+        if (blogId.trim() !== '') {
+            window.location.href = `/blogedit/${blogId}`;
+        } else {
+            alert("Voer een geldig ID-nummer in.");
+        }
+    };
 
 
 
@@ -93,12 +101,13 @@ function AdminPanel() {
                     </div>
                     </section>
 
+
+
                     <section>
                         <h2 className="textCenter">Blog section</h2>
 
                         {/*--EDIT BLOG--*/}
-                        <form className="adminYellowField" action="">
-
+                        <form className="adminYellowField">
                             <label htmlFor="editBlog">
                                 <b>Blog bewerken</b>
                             </label>
@@ -108,34 +117,40 @@ function AdminPanel() {
                                 id="editBlog"
                                 placeholder="Typ een blog ID nummer en druk op edit"
                                 autoComplete="on"
+                                value={blogId}
+                                onChange={(e) => setBlogId(e.target.value)}
                             />
-                            <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
+                            <button
+                                className="simpleButtonsEdit buttonYellowEdit"
+                                type="button"
+                                onClick={handleEdit}
+                            >
                                 Edit <strong>blog</strong>
                             </button>
                         </form>
 
-                    {/*--DELETE BLOG--*/}
-                    <form className="adminRedfield" action="" onSubmit={(e) => {
-                        e.preventDefault();
-                        handleDeleteBlogpost()
-                    }}>
+                        {/*--DELETE BLOG--*/}
+                        <form className="adminRedfield" action="" onSubmit={(e) => {
+                            e.preventDefault();
+                            handleDeleteBlogpost()
+                        }}>
 
-                        <label htmlFor="deleteBlog">
-                            <b>Blog verwijderen</b>
-                        </label>
-                        <input
-                            className="textAreaOneLine"
-                            name="deleteBlog"
-                            id="deleteBlog"
-                            placeholder="Typ een blog ID nummer en druk op delete"
-                            autoComplete="on"
-                            value={postId} // Waarde van de input gekoppeld aan postId
-                            onChange={(e) => setPostId(e.target.value)} // onChange event handler om postId bij te werken
-                        />
-                        <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                            Delete <strong>blog</strong>
-                        </button>
-                    </form>
+                            <label htmlFor="deleteBlog">
+                                <b>Blog verwijderen</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="deleteBlog"
+                                id="deleteBlog"
+                                placeholder="Typ een blog ID nummer en druk op delete"
+                                autoComplete="on"
+                                value={postId} // Waarde van de input gekoppeld aan postId
+                                onChange={(e) => setPostId(e.target.value)} // onChange event handler om postId bij te werken
+                            />
+                            <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                Delete <strong>blog</strong>
+                            </button>
+                        </form>
                     </section>
 
 

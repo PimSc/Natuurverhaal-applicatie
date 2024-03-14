@@ -68,7 +68,7 @@ function App() {
                 <Route path="/writeBlog" element={<div><Helmet><title>Natuurverhaal | Blog schrijven</title></Helmet>{isAuth ? <WriteBlog/> : <Navigate to="/login"/>}</div>}/>
                 <Route path="/blogedit/:id" element={<div><Helmet><title>Natuurverhaal | Blog aanpassen</title></Helmet>{isAuth ? <BlogEdit/> : <Navigate to="/login"/>}</div>}/>
                 <Route path="/editprikbord/:id" element={<div><Helmet><title>Natuurverhaal | Prikbord aanpassen</title></Helmet>{isAuth ? <BulletinBoardEdit/> : <Navigate to="/login"/>}</div>}/>
-                <Route path="/ChangeUserData" element={<div><Helmet><title>Natuurverhaal | Gegevens aanpassen</title></Helmet>{isAuth ? <ChangeUserData/> : <Navigate to="/login"/>}</div>}/>
+                <Route path="/mijnGegevens" element={<div><Helmet><title>Natuurverhaal | Gegevens aanpassen</title></Helmet>{isAuth ? <ChangeUserData/> : <Navigate to="/login"/>}</div>}/>
 
                 {/*ADMIN PAGINA`S*/}
                 <Route path="/writeExcursion" element={isAuth ? <WriteExcursion/> : <Navigate to="/login"/>}/>

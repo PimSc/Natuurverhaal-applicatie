@@ -88,8 +88,7 @@ function ExcursionOverview() {
 
                                                 {/*Guide*/}
                                                 <li><p><img className="iconSmall" src={guideIcon}
-                                                            alt="dier-icoon"/><Link
-                                                    to={`/ProfileDetail/${post.guide.toLowerCase()}`}> {post.guide}</Link>
+                                                            alt="dier-icoon"/> {post.guide}
                                                 </p>
                                                 </li>
                                             </ul>
