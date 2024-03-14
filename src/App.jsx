@@ -39,13 +39,13 @@ function App() {
 
     return (
         <>
-            <header>
+          <header>
                 <Header/>
-            </header>
+        </header>
 
-            <nav>
+
                 <Navigation/>
-            </nav>
+
 
             <ScrollToTop/>
 
