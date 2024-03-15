@@ -7,7 +7,6 @@ import animalIcon from "./../../../public/assets/icons/animal-icon.png";
 import guideIcon from "./../../../public/assets/icons/guide-icon.png";
 import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
 import moneyIcon from "../../../public/assets/icons/money-icon.png";
-// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 import React, {useEffect, useRef, useState} from "react";
 
 
@@ -34,10 +33,7 @@ function ExcursionOverview() {
     // ----- Lazy loading end -----
 
 
-    // // Loading gif
-    // if (ExcursionsAll.length === 0) {
-    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    // }
+
 
     return (
         <>

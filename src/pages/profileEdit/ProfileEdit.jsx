@@ -69,11 +69,6 @@ function ProfileEdit() {
         formDataToSend.append("username", formData.username);
 
 
-        console.log('form', formDataToSend)
-
-
-        // pim aangepast
-
         try {
             const token = localStorage.getItem("token")
             const response = await axios.post(url, formDataToSend, {

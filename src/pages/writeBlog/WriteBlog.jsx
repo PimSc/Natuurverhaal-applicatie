@@ -9,6 +9,7 @@ function WriteBlog() {
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
+
     const [formData, setFormData] = useState({
         title: "",
         subtitle: "",

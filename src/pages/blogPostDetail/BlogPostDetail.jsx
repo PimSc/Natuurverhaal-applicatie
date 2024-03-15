@@ -29,6 +29,9 @@ function BlogPostDetail() {
         return <div>Post niet gevonden.</div>;
     }
 
+
+
+
     return (
         <>
             <article className="outer-content-container-column">

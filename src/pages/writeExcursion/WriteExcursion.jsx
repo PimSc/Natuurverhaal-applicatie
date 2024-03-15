@@ -336,9 +336,7 @@ function WriteExcursion() {
 
 
                             </div>
-                            {/*pim*/}
                             {uploadStatus && <p>{uploadStatus}</p>}
-
 
                             <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
                                 <strong>plaatsen</strong>

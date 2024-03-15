@@ -16,20 +16,46 @@ import {
     WhatsappIcon,
     WhatsappShareButton
 } from "react-share";
-import React from "react";
+import React, {useContext, useState} from "react";
+import axios from "axios";
 
 function ExcursionPostDetail() {
     const {id} = useParams();
     const {ExcursionsAll} = useAllExcursions();
     const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
+    const [message, setMessage] = useState('');
 
     console.log("ExcursionsAll", ExcursionsAll)
 
     if (!post) {
-        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
         return <div>Post niet gevonden.</div>;
     }
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('title').value;
+        const email = document.getElementById('content').value;
+
+        const registrationData = {
+            name: name,
+            email: email,
+            excursieId: id, // assuming 'id' is the id of the excursion
+        };
+
+        try {
+            const token = localStorage.getItem("token")
+            const response = await axios.post('http://localhost:8080/registrations', registrationData, {
+                headers: {
+                    Authorization: `Bearer ${token}`}
+                });
+            console.log(response.data);
+            setMessage('Inschrijving gelukt');
+        } catch (error) {
+            console.error('Error posting data', error);
+            setMessage('Inschrijving mislukt');
+        }
+    };
 
     return (
         <>
@@ -52,7 +78,7 @@ function ExcursionPostDetail() {
 
                         <br/>
 
-                        <ol className="excursionsActivityDetailText">
+                        <ol className="textStart excursionsActivityDetailText">
 
                             {/*Date*/}
                             <li><p><img className="iconSmall" src={calendarIcon}
@@ -87,7 +113,7 @@ function ExcursionPostDetail() {
 
                         <p className="margin20PxButton">Maximaal aantal deelnemers: {post.max_participants}</p>
 
-                        <form action="">
+                        <form action="" onSubmit={handleSubmit}>
                             <div className="textCenter" id="topMarginDeelnemen">
                                 <h2>Deelnemen</h2>
                             </div>
@@ -115,10 +141,14 @@ function ExcursionPostDetail() {
                                        required
                                 />
                             </div>
+                            <p className="margin20PxBottom">{message}</p>
+                            <button className="simpleButtons margin20PxBottom" type="submit">verzend gegevens</button>
+
                         </form>
 
+
                         <div className="shareIconsBox, margin20PxBottom">
-                            <p><strong>Deel deze pagina</strong></p>
+                        <p><strong>Deel deze pagina</strong></p>
                             <WhatsappShareButton
                                 className="ShareIcon"
                                 url={`/excursiePosts/${id}`}

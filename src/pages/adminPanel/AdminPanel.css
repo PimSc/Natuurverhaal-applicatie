@@ -1,3 +1,4 @@
+
 .adminRedfield {
     margin: 30px 0 20px 0;
     border: 5px solid red;
@@ -32,6 +33,43 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .adminRedfield {
+        width: 300px;
+    }
+
+    .adminYellowField {
+        width: 300px;
+    }
+
+    .adminGreenField {
+        width: 300px;
+    }
+
+    .adminUsernameInput {
+        width: 200px;
+        height: 2lh;
+        margin-left: 30px;
+    }
+
+    .adminWriteMassageContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .adminGreenCenterContainer{
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+
+
 }
 
 

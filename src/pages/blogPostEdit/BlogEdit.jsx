@@ -19,18 +19,6 @@ function BlogEdit() {
     const [content, setContent] = useState('');
 
 
-    // // pim
-    // const [formData, setFormData] = useState({
-    //     title: "",
-    //     subtitle: "",
-    //     file: null,
-    //     caption: "",
-    //     content: "",
-    //     username: `${user.username}`,
-    //     categories: [''],
-    //     date: ""
-    // });
-
     useEffect(() => {
         if (post) {
             setTitle(post.title || '');
@@ -221,7 +209,7 @@ function BlogEdit() {
                         </div>
                         <div className="elementCenterContainer">
                             <br />
-                            <button className="simpleButtons" type="submit">
+                            <button className="simpleButtons margin20PxBottom" type="submit">
                                 Blog aanpassingen verzenden
                             </button>
                             <button className="simpleButtons" id="WriteBlogBackButton" type="button">

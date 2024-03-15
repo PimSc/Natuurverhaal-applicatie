@@ -308,13 +308,14 @@ button, select, textarea {
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;
-    height: 55px;
+    height: auto;
     margin: 25px 0;
     padding: 10px 10px 10px 10px;
     border: 4px solid var(--mainFontColor);
     border-radius: 6px 22px;
     box-sizing: border-box;
     text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.4);
 }
 
 .simpleButtonsRemove:hover {
@@ -325,6 +326,7 @@ button, select, textarea {
     cursor: pointer;
 }
 
+
 .simpleButtonsEdit {
     font-family: var(--mainFont);
     color: var(--mainFontColor);
@@ -332,14 +334,16 @@ button, select, textarea {
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;
-    height: 55px;
+    height: auto;
     margin: 25px 0;
     padding: 10px 10px 10px 10px;
     border: 4px solid var(--mainFontColor);
     border-radius: 6px 22px;
     box-sizing: border-box;
     text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.4);
 }
+
 
 .simpleButtonsEdit:hover {
     color: black;
@@ -356,7 +360,7 @@ button, select, textarea {
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;
-    height: 55px;
+    height: auto;
     margin: 25px 0;
     padding: 10px 10px 10px 10px;
     border: 4px solid var(--mainFontColor);
@@ -607,17 +611,47 @@ button, select, textarea {
 /*---ShareIcons Start---*/
 .ShareIcon {
     box-shadow: none;
-    margin: 5px 0 0 5px;
+    margin: 5px 0 0 -10px;
 }
 
 .shareIconsBox {
-    margin: 30px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 /*---ShareIcons End---*/
 
+.blackField {
+    margin: 30px 0 20px 0;
+    border: 5px solid var(--mainFontColor);
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+}
+
+.elementCenterContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.simpleButtonsEdit a{
+    font-size: 1em;
+}
+
+.simpleButtonsTotalGreen a{
+    font-size: 1em;
+}
+
+.simpleButtonsRemove{
+    font-size: 1em;
+}
+
 
 @media only screen and (max-width: 767px) {
+
 
     p {
         font-size: calc(var(--pFontSize) - 20%);
@@ -654,7 +688,7 @@ button, select, textarea {
     }
 
     .textAreaOneLine {
-        width: 290px;
+        width: 100%;
     }
 
     .textAreaStory {
@@ -740,15 +774,71 @@ button, select, textarea {
     .onTopOfImageBox {
         z-index: 2;
         background-color: hsl(0, 0%, 100%, 0.4);
-        max-height: 200px;
-        min-height: 130px;
+        height: 50px;
         overflow: hidden;
+        justify-content: end;
+    }
+
+    .onTopOfImageBox h2{
+     font-size: 12px;
+    }
+
+    .onTopOfImageBox p{
+        font-size: 12px;
+    }
+
+    .onTopOfImageBox i{
+        display: none;
     }
 
     .post-image {
         max-height: 100px;
 
     }
+
+    .simpleButtons {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .simpleButtonsEdit {
+        width: 90px;
+        height: 40px;
+        letter-spacing: 0;
+        margin:  0;
+        padding: 0;
+        border: 2px solid black;
+    }
+
+    .simpleButtonsRemove {
+        width: 90px;
+        letter-spacing: 0;
+        height: 40px;
+        margin:  0;
+        padding: 0;
+        border: 2px solid black;
+    }
+
+    .simpleButtonsTotalGreen {
+        width: 90px;
+        letter-spacing: 0;
+        height: 40px;
+        padding: 0;
+        margin: 0 10px;
+        border: 2px solid black;
+    }
+
+    .simpleButtonsEdit a{
+  font-size: 10px;
+    }
+
+    .simpleButtonsTotalGreen a{
+        font-size: 10px;
+    }
+
+    .simpleButtonsRemove{
+        font-size: 10px;
+    }
+
 
 
 }

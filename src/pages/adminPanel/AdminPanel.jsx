@@ -68,7 +68,37 @@ function AdminPanel() {
         }
     };
 
+    const assignRoleAdmin = () => {
+        axios.post(`http://localhost:8080/users/${username}/authorities`, {
+            "authority": "ROLE_ADMIN"
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                console.log('Role assigned successfully');
+                window.location.reload();
+            })
+            .catch(error => {
+                console.error('Error assigning role:', error);
+            });
+    };
 
+    const deleteRoleAdmin = () => {
+        axios.delete(`http://localhost:8080/users/${username}/authorities/ROLE_ADMIN`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                console.log('Role assigned successfully');
+                window.location.reload();
+            })
+            .catch(error => {
+                console.error('Error assigning role:', error);
+            });
+    };
 
     return (
         <>
@@ -79,13 +109,13 @@ function AdminPanel() {
                     <h1>Admin panel</h1>
                     <h3 className="ButtonMargin40px">Welkom admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
 
-                    {/*admin maken toevoegen*/}
+                    {/*pim admin maken toevoegen*/}
 
 
                     <section>
                     <h2 className="textCenter">Excursie section</h2>
 
-                    <div className="elementCenterContainer adminGreenField">
+                    <div className="adminGreenCenterContainer adminGreenField">
                         <button
                             className="simpleButtons simpleButtonTopMargin"
                             type="button"
@@ -203,6 +233,30 @@ function AdminPanel() {
 
                     <section>
                         <h2 className="textCenter">User section</h2>
+
+                        {/*--EDIT PRIKBORD--*/}
+                        <form className="adminYellowField" action="">
+                            <label htmlFor="editBlog">
+                                <b>Rol toekennen aan gebruiker</b>
+                            </label>
+                            <input
+                                className="textAreaOneLine"
+                                name="editBlog"
+                                id="editBlog"
+                                placeholder="Voer een username in"
+                                autoComplete="on"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <button className="simpleButtonsEdit buttonYellowEdit" type="button"
+                                    onClick={assignRoleAdmin}>
+                                Admin rol <strong>toekennen</strong>
+                            </button>
+                            <button className="simpleButtonsEdit buttonYellowEdit" type="button"
+                                    onClick={deleteRoleAdmin}>
+                                Admin rol <strong>verwijderen</strong>
+                            </button>
+                        </form>
 
                         {/*--HARD DELETE USER--*/}
                         <form className="adminRedfield" onSubmit={(e) => {

@@ -69,7 +69,7 @@ function ChangeUserData() {
 
                         <article>
                         <section>
-                            <form className="adminRedfield" action="" onSubmit={handleForm1Submit}>
+                            <form className="blackField" action="" onSubmit={handleForm1Submit}>
                                 <label htmlFor="email">
                                     <p>Change email</p>
                                 </label>
@@ -84,14 +84,14 @@ function ChangeUserData() {
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <br/>
-                                <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                <button className="simpleButtons" type="submit">
                                     Change <strong>email</strong>
                                 </button>
                             </form>
                         </section>
 
                         <section>
-                            <form className="adminRedfield" action="" onSubmit={handleForm2Submit}>
+                            <form className="blackField" action="" onSubmit={handleForm2Submit}>
                                 <label htmlFor="password">
                                     <p>Change password</p>
                                 </label>
@@ -106,7 +106,7 @@ function ChangeUserData() {
                                     minLength={8}
                                     onChange={(e) => setPassword(e.target.value)}/>
                                 <br/>
-                                <button className="simpleButtonsRemove buttonRedRemove" type="submit">
+                                <button className="simpleButtons" type="submit">
                                     Change <strong>password</strong>
                                 </button>
                             </form>

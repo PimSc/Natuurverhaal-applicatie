@@ -135,8 +135,6 @@ return (
             <div className="inner-content-container-editBorder">
                 {post && (
                     <>
-
-                        {/*pim*/}
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
                         <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>

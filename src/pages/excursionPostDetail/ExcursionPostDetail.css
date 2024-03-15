@@ -1,5 +1,5 @@
 .excursionsActivityDetailText{
-    list-style-type: disc;
+    list-style-type: none;
 }
 
 #topMarginDeelnemen{
@@ -30,6 +30,7 @@
 .excursionDetailInnerContainer hr{
     width: 100%;
 }
+
 
 
 
