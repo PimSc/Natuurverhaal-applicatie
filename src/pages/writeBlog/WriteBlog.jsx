@@ -204,7 +204,7 @@ function WriteBlog() {
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
                         <div className="textCenter">
                             <p>Na "Blogbericht plaatsen" verschijnt de blog op de homepage </p>
                             <p>Blogs aanpassen kan bij Account > Mijn blogs</p>

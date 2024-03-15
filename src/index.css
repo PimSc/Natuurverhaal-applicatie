@@ -504,10 +504,13 @@ button, select, textarea {
     align-items: center;
 }
 
+.redText{
+    color: red;
+    margin-bottom: 10px;
+}
+
 
 /*SIMPLE BUTTONS START*/
-
-
 .simpleButtons {
     font-family: var(--mainFont);
     color: var(--mainFontColor);
@@ -616,9 +619,11 @@ button, select, textarea {
     border-radius: 22px 6px;
     cursor: pointer;
 }
-
-
 /*SIMPLE BUTTONS END*/
+
+
+
+
 
 
 
@@ -773,9 +778,6 @@ button, select, textarea {
         padding: 20px;
         width: 330px;
     }
-
-
-
 
 
     /*SIMPLE BUTTONS MOBILE START*/

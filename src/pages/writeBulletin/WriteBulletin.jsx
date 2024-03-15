@@ -159,7 +159,7 @@ function WriteBulletin() {
                     </div>
 
                     <div className="elementCenterContainer">
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
                         <button
                             className="simpleButtons margin20PxTop"
                             type="submit" onClick={uploadGegevens}>

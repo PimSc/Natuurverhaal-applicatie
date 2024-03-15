@@ -3,7 +3,6 @@ import question from "./../../../public/assets/icons/question-icon.png"
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import React, {useContext, useEffect, useState} from "react";
-import useProfileImage from "../../Hooks/useProfileImage.jsx";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
@@ -55,8 +54,8 @@ function ProfileEdit() {
     };
 
 
-    async function uploadGegevens() {
-
+    async function uploadGegevens(event) {
+        event.preventDefault();
 
         const url = `http://localhost:8080/user-profile/${user.username}`;
         console.log(user.username)
@@ -281,13 +280,14 @@ function ProfileEdit() {
                     </div>
 
                     <div className="profileButtonCenter">
-
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        <div className="elementCenterContainer">
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
 
                         <button className="simpleButtons" type="submit"
                                 onClick={uploadGegevens}>
                             Profiel plaatsen
                         </button>
+                        </div>
                     </div>
 
                 </form>

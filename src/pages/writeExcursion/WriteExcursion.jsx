@@ -336,7 +336,7 @@ function WriteExcursion() {
 
 
                             </div>
-                            {uploadStatus && <p>{uploadStatus}</p>}
+                            {uploadStatus && <p className="red">{uploadStatus}</p>}
 
                             <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
                                 <strong>plaatsen</strong>

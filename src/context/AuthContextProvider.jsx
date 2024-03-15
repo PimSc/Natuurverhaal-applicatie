@@ -5,6 +5,8 @@ import axios from 'axios';
 import LoadingGif from "../../public/assets/icons/LoadingGif.gif"
 
 
+// Ik heb hier expres de comments laten staan
+
 export const AuthContext = createContext({});
 
 function AuthContextProvider({ children }) {

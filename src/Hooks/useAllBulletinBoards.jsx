@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
+// Deze hook haalt de BulletinBoard (prikbord) posts op en geeft deze door aan de andere pagina`s waar nodig
 
 function useAllBulletinBoards() {
     const [bulletinBoardsAll, setBulletinBoards] = useState([]);

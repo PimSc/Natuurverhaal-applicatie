@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-
+// Deze hook haalt de excursion posts op en geeft deze door aan de andere pagina`s waar nodig
 function useAllExcursions() {
     const [ExcursionsAll, setExcursions] = useState([]);
 

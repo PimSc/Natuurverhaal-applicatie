@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContextProvider.jsx";
 import axios from "axios";
 
+// Deze hook haalt de userProfiles op en geeft deze door aan de andere pagina`s waar nodig
+
 function UseAllUserProfiles() {
     const [AllUserProfiles, setUserProfile] = useState([]);
     const { user } = useContext(AuthContext);

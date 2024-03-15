@@ -9,8 +9,8 @@ function AdminPanel() {
     const {user} = useContext(AuthContext);
     const [postId, setPostId] = useState(""); // State toegevoegd voor postId
     const [prikbordpostId, setPrikbordId] = useState(""); // State toegevoegd voor postId
-    const [username, setUsername] = useState(""); // State toegevoegd voor username
-    const [usernameRole, setUsernameRole] = useState(""); // State toegevoegd voor username
+    const [username, setUsername] = useState(""); // State toegevoegd voor username DeleteUser
+    const [usernameRole, setUsernameRole] = useState(""); // State toegevoegd voor username ROLE
     const token = localStorage.getItem("token")
 
     const handleDeleteBlogpost = () => {
@@ -22,7 +22,7 @@ function AdminPanel() {
         })
             .then(response => {
                 console.log('Post deleted successfully');
-                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+                window.location.reload();
             })
             .catch(error => {
                 console.error('Error deleting post:', error);
@@ -116,9 +116,6 @@ function AdminPanel() {
                         <h3 className="ButtonMargin40px">Welkom
                             admin {user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3>
 
-                        {/*pim admin maken toevoegen*/}
-
-
                         <section>
                             <h2 className="textCenter">Excursie section</h2>
 
@@ -183,8 +180,8 @@ function AdminPanel() {
                                     id="deleteBlog"
                                     placeholder="Typ een blog ID nummer en druk op delete"
                                     autoComplete="on"
-                                    value={postId} // Waarde van de input gekoppeld aan postId
-                                    onChange={(e) => setPostId(e.target.value)} // onChange event handler om postId bij te werken
+                                    value={postId}
+                                    onChange={(e) => setPostId(e.target.value)}
                                 />
                                 <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                                     Delete <strong>blog</strong>
@@ -231,7 +228,7 @@ function AdminPanel() {
                                     placeholder="Typ een prikbord ID nummer en druk op delete"
                                     autoComplete="on"
                                     value={prikbordpostId}
-                                    onChange={(e) => setPrikbordId(e.target.value)} // onChange event handler om postId bij te werken
+                                    onChange={(e) => setPrikbordId(e.target.value)}
                                 />
                                 <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                                     Delete <strong>blog</strong>
@@ -281,8 +278,8 @@ function AdminPanel() {
                                     id="deleteUser"
                                     placeholder="Typ een username en druk op delete"
                                     autoComplete="on"
-                                    value={username} // Waarde van de input gekoppeld aan username
-                                    onChange={(e) => setUsername(e.target.value)} // onChange event handler om username bij te werken
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
                                 />
                                 <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                                     Hard delete <strong>user</strong>
