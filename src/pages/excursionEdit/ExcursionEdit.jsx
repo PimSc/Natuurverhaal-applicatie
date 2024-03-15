@@ -343,7 +343,7 @@ return (
                         <button className="simpleButtons" type="submit">
                             Excursie aanpassingen verzenden
                         </button>
-                        <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                        <button className="simpleButtons" type="button">
                             <Link to="/mijnExcursies">Terug naar mijn excursies</Link>
                         </button>
                     </div>

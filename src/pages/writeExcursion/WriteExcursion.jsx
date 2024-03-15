@@ -138,7 +138,7 @@ function WriteExcursion() {
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
 
-                    <div className="inner-content-container-column margin20PxTopBottom margin20PxBottom">
+                    <div className="inner-content-container-column margin20PxTop margin20PxBottom">
                         <h1>Welkom admin</h1>
                         <h4>Maak hier een excursie aan voor het overzicht</h4>
                         <p>Een activiteit verwijderen kan in het algemene excursie overzicht</p>

@@ -212,7 +212,7 @@ function BlogEdit() {
                             <button className="simpleButtons margin20PxBottom" type="submit">
                                 Blog aanpassingen verzenden
                             </button>
-                            <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                            <button className="simpleButtons" type="button">
                                 <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                             </button>
                         </div>

@@ -70,7 +70,7 @@ function ExcursionPostDetail() {
                         </div>
 
 
-                        <hr className="margin20PxTopBottom"/>
+                        <hr className="margin20PxTop"/>
 
 
                         <h1>{post.title}</h1>
@@ -105,7 +105,7 @@ function ExcursionPostDetail() {
                         </ol>
 
 
-                        <hr className="margin20PxTopBottom"/>
+                        <hr className="margin20PxTop"/>
 
 
                         <p className="textStart">{post.content}</p>

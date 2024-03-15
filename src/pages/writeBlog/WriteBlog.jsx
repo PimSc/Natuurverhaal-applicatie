@@ -96,7 +96,7 @@ function WriteBlog() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                <button className="simpleButtons margin20PxTop" type="button">
                     <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                 </button>
 

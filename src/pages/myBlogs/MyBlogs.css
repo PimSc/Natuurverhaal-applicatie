@@ -60,7 +60,6 @@ width: auto;
 .WriteBlogButton {
     font-family: var(--mainFont);
     color:  var(--mainFontColor);
-    text-transform: uppercase;
     transition: all 0.3s ease 0s;
     display: inline-block;
     letter-spacing: 2px;

@@ -14,7 +14,7 @@ function NotFound() {
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
                     <h2>Oeps... De de pagina die je zoekt bestaat niet</h2>
-                    <button className="simpleButtons margin20PxTopBottom" onClick={handleTerugClick}> Terug naar de vorige pagina
+                    <button className="simpleButtons margin20PxTop" onClick={handleTerugClick}> Terug naar de vorige pagina
                     </button>
                 </div>
             </div>
