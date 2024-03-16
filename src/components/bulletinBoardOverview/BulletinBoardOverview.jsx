@@ -1,10 +1,13 @@
 import './BulletinBoardOverview.css';
 import {Link} from "react-router-dom";
-import useBlog from "../../Hooks/useAllBulletinBoards.jsx";
+import useAllBulletinBoards from "../../Hooks/useAllBulletinBoards.jsx";
 import {useEffect, useRef, useState} from "react";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function BulletinBoardOverview() {
-    const {bulletinBoardsAll} = useBlog();
+    const {bulletinBoardsAll} = useAllBulletinBoards();
+    const {bulletinIsLoading} = useAllBulletinBoards();
+
     const reversedPosts = bulletinBoardsAll.slice().reverse();
 
     // ----- Lazy loading start -----
@@ -27,36 +30,44 @@ function BulletinBoardOverview() {
     // ----- Lazy loading end -----
 
 
-
+    // Loading gif
+    if (bulletinIsLoading) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
         <>
-            <section className="outer-content-container" ref={containerRef}>
-                <div className="inner-content-container">
-                    <ul className="post-list">
-                        {reversedPosts.slice(0, visiblePosts).map((post) => (
-                            <section key={post.id}>
-                            <li className="post-item">
-                                <Link to={`/prikbordPosts/${post.id}`}>
-                                    <div className="post-image">
-                                        <img
-                                            src={"data:image/png;base64," + post.fileContent} alt={post.title}
-                                            loading="lazy"
-                                            className="post-image"/>
-                                        <div className="onTopOfImageBox">
-                                            <h2>{post.title}</h2>
-                                            <p>Geschreven
-                                                door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
-                                            <i>{post.date}</i>
+            {reversedPosts.length > 0 && (
+                <section className="outer-content-container" ref={containerRef}>
+                    <div className="inner-content-container">
+                        <ul className="post-list">
+                            {reversedPosts.slice(0, visiblePosts).map((post) => (
+                                <section key={post.id}>
+                                <li className="post-item">
+                                    <Link to={`/prikbordPosts/${post.id}`}>
+                                        <div className="post-image">
+                                            <img
+                                                src={"data:image/png;base64," + post.fileContent} alt={post.title}
+                                                loading="lazy"
+                                                className="post-image"/>
+                                            <div className="onTopOfImageBox">
+                                                <h2>{post.title}</h2>
+                                                <p>Geschreven
+                                                    door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                                <i>{post.date}</i>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            </li>
-                            </section>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+                                    </Link>
+                                </li>
+                                </section>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            )}
+            {reversedPosts.length === 0 && (
+                <div><center>Er zijn geen prikbord berichten.</center></div>
+            )}
         </>
     );
 }

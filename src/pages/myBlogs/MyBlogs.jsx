@@ -24,7 +24,6 @@ function MyBlogs() {
     }, [searchQuery, blogPostsUser]);
 
     const handleDelete = (postId) => {
-        console.log(postId)
         axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`

@@ -14,7 +14,6 @@ function AdminPanel() {
     const token = localStorage.getItem("token")
 
     const handleDeleteBlogpost = () => {
-        console.log(postId);
         axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -30,7 +29,6 @@ function AdminPanel() {
     };
 
     const handleDeletePrikbordpost = () => {
-        console.log(prikbordpostId);
         axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${prikbordpostId}`, {
             headers: {
                 Authorization: `Bearer ${token}`

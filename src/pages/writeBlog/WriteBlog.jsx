@@ -58,7 +58,6 @@ function WriteBlog() {
     async function uploadGegevens(event) {
         event.preventDefault();
         const url = `http://localhost:8080/blog-posts/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("subtitle", formData.subtitle);
@@ -67,8 +66,6 @@ function WriteBlog() {
         formDataToSend.append("content", formData.content);
         formDataToSend.append("categories", formData.categories);
         formDataToSend.append("username", formData.username);
-
-        console.log('form', formDataToSend)
 
         try {
             const token = localStorage.getItem("token")

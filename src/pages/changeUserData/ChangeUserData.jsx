@@ -16,11 +16,10 @@ function ChangeUserData() {
     async function handleForm1Submit(e) {
         e.preventDefault()
 
+        // Change email
         try {
-
             const response = await axios.put(`http://localhost:8080/users/${user.username}`, {
                 username: `${user.username}`,
-                password: `${user.password}`,
                 email: email,
                 enabled: enabled
             }, {
@@ -28,18 +27,14 @@ function ChangeUserData() {
                     Authorization: `Bearer ${token}`,
                 }
             });
-            console.log(response.data);
-
         } catch (error) {
             console.error(error);
         }
     }
 
-
-
+    // Change password
     async function handleForm2Submit(e) {
         e.preventDefault()
-
         try {
 
             const response = await axios.put(`http://localhost:8080/users/${user.username}`, {
@@ -52,8 +47,6 @@ function ChangeUserData() {
                     Authorization: `Bearer ${token}`
                 }
             });
-
-            console.log(response.data);
 
         } catch (error) {
             console.error(error);

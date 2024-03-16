@@ -23,8 +23,6 @@ function LoginScreen() {
                 username: username,
                 password: password
             });
-            // log het resultaat in de console
-            console.log(response.data);
             // geef de JWT token aan de login-functie van de context mee
             login(response.data.jwt);
             // navigate('/')

@@ -4,6 +4,7 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function MyBulletinPosts() {
     const { bulletinBoardPostUser } = useBulletinBoard();
@@ -12,7 +13,6 @@ function MyBulletinPosts() {
     const token = localStorage.getItem("token")
 
     const handleDelete = (postId) => {
-        console.log(postId)
         axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -68,7 +68,7 @@ function MyBulletinPosts() {
 
                     <h1 id="myBlogsTitleStyling">Mijn prikbord overzicht</h1>
                     <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
-                    <h4 className="totalBlogsCounter">Je hebt {bulletinBoardPostUser.length} prikbord posts</h4>
+                    <h4 className="totalBlogsCounter margin20PxTop">Je hebt {bulletinBoardPostUser.length} prikbord posts</h4>
                     <br/>
                 </div>
             </section>

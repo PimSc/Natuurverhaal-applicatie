@@ -91,7 +91,6 @@ function WriteExcursion() {
     async function uploadGegevens(event) {
         event.preventDefault();
 
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("file", formData.file);
         formDataToSend.append("title", formData.title);

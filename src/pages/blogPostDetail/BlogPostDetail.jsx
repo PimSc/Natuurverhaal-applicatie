@@ -25,8 +25,7 @@ function BlogPostDetail() {
     };
 
     if (!post) {
-        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
-        return <div>Post niet gevonden.</div>;
+        return;
     }
 
 

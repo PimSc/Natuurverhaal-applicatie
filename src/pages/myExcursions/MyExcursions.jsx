@@ -12,15 +12,14 @@ function MyExcursions() {
     const token = localStorage.getItem("token")
 
     const handleDelete = (postId) => {
-        console.log(postId)
-        axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`, {
+        axios.delete(`http://localhost:8080/excursies/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
 
             .then(response => {
-                console.log('Post deleted successfully');
+                console.log('Post succesvol verwijderd');
                 window.location.reload();
             })
             .catch(error => {

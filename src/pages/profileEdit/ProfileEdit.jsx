@@ -10,7 +10,6 @@ function ProfileEdit() {
     const navigate = useNavigate();
 
     const {user} = useContext(AuthContext);
-    console.log("role", user.role)
 
     const [formData, setFormData] = useState({
         email: "",
@@ -58,7 +57,6 @@ function ProfileEdit() {
         event.preventDefault();
 
         const url = `http://localhost:8080/user-profile/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("name", formData.name);
         formDataToSend.append("email", formData.email);
@@ -100,7 +98,7 @@ function ProfileEdit() {
                     <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
                     <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
 
-                    <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
+                    <button className="simpleButtons margin20PxTop"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
                         openbaar profiel</Link></button>
                 </div>
             </div>
@@ -134,18 +132,18 @@ function ProfileEdit() {
                         {/*laatste rij verticaal (uitleg bestandupload)*/}
                         <div className="ProfileEditBox3">
                             <br/>
-                            <div className="iconContainer">
-                                <img className="iconSmall" src={question} alt="question icon"/>
-                                <div className="iconOverlay">
-                                    <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
-                                        .png</i>
-                                </div>
-                            </div>
+                            {/*<div className="iconContainer">*/}
+                            {/*    <img className="iconSmall" src={question} alt="question icon"/>*/}
+                            {/*    <div className="iconOverlay">*/}
+                            {/*        <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,*/}
+                            {/*            .png</i>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
 
 
-                    <div className="ProfileEditContentBox1">
+                    <div>
 
                         <div className="ProfileRowContainer">
                             {/*Middelste rij verticaal*/}
@@ -164,19 +162,19 @@ function ProfileEdit() {
                                        onChange={handleChangeEmail}
                                        required
                                 />
+                            </div>
 
-                            </div>
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img className="iconSmall"
-                                         src={question}
-                                         alt="question icon"
-                                    />
-                                    <div className="iconOverlay">
-                                        <i>Via dit e-mail adres kan iedereen contact met je opnemen</i>
-                                    </div>
-                                </div>
-                            </div>
+                            {/*<div className="ProfileEditBox3">*/}
+                            {/*    <div className="iconContainer">*/}
+                            {/*        <img className="iconSmall"*/}
+                            {/*             src={question}*/}
+                            {/*             alt="question icon"*/}
+                            {/*        />*/}
+                            {/*        <div className="iconOverlay">*/}
+                            {/*            <i>Via dit e-mail adres kan iedereen contact met je opnemen</i>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
 
                         <div className="ProfileRowContainer">
@@ -197,19 +195,19 @@ function ProfileEdit() {
                                 />
 
                             </div>
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img
-                                        className="iconSmall"
-                                        src={question}
-                                        alt="question icon"
-                                    />
+                            {/*<div className="ProfileEditBox3">*/}
+                            {/*    <div className="iconContainer">*/}
+                            {/*        <img*/}
+                            {/*            className="iconSmall"*/}
+                            {/*            src={question}*/}
+                            {/*            alt="question icon"*/}
+                            {/*        />*/}
 
-                                    <div className="iconOverlay">
-                                        <i>Onder welke naam wil je bekend worden?</i>
-                                    </div>
-                                </div>
-                            </div>
+                            {/*        <div className="iconOverlay">*/}
+                            {/*            <i>Onder welke naam wil je bekend worden?</i>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
 
@@ -231,18 +229,18 @@ function ProfileEdit() {
                             />
 
                         </div>
-                        <div className="ProfileEditBox3">
-                            <div className="iconContainer">
-                                <img
-                                    className="iconSmall"
-                                    src={question}
-                                    alt="question icon"
-                                />
-                                <div className="iconOverlay">
-                                    <i>In welke regio ben je actief?</i>
-                                </div>
-                            </div>
-                        </div>
+                        {/*<div className="ProfileEditBox3">*/}
+                        {/*    <div className="iconContainer">*/}
+                        {/*        <img*/}
+                        {/*            className="iconSmall"*/}
+                        {/*            src={question}*/}
+                        {/*            alt="question icon"*/}
+                        {/*        />*/}
+                        {/*        <div className="iconOverlay">*/}
+                        {/*            <i>In welke regio ben je actief?</i>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
 
 
@@ -265,18 +263,18 @@ function ProfileEdit() {
                             />
                         </div>
 
-                        <div className="ProfileEditBox3">
-                            <div className="iconContainer">
-                                <img
-                                    className="iconSmall"
-                                    src={question}
-                                    alt="question icon"
-                                />
-                                <div className="iconOverlay">
-                                    <i>Doorlinken naar een externe pagina is toegestaan</i>
-                                </div>
-                            </div>
-                        </div>
+                        {/*<div className="ProfileEditBox3">*/}
+                        {/*    <div className="iconContainer">*/}
+                        {/*        <img*/}
+                        {/*            className="iconSmall"*/}
+                        {/*            src={question}*/}
+                        {/*            alt="question icon"*/}
+                        {/*        />*/}
+                        {/*        <div className="iconOverlay">*/}
+                        {/*            <i>Doorlinken naar een externe pagina is toegestaan</i>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
 
                     <div className="profileButtonCenter">

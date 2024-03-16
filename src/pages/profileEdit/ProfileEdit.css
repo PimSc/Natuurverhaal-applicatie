@@ -68,7 +68,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .ProfileEditBox3 {
@@ -101,7 +101,7 @@ margin-bottom: 20px;
 
     .ProfileEditBox2 {
         width: 200px;
-        min-height: 200px;
+        height: auto;
         display: flex;
         flex-direction: column;
     }
@@ -163,6 +163,22 @@ margin-bottom: 20px;
     .ProfileTextField {
         width: 290px;
     }
+
+    .profileBiografieTextField {
+        width: 290px;
+    }
+
+    .ProfileEditBox3 {
+        width: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
 
 
     /*------Icon overlay tekst End------*/

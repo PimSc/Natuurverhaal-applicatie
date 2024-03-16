@@ -14,7 +14,6 @@ function UpVote({ blogId }) {
             try {
                 const response = await axios.get(`http://localhost:8080/blog-posts/${blogId}/upvotes`);
                 setUpvotes(response.data);
-                console.log("response log", response.data);
             } catch (error) {
                 console.error('Error fetching upvotes', error);
             }

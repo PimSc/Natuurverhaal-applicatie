@@ -47,15 +47,12 @@ function WriteBulletin() {
         event.preventDefault();
 
         const url = `http://localhost:8080/bulletin-boards/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("file", formData.file);
         formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
         formDataToSend.append("username", formData.username);
-
-        console.log('form', formDataToSend)
 
         try {
             const token = localStorage.getItem("token")
@@ -73,14 +70,11 @@ function WriteBulletin() {
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
-                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
-        console.log("urlToSend:", url);
-
     }
 
 

@@ -303,14 +303,12 @@ button, select, textarea {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -320,7 +318,6 @@ button, select, textarea {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
@@ -330,7 +327,6 @@ button, select, textarea {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /*border: 5px dashed green;*/
 }
 
 /*Inner content container voor text fields*/
@@ -338,7 +334,6 @@ button, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -348,7 +343,6 @@ button, select, textarea {
     width: fit-content;
     height: fit-content;
     align-items: center;
-    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -360,7 +354,6 @@ button, select, textarea {
     flex-grow: 0;
     text-align: start;
     align-items: flex-start;
-    /*border: 1px dashed lightgreen;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -371,7 +364,6 @@ button, select, textarea {
     text-align: center;
     align-items: center;
     width: 100%;
-    /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -381,7 +373,6 @@ button, select, textarea {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for button.*/
@@ -390,25 +381,20 @@ button, select, textarea {
     flex-direction: row;
     width: auto;
     justify-content: center;
-    /*border: 3px dashed green;*/
 }
 
 /*Container to make icons small*/
 .iconSmall {
     width: 15px;
     height: 15px;
-    /*border: 2px solid pink;*/
 }
 
 /*Container with styling for (blog) posts*/
-
-
 .outer-content-container-Edit {
     margin: 40px 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*border: 2px dashed red;*/
 }
 
 .inner-content-container-Edit {
@@ -432,7 +418,6 @@ button, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 2px dashed blue;*/
 }
 
 

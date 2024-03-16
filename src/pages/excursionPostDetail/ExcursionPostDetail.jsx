@@ -25,7 +25,6 @@ function ExcursionPostDetail() {
     const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
     const [message, setMessage] = useState('');
 
-    console.log("ExcursionsAll", ExcursionsAll)
 
     if (!post) {
         return <div>Post niet gevonden.</div>;
@@ -49,7 +48,6 @@ function ExcursionPostDetail() {
                 headers: {
                     Authorization: `Bearer ${token}`}
                 });
-            console.log(response.data);
             setMessage('Inschrijving gelukt');
         } catch (error) {
             console.error('Error posting data', error);

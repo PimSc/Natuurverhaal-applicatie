@@ -33,8 +33,6 @@ function RegisterScreen() {
                 cancelToken: source.token
             });
 
-            console.log(response.data);
-
             window.location.reload(false);
         } catch (e) {
             if (axios.isCancel(e)) {
