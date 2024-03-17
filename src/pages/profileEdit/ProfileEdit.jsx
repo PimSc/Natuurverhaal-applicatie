@@ -106,8 +106,6 @@ function ProfileEdit() {
                 <form className="inner-content-container-column" action="">
 
 
-                    {/*Middelste rij verticaal*/}
-
                         <div className="ProfileEditBox2 margin20PxTop">
 
                             {/*IMAGE UPLOAD*/}
@@ -130,7 +128,6 @@ function ProfileEdit() {
 
 
                         <div>
-                            {/*Middelste rij verticaal*/}
                             <div className="ProfileEditBox2">
                                 {/*EMAIL*/}
                                 <label className="textStart" htmlFor="email">
@@ -172,7 +169,6 @@ function ProfileEdit() {
 
 
                         <div className="ProfileEditBox2">
-
                             {/*REGIO*/}
                             <label className="textStart" htmlFor="regio">
                                 <b>Regio:</b>
@@ -186,10 +182,7 @@ function ProfileEdit() {
                                    onChange={handleChangeRegio}
                                    required
                             />
-
                         </div>
-
-
 
 
                         <div className="ProfileEditBox2">
@@ -222,8 +215,6 @@ function ProfileEdit() {
 
                 </form>
             </div>
-
-
         </>
     )
         ;

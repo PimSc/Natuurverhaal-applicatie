@@ -8,12 +8,12 @@ import { useNavigate } from "react-router-dom";
 
 function AdminPanel() {
     const {user} = useContext(AuthContext);
-    const [postDeleteId, setPostDeleteId] = useState(""); // State toegevoegd voor postId
+    const [postDeleteId, setPostDeleteId] = useState("");
     const [blogEditId, setBlogEditId] = useState('');
     const [bulletinEditId, setBulletinEditId] = useState('');
     const [bulletinDeleteId, setBulletinDeleteId] = useState('');
-    const [username, setUsername] = useState(""); // State toegevoegd voor username DeleteUser
-    const [usernameRole, setUsernameRole] = useState(""); // State toegevoegd voor username ROLE
+    const [username, setUsername] = useState("");
+    const [usernameRole, setUsernameRole] = useState("");
     const token = localStorage.getItem("token")
     const Navigate = useNavigate();
 
