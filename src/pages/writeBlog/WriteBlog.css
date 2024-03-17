@@ -1,6 +1,4 @@
-#WriteBlogBackButton{
-    margin: 80px 0 30px 0;
-}
+
 
 .categoryContainer {
     width: 500px;
@@ -11,7 +9,7 @@
     width: 100%;
     border-radius: 10px;
     border: 2px solid var(--mainFontColor);
-    height: 4lh;
+    height: 2lh;
     color: black;
     background-color: white;
     padding: 10px;
@@ -21,4 +19,12 @@
 .categoryContainer p {
     color: black;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .categoryContainer {
+        width: auto;
+        margin: 0 0 30px 0;
+    }
 }

@@ -1,26 +1,25 @@
 import './MyExcursions.css';
 import {Link} from "react-router-dom";
 import React, {useContext, useEffect, useRef, useState} from "react";
-import useBlog from "../../Hooks/useAllExcursions.jsx";
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContextProvider.jsx";
-// import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+
 
 function MyExcursions() {
-    const { ExcursionsAll } = useBlog();
-    const { user } = useContext(AuthContext);
     const token = localStorage.getItem("token")
+    const {excursionsAll} = useAllExcursions();
+    const {excursionsIsLoading} = useAllExcursions();
 
     const handleDelete = (postId) => {
-        console.log(postId)
-        axios.delete(`http://localhost:8080/excursies/${user.username}/${postId}`, {
+        axios.delete(`http://localhost:8080/excursies/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
 
             .then(response => {
-                console.log('Post deleted successfully');
+                console.log('Post succesvol verwijderd');
                 window.location.reload();
             })
             .catch(error => {
@@ -47,11 +46,10 @@ function MyExcursions() {
     }, []);
     // ----- Lazy loading end -----
 
-
-    // // Loading gif
-    // if (ExcursionsAll.length === 0) {
-    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    // }
+    // Loading gif
+    if (excursionsIsLoading) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
 return (
@@ -64,11 +62,11 @@ return (
                     <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
                 </div>
 
-                <button id="WriteBlogButton" type="button">
-                    <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
+                <button id="WriteBlogButton" className="WriteBlogButton" type="button">
+                    <Link to="/WriteBlog"><strong>Excursie aanmaken</strong></Link>
                 </button>
 
-                <h4 className="totalBlogsCounter">Je hebt al {ExcursionsAll.length} natuurblogs</h4>
+                <h4 className="totalBlogsCounter">Er zijn {excursionsAll.length} excursies</h4>
                 <br/>
             </div>
         </section>
@@ -76,7 +74,7 @@ return (
         <section className="outer-content-container" ref={containerRef}>
             <div className="inner-content-container">
                 <ul className="post-list">
-                    {ExcursionsAll.slice(0, visiblePosts).map((post) => (
+                    {excursionsAll.slice(0, visiblePosts).map((post) => (
                         <li key={post.id} className="post-item">
                             <div className="post-image">
                                 <img src={"data:image/png;base64," + post.fileContent} alt={post.title} loading="lazy"
@@ -124,7 +122,6 @@ return (
                 </ul>
             </div>
         </section>
-
     </>
 );
 }

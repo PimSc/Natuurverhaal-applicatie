@@ -3,15 +3,12 @@ import question from "./../../../public/assets/icons/question-icon.png"
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContextProvider.jsx';
 import React, {useContext, useEffect, useState} from "react";
-import useProfileImage from "../../Hooks/useProfileImage.jsx";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
 function ProfileEdit() {
     const navigate = useNavigate();
-
     const {user} = useContext(AuthContext);
-    console.log("role", user.role)
 
     const [formData, setFormData] = useState({
         email: "",
@@ -55,11 +52,10 @@ function ProfileEdit() {
     };
 
 
-    async function uploadGegevens() {
-
+    async function uploadGegevens(event) {
+        event.preventDefault();
 
         const url = `http://localhost:8080/user-profile/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("name", formData.name);
         formDataToSend.append("email", formData.email);
@@ -68,11 +64,6 @@ function ProfileEdit() {
         formDataToSend.append("bio", formData.bio);
         formDataToSend.append("username", formData.username);
 
-
-        console.log('form', formDataToSend)
-
-
-        // pim aangepast
 
         try {
             const token = localStorage.getItem("token")
@@ -106,7 +97,7 @@ function ProfileEdit() {
                     <h5>Hier vind je alles wat je moet weten over je openbare profiel</h5>
                     <i>Een profiel kan worden geopend via een blog, excursie of prikbord bericht.</i>
 
-                    <button className="simpleButtons"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
+                    <button className="simpleButtons margin20PxTop"><Link to={`/ProfileDetail/${user.username}`}> Bezoek jouw
                         openbaar profiel</Link></button>
                 </div>
             </div>
@@ -115,9 +106,7 @@ function ProfileEdit() {
                 <form className="inner-content-container-column" action="">
 
 
-                    {/*Middelste rij verticaal*/}
-                    <div className="ProfileRowContainer">
-                        <div className="ProfileEditBox2">
+                        <div className="ProfileEditBox2 margin20PxTop">
 
                             {/*IMAGE UPLOAD*/}
                             <label className="textStart" htmlFor="fileUpload">
@@ -128,6 +117,7 @@ function ProfileEdit() {
                                    accept=".jpg, .jpeg, .png"
                                    name="file"
                                    id="fileUpload"
+                                   required
                                    onChange={handleFileChange}
                             />
 
@@ -136,24 +126,8 @@ function ProfileEdit() {
                                      style={{maxWidth: "500px", maxHeight: "500px"}}/>}
                         </div>
 
-                        {/*laatste rij verticaal (uitleg bestandupload)*/}
-                        <div className="ProfileEditBox3">
-                            <br/>
-                            <div className="iconContainer">
-                                <img className="iconSmall" src={question} alt="question icon"/>
-                                <div className="iconOverlay">
-                                    <i>Maximale afmeting: 400x400 pixels<br/><br/> Bestandtype: .jpg, .jpeg,
-                                        .png</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-
-                    <div className="ProfileEditContentBox1">
-
-                        <div className="ProfileRowContainer">
-                            {/*Middelste rij verticaal*/}
+                        <div>
                             <div className="ProfileEditBox2">
                                 {/*EMAIL*/}
                                 <label className="textStart" htmlFor="email">
@@ -163,27 +137,16 @@ function ProfileEdit() {
                                        placeholder="email"
                                        name="email"
                                        id="email"
+                                       type="email"
                                        autoComplete="on"
                                        value={formData.email}
                                        onChange={handleChangeEmail}
                                        required
                                 />
-
-                            </div>
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img className="iconSmall"
-                                         src={question}
-                                         alt="question icon"
-                                    />
-                                    <div className="iconOverlay">
-                                        <i>Via dit e-mail adres kan iedereen contact met je opnemen</i>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
-                        <div className="ProfileRowContainer">
+                        <div>
                             <div className="ProfileEditBox2">
                                 {/*NAAM*/}
                                 <label className="textStart" htmlFor="name">
@@ -197,28 +160,15 @@ function ProfileEdit() {
                                        value={formData.name}
                                        onChange={handleChangeName}
                                        required
+                                       maxLength={20}
                                 />
 
                             </div>
-                            <div className="ProfileEditBox3">
-                                <div className="iconContainer">
-                                    <img
-                                        className="iconSmall"
-                                        src={question}
-                                        alt="question icon"
-                                    />
-
-                                    <div className="iconOverlay">
-                                        <i>Onder welke naam wil je bekend worden?</i>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
-                    <div className="ProfileRowContainer">
+
+
                         <div className="ProfileEditBox2">
-
                             {/*REGIO*/}
                             <label className="textStart" htmlFor="regio">
                                 <b>Regio:</b>
@@ -232,24 +182,7 @@ function ProfileEdit() {
                                    onChange={handleChangeRegio}
                                    required
                             />
-
                         </div>
-                        <div className="ProfileEditBox3">
-                            <div className="iconContainer">
-                                <img
-                                    className="iconSmall"
-                                    src={question}
-                                    alt="question icon"
-                                />
-                                <div className="iconOverlay">
-                                    <i>In welke regio ben je actief?</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className="ProfileRowContainer">
 
 
                         <div className="ProfileEditBox2">
@@ -268,34 +201,20 @@ function ProfileEdit() {
                             />
                         </div>
 
-                        <div className="ProfileEditBox3">
-                            <div className="iconContainer">
-                                <img
-                                    className="iconSmall"
-                                    src={question}
-                                    alt="question icon"
-                                />
-                                <div className="iconOverlay">
-                                    <i>Doorlinken naar een externe pagina is toegestaan</i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div className="profileButtonCenter">
-
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        <div className="elementCenterContainer">
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
 
                         <button className="simpleButtons" type="submit"
                                 onClick={uploadGegevens}>
-                            Blog bericht plaatsen
+                            Profiel plaatsen
                         </button>
+                        </div>
                     </div>
 
                 </form>
             </div>
-
-
         </>
     )
         ;

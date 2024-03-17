@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SearchContextProvider from "../../context/SearchContextProvider.jsx";
 import { AuthContext } from "../../context/AuthContextProvider.jsx";
 import axios from "axios";
-import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
+
 
 function MyBlogs() {
     const { blogPostsUser } = useBlog();
@@ -24,7 +24,6 @@ function MyBlogs() {
     }, [searchQuery, blogPostsUser]);
 
     const handleDelete = (postId) => {
-        console.log(postId)
         axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -62,10 +61,7 @@ function MyBlogs() {
 
 
 
-    // // Loading gif
-    // if (filteredPosts.length === 0) {
-    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    // }
+
 
 
     return (
@@ -78,11 +74,11 @@ function MyBlogs() {
                         <p id="myBlogsSubTitleStyling"> Hier kan je je blogs bewerken en verwijderen</p>
                     </div>
 
-                    <button id="WriteBlogButton" type="button">
+                    <button className="WriteBlogButton" type="button">
                         <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
 
-                    <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
+                    <h4 className="totalBlogsCounter">Je hebt {blogPostsUser.length} natuurblogs</h4>
                     <br/>
                 </div>
             </section>
@@ -144,13 +140,3 @@ function MyBlogs() {
 
 export default MyBlogs;
 
-// <div className="myBlogsOnTopButtonContainer">
-//     <div className="myPostButtons">
-//         <div className="myBlogButtonContainer">
-//             <form onSubmit={(e) => {
-//                 e.preventDefault();
-//                 handleDelete(post.id)
-//             }}>
-//                 <button type="submit"
-//                         className="simpleButtonsRemove buttonRedRemove">Blog
-//                     verwijderen

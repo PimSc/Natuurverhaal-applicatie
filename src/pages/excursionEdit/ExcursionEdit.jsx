@@ -8,9 +8,9 @@ import axios from "axios";
 
 function ExcursionEdit() {
 
-    const {ExcursionsAll} = useAllExcursions();
+    const {excursionsAll} = useAllExcursions();
     const { id } = useParams();
-    const post = ExcursionsAll.find(post => post.id.toString() === id);
+    const post = excursionsAll.find(post => post.id.toString() === id);
     const Navigate = useNavigate();
 
     const [title, setTitle] = useState('');
@@ -135,8 +135,6 @@ return (
             <div className="inner-content-container-editBorder">
                 {post && (
                     <>
-
-                        {/*pim*/}
                         <h1>{post.title}</h1>
                         <h4>{post.subtitle}</h4>
                         <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
@@ -345,7 +343,7 @@ return (
                         <button className="simpleButtons" type="submit">
                             Excursie aanpassingen verzenden
                         </button>
-                        <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                        <button className="simpleButtons margin20PxTop" type="button">
                             <Link to="/mijnExcursies">Terug naar mijn excursies</Link>
                         </button>
                     </div>

@@ -16,11 +16,10 @@ function ChangeUserData() {
     async function handleForm1Submit(e) {
         e.preventDefault()
 
+        // Change email
         try {
-
             const response = await axios.put(`http://localhost:8080/users/${user.username}`, {
                 username: `${user.username}`,
-                password: `${user.password}`,
                 email: email,
                 enabled: enabled
             }, {
@@ -28,18 +27,14 @@ function ChangeUserData() {
                     Authorization: `Bearer ${token}`,
                 }
             });
-            console.log(response.data);
-
         } catch (error) {
             console.error(error);
         }
     }
 
-
-
+    // Change password
     async function handleForm2Submit(e) {
         e.preventDefault()
-
         try {
 
             const response = await axios.put(`http://localhost:8080/users/${user.username}`, {
@@ -53,8 +48,6 @@ function ChangeUserData() {
                 }
             });
 
-            console.log(response.data);
-
         } catch (error) {
             console.error(error);
         }
@@ -63,49 +56,59 @@ function ChangeUserData() {
 
     return (
         <>
-            <div className="admindiv">
-                <form className="adminRedfield" action="" onSubmit={handleForm1Submit}>
+            <div className="outer-content-container-column">
+                <div className="inner-content-container-column">
+                    <div className="admindiv">
 
-                    <label htmlFor="email">
-                        <p>Change email</p>
-                    </label>
-                    <input
-                        className="textAreaOneLine"
-                        name="email"
-                        id="email"
-                        type="email"
-                        placeholder="Type email and press change"
-                        autoComplete="on"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <br/>
-                    <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                        Change <strong>email</strong>
-                    </button>
-                </form>
+                        <article>
+                        <section>
+                            <form className="blackField" action="" onSubmit={handleForm1Submit}>
+                                <label htmlFor="email">
+                                    <p>Change email</p>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    name="email"
+                                    id="email"
+                                    type="email"
+                                    placeholder="Type email and press change"
+                                    autoComplete="on"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <br/>
+                                <button className="simpleButtons" type="submit">
+                                    Change <strong>email</strong>
+                                </button>
+                            </form>
+                        </section>
 
+                        <section>
+                            <form className="blackField" action="" onSubmit={handleForm2Submit}>
+                                <label htmlFor="password">
+                                    <p>Change password</p>
+                                </label>
+                                <input
+                                    className="textAreaOneLine"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Type the password and press change"
+                                    autoComplete="on"
+                                    value={password}
+                                    pattern=".*[!@#$%^&*].*"
+                                    minLength={8}
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                                <br/>
+                                <button className="simpleButtons" type="submit">
+                                    Change <strong>password</strong>
+                                </button>
+                            </form>
+                        </section>
+                        </article>
 
-                <form className="adminRedfield" action="" onSubmit={handleForm2Submit}>
-                    <label htmlFor="password">
-                        <p>Change password</p>
-                    </label>
-                    <input
-                        className="textAreaOneLine"
-                        name="password"
-                        id="password"
-                        placeholder="Type the password and press change"
-                        autoComplete="on"
-                        value={password}
-                        maxLength={50}
-                        onChange={(e) => setPassword(e.target.value)}/>
-                    <br/>
-                    <button className="simpleButtonsRemove buttonRedRemove" type="submit">
-                        Change <strong>password</strong>
-                    </button>
-                </form>
+                    </div>
+                </div>
             </div>
-
 
         </>
     );

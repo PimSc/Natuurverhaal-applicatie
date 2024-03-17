@@ -24,9 +24,9 @@ return (
                 <h5>© Natuurverhaal </h5>
             </div>
             <div className="footerBox3">
-                <Link to="https://www.instagram.com/pim.schuitema/">
-                <img src={instagramIcon} alt="Instagram icon"/>
-            </Link>
+                <Link to="https://www.instagram.com/pim.schuitema/" target="_blank" rel="noopener noreferrer">
+                    <img src={instagramIcon} alt="Instagram icon"/>
+                </Link>
             </div>
         </div>
     </div>

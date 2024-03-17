@@ -22,15 +22,9 @@ nav ul a:visited {
     font-size: var(--navLinkSize);
 }
 
-nav ul a:hover{
-color: var(--onHoverColor);
+nav ul a:hover {
+    color: var(--onHoverColor);
 }
-
-
-
-
-
-
 
 /*Deze niet op center zetten*/
 .navContainerStickyTop {
@@ -47,8 +41,7 @@ color: var(--onHoverColor);
     border-right: none;
 }
 
-
-.mainNav{
+.mainNav {
     min-width: 100%;
     font-family: var(--titleFont);
     display: flex;
@@ -56,7 +49,7 @@ color: var(--onHoverColor);
     padding: 0 20px;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     flex-basis: 100%;
     display: flex;
@@ -64,10 +57,9 @@ ul {
     align-items: center;
 }
 
-.hamburger-menu, .hamburger-menu input, .sidebar{
+.hamburger-menu, .hamburger-menu input, .sidebar {
     display: none;
 }
-
 
 
 /*------Drop down menu start------*/
@@ -108,48 +100,54 @@ ul {
     transition: color 0.3s ease;
 }
 
-.dropdown-content{
+.dropdown-content {
     border: 2px solid;
     border-color: var(--mainFontColor);
     border-top: none;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 /* Change the text color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {color: var(--onHoverColor)}
+.dropdown:hover .dropbtn {
+    color: var(--onHoverColor)
+}
+
 /*------Drop down menu end------*/
 
-#dropdownWhileLogin{
+#dropdownWhileLogin {
     background-color: HSL(124, 40%, 32%, 0.2);
 }
 
-.phoneSearbar{
+.phoneSearbar {
     display: none;
 }
 
-
 @media only screen and (max-width: 1200px) {
 
-    .phoneSearbar{
+    .phoneSearbar {
         display: flex;
         width: 100vw;
         justify-content: center;
-
+        transition: all 0.5s ease;
     }
 
-    .phoneNav{
+    .phoneNav {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .phoneNav input{
-width:80%;
+    .phoneNav input {
+        width: 80%;
     }
 
     .default-link {
@@ -181,16 +179,12 @@ width:80%;
     }
 
     /*Original nav disable*/
-    .mainNav  {
+    .mainNav {
         display: none;
     }
-    .mainNav  {
-        display: none;
-    }
-
 
     /*Telephone nav visible*/
-    .hamburger-menu, .hamburger-menu input, .sidebar{
+    .hamburger-menu, .hamburger-menu input, .sidebar {
         display: block;
     }
 
@@ -269,6 +263,7 @@ width:80%;
         width: var(--x-width);
         translate: 0 calc(var(--bar-height) / -2);
     }
+
     /*stripes to cross transition*/
     .hamburger-menu:has(input:checked)::after {
         rotate: -45deg;
@@ -298,6 +293,7 @@ width:80%;
         z-index: 0;
         position: absolute;
     }
+
     /*Hamburger menu end*/
 }
 

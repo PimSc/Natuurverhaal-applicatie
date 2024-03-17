@@ -10,6 +10,8 @@ import {
     WhatsappIcon, WhatsappShareButton,
 } from "react-share";
 import UpVote from "../../components/upVote/UpVote.jsx";
+import useBlogPosts from "../../Hooks/useAllBlogs.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 
 function BlogPostDetail() {
@@ -17,21 +19,25 @@ function BlogPostDetail() {
     const { id } = useParams(); // Haal het ID uit de URL-parameters
     const { blogPostsAll } = useBlog();
     const post = blogPostsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
-
+    const {blogPostsIsLoading} = useBlogPosts();
 
 
     const handleTerugClick = () => {
         navigate(-1); // Navigeer terug naar de vorige pagina
     };
 
-    if (!post) {
-        // Als de post niet beschikbaar is, toon dan bijvoorbeeld een foutmelding
-        return <div>Post niet gevonden.</div>;
+    // Loading gif
+    if (blogPostsIsLoading) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
     }
+
+
+
 
     return (
         <>
-            <section className="outer-content-container-column">
+            {post && (
+            <article className="outer-content-container-column">
                 <img className="blogDetailImageHeader" src={"data:image/png;base64," + post.fileContent} alt={post.caption}/>
                 <div className="inner-content-container" >
                     <div className="textCenter">
@@ -99,7 +105,11 @@ function BlogPostDetail() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </article>
+            )}
+            {post.length === 0 && (
+                <div><center>Er zijn geen blogposts.</center></div>
+            )}
         </>
     );
 }

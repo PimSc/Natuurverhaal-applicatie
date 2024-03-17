@@ -5,21 +5,24 @@ import axios from 'axios';
 
 function useBlogPosts() {
     const [blogPostsAll, setBlogPosts] = useState([]);
+    const [blogPostsIsLoading , setPostsIsLoading] = useState(true)
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/blog-posts');
+            setBlogPosts(response.data);
+        } catch (error) {
+            console.error('Error fetching blog posts:', error);
+        }
+    };
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:8080/blog-posts');
-                setBlogPosts(response.data);
-            } catch (error) {
-                console.error('Error fetching blog posts:', error);
-            }
-        };
-
-        fetchData();
+        fetchData().then(() => {
+            setPostsIsLoading(false)
+        })
     }, []);
 
-    return { blogPostsAll };
+    return { blogPostsAll, blogPostsIsLoading };
 }
 
 export default useBlogPosts;

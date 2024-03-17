@@ -1,15 +1,16 @@
 import React, {useState, useEffect, useContext} from 'react';
 import './BlogEdit.css';
-import useBlog from "../../Hooks/useUserBlogs.jsx";
 import {Link, useParams, useNavigate} from "react-router-dom";
 import axios from 'axios';
-import {AuthContext} from "../../context/AuthContextProvider.jsx";
+import useBlogPosts from "../../Hooks/useAllBlogs.jsx";
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
 
 function BlogEdit() {
-    const { blogPostsUser } = useBlog();
+    const {blogPostsAll} = useBlogPosts();
     const { id } = useParams();
     const Navigate = useNavigate();
-    const post = blogPostsUser.find(post => post.id.toString() === id);
+    const post = blogPostsAll.find(post => post.id.toString() === id);
+    const {user} = useContext(AuthContext);
 
     const [title, setTitle] = useState('');
     const [subtitle, setSubtitle] = useState('');
@@ -18,18 +19,6 @@ function BlogEdit() {
     const [category, setCategory] = useState('');
     const [content, setContent] = useState('');
 
-
-    // // pim
-    // const [formData, setFormData] = useState({
-    //     title: "",
-    //     subtitle: "",
-    //     file: null,
-    //     caption: "",
-    //     content: "",
-    //     username: `${user.username}`,
-    //     categories: [''],
-    //     date: ""
-    // });
 
     useEffect(() => {
         if (post) {
@@ -85,14 +74,19 @@ function BlogEdit() {
                         Authorization: `Bearer ${token}`,
                 }
             });
-
-            // Redirect the user to the updated blog post page
             Navigate("/");
         } catch (error) {
             console.error('Error updating blog post:', error);
-            // Handle error, show an alert or error message to the user
         }
     };
+
+    // Toegangscontrole
+    //Alleen een username uit de authcontext die gelijk is aan de username uit de blogpost mag de pagina zien OF iemand met authcontext ROLE_ADMIN. anders ga je terug naar /mijnBlogs
+    if (!user || !post || (user.username !== post.username && user.role !== 'ROLE_ADMIN')) {
+        Navigate("/mijnBlogs");
+        return null; // Render niets als de gebruiker niet geautoriseerd is
+    }
+
 
     return (
         <>
@@ -221,10 +215,10 @@ function BlogEdit() {
                         </div>
                         <div className="elementCenterContainer">
                             <br />
-                            <button className="simpleButtons" type="submit">
+                            <button className="simpleButtons margin20PxBottom" type="submit">
                                 Blog aanpassingen verzenden
                             </button>
-                            <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                            <button className="simpleButtons" type="button">
                                 <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                             </button>
                         </div>

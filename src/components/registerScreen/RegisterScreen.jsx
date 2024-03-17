@@ -33,8 +33,6 @@ function RegisterScreen() {
                 cancelToken: source.token
             });
 
-            console.log(response.data);
-
             window.location.reload(false);
         } catch (e) {
             if (axios.isCancel(e)) {
@@ -124,7 +122,7 @@ function RegisterScreen() {
                         {error && <p className="error">Dit account bestaat al. Probeer een andere gebruikersnaam.</p>}
 
                         <button
-                            className="simpleButtons simpleButtonButtonMargin"
+                            className="simpleButtons margin20PxBottom"
                             disabled={loading}
                             type="submit">Registreren
                         </button>

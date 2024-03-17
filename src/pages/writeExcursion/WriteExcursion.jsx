@@ -91,7 +91,6 @@ function WriteExcursion() {
     async function uploadGegevens(event) {
         event.preventDefault();
 
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("file", formData.file);
         formDataToSend.append("title", formData.title);
@@ -138,7 +137,7 @@ function WriteExcursion() {
             <div className="outer-content-container-column">
                 <div className="inner-content-container-column">
 
-                    <div className="inner-content-container-column">
+                    <div className="inner-content-container-column margin20PxTop margin20PxBottom">
                         <h1>Welkom admin</h1>
                         <h4>Maak hier een excursie aan voor het overzicht</h4>
                         <p>Een activiteit verwijderen kan in het algemene excursie overzicht</p>
@@ -336,9 +335,7 @@ function WriteExcursion() {
 
 
                             </div>
-                            {/*pim*/}
-                            {uploadStatus && <p>{uploadStatus}</p>}
-
+                            {uploadStatus && <p className="red">{uploadStatus}</p>}
 
                             <button className="simpleButtons" type="submit" onClick={uploadGegevens}>
                                 <strong>plaatsen</strong>

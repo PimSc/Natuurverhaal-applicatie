@@ -2,13 +2,13 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import './BlogOverview.css';
 import { Link } from 'react-router-dom';
 import SearchContextProvider from "../../context/SearchContextProvider.jsx";
-import useBlog from "../../Hooks/useAllBlogs.jsx";
-import UpVote from "../upVote/UpVote.jsx";
-
+import useBlogPosts from "../../Hooks/useAllBlogs.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 function BlogOverview() {
     const {searchQuery} = useContext(SearchContextProvider);
-    const {blogPostsAll} = useBlog();
+    const {blogPostsAll} = useBlogPosts();
+    const {blogPostsIsLoading} = useBlogPosts();
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -47,35 +47,41 @@ function BlogOverview() {
     // ----- Lazy loading end -----
 
 
-    // // Loading gif
-    // if (filteredPosts.length === 0) {
-    //     return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
-    // }
+    // Loading gif
+    if (blogPostsIsLoading) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
     return (
         <>
-            <section className="outer-content-container" ref={containerRef}>
-                <div className="inner-content-container">
-                    <ul className="post-list">
-                        {filteredPosts.slice(0, visiblePosts).map((post) => (
-                            <li key={post.id} className="post-item">
-                                <Link to={`/blogposts/${post.id}`}>
-                                    <div className="post-image">
-                                        <img src={"data:image/png;base64," + post.fileContent} alt={post.title}
-                                             loading="lazy" className="post-image"/>
-                                        <div className="onTopOfImageBox">
-                                            <h2>{post.title}</h2>
-                                            <p>Geschreven
-                                                door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
-                                            <i>{post.date}</i>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+            {filteredPosts.length > 0 && (
+                <section className="outer-content-container" ref={containerRef}>
+                    <div className="inner-content-container">
+                        <ul className="post-list">
+                            {filteredPosts.slice(0, visiblePosts).map((post) => (
+                                <section key={post.id}>
+                                    <li className="post-item">
+                                        <Link to={`/blogposts/${post.id}`}>
+                                            <div className="post-image">
+                                                <img src={"data:image/png;base64," + post.fileContent} alt={post.title}
+                                                     loading="lazy" className="post-image"/>
+                                                <div className="onTopOfImageBox">
+                                                    <h2>{post.title}</h2>
+                                                    <p>Geschreven door {post.username.charAt(0).toUpperCase() + post.username.slice(1)}</p>
+                                                    <i>{post.date}</i>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                </section>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            )}
+            {filteredPosts.length === 0 && (
+                <div className="inner-content-container-column margin20PxTop">Er zijn geen blogposts gevonden.</div>
+            )}
         </>
     );
 }

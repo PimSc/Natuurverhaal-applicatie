@@ -231,147 +231,19 @@ button, select, textarea {
 /*basic information end*/
 
 
-.margin20PxTopBottom {
-    margin: 20px 0;
+.margin20PxTop {
+    margin: 20px 0 0 0;
 }
 
 .margin20PxBottom {
     margin: 0 0 20px 0;
 }
 
-.simpleButtonTopMargin {
-    margin: 25px 0;
-}
-
-.simpleButtonButtonMargin {
-    margin: 25px 0;
-}
-
-.simpleButtons {
-    font-family: var(--mainFont);
-    color: var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: auto;
-    width: fit-content;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.simpleButtonsMargin {
-    font-family: var(--mainFont);
-    color: var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: auto;
-    width: fit-content;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-    margin: 30px 0;
-}
-
-.simpleButtons:hover {
-    color: var(--onHoverColor);
-    border-color: var(--onHoverColor);
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    cursor: pointer;
+.margin20PxTopAndBottom{
+    margin: 20px 0;
 }
 
 
-.buttonRedRemove:hover {
-    background-color: hsla(0, 100%, 50%, 0.4);
-}
-
-.buttonYellowEdit:hover {
-    background-color: hsla(42, 100%, 50%, 0.4);
-}
-
-.simpleButtonsTotalGreen:hover {
-    background-color: hsla(120, 100%, 50%, 0.4);
-}
-
-.simpleButtonsRemove {
-    font-family: var(--mainFont);
-    color: var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.simpleButtonsRemove:hover {
-    color: black;
-    border-color: red;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    cursor: pointer;
-}
-
-.simpleButtonsEdit {
-    font-family: var(--mainFont);
-    color: var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.simpleButtonsEdit:hover {
-    color: black;
-    border-color: goldenrod;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    cursor: pointer;
-}
-
-.simpleButtonsTotalGreen {
-    font-family: var(--mainFont);
-    color: var(--mainFontColor);
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    display: inline-block;
-    letter-spacing: 2px;
-    height: 55px;
-    margin: 25px 0;
-    padding: 10px 10px 10px 10px;
-    border: 4px solid var(--mainFontColor);
-    border-radius: 6px 22px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.simpleButtonsTotalGreen:hover {
-    color: black;
-    border-color: green;
-    transition: all 0.3s ease 0s;
-    border-radius: 22px 6px;
-    cursor: pointer;
-}
 
 /*---- POST CONTIANERS START----*/
 .post-list {
@@ -398,7 +270,7 @@ button, select, textarea {
 .post-image {
     position: relative; /* Voeg position: relative toe */
     width: 100%;
-    max-height: 500px;
+    max-height: 300px;
     object-fit: cover;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -431,14 +303,12 @@ button, select, textarea {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*border: 2px dashed blue;*/
 }
 
 .outer-content-container-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*border: 5px dashed purple;*/
 }
 
 /*Inner content container (Row)*/
@@ -448,16 +318,15 @@ button, select, textarea {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /*border: 2px dashed red;*/
 }
 
 /*Inner content container (column)*/
 .inner-content-container-column {
-    margin: 40px 40px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 5px dashed green;*/
+    text-align: center;
 }
 
 /*Inner content container voor text fields*/
@@ -465,7 +334,6 @@ button, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 2px dashed blue;*/
 }
 
 /*Extra Inner content container (column)*/
@@ -475,7 +343,6 @@ button, select, textarea {
     width: fit-content;
     height: fit-content;
     align-items: center;
-    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -487,7 +354,6 @@ button, select, textarea {
     flex-grow: 0;
     text-align: start;
     align-items: flex-start;
-    /*border: 1px dashed lightgreen;*/
 }
 
 /*Smalle inner container for text etc.*/
@@ -498,7 +364,6 @@ button, select, textarea {
     text-align: center;
     align-items: center;
     width: 100%;
-    /*border: 3px dashed green;*/
 }
 
 /*Container for header background images*/
@@ -508,7 +373,6 @@ button, select, textarea {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /*border: 2px dashed turquoise;*/
 }
 
 /*Smalle inner container for button.*/
@@ -517,25 +381,20 @@ button, select, textarea {
     flex-direction: row;
     width: auto;
     justify-content: center;
-    /*border: 3px dashed green;*/
 }
 
 /*Container to make icons small*/
 .iconSmall {
     width: 15px;
     height: 15px;
-    /*border: 2px solid pink;*/
 }
 
 /*Container with styling for (blog) posts*/
-
-
 .outer-content-container-Edit {
     margin: 40px 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /*border: 2px dashed red;*/
 }
 
 .inner-content-container-Edit {
@@ -559,7 +418,6 @@ button, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*border: 2px dashed blue;*/
 }
 
 
@@ -606,18 +464,155 @@ button, select, textarea {
 /*---ShareIcons Start---*/
 .ShareIcon {
     box-shadow: none;
-    margin: 5px 0 0 5px;
+    margin: 5px 0 0 -10px;
 }
 
 .shareIconsBox {
-    margin: 30px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 /*---ShareIcons End---*/
 
+.blackField {
+    margin: 30px 0 20px 0;
+    border: 5px solid var(--mainFontColor);
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+}
+
+.elementCenterContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redText{
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+/*SIMPLE BUTTONS START*/
+.simpleButtons {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: auto;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.simpleButtons:hover {
+    color: var(--onHoverColor);
+    border-color: var(--onHoverColor);
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    cursor: pointer;
+}
+
+
+.buttonRedRemove:hover {
+    background-color: hsla(0, 100%, 50%, 0.4);
+}
+
+.buttonYellowEdit:hover {
+    background-color: hsla(42, 100%, 50%, 0.4);
+}
+
+.simpleButtonsTotalGreen:hover {
+    background-color: hsla(120, 100%, 50%, 0.4);
+}
+
+.simpleButtonsRemove {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: auto;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+.simpleButtonsRemove:hover {
+    color: black;
+    border-color: red;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    cursor: pointer;
+}
+
+
+.simpleButtonsEdit {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: auto;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+
+.simpleButtonsEdit:hover {
+    color: black;
+    border-color: goldenrod;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    cursor: pointer;
+}
+
+.simpleButtonsTotalGreen {
+    font-family: var(--mainFont);
+    color: var(--mainFontColor);
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    letter-spacing: 2px;
+    height: auto;
+    margin: 25px 0;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid var(--mainFontColor);
+    border-radius: 6px 22px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.simpleButtonsTotalGreen:hover {
+    color: black;
+    border-color: green;
+    transition: all 0.3s ease 0s;
+    border-radius: 22px 6px;
+    cursor: pointer;
+}
+/*SIMPLE BUTTONS END*/
+
+
+
+
+
+
 
 @media only screen and (max-width: 767px) {
-
     p {
         font-size: calc(var(--pFontSize) - 20%);
     }
@@ -653,7 +648,7 @@ button, select, textarea {
     }
 
     .textAreaOneLine {
-        width: 290px;
+        width: 100%;
     }
 
     .textAreaStory {
@@ -739,10 +734,95 @@ button, select, textarea {
     .onTopOfImageBox {
         z-index: 2;
         background-color: hsl(0, 0%, 100%, 0.4);
-        max-height: 200px;
-        min-height: 130px;
+        height: 50px;
         overflow: hidden;
+        justify-content: end;
     }
+
+    .onTopOfImageBox h2{
+     font-size: 12px;
+    }
+
+    .onTopOfImageBox p{
+        font-size: 12px;
+    }
+
+    .onTopOfImageBox i{
+        display: none;
+    }
+
+    .post-image {
+        max-height: 100px;
+
+    }
+
+    .blackField {
+        margin: 30px 0 20px 0;
+        border: 5px solid var(--mainFontColor);
+        border-radius: 10px;
+        padding: 20px;
+        width: 330px;
+    }
+
+
+    /*SIMPLE BUTTONS MOBILE START*/
+    .simpleButtons {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .simpleButtonsEdit {
+        width: auto;
+        height: 40px;
+        letter-spacing: 0;
+        margin:  0;
+        padding: 5px 5px;
+        border: 2px solid black;
+        font-size: 12px;
+    }
+
+    .simpleButtonsRemove {
+        width: auto;
+        letter-spacing: 0;
+        height: 40px;
+        margin:  0;
+        padding: 5px 5px;
+        border: 2px solid black;
+    }
+
+    .simpleButtons {
+        width: auto;
+        letter-spacing: 0;
+        height: auto;
+        margin:  0;
+        padding: 10px 10px;
+        border: 2px solid black;
+    }
+
+    .simpleButtonsTotalGreen {
+        width: auto;
+        letter-spacing: 0;
+        height: 40px;
+        margin:  0;
+        padding: 5px 5px;
+        border: 2px solid black;
+    }
+
+
+
+    /*SIMPLE BUTTONS MOBILE END*/
+
+    .margin20PxTop {
+        margin: 20px 0 0 0;
+    }
+
+    .margin20PxBottom {
+        margin: 0 0 20px 0;
+    }
+
+    .margin20PxTopAndBottom{
+        margin: 20px 0;
+    }
+
 
 }
 

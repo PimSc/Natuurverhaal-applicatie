@@ -47,15 +47,12 @@ function WriteBulletin() {
         event.preventDefault();
 
         const url = `http://localhost:8080/bulletin-boards/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("file", formData.file);
         formDataToSend.append("caption", formData.caption);
         formDataToSend.append("content", formData.content);
         formDataToSend.append("username", formData.username);
-
-        console.log('form', formDataToSend)
 
         try {
             const token = localStorage.getItem("token")
@@ -69,18 +66,15 @@ function WriteBulletin() {
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                navigate("/prikbord");
+                navigate("/mijnprikbord");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
-                console.log('form', formDataToSend)
             }
         } catch (error) {
             console.error("Error posting blog:", error);
             setUploadStatus("Er gaat iets mis. Upload niet gelukt.");
         }
-        console.log("urlToSend:", url);
-
     }
 
 
@@ -91,7 +85,7 @@ function WriteBulletin() {
 
                 <form action="" method="post">
                     <div className="elementCenterContainer">
-                        <button className="simpleButtonsMargin" type="button">
+                        <button className="simpleButtons margin20PxTopAndBottom" type="button">
                             <Link to="/prikbord"><strong>Terug naar het prikbord</strong></Link>
                         </button>
                     </div>
@@ -126,6 +120,7 @@ function WriteBulletin() {
                                name="file"
                                id="fileUpload"
                                onChange={handleFileChange}
+                               required
                         />
 
                         {/* Caption */}
@@ -158,9 +153,9 @@ function WriteBulletin() {
                     </div>
 
                     <div className="elementCenterContainer">
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
                         <button
-                            className="simpleButtonsMargin"
+                            className="simpleButtons margin20PxTop"
                             type="submit" onClick={uploadGegevens}>
                             <strong>Prikbord bericht plaatsen</strong>
                         </button>

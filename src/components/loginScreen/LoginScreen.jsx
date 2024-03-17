@@ -23,8 +23,6 @@ function LoginScreen() {
                 username: username,
                 password: password
             });
-            // log het resultaat in de console
-            console.log(response.data);
             // geef de JWT token aan de login-functie van de context mee
             login(response.data.jwt);
             // navigate('/')
@@ -66,7 +64,10 @@ function LoginScreen() {
                                 value={username}
                                 id="username"
                                 required
-                                autoComplete="on"/>
+                                autoComplete="on"
+                            minLength={3}
+                            maxLength={15}
+                            />
                         </div>
 
                         <div className="inputFieldMargin">
@@ -81,12 +82,15 @@ function LoginScreen() {
                                 value={password}
                                 id="wachtwoord"
                                 required
-                                autoComplete="on"/>
+                                autoComplete="on"
+                                pattern=".*[!@#$%^&*].*"
+                                minLength={8}
+                            />
                         </div>
 
                         {error && <p className="error">Combinatie van username en wachtwoord is onjuist</p>}
 
-                        <button className="simpleButtons simpleButtonButtonMargin" type="submit">Inloggen</button>
+                        <button className="simpleButtons margin20PxBottom" type="submit">Inloggen</button>
                     </div>
                 </div>
                 <hr/>

@@ -9,6 +9,7 @@ function WriteBlog() {
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
 
+
     const [formData, setFormData] = useState({
         title: "",
         subtitle: "",
@@ -57,7 +58,6 @@ function WriteBlog() {
     async function uploadGegevens(event) {
         event.preventDefault();
         const url = `http://localhost:8080/blog-posts/${user.username}`;
-        console.log(user.username)
         const formDataToSend = new FormData();
         formDataToSend.append("title", formData.title);
         formDataToSend.append("subtitle", formData.subtitle);
@@ -66,8 +66,6 @@ function WriteBlog() {
         formDataToSend.append("content", formData.content);
         formDataToSend.append("categories", formData.categories);
         formDataToSend.append("username", formData.username);
-
-        console.log('form', formDataToSend)
 
         try {
             const token = localStorage.getItem("token")
@@ -81,7 +79,7 @@ function WriteBlog() {
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                navigate("/");
+                navigate("/mijnBlogs");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");
@@ -95,7 +93,7 @@ function WriteBlog() {
     return (
         <>
             <div className="inner-content-container-textFields">
-                <button className="simpleButtons" id="WriteBlogBackButton" type="button">
+                <button className="simpleButtons margin20PxTop" type="button">
                     <Link to="/mijnBlogs">Terug naar mijn blogs</Link>
                 </button>
 
@@ -111,7 +109,7 @@ function WriteBlog() {
                             <label htmlFor="title">
                                 <b>Categorieën:</b>
                             </label>
-                            <select onChange={handleChangeCategories}>
+                            <select onChange={handleChangeCategories} required>
                                 <option value="please select a category">Selecteer een categorie</option>
                                 <option value="natuurgebied">natuurgebied</option>
                                 <option value="wandelroute">wandelroute</option>
@@ -168,6 +166,7 @@ function WriteBlog() {
                                accept=".jpg, .jpeg, .png"
                                name="file"
                                id="fileUpload"
+                               required
                                onChange={handleFileChange}
                         />
 
@@ -202,7 +201,7 @@ function WriteBlog() {
                     </div>
                     <div className="elementCenterContainer">
                         <br/>
-                        {uploadStatus && <p>{uploadStatus}</p>}
+                        {uploadStatus && <p className="redText">{uploadStatus}</p>}
                         <div className="textCenter">
                             <p>Na "Blogbericht plaatsen" verschijnt de blog op de homepage </p>
                             <p>Blogs aanpassen kan bij Account > Mijn blogs</p>
