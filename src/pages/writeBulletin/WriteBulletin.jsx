@@ -66,7 +66,7 @@ function WriteBulletin() {
             if (response.status === 201) {
                 console.log("Blog post successful!");
                 setUploadStatus("Upload is gelukt!");
-                navigate("/prikbord");
+                navigate("/mijnprikbord");
             } else {
                 console.error("Error posting blog:", response.statusText);
                 setUploadStatus("Er is een fout opgetreden bij het uploaden.");

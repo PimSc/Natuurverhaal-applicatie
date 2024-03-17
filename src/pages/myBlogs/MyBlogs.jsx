@@ -78,7 +78,7 @@ function MyBlogs() {
                         <Link to="/WriteBlog"><strong>Blog schrijven</strong></Link>
                     </button>
 
-                    <h4 className="totalBlogsCounter">Je hebt al {blogPostsUser.length} natuurblogs</h4>
+                    <h4 className="totalBlogsCounter">Je hebt {blogPostsUser.length} natuurblogs</h4>
                     <br/>
                 </div>
             </section>

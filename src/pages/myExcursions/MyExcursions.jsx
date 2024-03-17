@@ -1,15 +1,15 @@
 import './MyExcursions.css';
 import {Link} from "react-router-dom";
 import React, {useContext, useEffect, useRef, useState} from "react";
-import useBlog from "../../Hooks/useAllExcursions.jsx";
 import axios from "axios";
-import { AuthContext } from "../../context/AuthContextProvider.jsx";
+import useAllExcursions from "../../Hooks/useAllExcursions.jsx";
+import LoadingGif from "../../../public/assets/icons/LoadingGif.gif";
 
 
 function MyExcursions() {
-    const { ExcursionsAll } = useBlog();
-    const { user } = useContext(AuthContext);
     const token = localStorage.getItem("token")
+    const {excursionsAll} = useAllExcursions();
+    const {excursionsIsLoading} = useAllExcursions();
 
     const handleDelete = (postId) => {
         axios.delete(`http://localhost:8080/excursies/${postId}`, {
@@ -46,6 +46,10 @@ function MyExcursions() {
     }, []);
     // ----- Lazy loading end -----
 
+    // Loading gif
+    if (excursionsIsLoading) {
+        return <div className="loadingGif"><img src={LoadingGif} alt="loading Gif"/></div>;
+    }
 
 
 return (
@@ -62,7 +66,7 @@ return (
                     <Link to="/WriteBlog"><strong>Excursie aanmaken</strong></Link>
                 </button>
 
-                <h4 className="totalBlogsCounter">Je hebt al {ExcursionsAll.length} natuurblogs</h4>
+                <h4 className="totalBlogsCounter">Er zijn {excursionsAll.length} excursies</h4>
                 <br/>
             </div>
         </section>
@@ -70,7 +74,7 @@ return (
         <section className="outer-content-container" ref={containerRef}>
             <div className="inner-content-container">
                 <ul className="post-list">
-                    {ExcursionsAll.slice(0, visiblePosts).map((post) => (
+                    {excursionsAll.slice(0, visiblePosts).map((post) => (
                         <li key={post.id} className="post-item">
                             <div className="post-image">
                                 <img src={"data:image/png;base64," + post.fileContent} alt={post.title} loading="lazy"
@@ -118,7 +122,6 @@ return (
                 </ul>
             </div>
         </section>
-
     </>
 );
 }

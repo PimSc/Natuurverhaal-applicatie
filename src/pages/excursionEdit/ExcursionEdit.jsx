@@ -8,9 +8,9 @@ import axios from "axios";
 
 function ExcursionEdit() {
 
-    const {ExcursionsAll} = useAllExcursions();
+    const {excursionsAll} = useAllExcursions();
     const { id } = useParams();
-    const post = ExcursionsAll.find(post => post.id.toString() === id);
+    const post = excursionsAll.find(post => post.id.toString() === id);
     const Navigate = useNavigate();
 
     const [title, setTitle] = useState('');

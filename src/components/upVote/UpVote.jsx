@@ -57,13 +57,13 @@ function UpVote({ blogId }) {
 
             <input type="checkbox" id="checkbox" onChange={handleUpvote}/>
             <label htmlFor="checkbox">
-                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg" strokeLinecap="round"
+                     strokeLinejoin="round">
+                    <g id="Group" fill="none" fillRule="evenodd" transform="translate(467 392)">
                         <path
                             d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
                             id="heart"/>
-                        <circle className="circle" cx="29.5" cy="29.5" r="1.5" stroke="#CD85E7" stroke-width="0 "/>
+                        <circle className="circle" cx="29.5" cy="29.5" r="1.5" stroke="#CD85E7" strokeWidth="0 "/>
 
                         <g id="grp7" opacity="0" transform="translate(7 6)">
                             <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>

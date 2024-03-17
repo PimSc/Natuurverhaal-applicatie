@@ -21,8 +21,8 @@ import axios from "axios";
 
 function ExcursionPostDetail() {
     const {id} = useParams();
-    const {ExcursionsAll} = useAllExcursions();
-    const post = ExcursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
+    const {excursionsAll} = useAllExcursions();
+    const post = excursionsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
     const [message, setMessage] = useState('');
 
 
