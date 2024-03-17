@@ -106,7 +106,7 @@ function ExcursionOverview() {
                 </div>
             )}
             {excursionsAll.length === 0 && (
-                <div><center>Er zijn geen excursies.</center></div>
+                <div><center>Er zijn geen excursies gevonden.</center></div>
             )}
         </>
     );

@@ -8,7 +8,6 @@ import {useNavigate} from "react-router-dom";
 
 function ProfileEdit() {
     const navigate = useNavigate();
-
     const {user} = useContext(AuthContext);
 
     const [formData, setFormData] = useState({

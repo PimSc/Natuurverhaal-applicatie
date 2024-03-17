@@ -1,15 +1,18 @@
 import './BulletinBoardEdit.css';
 import {Link, useNavigate, useParams} from "react-router-dom";
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import useBlog from "../../Hooks/useUserBulletinBoards.jsx";
 import axios from "axios";
+import {AuthContext} from '../../context/AuthContextProvider.jsx';
+import useAllBulletinBoards from "../../Hooks/useAllBulletinBoards.jsx";
 
 function BulletinBoardEdit() {
 
-    const { bulletinBoardPostUser } = useBlog();
+    const {bulletinBoardsAll} = useAllBulletinBoards();
     const { id } = useParams(); // Haal het ID uit de URL-parameters
-    const post = bulletinBoardPostUser.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
+    const post = bulletinBoardsAll.find(post => post.id.toString() === id); // Zoek de blogpost met het overeenkomende ID
     const Navigate = useNavigate();
+    const {user} = useContext(AuthContext);
 
     const [title, setTitle] = useState('');
     const [file, setFile] = useState(null);
@@ -69,7 +72,12 @@ function BulletinBoardEdit() {
 
 
 
-
+    // Toegangscontrole
+    //Alleen een username uit de authcontext die gelijk is aan de username uit de bulletinBoardPost mag de pagina zien OF iemand met authcontext ROLE_ADMIN. anders ga je terug naar /mijnprikbord
+    if (!user || !post || (user.username !== post.username && user.role !== 'ROLE_ADMIN')) {
+        Navigate("/mijnprikbord");
+        return null; // Render niets als de gebruiker niet geautoriseerd is
+    }
 
 
     return (

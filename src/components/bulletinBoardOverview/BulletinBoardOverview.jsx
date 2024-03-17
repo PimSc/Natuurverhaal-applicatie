@@ -66,7 +66,7 @@ function BulletinBoardOverview() {
                 </section>
             )}
             {reversedPosts.length === 0 && (
-                <div><center>Er zijn geen prikbord berichten.</center></div>
+                <div className="inner-content-container-column margin20PxTop">Er zijn geen prikbord berichten gevonden.</div>
             )}
         </>
     );

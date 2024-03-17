@@ -80,7 +80,7 @@ function BlogOverview() {
                 </section>
             )}
             {filteredPosts.length === 0 && (
-                <div><center>Er zijn geen blogposts.</center></div>
+                <div className="inner-content-container-column margin20PxTop">Er zijn geen blogposts gevonden.</div>
             )}
         </>
     );

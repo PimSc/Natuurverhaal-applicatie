@@ -4,40 +4,45 @@ import {useContext} from "react";
 import {AuthContext} from "../../context/AuthContextProvider.jsx";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AdminPanel() {
     const {user} = useContext(AuthContext);
-    const [postId, setPostId] = useState(""); // State toegevoegd voor postId
-    const [prikbordpostId, setPrikbordId] = useState(""); // State toegevoegd voor postId
+    const [postDeleteId, setPostDeleteId] = useState(""); // State toegevoegd voor postId
+    const [blogEditId, setBlogEditId] = useState('');
+    const [bulletinEditId, setBulletinEditId] = useState('');
+    const [bulletinDeleteId, setBulletinDeleteId] = useState('');
     const [username, setUsername] = useState(""); // State toegevoegd voor username DeleteUser
     const [usernameRole, setUsernameRole] = useState(""); // State toegevoegd voor username ROLE
     const token = localStorage.getItem("token")
+    const Navigate = useNavigate();
 
+    // DELETE BLOGPOST
     const handleDeleteBlogpost = () => {
-        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postId}`, {
+        axios.delete(`http://localhost:8080/blog-posts/${user.username}/${postDeleteId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
                 console.log('Post deleted successfully');
-                window.location.reload();
+                Navigate("/");
             })
             .catch(error => {
                 console.error('Error deleting post:', error);
             });
     };
 
+// DELETE PRIKBORD POST
     const handleDeletePrikbordpost = () => {
-        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${prikbordpostId}`, {
+        axios.delete(`http://localhost:8080/bulletin-boards/${user.username}/${bulletinDeleteId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
-
             .then(response => {
                 console.log('Post deleted successfully');
-                window.location.reload(); // Herlaad de pagina na succesvol verwijderen
+                Navigate("/Prikbord");
             })
             .catch(error => {
                 console.error('Error deleting post:', error);
@@ -45,8 +50,8 @@ function AdminPanel() {
     };
 
 
+// DELETE USER
     const handleDeleteUser = () => {
-
         axios.delete(`http://localhost:8080/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -61,16 +66,27 @@ function AdminPanel() {
             });
     };
 
-    const [blogId, setBlogId] = useState('');
 
-    const handleEdit = () => {
-        if (blogId.trim() !== '') {
-            window.location.href = `/blogedit/${blogId}`;
+
+    // EDIT BLOG BY ID NUMBER
+    const handleEditBlogPost = () => {
+        if (blogEditId.trim() !== '') {
+            window.location.href = `/blogedit/${blogEditId}`;
         } else {
             alert("Voer een geldig ID-nummer in.");
         }
     };
 
+    // EDIT PRIKBORD BY ID NUMBER
+    const handleEditPrikbordPost = () => {
+        if (bulletinEditId.trim() !== '') {
+            window.location.href = `/editprikbord/${bulletinEditId}`;
+        } else {
+            alert("Voer een geldig ID-nummer in.");
+        }
+    };
+
+    // ASSIGN ADMIN ROLE
     const assignRoleAdmin = () => {
         axios.post(`http://localhost:8080/users/${usernameRole}/authorities`, {
             "authority": "ROLE_ADMIN"
@@ -88,6 +104,8 @@ function AdminPanel() {
             });
     };
 
+
+    // Delete ADMIN ROLE
     const deleteRoleAdmin = () => {
         axios.delete(`http://localhost:8080/users/${usernameRole}/authorities/ROLE_ADMIN`, {
             headers: {
@@ -151,13 +169,13 @@ function AdminPanel() {
                                     id="editBlog"
                                     placeholder="Typ een blog ID nummer en druk op edit"
                                     autoComplete="on"
-                                    value={blogId}
-                                    onChange={(e) => setBlogId(e.target.value)}
+                                    value={blogEditId}
+                                    onChange={(e) => setBlogEditId(e.target.value)}
                                 />
                                 <button
                                     className="simpleButtonsEdit buttonYellowEdit"
                                     type="button"
-                                    onClick={handleEdit}
+                                    onClick={handleEditBlogPost}
                                 >
                                     Edit <strong>blog</strong>
                                 </button>
@@ -178,8 +196,8 @@ function AdminPanel() {
                                     id="deleteBlog"
                                     placeholder="Typ een blog ID nummer en druk op delete"
                                     autoComplete="on"
-                                    value={postId}
-                                    onChange={(e) => setPostId(e.target.value)}
+                                    value={postDeleteId}
+                                    onChange={(e) => setPostDeleteId(e.target.value)}
                                 />
                                 <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                                     Delete <strong>blog</strong>
@@ -192,7 +210,10 @@ function AdminPanel() {
                             <h2 className="textCenter">Prikbord section</h2>
 
                             {/*--EDIT PRIKBORD--*/}
-                            <form className="adminYellowField" action="">
+                            <form className="adminYellowField" action="" onSubmit={(e) => {
+                                e.preventDefault();
+                                handleEditPrikbordPost()
+                            }}>
 
                                 <label htmlFor="editBlog">
                                     <b>Prikbord post bewerken</b>
@@ -202,6 +223,8 @@ function AdminPanel() {
                                     name="editBlog"
                                     id="editBlog"
                                     placeholder="Typ een blog ID nummer en druk op edit"
+                                    value={bulletinEditId}
+                                    onChange={(e) => setBulletinEditId(e.target.value)}
                                     autoComplete="on"
                                 />
                                 <button className="simpleButtonsEdit buttonYellowEdit" type="submit">
@@ -225,8 +248,8 @@ function AdminPanel() {
                                     id="deleteBulletin"
                                     placeholder="Typ een prikbord ID nummer en druk op delete"
                                     autoComplete="on"
-                                    value={prikbordpostId}
-                                    onChange={(e) => setPrikbordId(e.target.value)}
+                                    value={bulletinDeleteId}
+                                    onChange={(e) => setBulletinDeleteId(e.target.value)}
                                 />
                                 <button className="simpleButtonsRemove buttonRedRemove" type="submit">
                                     Delete <strong>blog</strong>
